@@ -2,8 +2,22 @@ grammar org.xtext.example.pascal.Pascal with org.eclipse.xtext.common.Terminals
 
 generate pascal "http://www.xtext.org/example/pascal/Pascal"
 
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
+program:
+	"program" name=ID ( "(" identifiers=indentifier_list ")" ) ? ";"
+;
+
+indentifier_list:
+	names+=ID ( "," names+=ID ) * 
+;
+
+terminal ADDITION_OP:
+	"+" | "-"
+;
+
+terminal MULTIPLICATION_OP:
+	"*" | "/"
+;
+
+terminal RELATIONAL_OP:
+	"=" | "<>" | "<" | "<=" | ">" | ">="	
+;
