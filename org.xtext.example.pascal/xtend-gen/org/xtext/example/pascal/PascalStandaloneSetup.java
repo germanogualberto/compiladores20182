@@ -3,14 +3,13 @@
  */
 package org.xtext.example.pascal;
 
-import org.xtext.example.pascal.PascalStandaloneSetupGenerated;
-
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
  */
 @SuppressWarnings("all")
-public class PascalStandaloneSetup extends PascalStandaloneSetupGenerated {
+public class PascalStandaloneSetup /* implements PascalStandaloneSetupGenerated  */{
   public static void doSetup() {
-    new PascalStandaloneSetup().createInjectorAndDoEMFRegistration();
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method createInjectorAndDoEMFRegistration() is undefined for the type PascalStandaloneSetup");
   }
 }

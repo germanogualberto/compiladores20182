@@ -107,6 +107,11 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final ProgramElements pProgram;
 	private final Indentifier_listElements pIndentifier_list;
+	private final TerminalRule tADDITION_OP;
+	private final TerminalRule tMULTIPLICATION_OP;
+	private final TerminalRule tRELATIONAL_OP;
+	private final TerminalRule tPARENTHESES_COMMENT;
+	private final TerminalRule tCURLY_BRACKETS_COMMENT;
 	
 	private final Grammar grammar;
 	
@@ -119,6 +124,11 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pProgram = new ProgramElements();
 		this.pIndentifier_list = new Indentifier_listElements();
+		this.tADDITION_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.ADDITION_OP");
+		this.tMULTIPLICATION_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.MULTIPLICATION_OP");
+		this.tRELATIONAL_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.RELATIONAL_OP");
+		this.tPARENTHESES_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.PARENTHESES_COMMENT");
+		this.tCURLY_BRACKETS_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.CURLY_BRACKETS_COMMENT");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -166,6 +176,36 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getIndentifier_listRule() {
 		return getIndentifier_listAccess().getRule();
+	}
+	
+	//terminal ADDITION_OP:
+	//	"+" | "-";
+	public TerminalRule getADDITION_OPRule() {
+		return tADDITION_OP;
+	}
+	
+	//terminal MULTIPLICATION_OP:
+	//	"*" | "/";
+	public TerminalRule getMULTIPLICATION_OPRule() {
+		return tMULTIPLICATION_OP;
+	}
+	
+	//terminal RELATIONAL_OP:
+	//	"=" | "<>" | "<" | "<=" | ">" | ">=";
+	public TerminalRule getRELATIONAL_OPRule() {
+		return tRELATIONAL_OP;
+	}
+	
+	//terminal PARENTHESES_COMMENT:
+	//	'(*' .*->'*)';
+	public TerminalRule getPARENTHESES_COMMENTRule() {
+		return tPARENTHESES_COMMENT;
+	}
+	
+	//terminal CURLY_BRACKETS_COMMENT:
+	//	'{' .*->'}';
+	public TerminalRule getCURLY_BRACKETS_COMMENTRule() {
+		return tCURLY_BRACKETS_COMMENT;
 	}
 	
 	//terminal ID:

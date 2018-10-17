@@ -3,12 +3,8 @@
  */
 package org.xtext.example.pascal.ide;
 
-import com.google.inject.Guice;
 import com.google.inject.Injector;
-import org.eclipse.xtext.util.Modules2;
-import org.xtext.example.pascal.PascalRuntimeModule;
 import org.xtext.example.pascal.PascalStandaloneSetup;
-import org.xtext.example.pascal.ide.PascalIdeModule;
 
 /**
  * Initialization support for running Xtext languages as language servers.
@@ -17,8 +13,8 @@ import org.xtext.example.pascal.ide.PascalIdeModule;
 public class PascalIdeSetup extends PascalStandaloneSetup {
   @Override
   public Injector createInjector() {
-    PascalRuntimeModule _pascalRuntimeModule = new PascalRuntimeModule();
-    PascalIdeModule _pascalIdeModule = new PascalIdeModule();
-    return Guice.createInjector(Modules2.mixin(_pascalRuntimeModule, _pascalIdeModule));
+    throw new Error("Unresolved compilation problems:"
+      + "\nType mismatch: cannot convert from PascalRuntimeModule to Module"
+      + "\nType mismatch: cannot convert from PascalIdeModule to Module");
   }
 }

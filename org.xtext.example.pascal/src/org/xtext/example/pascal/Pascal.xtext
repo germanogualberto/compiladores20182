@@ -21,3 +21,11 @@ terminal MULTIPLICATION_OP:
 terminal RELATIONAL_OP:
 	"=" | "<>" | "<" | "<=" | ">" | ">="	
 ;
+
+terminal PARENTHESES_COMMENT: 
+	'(*' (.*)? -> '*)'
+;
+
+terminal CURLY_BRACKETS_COMMENT:
+	'{' (.*)? -> '}'
+;

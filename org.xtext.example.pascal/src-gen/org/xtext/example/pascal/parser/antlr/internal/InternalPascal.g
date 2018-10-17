@@ -195,6 +195,16 @@ ruleindentifier_list returns [EObject current=null]
 	)
 ;
 
+RULE_ADDITION_OP : ('+'|'-');
+
+RULE_MULTIPLICATION_OP : ('*'|'/');
+
+RULE_RELATIONAL_OP : ('='|'<>'|'<'|'<='|'>'|'>=');
+
+RULE_PARENTHESES_COMMENT : '(*' .* ( options {greedy=false;} : . )*'*)';
+
+RULE_CURLY_BRACKETS_COMMENT : '{' .* ( options {greedy=false;} : . )*'}';
+
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
