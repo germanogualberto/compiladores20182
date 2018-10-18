@@ -3,9 +3,11 @@
  */
 package org.xtext.example.pascal;
 
+import org.xtext.example.pascal.AbstractPascalRuntimeModule;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 @SuppressWarnings("all")
-public class PascalRuntimeModule /* implements AbstractPascalRuntimeModule  */{
+public class PascalRuntimeModule extends AbstractPascalRuntimeModule {
 }

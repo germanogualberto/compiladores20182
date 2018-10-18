@@ -197,13 +197,13 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal PARENTHESES_COMMENT:
-	//	'(*' .*->'*)';
+	//	'(*'->'*)';
 	public TerminalRule getPARENTHESES_COMMENTRule() {
 		return tPARENTHESES_COMMENT;
 	}
 	
 	//terminal CURLY_BRACKETS_COMMENT:
-	//	'{' .*->'}';
+	//	'{'->'}';
 	public TerminalRule getCURLY_BRACKETS_COMMENTRule() {
 		return tCURLY_BRACKETS_COMMENT;
 	}
