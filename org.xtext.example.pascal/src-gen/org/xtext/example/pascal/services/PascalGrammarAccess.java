@@ -112,6 +112,9 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tRELATIONAL_OP;
 	private final TerminalRule tPARENTHESES_COMMENT;
 	private final TerminalRule tCURLY_BRACKETS_COMMENT;
+	private final TerminalRule tUNSIGNED_DIGIT_SEQUENCE;
+	private final TerminalRule tDIGIT_SEQUENCE;
+	private final TerminalRule tDIGIT;
 	
 	private final Grammar grammar;
 	
@@ -129,6 +132,9 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		this.tRELATIONAL_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.RELATIONAL_OP");
 		this.tPARENTHESES_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.PARENTHESES_COMMENT");
 		this.tCURLY_BRACKETS_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.CURLY_BRACKETS_COMMENT");
+		this.tUNSIGNED_DIGIT_SEQUENCE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.UNSIGNED_DIGIT_SEQUENCE");
+		this.tDIGIT_SEQUENCE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.DIGIT_SEQUENCE");
+		this.tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.DIGIT");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -206,6 +212,24 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	//	'{'->'}';
 	public TerminalRule getCURLY_BRACKETS_COMMENTRule() {
 		return tCURLY_BRACKETS_COMMENT;
+	}
+	
+	//terminal UNSIGNED_DIGIT_SEQUENCE:
+	//	DIGIT+;
+	public TerminalRule getUNSIGNED_DIGIT_SEQUENCERule() {
+		return tUNSIGNED_DIGIT_SEQUENCE;
+	}
+	
+	//terminal DIGIT_SEQUENCE:
+	//	ADDITION_OP? UNSIGNED_DIGIT_SEQUENCE;
+	public TerminalRule getDIGIT_SEQUENCERule() {
+		return tDIGIT_SEQUENCE;
+	}
+	
+	//terminal DIGIT:
+	//	'0'..'9';
+	public TerminalRule getDIGITRule() {
+		return tDIGIT;
 	}
 	
 	//terminal ID:

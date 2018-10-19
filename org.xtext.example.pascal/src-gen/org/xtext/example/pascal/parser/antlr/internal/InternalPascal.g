@@ -195,7 +195,7 @@ ruleindentifier_list returns [EObject current=null]
 	)
 ;
 
-RULE_ADDITION_OP : ('+'|'-');
+fragment RULE_ADDITION_OP : ('+'|'-');
 
 RULE_MULTIPLICATION_OP : ('*'|'/');
 
@@ -204,6 +204,12 @@ RULE_RELATIONAL_OP : ('='|'<>'|'<'|'<='|'>'|'>=');
 RULE_PARENTHESES_COMMENT : '(*' ( options {greedy=false;} : . )*'*)';
 
 RULE_CURLY_BRACKETS_COMMENT : '{' ( options {greedy=false;} : . )*'}';
+
+fragment RULE_UNSIGNED_DIGIT_SEQUENCE : RULE_DIGIT+;
+
+RULE_DIGIT_SEQUENCE : RULE_ADDITION_OP? RULE_UNSIGNED_DIGIT_SEQUENCE;
+
+fragment RULE_DIGIT : '0'..'9';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

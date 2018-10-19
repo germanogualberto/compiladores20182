@@ -29,3 +29,15 @@ terminal PARENTHESES_COMMENT:
 terminal CURLY_BRACKETS_COMMENT:
 	'{' -> '}'
 ;
+
+terminal UNSIGNED_DIGIT_SEQUENCE:
+	DIGIT+
+;
+
+terminal DIGIT_SEQUENCE:
+	ADDITION_OP ? UNSIGNED_DIGIT_SEQUENCE
+;
+
+terminal DIGIT:
+	'0'..'9'
+;
