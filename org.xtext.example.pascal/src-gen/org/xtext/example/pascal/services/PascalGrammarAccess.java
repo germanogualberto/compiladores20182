@@ -112,9 +112,11 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tRELATIONAL_OP;
 	private final TerminalRule tPARENTHESES_COMMENT;
 	private final TerminalRule tCURLY_BRACKETS_COMMENT;
-	private final TerminalRule tUNSIGNED_DIGIT_SEQUENCE;
+	private final TerminalRule tNUMERIC_SUBRANGE;
 	private final TerminalRule tDIGIT_SEQUENCE;
-	private final TerminalRule tDIGIT;
+	private final TerminalRule tSIGNED_INTEGER_NUMBER;
+	private final TerminalRule tREAL_NUMBER;
+	private final TerminalRule tSIGNED_REAL_NUMBER;
 	
 	private final Grammar grammar;
 	
@@ -132,9 +134,11 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		this.tRELATIONAL_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.RELATIONAL_OP");
 		this.tPARENTHESES_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.PARENTHESES_COMMENT");
 		this.tCURLY_BRACKETS_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.CURLY_BRACKETS_COMMENT");
-		this.tUNSIGNED_DIGIT_SEQUENCE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.UNSIGNED_DIGIT_SEQUENCE");
+		this.tNUMERIC_SUBRANGE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.NUMERIC_SUBRANGE");
 		this.tDIGIT_SEQUENCE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.DIGIT_SEQUENCE");
-		this.tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.DIGIT");
+		this.tSIGNED_INTEGER_NUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.SIGNED_INTEGER_NUMBER");
+		this.tREAL_NUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.REAL_NUMBER");
+		this.tSIGNED_REAL_NUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.SIGNED_REAL_NUMBER");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -214,22 +218,34 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		return tCURLY_BRACKETS_COMMENT;
 	}
 	
-	//terminal UNSIGNED_DIGIT_SEQUENCE:
-	//	DIGIT+;
-	public TerminalRule getUNSIGNED_DIGIT_SEQUENCERule() {
-		return tUNSIGNED_DIGIT_SEQUENCE;
+	//terminal NUMERIC_SUBRANGE:
+	//	(INT | REAL_NUMBER | SIGNED_INTEGER_NUMBER | SIGNED_REAL_NUMBER) '..';
+	public TerminalRule getNUMERIC_SUBRANGERule() {
+		return tNUMERIC_SUBRANGE;
 	}
 	
 	//terminal DIGIT_SEQUENCE:
-	//	ADDITION_OP? UNSIGNED_DIGIT_SEQUENCE;
+	//	ADDITION_OP? INT;
 	public TerminalRule getDIGIT_SEQUENCERule() {
 		return tDIGIT_SEQUENCE;
 	}
 	
-	//terminal DIGIT:
-	//	'0'..'9';
-	public TerminalRule getDIGITRule() {
-		return tDIGIT;
+	//terminal SIGNED_INTEGER_NUMBER:
+	//	ADDITION_OP INT;
+	public TerminalRule getSIGNED_INTEGER_NUMBERRule() {
+		return tSIGNED_INTEGER_NUMBER;
+	}
+	
+	//terminal REAL_NUMBER:
+	//	INT "." INT? (("E" | "e") DIGIT_SEQUENCE)? | INT ("E" | "e") DIGIT_SEQUENCE;
+	public TerminalRule getREAL_NUMBERRule() {
+		return tREAL_NUMBER;
+	}
+	
+	//terminal SIGNED_REAL_NUMBER:
+	//	ADDITION_OP REAL_NUMBER;
+	public TerminalRule getSIGNED_REAL_NUMBERRule() {
+		return tSIGNED_REAL_NUMBER;
 	}
 	
 	//terminal ID:

@@ -466,15 +466,19 @@ RULE_PARENTHESES_COMMENT : '(*' ( options {greedy=false;} : . )*'*)';
 
 RULE_CURLY_BRACKETS_COMMENT : '{' ( options {greedy=false;} : . )*'}';
 
-fragment RULE_UNSIGNED_DIGIT_SEQUENCE : RULE_DIGIT+;
+RULE_NUMERIC_SUBRANGE : (RULE_INT|RULE_REAL_NUMBER|RULE_SIGNED_INTEGER_NUMBER|RULE_SIGNED_REAL_NUMBER) '..';
 
-RULE_DIGIT_SEQUENCE : RULE_ADDITION_OP? RULE_UNSIGNED_DIGIT_SEQUENCE;
+fragment RULE_DIGIT_SEQUENCE : RULE_ADDITION_OP? RULE_INT;
 
-fragment RULE_DIGIT : '0'..'9';
+fragment RULE_SIGNED_INTEGER_NUMBER : RULE_ADDITION_OP RULE_INT;
+
+fragment RULE_REAL_NUMBER : (RULE_INT '.' RULE_INT? (('E'|'e') RULE_DIGIT_SEQUENCE)?|RULE_INT ('E'|'e') RULE_DIGIT_SEQUENCE);
+
+fragment RULE_SIGNED_REAL_NUMBER : RULE_ADDITION_OP RULE_REAL_NUMBER;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
-RULE_INT : ('0'..'9')+;
+fragment RULE_INT : ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 

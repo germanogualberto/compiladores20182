@@ -21,28 +21,30 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPascalParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_ADDITION_OP", "RULE_MULTIPLICATION_OP", "RULE_RELATIONAL_OP", "RULE_PARENTHESES_COMMENT", "RULE_CURLY_BRACKETS_COMMENT", "RULE_DIGIT", "RULE_UNSIGNED_DIGIT_SEQUENCE", "RULE_DIGIT_SEQUENCE", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'program'", "'('", "')'", "';'", "','"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_ADDITION_OP", "RULE_MULTIPLICATION_OP", "RULE_RELATIONAL_OP", "RULE_PARENTHESES_COMMENT", "RULE_CURLY_BRACKETS_COMMENT", "RULE_INT", "RULE_REAL_NUMBER", "RULE_SIGNED_INTEGER_NUMBER", "RULE_SIGNED_REAL_NUMBER", "RULE_NUMERIC_SUBRANGE", "RULE_DIGIT_SEQUENCE", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'program'", "'('", "')'", "';'", "','"
     };
     public static final int RULE_PARENTHESES_COMMENT=8;
-    public static final int RULE_UNSIGNED_DIGIT_SEQUENCE=11;
-    public static final int RULE_STRING=14;
-    public static final int RULE_SL_COMMENT=16;
-    public static final int T__19=19;
-    public static final int RULE_DIGIT_SEQUENCE=12;
+    public static final int RULE_STRING=16;
+    public static final int RULE_REAL_NUMBER=11;
+    public static final int RULE_SL_COMMENT=18;
+    public static final int RULE_DIGIT_SEQUENCE=15;
+    public static final int RULE_NUMERIC_SUBRANGE=14;
     public static final int EOF=-1;
     public static final int RULE_ID=4;
-    public static final int RULE_WS=17;
+    public static final int RULE_WS=19;
     public static final int RULE_MULTIPLICATION_OP=6;
-    public static final int RULE_DIGIT=10;
-    public static final int RULE_ANY_OTHER=18;
-    public static final int RULE_INT=13;
+    public static final int RULE_ANY_OTHER=20;
+    public static final int RULE_SIGNED_INTEGER_NUMBER=12;
+    public static final int RULE_SIGNED_REAL_NUMBER=13;
+    public static final int RULE_INT=10;
     public static final int T__22=22;
     public static final int RULE_CURLY_BRACKETS_COMMENT=9;
-    public static final int RULE_ML_COMMENT=15;
+    public static final int RULE_ML_COMMENT=17;
     public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
     public static final int RULE_ADDITION_OP=5;
     public static final int RULE_RELATIONAL_OP=7;
-    public static final int T__20=20;
     public static final int T__21=21;
 
     // delegates
@@ -143,7 +145,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             // InternalPascal.g:78:2: (otherlv_0= 'program' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '(' ( (lv_identifiers_3_0= ruleindentifier_list ) ) otherlv_4= ')' )? otherlv_5= ';' )
             // InternalPascal.g:79:3: otherlv_0= 'program' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '(' ( (lv_identifiers_3_0= ruleindentifier_list ) ) otherlv_4= ')' )? otherlv_5= ';'
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_3); 
+            otherlv_0=(Token)match(input,21,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getProgramAccess().getProgramKeyword_0());
             		
@@ -177,14 +179,14 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==20) ) {
+            if ( (LA1_0==22) ) {
                 alt1=1;
             }
             switch (alt1) {
                 case 1 :
                     // InternalPascal.g:102:4: otherlv_2= '(' ( (lv_identifiers_3_0= ruleindentifier_list ) ) otherlv_4= ')'
                     {
-                    otherlv_2=(Token)match(input,20,FOLLOW_3); 
+                    otherlv_2=(Token)match(input,22,FOLLOW_3); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getProgramAccess().getLeftParenthesisKeyword_2_0());
                     			
@@ -219,7 +221,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,21,FOLLOW_6); 
+                    otherlv_4=(Token)match(input,23,FOLLOW_6); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getProgramAccess().getRightParenthesisKeyword_2_2());
                     			
@@ -229,7 +231,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_2); 
+            otherlv_5=(Token)match(input,24,FOLLOW_2); 
 
             			newLeafNode(otherlv_5, grammarAccess.getProgramAccess().getSemicolonKeyword_3());
             		
@@ -342,7 +344,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==23) ) {
+                if ( (LA2_0==25) ) {
                     alt2=1;
                 }
 
@@ -351,7 +353,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // InternalPascal.g:172:4: otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) )
             	    {
-            	    otherlv_1=(Token)match(input,23,FOLLOW_3); 
+            	    otherlv_1=(Token)match(input,25,FOLLOW_3); 
 
             	    				newLeafNode(otherlv_1, grammarAccess.getIndentifier_listAccess().getCommaKeyword_1_0());
             	    			
@@ -419,9 +421,9 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000500000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000001400000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000002000002L});
 
 }
