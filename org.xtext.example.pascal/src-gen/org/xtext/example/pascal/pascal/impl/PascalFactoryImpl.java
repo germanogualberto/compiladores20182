@@ -67,6 +67,17 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
     {
       case PascalPackage.PROGRAM: return createprogram();
       case PascalPackage.INDENTIFIER_LIST: return createindentifier_list();
+      case PascalPackage.VARIABLE: return createvariable();
+      case PascalPackage.VAR_: return createvar_();
+      case PascalPackage.EXPRESSION_LIST: return createexpression_list();
+      case PascalPackage.EXPRESSION: return createexpression();
+      case PascalPackage.SIMPLE_EXPRESSION: return createsimple_expression();
+      case PascalPackage.TERM: return createterm();
+      case PascalPackage.FACTOR: return createfactor();
+      case PascalPackage.FUNCTION_DESIGNATOR: return createfunction_designator();
+      case PascalPackage.SET: return createset();
+      case PascalPackage.NUMBER: return createnumber();
+      case PascalPackage.ANY_NUMBER: return createany_number();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -92,6 +103,127 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
   {
     indentifier_listImpl indentifier_list = new indentifier_listImpl();
     return indentifier_list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public variable createvariable()
+  {
+    variableImpl variable = new variableImpl();
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public var_ createvar_()
+  {
+    var_Impl var_ = new var_Impl();
+    return var_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public expression_list createexpression_list()
+  {
+    expression_listImpl expression_list = new expression_listImpl();
+    return expression_list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public expression createexpression()
+  {
+    expressionImpl expression = new expressionImpl();
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public simple_expression createsimple_expression()
+  {
+    simple_expressionImpl simple_expression = new simple_expressionImpl();
+    return simple_expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public term createterm()
+  {
+    termImpl term = new termImpl();
+    return term;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public factor createfactor()
+  {
+    factorImpl factor = new factorImpl();
+    return factor;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public function_designator createfunction_designator()
+  {
+    function_designatorImpl function_designator = new function_designatorImpl();
+    return function_designator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public set createset()
+  {
+    setImpl set = new setImpl();
+    return set;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public number createnumber()
+  {
+    numberImpl number = new numberImpl();
+    return number;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public any_number createany_number()
+  {
+    any_numberImpl any_number = new any_numberImpl();
+    return any_number;
   }
 
   /**

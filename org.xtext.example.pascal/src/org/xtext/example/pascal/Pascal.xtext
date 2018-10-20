@@ -10,6 +10,58 @@ indentifier_list:
 	names+=ID ( "," names+=ID ) * 
 ;
 
+variable: 
+	name=ID variable=var_
+;
+
+var_:
+	( "[" expressions=expression_list "]" array=var_ | accessor?="." name=ID variable=var_ | "^" pointer=var_ ) ?
+;
+
+expression_list:
+	expressions+=expression ( "," expressions+=expression ) * 
+;
+
+expression:
+	expressions+=simple_expression ( ( operators+=RELATIONAL_OP | operators+="in" | operators+="=" ) expressions+=simple_expression ) ?
+;
+
+simple_expression:
+	( prefixOperator=ADDITION_OP ) ? terms+=term ( ( operators+=ADDITION_OP | operators+="or" ) terms+=term | terms+=unsigned_number ) *
+;
+
+term:
+	factors+=factor ( ( operators+=MULTIPLICATION_OP | operators+="div" | operators+="mod" | operators+="and" ) factors+=factor ) *
+;
+
+factor:
+	variable=variable | number=number | string=STRING | set=set | nil?="nil" | boolean="true" | boolean="false" | function=function_designator | "(" expression=expression ")" | "not" not=factor
+;
+
+function_designator:
+	name=ID "(" expressions=expression_list ? ")"
+;
+
+set:
+	brackets+="[" expressions=expression_list ? brackets+="]"
+;
+
+number:
+	number=any_number
+;
+
+any_number:
+	unsigned_number | signed_number
+;
+
+signed_number returns any_number:
+	integer=SIGNED_INTEGER_NUMBER | real=SIGNED_REAL_NUMBER
+;
+
+unsigned_number returns any_number:
+	integer=INTEGER_NUMBER | real=REAL_NUMBER
+;
+
 terminal ADDITION_OP:
 	"+" | "-"
 ;
@@ -31,20 +83,24 @@ terminal CURLY_BRACKETS_COMMENT:
 ;
 
 terminal NUMERIC_SUBRANGE:
-	( INT | REAL_NUMBER | SIGNED_INTEGER_NUMBER | SIGNED_REAL_NUMBER ) '..'
+	( INTEGER_NUMBER | REAL_NUMBER | SIGNED_INTEGER_NUMBER | SIGNED_REAL_NUMBER ) '..'
 ;
 
 terminal DIGIT_SEQUENCE:
-	ADDITION_OP ? INT
+	ADDITION_OP ? INTEGER_NUMBER
 ;
 
 terminal SIGNED_INTEGER_NUMBER:
-	ADDITION_OP INT
+	ADDITION_OP INTEGER_NUMBER
+;
+
+terminal INTEGER_NUMBER:
+	INT
 ;
 
 terminal REAL_NUMBER:
-	INT "." ( INT ) ? ( ( "E" | "e" ) DIGIT_SEQUENCE ) ? |
-	INT ( "E" | "e" ) DIGIT_SEQUENCE
+	INTEGER_NUMBER "." ( INTEGER_NUMBER ) ? ( ( "E" | "e" ) DIGIT_SEQUENCE ) ? |
+	INTEGER_NUMBER ( "E" | "e" ) DIGIT_SEQUENCE
 ;
 
 terminal SIGNED_REAL_NUMBER:

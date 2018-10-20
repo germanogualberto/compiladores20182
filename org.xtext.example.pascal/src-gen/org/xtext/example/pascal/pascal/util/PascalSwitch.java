@@ -87,6 +87,83 @@ public class PascalSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PascalPackage.VARIABLE:
+      {
+        variable variable = (variable)theEObject;
+        T result = casevariable(variable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.VAR_:
+      {
+        var_ var_ = (var_)theEObject;
+        T result = casevar_(var_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.EXPRESSION_LIST:
+      {
+        expression_list expression_list = (expression_list)theEObject;
+        T result = caseexpression_list(expression_list);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.EXPRESSION:
+      {
+        expression expression = (expression)theEObject;
+        T result = caseexpression(expression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.SIMPLE_EXPRESSION:
+      {
+        simple_expression simple_expression = (simple_expression)theEObject;
+        T result = casesimple_expression(simple_expression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.TERM:
+      {
+        term term = (term)theEObject;
+        T result = caseterm(term);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.FACTOR:
+      {
+        factor factor = (factor)theEObject;
+        T result = casefactor(factor);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.FUNCTION_DESIGNATOR:
+      {
+        function_designator function_designator = (function_designator)theEObject;
+        T result = casefunction_designator(function_designator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.SET:
+      {
+        set set = (set)theEObject;
+        T result = caseset(set);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.NUMBER:
+      {
+        number number = (number)theEObject;
+        T result = casenumber(number);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.ANY_NUMBER:
+      {
+        any_number any_number = (any_number)theEObject;
+        T result = caseany_number(any_number);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -119,6 +196,182 @@ public class PascalSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseindentifier_list(indentifier_list object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casevariable(variable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>var </em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>var </em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casevar_(var_ object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>expression list</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>expression list</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseexpression_list(expression_list object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseexpression(expression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>simple expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>simple expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casesimple_expression(simple_expression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>term</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>term</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseterm(term object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>factor</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>factor</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefactor(factor object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>function designator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>function designator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefunction_designator(function_designator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseset(set object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>number</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>number</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casenumber(number object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>any number</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>any number</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseany_number(any_number object)
   {
     return null;
   }

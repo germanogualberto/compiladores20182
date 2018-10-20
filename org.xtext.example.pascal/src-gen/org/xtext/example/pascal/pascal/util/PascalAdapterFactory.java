@@ -86,6 +86,61 @@ public class PascalAdapterFactory extends AdapterFactoryImpl
         return createindentifier_listAdapter();
       }
       @Override
+      public Adapter casevariable(variable object)
+      {
+        return createvariableAdapter();
+      }
+      @Override
+      public Adapter casevar_(var_ object)
+      {
+        return createvar_Adapter();
+      }
+      @Override
+      public Adapter caseexpression_list(expression_list object)
+      {
+        return createexpression_listAdapter();
+      }
+      @Override
+      public Adapter caseexpression(expression object)
+      {
+        return createexpressionAdapter();
+      }
+      @Override
+      public Adapter casesimple_expression(simple_expression object)
+      {
+        return createsimple_expressionAdapter();
+      }
+      @Override
+      public Adapter caseterm(term object)
+      {
+        return createtermAdapter();
+      }
+      @Override
+      public Adapter casefactor(factor object)
+      {
+        return createfactorAdapter();
+      }
+      @Override
+      public Adapter casefunction_designator(function_designator object)
+      {
+        return createfunction_designatorAdapter();
+      }
+      @Override
+      public Adapter caseset(set object)
+      {
+        return createsetAdapter();
+      }
+      @Override
+      public Adapter casenumber(number object)
+      {
+        return createnumberAdapter();
+      }
+      @Override
+      public Adapter caseany_number(any_number object)
+      {
+        return createany_numberAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -133,6 +188,171 @@ public class PascalAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createindentifier_listAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.variable <em>variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.variable
+   * @generated
+   */
+  public Adapter createvariableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.var_ <em>var </em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.var_
+   * @generated
+   */
+  public Adapter createvar_Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.expression_list <em>expression list</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.expression_list
+   * @generated
+   */
+  public Adapter createexpression_listAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.expression <em>expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.expression
+   * @generated
+   */
+  public Adapter createexpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.simple_expression <em>simple expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.simple_expression
+   * @generated
+   */
+  public Adapter createsimple_expressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.term <em>term</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.term
+   * @generated
+   */
+  public Adapter createtermAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.factor <em>factor</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.factor
+   * @generated
+   */
+  public Adapter createfactorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.function_designator <em>function designator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.function_designator
+   * @generated
+   */
+  public Adapter createfunction_designatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.set <em>set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.set
+   * @generated
+   */
+  public Adapter createsetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.number <em>number</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.number
+   * @generated
+   */
+  public Adapter createnumberAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.any_number <em>any number</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.any_number
+   * @generated
+   */
+  public Adapter createany_numberAdapter()
   {
     return null;
   }

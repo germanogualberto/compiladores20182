@@ -6,6 +6,7 @@ package org.xtext.example.pascal.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
@@ -103,10 +104,642 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNamesIDTerminalRuleCall_1_1_0() { return cNamesIDTerminalRuleCall_1_1_0; }
 	}
+	public class VariableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.variable");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Assignment cVariableAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cVariableVar_ParserRuleCall_1_0 = (RuleCall)cVariableAssignment_1.eContents().get(0);
+		
+		//variable:
+		//	name=ID variable=var_;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=ID variable=var_
+		public Group getGroup() { return cGroup; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//variable=var_
+		public Assignment getVariableAssignment_1() { return cVariableAssignment_1; }
+		
+		//var_
+		public RuleCall getVariableVar_ParserRuleCall_1_0() { return cVariableVar_ParserRuleCall_1_0; }
+	}
+	public class Var_Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.var_");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cExpressionsAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cExpressionsExpression_listParserRuleCall_0_1_0 = (RuleCall)cExpressionsAssignment_0_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Assignment cArrayAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cArrayVar_ParserRuleCall_0_3_0 = (RuleCall)cArrayAssignment_0_3.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cAccessorAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final Keyword cAccessorFullStopKeyword_1_0_0 = (Keyword)cAccessorAssignment_1_0.eContents().get(0);
+		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
+		private final Assignment cVariableAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cVariableVar_ParserRuleCall_1_2_0 = (RuleCall)cVariableAssignment_1_2.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cCircumflexAccentKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cPointerAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cPointerVar_ParserRuleCall_2_1_0 = (RuleCall)cPointerAssignment_2_1.eContents().get(0);
+		
+		//var_:
+		//	("[" expressions=expression_list "]" array=var_ | accessor?="." name=ID variable=var_ | "^" pointer=var_)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//("[" expressions=expression_list "]" array=var_ | accessor?="." name=ID variable=var_ | "^" pointer=var_)?
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//"[" expressions=expression_list "]" array=var_
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//"["
+		public Keyword getLeftSquareBracketKeyword_0_0() { return cLeftSquareBracketKeyword_0_0; }
+		
+		//expressions=expression_list
+		public Assignment getExpressionsAssignment_0_1() { return cExpressionsAssignment_0_1; }
+		
+		//expression_list
+		public RuleCall getExpressionsExpression_listParserRuleCall_0_1_0() { return cExpressionsExpression_listParserRuleCall_0_1_0; }
+		
+		//"]"
+		public Keyword getRightSquareBracketKeyword_0_2() { return cRightSquareBracketKeyword_0_2; }
+		
+		//array=var_
+		public Assignment getArrayAssignment_0_3() { return cArrayAssignment_0_3; }
+		
+		//var_
+		public RuleCall getArrayVar_ParserRuleCall_0_3_0() { return cArrayVar_ParserRuleCall_0_3_0; }
+		
+		//accessor?="." name=ID variable=var_
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//accessor?="."
+		public Assignment getAccessorAssignment_1_0() { return cAccessorAssignment_1_0; }
+		
+		//"."
+		public Keyword getAccessorFullStopKeyword_1_0_0() { return cAccessorFullStopKeyword_1_0_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_1_0() { return cNameIDTerminalRuleCall_1_1_0; }
+		
+		//variable=var_
+		public Assignment getVariableAssignment_1_2() { return cVariableAssignment_1_2; }
+		
+		//var_
+		public RuleCall getVariableVar_ParserRuleCall_1_2_0() { return cVariableVar_ParserRuleCall_1_2_0; }
+		
+		//"^" pointer=var_
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//"^"
+		public Keyword getCircumflexAccentKeyword_2_0() { return cCircumflexAccentKeyword_2_0; }
+		
+		//pointer=var_
+		public Assignment getPointerAssignment_2_1() { return cPointerAssignment_2_1; }
+		
+		//var_
+		public RuleCall getPointerVar_ParserRuleCall_2_1_0() { return cPointerVar_ParserRuleCall_2_1_0; }
+	}
+	public class Expression_listElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.expression_list");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cExpressionsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cExpressionsExpressionParserRuleCall_0_0 = (RuleCall)cExpressionsAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cExpressionsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cExpressionsExpressionParserRuleCall_1_1_0 = (RuleCall)cExpressionsAssignment_1_1.eContents().get(0);
+		
+		//expression_list:
+		//	expressions+=expression ("," expressions+=expression)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//expressions+=expression ("," expressions+=expression)*
+		public Group getGroup() { return cGroup; }
+		
+		//expressions+=expression
+		public Assignment getExpressionsAssignment_0() { return cExpressionsAssignment_0; }
+		
+		//expression
+		public RuleCall getExpressionsExpressionParserRuleCall_0_0() { return cExpressionsExpressionParserRuleCall_0_0; }
+		
+		//("," expressions+=expression)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//","
+		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+		
+		//expressions+=expression
+		public Assignment getExpressionsAssignment_1_1() { return cExpressionsAssignment_1_1; }
+		
+		//expression
+		public RuleCall getExpressionsExpressionParserRuleCall_1_1_0() { return cExpressionsExpressionParserRuleCall_1_1_0; }
+	}
+	public class ExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.expression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cExpressionsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cExpressionsSimple_expressionParserRuleCall_0_0 = (RuleCall)cExpressionsAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorsAssignment_1_0_0 = (Assignment)cAlternatives_1_0.eContents().get(0);
+		private final RuleCall cOperatorsRELATIONAL_OPTerminalRuleCall_1_0_0_0 = (RuleCall)cOperatorsAssignment_1_0_0.eContents().get(0);
+		private final Assignment cOperatorsAssignment_1_0_1 = (Assignment)cAlternatives_1_0.eContents().get(1);
+		private final Keyword cOperatorsInKeyword_1_0_1_0 = (Keyword)cOperatorsAssignment_1_0_1.eContents().get(0);
+		private final Assignment cOperatorsAssignment_1_0_2 = (Assignment)cAlternatives_1_0.eContents().get(2);
+		private final Keyword cOperatorsEqualsSignKeyword_1_0_2_0 = (Keyword)cOperatorsAssignment_1_0_2.eContents().get(0);
+		private final Assignment cExpressionsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cExpressionsSimple_expressionParserRuleCall_1_1_0 = (RuleCall)cExpressionsAssignment_1_1.eContents().get(0);
+		
+		//expression:
+		//	expressions+=simple_expression ((operators+=RELATIONAL_OP | operators+="in" | operators+="=")
+		//	expressions+=simple_expression)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//expressions+=simple_expression ((operators+=RELATIONAL_OP | operators+="in" | operators+="=")
+		//expressions+=simple_expression)?
+		public Group getGroup() { return cGroup; }
+		
+		//expressions+=simple_expression
+		public Assignment getExpressionsAssignment_0() { return cExpressionsAssignment_0; }
+		
+		//simple_expression
+		public RuleCall getExpressionsSimple_expressionParserRuleCall_0_0() { return cExpressionsSimple_expressionParserRuleCall_0_0; }
+		
+		//((operators+=RELATIONAL_OP | operators+="in" | operators+="=") expressions+=simple_expression)?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//operators+=RELATIONAL_OP | operators+="in" | operators+="="
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+		
+		//operators+=RELATIONAL_OP
+		public Assignment getOperatorsAssignment_1_0_0() { return cOperatorsAssignment_1_0_0; }
+		
+		//RELATIONAL_OP
+		public RuleCall getOperatorsRELATIONAL_OPTerminalRuleCall_1_0_0_0() { return cOperatorsRELATIONAL_OPTerminalRuleCall_1_0_0_0; }
+		
+		//operators+="in"
+		public Assignment getOperatorsAssignment_1_0_1() { return cOperatorsAssignment_1_0_1; }
+		
+		//"in"
+		public Keyword getOperatorsInKeyword_1_0_1_0() { return cOperatorsInKeyword_1_0_1_0; }
+		
+		//operators+="="
+		public Assignment getOperatorsAssignment_1_0_2() { return cOperatorsAssignment_1_0_2; }
+		
+		//"="
+		public Keyword getOperatorsEqualsSignKeyword_1_0_2_0() { return cOperatorsEqualsSignKeyword_1_0_2_0; }
+		
+		//expressions+=simple_expression
+		public Assignment getExpressionsAssignment_1_1() { return cExpressionsAssignment_1_1; }
+		
+		//simple_expression
+		public RuleCall getExpressionsSimple_expressionParserRuleCall_1_1_0() { return cExpressionsSimple_expressionParserRuleCall_1_1_0; }
+	}
+	public class Simple_expressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.simple_expression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPrefixOperatorAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cPrefixOperatorADDITION_OPTerminalRuleCall_0_0 = (RuleCall)cPrefixOperatorAssignment_0.eContents().get(0);
+		private final Assignment cTermsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTermsTermParserRuleCall_1_0 = (RuleCall)cTermsAssignment_1.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
+		private final Alternatives cAlternatives_2_0_0 = (Alternatives)cGroup_2_0.eContents().get(0);
+		private final Assignment cOperatorsAssignment_2_0_0_0 = (Assignment)cAlternatives_2_0_0.eContents().get(0);
+		private final RuleCall cOperatorsADDITION_OPTerminalRuleCall_2_0_0_0_0 = (RuleCall)cOperatorsAssignment_2_0_0_0.eContents().get(0);
+		private final Assignment cOperatorsAssignment_2_0_0_1 = (Assignment)cAlternatives_2_0_0.eContents().get(1);
+		private final Keyword cOperatorsOrKeyword_2_0_0_1_0 = (Keyword)cOperatorsAssignment_2_0_0_1.eContents().get(0);
+		private final Assignment cTermsAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
+		private final RuleCall cTermsTermParserRuleCall_2_0_1_0 = (RuleCall)cTermsAssignment_2_0_1.eContents().get(0);
+		private final Assignment cTermsAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cTermsUnsigned_numberParserRuleCall_2_1_0 = (RuleCall)cTermsAssignment_2_1.eContents().get(0);
+		
+		//simple_expression:
+		//	prefixOperator=ADDITION_OP? terms+=term ((operators+=ADDITION_OP | operators+="or") terms+=term |
+		//	terms+=unsigned_number)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//prefixOperator=ADDITION_OP? terms+=term ((operators+=ADDITION_OP | operators+="or") terms+=term |
+		//terms+=unsigned_number)*
+		public Group getGroup() { return cGroup; }
+		
+		//prefixOperator=ADDITION_OP?
+		public Assignment getPrefixOperatorAssignment_0() { return cPrefixOperatorAssignment_0; }
+		
+		//ADDITION_OP
+		public RuleCall getPrefixOperatorADDITION_OPTerminalRuleCall_0_0() { return cPrefixOperatorADDITION_OPTerminalRuleCall_0_0; }
+		
+		//terms+=term
+		public Assignment getTermsAssignment_1() { return cTermsAssignment_1; }
+		
+		//term
+		public RuleCall getTermsTermParserRuleCall_1_0() { return cTermsTermParserRuleCall_1_0; }
+		
+		//((operators+=ADDITION_OP | operators+="or") terms+=term | terms+=unsigned_number)*
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		
+		//(operators+=ADDITION_OP | operators+="or") terms+=term
+		public Group getGroup_2_0() { return cGroup_2_0; }
+		
+		//operators+=ADDITION_OP | operators+="or"
+		public Alternatives getAlternatives_2_0_0() { return cAlternatives_2_0_0; }
+		
+		//operators+=ADDITION_OP
+		public Assignment getOperatorsAssignment_2_0_0_0() { return cOperatorsAssignment_2_0_0_0; }
+		
+		//ADDITION_OP
+		public RuleCall getOperatorsADDITION_OPTerminalRuleCall_2_0_0_0_0() { return cOperatorsADDITION_OPTerminalRuleCall_2_0_0_0_0; }
+		
+		//operators+="or"
+		public Assignment getOperatorsAssignment_2_0_0_1() { return cOperatorsAssignment_2_0_0_1; }
+		
+		//"or"
+		public Keyword getOperatorsOrKeyword_2_0_0_1_0() { return cOperatorsOrKeyword_2_0_0_1_0; }
+		
+		//terms+=term
+		public Assignment getTermsAssignment_2_0_1() { return cTermsAssignment_2_0_1; }
+		
+		//term
+		public RuleCall getTermsTermParserRuleCall_2_0_1_0() { return cTermsTermParserRuleCall_2_0_1_0; }
+		
+		//terms+=unsigned_number
+		public Assignment getTermsAssignment_2_1() { return cTermsAssignment_2_1; }
+		
+		//unsigned_number
+		public RuleCall getTermsUnsigned_numberParserRuleCall_2_1_0() { return cTermsUnsigned_numberParserRuleCall_2_1_0; }
+	}
+	public class TermElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.term");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cFactorsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cFactorsFactorParserRuleCall_0_0 = (RuleCall)cFactorsAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorsAssignment_1_0_0 = (Assignment)cAlternatives_1_0.eContents().get(0);
+		private final RuleCall cOperatorsMULTIPLICATION_OPTerminalRuleCall_1_0_0_0 = (RuleCall)cOperatorsAssignment_1_0_0.eContents().get(0);
+		private final Assignment cOperatorsAssignment_1_0_1 = (Assignment)cAlternatives_1_0.eContents().get(1);
+		private final Keyword cOperatorsDivKeyword_1_0_1_0 = (Keyword)cOperatorsAssignment_1_0_1.eContents().get(0);
+		private final Assignment cOperatorsAssignment_1_0_2 = (Assignment)cAlternatives_1_0.eContents().get(2);
+		private final Keyword cOperatorsModKeyword_1_0_2_0 = (Keyword)cOperatorsAssignment_1_0_2.eContents().get(0);
+		private final Assignment cOperatorsAssignment_1_0_3 = (Assignment)cAlternatives_1_0.eContents().get(3);
+		private final Keyword cOperatorsAndKeyword_1_0_3_0 = (Keyword)cOperatorsAssignment_1_0_3.eContents().get(0);
+		private final Assignment cFactorsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cFactorsFactorParserRuleCall_1_1_0 = (RuleCall)cFactorsAssignment_1_1.eContents().get(0);
+		
+		//term:
+		//	factors+=factor ((operators+=MULTIPLICATION_OP | operators+="div" | operators+="mod" | operators+="and")
+		//	factors+=factor)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//factors+=factor ((operators+=MULTIPLICATION_OP | operators+="div" | operators+="mod" | operators+="and")
+		//factors+=factor)*
+		public Group getGroup() { return cGroup; }
+		
+		//factors+=factor
+		public Assignment getFactorsAssignment_0() { return cFactorsAssignment_0; }
+		
+		//factor
+		public RuleCall getFactorsFactorParserRuleCall_0_0() { return cFactorsFactorParserRuleCall_0_0; }
+		
+		//((operators+=MULTIPLICATION_OP | operators+="div" | operators+="mod" | operators+="and") factors+=factor)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//operators+=MULTIPLICATION_OP | operators+="div" | operators+="mod" | operators+="and"
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+		
+		//operators+=MULTIPLICATION_OP
+		public Assignment getOperatorsAssignment_1_0_0() { return cOperatorsAssignment_1_0_0; }
+		
+		//MULTIPLICATION_OP
+		public RuleCall getOperatorsMULTIPLICATION_OPTerminalRuleCall_1_0_0_0() { return cOperatorsMULTIPLICATION_OPTerminalRuleCall_1_0_0_0; }
+		
+		//operators+="div"
+		public Assignment getOperatorsAssignment_1_0_1() { return cOperatorsAssignment_1_0_1; }
+		
+		//"div"
+		public Keyword getOperatorsDivKeyword_1_0_1_0() { return cOperatorsDivKeyword_1_0_1_0; }
+		
+		//operators+="mod"
+		public Assignment getOperatorsAssignment_1_0_2() { return cOperatorsAssignment_1_0_2; }
+		
+		//"mod"
+		public Keyword getOperatorsModKeyword_1_0_2_0() { return cOperatorsModKeyword_1_0_2_0; }
+		
+		//operators+="and"
+		public Assignment getOperatorsAssignment_1_0_3() { return cOperatorsAssignment_1_0_3; }
+		
+		//"and"
+		public Keyword getOperatorsAndKeyword_1_0_3_0() { return cOperatorsAndKeyword_1_0_3_0; }
+		
+		//factors+=factor
+		public Assignment getFactorsAssignment_1_1() { return cFactorsAssignment_1_1; }
+		
+		//factor
+		public RuleCall getFactorsFactorParserRuleCall_1_1_0() { return cFactorsFactorParserRuleCall_1_1_0; }
+	}
+	public class FactorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.factor");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cVariableAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cVariableVariableParserRuleCall_0_0 = (RuleCall)cVariableAssignment_0.eContents().get(0);
+		private final Assignment cNumberAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cNumberNumberParserRuleCall_1_0 = (RuleCall)cNumberAssignment_1.eContents().get(0);
+		private final Assignment cStringAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cStringSTRINGTerminalRuleCall_2_0 = (RuleCall)cStringAssignment_2.eContents().get(0);
+		private final Assignment cSetAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cSetSetParserRuleCall_3_0 = (RuleCall)cSetAssignment_3.eContents().get(0);
+		private final Assignment cNilAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final Keyword cNilNilKeyword_4_0 = (Keyword)cNilAssignment_4.eContents().get(0);
+		private final Assignment cBooleanAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final Keyword cBooleanTrueKeyword_5_0 = (Keyword)cBooleanAssignment_5.eContents().get(0);
+		private final Assignment cBooleanAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
+		private final Keyword cBooleanFalseKeyword_6_0 = (Keyword)cBooleanAssignment_6.eContents().get(0);
+		private final Assignment cFunctionAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
+		private final RuleCall cFunctionFunction_designatorParserRuleCall_7_0 = (RuleCall)cFunctionAssignment_7.eContents().get(0);
+		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
+		private final Keyword cLeftParenthesisKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cExpressionAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cExpressionExpressionParserRuleCall_8_1_0 = (RuleCall)cExpressionAssignment_8_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_8_2 = (Keyword)cGroup_8.eContents().get(2);
+		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
+		private final Keyword cNotKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cNotAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final RuleCall cNotFactorParserRuleCall_9_1_0 = (RuleCall)cNotAssignment_9_1.eContents().get(0);
+		
+		//factor:
+		//	variable=variable | number=number | string=STRING | set=set | nil?="nil" | boolean="true" | boolean="false" |
+		//	function=function_designator | "(" expression=expression ")" | "not" not=factor;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//variable=variable | number=number | string=STRING | set=set | nil?="nil" | boolean="true" | boolean="false" |
+		//function=function_designator | "(" expression=expression ")" | "not" not=factor
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//variable=variable
+		public Assignment getVariableAssignment_0() { return cVariableAssignment_0; }
+		
+		//variable
+		public RuleCall getVariableVariableParserRuleCall_0_0() { return cVariableVariableParserRuleCall_0_0; }
+		
+		//number=number
+		public Assignment getNumberAssignment_1() { return cNumberAssignment_1; }
+		
+		//number
+		public RuleCall getNumberNumberParserRuleCall_1_0() { return cNumberNumberParserRuleCall_1_0; }
+		
+		//string=STRING
+		public Assignment getStringAssignment_2() { return cStringAssignment_2; }
+		
+		//STRING
+		public RuleCall getStringSTRINGTerminalRuleCall_2_0() { return cStringSTRINGTerminalRuleCall_2_0; }
+		
+		//set=set
+		public Assignment getSetAssignment_3() { return cSetAssignment_3; }
+		
+		//set
+		public RuleCall getSetSetParserRuleCall_3_0() { return cSetSetParserRuleCall_3_0; }
+		
+		//nil?="nil"
+		public Assignment getNilAssignment_4() { return cNilAssignment_4; }
+		
+		//"nil"
+		public Keyword getNilNilKeyword_4_0() { return cNilNilKeyword_4_0; }
+		
+		//boolean="true"
+		public Assignment getBooleanAssignment_5() { return cBooleanAssignment_5; }
+		
+		//"true"
+		public Keyword getBooleanTrueKeyword_5_0() { return cBooleanTrueKeyword_5_0; }
+		
+		//boolean="false"
+		public Assignment getBooleanAssignment_6() { return cBooleanAssignment_6; }
+		
+		//"false"
+		public Keyword getBooleanFalseKeyword_6_0() { return cBooleanFalseKeyword_6_0; }
+		
+		//function=function_designator
+		public Assignment getFunctionAssignment_7() { return cFunctionAssignment_7; }
+		
+		//function_designator
+		public RuleCall getFunctionFunction_designatorParserRuleCall_7_0() { return cFunctionFunction_designatorParserRuleCall_7_0; }
+		
+		//"(" expression=expression ")"
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//"("
+		public Keyword getLeftParenthesisKeyword_8_0() { return cLeftParenthesisKeyword_8_0; }
+		
+		//expression=expression
+		public Assignment getExpressionAssignment_8_1() { return cExpressionAssignment_8_1; }
+		
+		//expression
+		public RuleCall getExpressionExpressionParserRuleCall_8_1_0() { return cExpressionExpressionParserRuleCall_8_1_0; }
+		
+		//")"
+		public Keyword getRightParenthesisKeyword_8_2() { return cRightParenthesisKeyword_8_2; }
+		
+		//"not" not=factor
+		public Group getGroup_9() { return cGroup_9; }
+		
+		//"not"
+		public Keyword getNotKeyword_9_0() { return cNotKeyword_9_0; }
+		
+		//not=factor
+		public Assignment getNotAssignment_9_1() { return cNotAssignment_9_1; }
+		
+		//factor
+		public RuleCall getNotFactorParserRuleCall_9_1_0() { return cNotFactorParserRuleCall_9_1_0; }
+	}
+	public class Function_designatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.function_designator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExpressionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionsExpression_listParserRuleCall_2_0 = (RuleCall)cExpressionsAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//function_designator:
+		//	name=ID "(" expressions=expression_list? ")";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=ID "(" expressions=expression_list? ")"
+		public Group getGroup() { return cGroup; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//expressions=expression_list?
+		public Assignment getExpressionsAssignment_2() { return cExpressionsAssignment_2; }
+		
+		//expression_list
+		public RuleCall getExpressionsExpression_listParserRuleCall_2_0() { return cExpressionsExpression_listParserRuleCall_2_0; }
+		
+		//")"
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class SetElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.set");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cBracketsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cBracketsLeftSquareBracketKeyword_0_0 = (Keyword)cBracketsAssignment_0.eContents().get(0);
+		private final Assignment cExpressionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExpressionsExpression_listParserRuleCall_1_0 = (RuleCall)cExpressionsAssignment_1.eContents().get(0);
+		private final Assignment cBracketsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cBracketsRightSquareBracketKeyword_2_0 = (Keyword)cBracketsAssignment_2.eContents().get(0);
+		
+		//set:
+		//	brackets+="[" expressions=expression_list? brackets+="]";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//brackets+="[" expressions=expression_list? brackets+="]"
+		public Group getGroup() { return cGroup; }
+		
+		//brackets+="["
+		public Assignment getBracketsAssignment_0() { return cBracketsAssignment_0; }
+		
+		//"["
+		public Keyword getBracketsLeftSquareBracketKeyword_0_0() { return cBracketsLeftSquareBracketKeyword_0_0; }
+		
+		//expressions=expression_list?
+		public Assignment getExpressionsAssignment_1() { return cExpressionsAssignment_1; }
+		
+		//expression_list
+		public RuleCall getExpressionsExpression_listParserRuleCall_1_0() { return cExpressionsExpression_listParserRuleCall_1_0; }
+		
+		//brackets+="]"
+		public Assignment getBracketsAssignment_2() { return cBracketsAssignment_2; }
+		
+		//"]"
+		public Keyword getBracketsRightSquareBracketKeyword_2_0() { return cBracketsRightSquareBracketKeyword_2_0; }
+	}
+	public class NumberElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.number");
+		private final Assignment cNumberAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNumberAny_numberParserRuleCall_0 = (RuleCall)cNumberAssignment.eContents().get(0);
+		
+		//number:
+		//	number=any_number;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//number=any_number
+		public Assignment getNumberAssignment() { return cNumberAssignment; }
+		
+		//any_number
+		public RuleCall getNumberAny_numberParserRuleCall_0() { return cNumberAny_numberParserRuleCall_0; }
+	}
+	public class Any_numberElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.any_number");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cUnsigned_numberParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSigned_numberParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//any_number:
+		//	unsigned_number | signed_number;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//unsigned_number | signed_number
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//unsigned_number
+		public RuleCall getUnsigned_numberParserRuleCall_0() { return cUnsigned_numberParserRuleCall_0; }
+		
+		//signed_number
+		public RuleCall getSigned_numberParserRuleCall_1() { return cSigned_numberParserRuleCall_1; }
+	}
+	public class Signed_numberElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.signed_number");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cIntegerAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cIntegerSIGNED_INTEGER_NUMBERTerminalRuleCall_0_0 = (RuleCall)cIntegerAssignment_0.eContents().get(0);
+		private final Assignment cRealAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cRealSIGNED_REAL_NUMBERTerminalRuleCall_1_0 = (RuleCall)cRealAssignment_1.eContents().get(0);
+		
+		//signed_number any_number:
+		//	integer=SIGNED_INTEGER_NUMBER | real=SIGNED_REAL_NUMBER;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//integer=SIGNED_INTEGER_NUMBER | real=SIGNED_REAL_NUMBER
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//integer=SIGNED_INTEGER_NUMBER
+		public Assignment getIntegerAssignment_0() { return cIntegerAssignment_0; }
+		
+		//SIGNED_INTEGER_NUMBER
+		public RuleCall getIntegerSIGNED_INTEGER_NUMBERTerminalRuleCall_0_0() { return cIntegerSIGNED_INTEGER_NUMBERTerminalRuleCall_0_0; }
+		
+		//real=SIGNED_REAL_NUMBER
+		public Assignment getRealAssignment_1() { return cRealAssignment_1; }
+		
+		//SIGNED_REAL_NUMBER
+		public RuleCall getRealSIGNED_REAL_NUMBERTerminalRuleCall_1_0() { return cRealSIGNED_REAL_NUMBERTerminalRuleCall_1_0; }
+	}
+	public class Unsigned_numberElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.unsigned_number");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cIntegerAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cIntegerINTEGER_NUMBERTerminalRuleCall_0_0 = (RuleCall)cIntegerAssignment_0.eContents().get(0);
+		private final Assignment cRealAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cRealREAL_NUMBERTerminalRuleCall_1_0 = (RuleCall)cRealAssignment_1.eContents().get(0);
+		
+		//unsigned_number any_number:
+		//	integer=INTEGER_NUMBER | real=REAL_NUMBER;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//integer=INTEGER_NUMBER | real=REAL_NUMBER
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//integer=INTEGER_NUMBER
+		public Assignment getIntegerAssignment_0() { return cIntegerAssignment_0; }
+		
+		//INTEGER_NUMBER
+		public RuleCall getIntegerINTEGER_NUMBERTerminalRuleCall_0_0() { return cIntegerINTEGER_NUMBERTerminalRuleCall_0_0; }
+		
+		//real=REAL_NUMBER
+		public Assignment getRealAssignment_1() { return cRealAssignment_1; }
+		
+		//REAL_NUMBER
+		public RuleCall getRealREAL_NUMBERTerminalRuleCall_1_0() { return cRealREAL_NUMBERTerminalRuleCall_1_0; }
+	}
 	
 	
 	private final ProgramElements pProgram;
 	private final Indentifier_listElements pIndentifier_list;
+	private final VariableElements pVariable;
+	private final Var_Elements pVar_;
+	private final Expression_listElements pExpression_list;
+	private final ExpressionElements pExpression;
+	private final Simple_expressionElements pSimple_expression;
+	private final TermElements pTerm;
+	private final FactorElements pFactor;
+	private final Function_designatorElements pFunction_designator;
+	private final SetElements pSet;
+	private final NumberElements pNumber;
+	private final Any_numberElements pAny_number;
+	private final Signed_numberElements pSigned_number;
+	private final Unsigned_numberElements pUnsigned_number;
 	private final TerminalRule tADDITION_OP;
 	private final TerminalRule tMULTIPLICATION_OP;
 	private final TerminalRule tRELATIONAL_OP;
@@ -115,6 +748,7 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tNUMERIC_SUBRANGE;
 	private final TerminalRule tDIGIT_SEQUENCE;
 	private final TerminalRule tSIGNED_INTEGER_NUMBER;
+	private final TerminalRule tINTEGER_NUMBER;
 	private final TerminalRule tREAL_NUMBER;
 	private final TerminalRule tSIGNED_REAL_NUMBER;
 	
@@ -129,6 +763,19 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pProgram = new ProgramElements();
 		this.pIndentifier_list = new Indentifier_listElements();
+		this.pVariable = new VariableElements();
+		this.pVar_ = new Var_Elements();
+		this.pExpression_list = new Expression_listElements();
+		this.pExpression = new ExpressionElements();
+		this.pSimple_expression = new Simple_expressionElements();
+		this.pTerm = new TermElements();
+		this.pFactor = new FactorElements();
+		this.pFunction_designator = new Function_designatorElements();
+		this.pSet = new SetElements();
+		this.pNumber = new NumberElements();
+		this.pAny_number = new Any_numberElements();
+		this.pSigned_number = new Signed_numberElements();
+		this.pUnsigned_number = new Unsigned_numberElements();
 		this.tADDITION_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.ADDITION_OP");
 		this.tMULTIPLICATION_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.MULTIPLICATION_OP");
 		this.tRELATIONAL_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.RELATIONAL_OP");
@@ -137,6 +784,7 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		this.tNUMERIC_SUBRANGE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.NUMERIC_SUBRANGE");
 		this.tDIGIT_SEQUENCE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.DIGIT_SEQUENCE");
 		this.tSIGNED_INTEGER_NUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.SIGNED_INTEGER_NUMBER");
+		this.tINTEGER_NUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.INTEGER_NUMBER");
 		this.tREAL_NUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.REAL_NUMBER");
 		this.tSIGNED_REAL_NUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.SIGNED_REAL_NUMBER");
 	}
@@ -188,6 +836,140 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		return getIndentifier_listAccess().getRule();
 	}
 	
+	//variable:
+	//	name=ID variable=var_;
+	public VariableElements getVariableAccess() {
+		return pVariable;
+	}
+	
+	public ParserRule getVariableRule() {
+		return getVariableAccess().getRule();
+	}
+	
+	//var_:
+	//	("[" expressions=expression_list "]" array=var_ | accessor?="." name=ID variable=var_ | "^" pointer=var_)?;
+	public Var_Elements getVar_Access() {
+		return pVar_;
+	}
+	
+	public ParserRule getVar_Rule() {
+		return getVar_Access().getRule();
+	}
+	
+	//expression_list:
+	//	expressions+=expression ("," expressions+=expression)*;
+	public Expression_listElements getExpression_listAccess() {
+		return pExpression_list;
+	}
+	
+	public ParserRule getExpression_listRule() {
+		return getExpression_listAccess().getRule();
+	}
+	
+	//expression:
+	//	expressions+=simple_expression ((operators+=RELATIONAL_OP | operators+="in" | operators+="=")
+	//	expressions+=simple_expression)?;
+	public ExpressionElements getExpressionAccess() {
+		return pExpression;
+	}
+	
+	public ParserRule getExpressionRule() {
+		return getExpressionAccess().getRule();
+	}
+	
+	//simple_expression:
+	//	prefixOperator=ADDITION_OP? terms+=term ((operators+=ADDITION_OP | operators+="or") terms+=term |
+	//	terms+=unsigned_number)*;
+	public Simple_expressionElements getSimple_expressionAccess() {
+		return pSimple_expression;
+	}
+	
+	public ParserRule getSimple_expressionRule() {
+		return getSimple_expressionAccess().getRule();
+	}
+	
+	//term:
+	//	factors+=factor ((operators+=MULTIPLICATION_OP | operators+="div" | operators+="mod" | operators+="and")
+	//	factors+=factor)*;
+	public TermElements getTermAccess() {
+		return pTerm;
+	}
+	
+	public ParserRule getTermRule() {
+		return getTermAccess().getRule();
+	}
+	
+	//factor:
+	//	variable=variable | number=number | string=STRING | set=set | nil?="nil" | boolean="true" | boolean="false" |
+	//	function=function_designator | "(" expression=expression ")" | "not" not=factor;
+	public FactorElements getFactorAccess() {
+		return pFactor;
+	}
+	
+	public ParserRule getFactorRule() {
+		return getFactorAccess().getRule();
+	}
+	
+	//function_designator:
+	//	name=ID "(" expressions=expression_list? ")";
+	public Function_designatorElements getFunction_designatorAccess() {
+		return pFunction_designator;
+	}
+	
+	public ParserRule getFunction_designatorRule() {
+		return getFunction_designatorAccess().getRule();
+	}
+	
+	//set:
+	//	brackets+="[" expressions=expression_list? brackets+="]";
+	public SetElements getSetAccess() {
+		return pSet;
+	}
+	
+	public ParserRule getSetRule() {
+		return getSetAccess().getRule();
+	}
+	
+	//number:
+	//	number=any_number;
+	public NumberElements getNumberAccess() {
+		return pNumber;
+	}
+	
+	public ParserRule getNumberRule() {
+		return getNumberAccess().getRule();
+	}
+	
+	//any_number:
+	//	unsigned_number | signed_number;
+	public Any_numberElements getAny_numberAccess() {
+		return pAny_number;
+	}
+	
+	public ParserRule getAny_numberRule() {
+		return getAny_numberAccess().getRule();
+	}
+	
+	//signed_number any_number:
+	//	integer=SIGNED_INTEGER_NUMBER | real=SIGNED_REAL_NUMBER;
+	public Signed_numberElements getSigned_numberAccess() {
+		return pSigned_number;
+	}
+	
+	public ParserRule getSigned_numberRule() {
+		return getSigned_numberAccess().getRule();
+	}
+	
+	//unsigned_number any_number:
+	//	integer=INTEGER_NUMBER | real=REAL_NUMBER;
+	public Unsigned_numberElements getUnsigned_numberAccess() {
+		return pUnsigned_number;
+	}
+	
+	public ParserRule getUnsigned_numberRule() {
+		return getUnsigned_numberAccess().getRule();
+	}
+	
 	//terminal ADDITION_OP:
 	//	"+" | "-";
 	public TerminalRule getADDITION_OPRule() {
@@ -219,25 +1001,31 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal NUMERIC_SUBRANGE:
-	//	(INT | REAL_NUMBER | SIGNED_INTEGER_NUMBER | SIGNED_REAL_NUMBER) '..';
+	//	(INTEGER_NUMBER | REAL_NUMBER | SIGNED_INTEGER_NUMBER | SIGNED_REAL_NUMBER) '..';
 	public TerminalRule getNUMERIC_SUBRANGERule() {
 		return tNUMERIC_SUBRANGE;
 	}
 	
 	//terminal DIGIT_SEQUENCE:
-	//	ADDITION_OP? INT;
+	//	ADDITION_OP? INTEGER_NUMBER;
 	public TerminalRule getDIGIT_SEQUENCERule() {
 		return tDIGIT_SEQUENCE;
 	}
 	
 	//terminal SIGNED_INTEGER_NUMBER:
-	//	ADDITION_OP INT;
+	//	ADDITION_OP INTEGER_NUMBER;
 	public TerminalRule getSIGNED_INTEGER_NUMBERRule() {
 		return tSIGNED_INTEGER_NUMBER;
 	}
 	
+	//terminal INTEGER_NUMBER:
+	//	INT;
+	public TerminalRule getINTEGER_NUMBERRule() {
+		return tINTEGER_NUMBER;
+	}
+	
 	//terminal REAL_NUMBER:
-	//	INT "." INT? (("E" | "e") DIGIT_SEQUENCE)? | INT ("E" | "e") DIGIT_SEQUENCE;
+	//	INTEGER_NUMBER "." INTEGER_NUMBER? (("E" | "e") DIGIT_SEQUENCE)? | INTEGER_NUMBER ("E" | "e") DIGIT_SEQUENCE;
 	public TerminalRule getREAL_NUMBERRule() {
 		return tREAL_NUMBER;
 	}
