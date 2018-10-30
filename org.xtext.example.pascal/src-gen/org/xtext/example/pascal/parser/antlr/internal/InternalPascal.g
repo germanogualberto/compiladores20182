@@ -98,100 +98,10 @@ ruleprogram returns [EObject current=null]
 				}
 			)
 		)
-		(
-			otherlv_2='('
-			{
-				newLeafNode(otherlv_2, grammarAccess.getProgramAccess().getLeftParenthesisKeyword_2_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getProgramAccess().getIdentifiersIndentifier_listParserRuleCall_2_1_0());
-					}
-					lv_identifiers_3_0=ruleindentifier_list
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getProgramRule());
-						}
-						set(
-							$current,
-							"identifiers",
-							lv_identifiers_3_0,
-							"org.xtext.example.pascal.Pascal.indentifier_list");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			otherlv_4=')'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getProgramAccess().getRightParenthesisKeyword_2_2());
-			}
-		)?
-		otherlv_5=';'
+		otherlv_2=';'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getProgramAccess().getSemicolonKeyword_3());
+			newLeafNode(otherlv_2, grammarAccess.getProgramAccess().getSemicolonKeyword_2());
 		}
-	)
-;
-
-// Entry rule entryRuleindentifier_list
-entryRuleindentifier_list returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getIndentifier_listRule()); }
-	iv_ruleindentifier_list=ruleindentifier_list
-	{ $current=$iv_ruleindentifier_list.current; }
-	EOF;
-
-// Rule indentifier_list
-ruleindentifier_list returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_names_0_0=RULE_ID
-				{
-					newLeafNode(lv_names_0_0, grammarAccess.getIndentifier_listAccess().getNamesIDTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getIndentifier_listRule());
-					}
-					addWithLastConsumed(
-						$current,
-						"names",
-						lv_names_0_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			otherlv_1=','
-			{
-				newLeafNode(otherlv_1, grammarAccess.getIndentifier_listAccess().getCommaKeyword_1_0());
-			}
-			(
-				(
-					lv_names_2_0=RULE_ID
-					{
-						newLeafNode(lv_names_2_0, grammarAccess.getIndentifier_listAccess().getNamesIDTerminalRuleCall_1_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getIndentifier_listRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"names",
-							lv_names_2_0,
-							"org.eclipse.xtext.common.Terminals.ID");
-					}
-				)
-			)
-		)*
 	)
 ;
 

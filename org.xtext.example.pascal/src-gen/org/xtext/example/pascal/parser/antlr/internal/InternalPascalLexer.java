@@ -90,10 +90,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:12:7: ( '(' )
-            // InternalPascal.g:12:9: '('
+            // InternalPascal.g:12:7: ( ';' )
+            // InternalPascal.g:12:9: ';'
             {
-            match('('); 
+            match(';'); 
 
             }
 
@@ -110,10 +110,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:13:7: ( ')' )
-            // InternalPascal.g:13:9: ')'
+            // InternalPascal.g:13:7: ( '[' )
+            // InternalPascal.g:13:9: '['
             {
-            match(')'); 
+            match('['); 
 
             }
 
@@ -130,10 +130,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:14:7: ( ';' )
-            // InternalPascal.g:14:9: ';'
+            // InternalPascal.g:14:7: ( ']' )
+            // InternalPascal.g:14:9: ']'
             {
-            match(';'); 
+            match(']'); 
 
             }
 
@@ -150,10 +150,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:15:7: ( ',' )
-            // InternalPascal.g:15:9: ','
+            // InternalPascal.g:15:7: ( '.' )
+            // InternalPascal.g:15:9: '.'
             {
-            match(','); 
+            match('.'); 
 
             }
 
@@ -170,10 +170,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:16:7: ( '[' )
-            // InternalPascal.g:16:9: '['
+            // InternalPascal.g:16:7: ( '^' )
+            // InternalPascal.g:16:9: '^'
             {
-            match('['); 
+            match('^'); 
 
             }
 
@@ -190,10 +190,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:17:7: ( ']' )
-            // InternalPascal.g:17:9: ']'
+            // InternalPascal.g:17:7: ( ',' )
+            // InternalPascal.g:17:9: ','
             {
-            match(']'); 
+            match(','); 
 
             }
 
@@ -210,10 +210,11 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:18:7: ( '.' )
-            // InternalPascal.g:18:9: '.'
+            // InternalPascal.g:18:7: ( 'in' )
+            // InternalPascal.g:18:9: 'in'
             {
-            match('.'); 
+            match("in"); 
+
 
             }
 
@@ -230,10 +231,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:19:7: ( '^' )
-            // InternalPascal.g:19:9: '^'
+            // InternalPascal.g:19:7: ( '=' )
+            // InternalPascal.g:19:9: '='
             {
-            match('^'); 
+            match('='); 
 
             }
 
@@ -250,10 +251,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:20:7: ( 'in' )
-            // InternalPascal.g:20:9: 'in'
+            // InternalPascal.g:20:7: ( 'or' )
+            // InternalPascal.g:20:9: 'or'
             {
-            match("in"); 
+            match("or"); 
 
 
             }
@@ -271,10 +272,11 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:21:7: ( '=' )
-            // InternalPascal.g:21:9: '='
+            // InternalPascal.g:21:7: ( 'div' )
+            // InternalPascal.g:21:9: 'div'
             {
-            match('='); 
+            match("div"); 
+
 
             }
 
@@ -291,10 +293,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:22:7: ( 'or' )
-            // InternalPascal.g:22:9: 'or'
+            // InternalPascal.g:22:7: ( 'mod' )
+            // InternalPascal.g:22:9: 'mod'
             {
-            match("or"); 
+            match("mod"); 
 
 
             }
@@ -312,10 +314,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:23:7: ( 'div' )
-            // InternalPascal.g:23:9: 'div'
+            // InternalPascal.g:23:7: ( 'and' )
+            // InternalPascal.g:23:9: 'and'
             {
-            match("div"); 
+            match("and"); 
 
 
             }
@@ -333,10 +335,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:24:7: ( 'mod' )
-            // InternalPascal.g:24:9: 'mod'
+            // InternalPascal.g:24:7: ( 'nil' )
+            // InternalPascal.g:24:9: 'nil'
             {
-            match("mod"); 
+            match("nil"); 
 
 
             }
@@ -354,10 +356,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:25:7: ( 'and' )
-            // InternalPascal.g:25:9: 'and'
+            // InternalPascal.g:25:7: ( 'true' )
+            // InternalPascal.g:25:9: 'true'
             {
-            match("and"); 
+            match("true"); 
 
 
             }
@@ -375,10 +377,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:26:7: ( 'nil' )
-            // InternalPascal.g:26:9: 'nil'
+            // InternalPascal.g:26:7: ( 'false' )
+            // InternalPascal.g:26:9: 'false'
             {
-            match("nil"); 
+            match("false"); 
 
 
             }
@@ -396,11 +398,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:27:7: ( 'true' )
-            // InternalPascal.g:27:9: 'true'
+            // InternalPascal.g:27:7: ( '(' )
+            // InternalPascal.g:27:9: '('
             {
-            match("true"); 
-
+            match('('); 
 
             }
 
@@ -417,11 +418,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:28:7: ( 'false' )
-            // InternalPascal.g:28:9: 'false'
+            // InternalPascal.g:28:7: ( ')' )
+            // InternalPascal.g:28:9: ')'
             {
-            match("false"); 
-
+            match(')'); 
 
             }
 
@@ -459,8 +459,8 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_ADDITION_OP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1363:18: ( ( '+' | '-' ) )
-            // InternalPascal.g:1363:20: ( '+' | '-' )
+            // InternalPascal.g:1273:18: ( ( '+' | '-' ) )
+            // InternalPascal.g:1273:20: ( '+' | '-' )
             {
             if ( input.LA(1)=='+'||input.LA(1)=='-' ) {
                 input.consume();
@@ -487,8 +487,8 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_MULTIPLICATION_OP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1365:24: ( ( '*' | '/' ) )
-            // InternalPascal.g:1365:26: ( '*' | '/' )
+            // InternalPascal.g:1275:24: ( ( '*' | '/' ) )
+            // InternalPascal.g:1275:26: ( '*' | '/' )
             {
             if ( input.LA(1)=='*'||input.LA(1)=='/' ) {
                 input.consume();
@@ -515,10 +515,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_RELATIONAL_OP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1367:20: ( ( '=' | '<>' | '<' | '<=' | '>' | '>=' ) )
-            // InternalPascal.g:1367:22: ( '=' | '<>' | '<' | '<=' | '>' | '>=' )
+            // InternalPascal.g:1277:20: ( ( '=' | '<>' | '<' | '<=' | '>' | '>=' ) )
+            // InternalPascal.g:1277:22: ( '=' | '<>' | '<' | '<=' | '>' | '>=' )
             {
-            // InternalPascal.g:1367:22: ( '=' | '<>' | '<' | '<=' | '>' | '>=' )
+            // InternalPascal.g:1277:22: ( '=' | '<>' | '<' | '<=' | '>' | '>=' )
             int alt1=6;
             switch ( input.LA(1) ) {
             case '=':
@@ -564,14 +564,14 @@ public class InternalPascalLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // InternalPascal.g:1367:23: '='
+                    // InternalPascal.g:1277:23: '='
                     {
                     match('='); 
 
                     }
                     break;
                 case 2 :
-                    // InternalPascal.g:1367:27: '<>'
+                    // InternalPascal.g:1277:27: '<>'
                     {
                     match("<>"); 
 
@@ -579,14 +579,14 @@ public class InternalPascalLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // InternalPascal.g:1367:32: '<'
+                    // InternalPascal.g:1277:32: '<'
                     {
                     match('<'); 
 
                     }
                     break;
                 case 4 :
-                    // InternalPascal.g:1367:36: '<='
+                    // InternalPascal.g:1277:36: '<='
                     {
                     match("<="); 
 
@@ -594,14 +594,14 @@ public class InternalPascalLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // InternalPascal.g:1367:41: '>'
+                    // InternalPascal.g:1277:41: '>'
                     {
                     match('>'); 
 
                     }
                     break;
                 case 6 :
-                    // InternalPascal.g:1367:45: '>='
+                    // InternalPascal.g:1277:45: '>='
                     {
                     match(">="); 
 
@@ -627,12 +627,12 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_PARENTHESES_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1369:26: ( '(*' ( options {greedy=false; } : . )* '*)' )
-            // InternalPascal.g:1369:28: '(*' ( options {greedy=false; } : . )* '*)'
+            // InternalPascal.g:1279:26: ( '(*' ( options {greedy=false; } : . )* '*)' )
+            // InternalPascal.g:1279:28: '(*' ( options {greedy=false; } : . )* '*)'
             {
             match("(*"); 
 
-            // InternalPascal.g:1369:33: ( options {greedy=false; } : . )*
+            // InternalPascal.g:1279:33: ( options {greedy=false; } : . )*
             loop2:
             do {
                 int alt2=2;
@@ -657,7 +657,7 @@ public class InternalPascalLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalPascal.g:1369:61: .
+            	    // InternalPascal.g:1279:61: .
             	    {
             	    matchAny(); 
 
@@ -687,11 +687,11 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_CURLY_BRACKETS_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1371:29: ( '{' ( options {greedy=false; } : . )* '}' )
-            // InternalPascal.g:1371:31: '{' ( options {greedy=false; } : . )* '}'
+            // InternalPascal.g:1281:29: ( '{' ( options {greedy=false; } : . )* '}' )
+            // InternalPascal.g:1281:31: '{' ( options {greedy=false; } : . )* '}'
             {
             match('{'); 
-            // InternalPascal.g:1371:35: ( options {greedy=false; } : . )*
+            // InternalPascal.g:1281:35: ( options {greedy=false; } : . )*
             loop3:
             do {
                 int alt3=2;
@@ -707,7 +707,7 @@ public class InternalPascalLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalPascal.g:1371:63: .
+            	    // InternalPascal.g:1281:63: .
             	    {
             	    matchAny(); 
 
@@ -736,36 +736,36 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_NUMERIC_SUBRANGE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1373:23: ( ( RULE_INTEGER_NUMBER | RULE_REAL_NUMBER | RULE_SIGNED_INTEGER_NUMBER | RULE_SIGNED_REAL_NUMBER ) '..' )
-            // InternalPascal.g:1373:25: ( RULE_INTEGER_NUMBER | RULE_REAL_NUMBER | RULE_SIGNED_INTEGER_NUMBER | RULE_SIGNED_REAL_NUMBER ) '..'
+            // InternalPascal.g:1283:23: ( ( RULE_INTEGER_NUMBER | RULE_REAL_NUMBER | RULE_SIGNED_INTEGER_NUMBER | RULE_SIGNED_REAL_NUMBER ) '..' )
+            // InternalPascal.g:1283:25: ( RULE_INTEGER_NUMBER | RULE_REAL_NUMBER | RULE_SIGNED_INTEGER_NUMBER | RULE_SIGNED_REAL_NUMBER ) '..'
             {
-            // InternalPascal.g:1373:25: ( RULE_INTEGER_NUMBER | RULE_REAL_NUMBER | RULE_SIGNED_INTEGER_NUMBER | RULE_SIGNED_REAL_NUMBER )
+            // InternalPascal.g:1283:25: ( RULE_INTEGER_NUMBER | RULE_REAL_NUMBER | RULE_SIGNED_INTEGER_NUMBER | RULE_SIGNED_REAL_NUMBER )
             int alt4=4;
             alt4 = dfa4.predict(input);
             switch (alt4) {
                 case 1 :
-                    // InternalPascal.g:1373:26: RULE_INTEGER_NUMBER
+                    // InternalPascal.g:1283:26: RULE_INTEGER_NUMBER
                     {
                     mRULE_INTEGER_NUMBER(); 
 
                     }
                     break;
                 case 2 :
-                    // InternalPascal.g:1373:46: RULE_REAL_NUMBER
+                    // InternalPascal.g:1283:46: RULE_REAL_NUMBER
                     {
                     mRULE_REAL_NUMBER(); 
 
                     }
                     break;
                 case 3 :
-                    // InternalPascal.g:1373:63: RULE_SIGNED_INTEGER_NUMBER
+                    // InternalPascal.g:1283:63: RULE_SIGNED_INTEGER_NUMBER
                     {
                     mRULE_SIGNED_INTEGER_NUMBER(); 
 
                     }
                     break;
                 case 4 :
-                    // InternalPascal.g:1373:90: RULE_SIGNED_REAL_NUMBER
+                    // InternalPascal.g:1283:90: RULE_SIGNED_REAL_NUMBER
                     {
                     mRULE_SIGNED_REAL_NUMBER(); 
 
@@ -790,10 +790,10 @@ public class InternalPascalLexer extends Lexer {
     // $ANTLR start "RULE_DIGIT_SEQUENCE"
     public final void mRULE_DIGIT_SEQUENCE() throws RecognitionException {
         try {
-            // InternalPascal.g:1375:30: ( ( RULE_ADDITION_OP )? RULE_INTEGER_NUMBER )
-            // InternalPascal.g:1375:32: ( RULE_ADDITION_OP )? RULE_INTEGER_NUMBER
+            // InternalPascal.g:1285:30: ( ( RULE_ADDITION_OP )? RULE_INTEGER_NUMBER )
+            // InternalPascal.g:1285:32: ( RULE_ADDITION_OP )? RULE_INTEGER_NUMBER
             {
-            // InternalPascal.g:1375:32: ( RULE_ADDITION_OP )?
+            // InternalPascal.g:1285:32: ( RULE_ADDITION_OP )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -802,7 +802,7 @@ public class InternalPascalLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalPascal.g:1375:32: RULE_ADDITION_OP
+                    // InternalPascal.g:1285:32: RULE_ADDITION_OP
                     {
                     mRULE_ADDITION_OP(); 
 
@@ -826,8 +826,8 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_SIGNED_INTEGER_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1377:28: ( RULE_ADDITION_OP RULE_INTEGER_NUMBER )
-            // InternalPascal.g:1377:30: RULE_ADDITION_OP RULE_INTEGER_NUMBER
+            // InternalPascal.g:1287:28: ( RULE_ADDITION_OP RULE_INTEGER_NUMBER )
+            // InternalPascal.g:1287:30: RULE_ADDITION_OP RULE_INTEGER_NUMBER
             {
             mRULE_ADDITION_OP(); 
             mRULE_INTEGER_NUMBER(); 
@@ -847,8 +847,8 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_INTEGER_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1379:21: ( RULE_INT )
-            // InternalPascal.g:1379:23: RULE_INT
+            // InternalPascal.g:1289:21: ( RULE_INT )
+            // InternalPascal.g:1289:23: RULE_INT
             {
             mRULE_INT(); 
 
@@ -867,19 +867,19 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_REAL_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1381:18: ( ( RULE_INTEGER_NUMBER '.' ( RULE_INTEGER_NUMBER )? ( ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )? | RULE_INTEGER_NUMBER ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE ) )
-            // InternalPascal.g:1381:20: ( RULE_INTEGER_NUMBER '.' ( RULE_INTEGER_NUMBER )? ( ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )? | RULE_INTEGER_NUMBER ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )
+            // InternalPascal.g:1291:18: ( ( RULE_INTEGER_NUMBER '.' ( RULE_INTEGER_NUMBER )? ( ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )? | RULE_INTEGER_NUMBER ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE ) )
+            // InternalPascal.g:1291:20: ( RULE_INTEGER_NUMBER '.' ( RULE_INTEGER_NUMBER )? ( ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )? | RULE_INTEGER_NUMBER ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )
             {
-            // InternalPascal.g:1381:20: ( RULE_INTEGER_NUMBER '.' ( RULE_INTEGER_NUMBER )? ( ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )? | RULE_INTEGER_NUMBER ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )
+            // InternalPascal.g:1291:20: ( RULE_INTEGER_NUMBER '.' ( RULE_INTEGER_NUMBER )? ( ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )? | RULE_INTEGER_NUMBER ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )
             int alt8=2;
             alt8 = dfa8.predict(input);
             switch (alt8) {
                 case 1 :
-                    // InternalPascal.g:1381:21: RULE_INTEGER_NUMBER '.' ( RULE_INTEGER_NUMBER )? ( ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )?
+                    // InternalPascal.g:1291:21: RULE_INTEGER_NUMBER '.' ( RULE_INTEGER_NUMBER )? ( ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )?
                     {
                     mRULE_INTEGER_NUMBER(); 
                     match('.'); 
-                    // InternalPascal.g:1381:45: ( RULE_INTEGER_NUMBER )?
+                    // InternalPascal.g:1291:45: ( RULE_INTEGER_NUMBER )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -888,7 +888,7 @@ public class InternalPascalLexer extends Lexer {
                     }
                     switch (alt6) {
                         case 1 :
-                            // InternalPascal.g:1381:45: RULE_INTEGER_NUMBER
+                            // InternalPascal.g:1291:45: RULE_INTEGER_NUMBER
                             {
                             mRULE_INTEGER_NUMBER(); 
 
@@ -897,7 +897,7 @@ public class InternalPascalLexer extends Lexer {
 
                     }
 
-                    // InternalPascal.g:1381:66: ( ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )?
+                    // InternalPascal.g:1291:66: ( ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )?
                     int alt7=2;
                     int LA7_0 = input.LA(1);
 
@@ -906,7 +906,7 @@ public class InternalPascalLexer extends Lexer {
                     }
                     switch (alt7) {
                         case 1 :
-                            // InternalPascal.g:1381:67: ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE
+                            // InternalPascal.g:1291:67: ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE
                             {
                             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                                 input.consume();
@@ -928,7 +928,7 @@ public class InternalPascalLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalPascal.g:1381:99: RULE_INTEGER_NUMBER ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE
+                    // InternalPascal.g:1291:99: RULE_INTEGER_NUMBER ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE
                     {
                     mRULE_INTEGER_NUMBER(); 
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
@@ -963,8 +963,8 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_SIGNED_REAL_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1383:25: ( RULE_ADDITION_OP RULE_REAL_NUMBER )
-            // InternalPascal.g:1383:27: RULE_ADDITION_OP RULE_REAL_NUMBER
+            // InternalPascal.g:1293:25: ( RULE_ADDITION_OP RULE_REAL_NUMBER )
+            // InternalPascal.g:1293:27: RULE_ADDITION_OP RULE_REAL_NUMBER
             {
             mRULE_ADDITION_OP(); 
             mRULE_REAL_NUMBER(); 
@@ -984,10 +984,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1385:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalPascal.g:1385:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalPascal.g:1295:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalPascal.g:1295:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalPascal.g:1385:11: ( '^' )?
+            // InternalPascal.g:1295:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -996,7 +996,7 @@ public class InternalPascalLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalPascal.g:1385:11: '^'
+                    // InternalPascal.g:1295:11: '^'
                     {
                     match('^'); 
 
@@ -1014,7 +1014,7 @@ public class InternalPascalLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalPascal.g:1385:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalPascal.g:1295:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -1061,10 +1061,10 @@ public class InternalPascalLexer extends Lexer {
     // $ANTLR start "RULE_INT"
     public final void mRULE_INT() throws RecognitionException {
         try {
-            // InternalPascal.g:1387:19: ( ( '0' .. '9' )+ )
-            // InternalPascal.g:1387:21: ( '0' .. '9' )+
+            // InternalPascal.g:1297:19: ( ( '0' .. '9' )+ )
+            // InternalPascal.g:1297:21: ( '0' .. '9' )+
             {
-            // InternalPascal.g:1387:21: ( '0' .. '9' )+
+            // InternalPascal.g:1297:21: ( '0' .. '9' )+
             int cnt11=0;
             loop11:
             do {
@@ -1078,7 +1078,7 @@ public class InternalPascalLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalPascal.g:1387:22: '0' .. '9'
+            	    // InternalPascal.g:1297:22: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1108,10 +1108,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1389:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalPascal.g:1389:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalPascal.g:1299:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalPascal.g:1299:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalPascal.g:1389:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalPascal.g:1299:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -1129,10 +1129,10 @@ public class InternalPascalLexer extends Lexer {
             }
             switch (alt14) {
                 case 1 :
-                    // InternalPascal.g:1389:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalPascal.g:1299:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalPascal.g:1389:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalPascal.g:1299:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop12:
                     do {
                         int alt12=3;
@@ -1148,7 +1148,7 @@ public class InternalPascalLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // InternalPascal.g:1389:21: '\\\\' .
+                    	    // InternalPascal.g:1299:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1156,7 +1156,7 @@ public class InternalPascalLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalPascal.g:1389:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalPascal.g:1299:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1181,10 +1181,10 @@ public class InternalPascalLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalPascal.g:1389:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalPascal.g:1299:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalPascal.g:1389:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalPascal.g:1299:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop13:
                     do {
                         int alt13=3;
@@ -1200,7 +1200,7 @@ public class InternalPascalLexer extends Lexer {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // InternalPascal.g:1389:54: '\\\\' .
+                    	    // InternalPascal.g:1299:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1208,7 +1208,7 @@ public class InternalPascalLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalPascal.g:1389:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalPascal.g:1299:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1251,12 +1251,12 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1391:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalPascal.g:1391:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalPascal.g:1301:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalPascal.g:1301:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalPascal.g:1391:24: ( options {greedy=false; } : . )*
+            // InternalPascal.g:1301:24: ( options {greedy=false; } : . )*
             loop15:
             do {
                 int alt15=2;
@@ -1281,7 +1281,7 @@ public class InternalPascalLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalPascal.g:1391:52: .
+            	    // InternalPascal.g:1301:52: .
             	    {
             	    matchAny(); 
 
@@ -1311,12 +1311,12 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1393:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalPascal.g:1393:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalPascal.g:1303:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalPascal.g:1303:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalPascal.g:1393:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalPascal.g:1303:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop16:
             do {
                 int alt16=2;
@@ -1329,7 +1329,7 @@ public class InternalPascalLexer extends Lexer {
 
                 switch (alt16) {
             	case 1 :
-            	    // InternalPascal.g:1393:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalPascal.g:1303:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1349,7 +1349,7 @@ public class InternalPascalLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalPascal.g:1393:40: ( ( '\\r' )? '\\n' )?
+            // InternalPascal.g:1303:40: ( ( '\\r' )? '\\n' )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -1358,9 +1358,9 @@ public class InternalPascalLexer extends Lexer {
             }
             switch (alt18) {
                 case 1 :
-                    // InternalPascal.g:1393:41: ( '\\r' )? '\\n'
+                    // InternalPascal.g:1303:41: ( '\\r' )? '\\n'
                     {
-                    // InternalPascal.g:1393:41: ( '\\r' )?
+                    // InternalPascal.g:1303:41: ( '\\r' )?
                     int alt17=2;
                     int LA17_0 = input.LA(1);
 
@@ -1369,7 +1369,7 @@ public class InternalPascalLexer extends Lexer {
                     }
                     switch (alt17) {
                         case 1 :
-                            // InternalPascal.g:1393:41: '\\r'
+                            // InternalPascal.g:1303:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1401,10 +1401,10 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1395:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalPascal.g:1395:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalPascal.g:1305:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalPascal.g:1305:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalPascal.g:1395:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalPascal.g:1305:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt19=0;
             loop19:
             do {
@@ -1458,8 +1458,8 @@ public class InternalPascalLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPascal.g:1397:16: ( . )
-            // InternalPascal.g:1397:18: .
+            // InternalPascal.g:1307:16: ( . )
+            // InternalPascal.g:1307:18: .
             {
             matchAny(); 
 
@@ -1789,7 +1789,7 @@ public class InternalPascalLexer extends Lexer {
             this.transition = DFA4_transition;
         }
         public String getDescription() {
-            return "1373:25: ( RULE_INTEGER_NUMBER | RULE_REAL_NUMBER | RULE_SIGNED_INTEGER_NUMBER | RULE_SIGNED_REAL_NUMBER )";
+            return "1283:25: ( RULE_INTEGER_NUMBER | RULE_REAL_NUMBER | RULE_SIGNED_INTEGER_NUMBER | RULE_SIGNED_REAL_NUMBER )";
         }
     }
     static final String DFA8_eotS =
@@ -1841,41 +1841,41 @@ public class InternalPascalLexer extends Lexer {
             this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "1381:20: ( RULE_INTEGER_NUMBER '.' ( RULE_INTEGER_NUMBER )? ( ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )? | RULE_INTEGER_NUMBER ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )";
+            return "1291:20: ( RULE_INTEGER_NUMBER '.' ( RULE_INTEGER_NUMBER )? ( ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )? | RULE_INTEGER_NUMBER ( 'E' | 'e' ) RULE_DIGIT_SEQUENCE )";
         }
     }
     static final String DFA20_eotS =
-        "\1\uffff\1\40\1\42\6\uffff\1\51\1\40\1\uffff\7\40\1\64\1\70\2\uffff\1\36\1\73\1\uffff\2\36\3\uffff\1\40\12\uffff\1\102\1\uffff\1\103\7\40\1\uffff\1\113\6\uffff\1\121\1\73\3\uffff\1\40\2\uffff\1\125\1\126\1\127\1\130\1\131\2\40\1\uffff\1\136\2\uffff\1\121\3\uffff\1\121\1\40\5\uffff\1\144\1\40\1\136\3\uffff\1\136\1\uffff\1\121\1\40\1\uffff\1\151\1\uffff\1\136\1\40\1\uffff\1\153\1\uffff";
+        "\1\uffff\1\40\4\uffff\1\45\1\uffff\1\40\1\uffff\7\40\1\62\1\uffff\1\64\1\70\2\uffff\1\36\1\73\1\uffff\2\36\3\uffff\1\40\7\uffff\1\102\1\uffff\1\103\7\40\4\uffff\1\113\6\uffff\1\121\1\73\3\uffff\1\40\2\uffff\1\125\1\126\1\127\1\130\1\131\2\40\1\uffff\1\136\2\uffff\1\121\3\uffff\1\121\1\40\5\uffff\1\144\1\40\1\136\3\uffff\1\136\1\uffff\1\121\1\40\1\uffff\1\151\1\uffff\1\136\1\40\1\uffff\1\153\1\uffff";
     static final String DFA20_eofS =
         "\154\uffff";
     static final String DFA20_minS =
-        "\1\0\1\162\1\52\6\uffff\1\101\1\156\1\uffff\1\162\1\151\1\157\1\156\1\151\1\162\1\141\1\60\1\52\2\uffff\1\0\1\56\1\uffff\2\0\3\uffff\1\157\12\uffff\1\60\1\uffff\1\60\1\166\2\144\1\154\1\164\1\165\1\154\1\uffff\1\56\6\uffff\2\56\1\53\2\uffff\1\147\2\uffff\5\60\1\145\1\163\1\uffff\1\56\1\53\1\uffff\1\56\1\53\1\uffff\1\60\1\56\1\162\5\uffff\1\60\1\145\1\56\1\53\1\uffff\1\60\1\56\1\60\1\56\1\141\1\uffff\2\60\1\56\1\155\1\uffff\1\60\1\uffff";
+        "\1\0\1\162\4\uffff\1\101\1\uffff\1\156\1\uffff\1\162\1\151\1\157\1\156\1\151\1\162\1\141\1\52\1\uffff\1\60\1\52\2\uffff\1\0\1\56\1\uffff\2\0\3\uffff\1\157\7\uffff\1\60\1\uffff\1\60\1\166\2\144\1\154\1\164\1\165\1\154\4\uffff\1\56\6\uffff\2\56\1\53\2\uffff\1\147\2\uffff\5\60\1\145\1\163\1\uffff\1\56\1\53\1\uffff\1\56\1\53\1\uffff\1\60\1\56\1\162\5\uffff\1\60\1\145\1\56\1\53\1\uffff\1\60\1\56\1\60\1\56\1\141\1\uffff\2\60\1\56\1\155\1\uffff\1\60\1\uffff";
     static final String DFA20_maxS =
-        "\1\uffff\1\162\1\52\6\uffff\1\172\1\156\1\uffff\1\162\1\151\1\157\1\156\1\157\1\162\1\141\1\71\1\57\2\uffff\1\uffff\1\145\1\uffff\2\uffff\3\uffff\1\157\12\uffff\1\172\1\uffff\1\172\1\166\2\144\1\154\1\164\1\165\1\154\1\uffff\1\145\6\uffff\2\145\1\71\2\uffff\1\147\2\uffff\5\172\1\145\1\163\1\uffff\1\145\1\71\1\uffff\1\145\1\71\1\uffff\2\71\1\162\5\uffff\1\172\2\145\1\71\1\uffff\4\71\1\141\1\uffff\1\172\2\71\1\155\1\uffff\1\172\1\uffff";
+        "\1\uffff\1\162\4\uffff\1\172\1\uffff\1\156\1\uffff\1\162\1\151\1\157\1\156\1\157\1\162\1\141\1\52\1\uffff\1\71\1\57\2\uffff\1\uffff\1\145\1\uffff\2\uffff\3\uffff\1\157\7\uffff\1\172\1\uffff\1\172\1\166\2\144\1\154\1\164\1\165\1\154\4\uffff\1\145\6\uffff\2\145\1\71\2\uffff\1\147\2\uffff\5\172\1\145\1\163\1\uffff\1\145\1\71\1\uffff\1\145\1\71\1\uffff\2\71\1\162\5\uffff\1\172\2\145\1\71\1\uffff\4\71\1\141\1\uffff\1\172\2\71\1\155\1\uffff\1\172\1\uffff";
     static final String DFA20_acceptS =
-        "\3\uffff\1\3\1\4\1\5\1\6\1\7\1\10\2\uffff\1\13\11\uffff\2\26\2\uffff\1\36\2\uffff\1\25\1\42\1\43\1\uffff\1\36\1\27\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\uffff\1\13\10\uffff\1\24\1\uffff\1\40\1\41\1\25\1\26\1\30\1\33\3\uffff\1\37\1\42\1\uffff\1\12\1\14\7\uffff\1\32\2\uffff\1\31\2\uffff\1\34\3\uffff\1\15\1\16\1\17\1\20\1\23\4\uffff\1\35\5\uffff\1\21\4\uffff\1\22\1\uffff\1\1";
+        "\2\uffff\1\2\1\3\1\4\1\5\1\uffff\1\7\1\uffff\1\11\10\uffff\1\22\2\uffff\2\26\2\uffff\1\36\2\uffff\1\25\1\42\1\43\1\uffff\1\36\1\2\1\3\1\4\1\5\1\6\1\7\1\uffff\1\11\10\uffff\1\27\1\21\1\22\1\24\1\uffff\1\40\1\41\1\25\1\26\1\30\1\33\3\uffff\1\37\1\42\1\uffff\1\10\1\12\7\uffff\1\32\2\uffff\1\31\2\uffff\1\34\3\uffff\1\13\1\14\1\15\1\16\1\23\4\uffff\1\35\5\uffff\1\17\4\uffff\1\20\1\uffff\1\1";
     static final String DFA20_specialS =
-        "\1\2\26\uffff\1\1\2\uffff\1\3\1\0\120\uffff}>";
+        "\1\0\26\uffff\1\2\2\uffff\1\3\1\1\120\uffff}>";
     static final String[] DFA20_transitionS = {
-            "\11\36\2\35\2\36\1\35\22\36\1\35\1\36\1\32\4\36\1\33\1\2\1\3\1\34\1\23\1\5\1\23\1\10\1\24\12\30\1\36\1\4\1\25\1\13\1\26\2\36\32\31\1\6\1\36\1\7\1\11\1\31\1\36\1\17\2\31\1\15\1\31\1\22\2\31\1\12\3\31\1\16\1\20\1\14\1\1\3\31\1\21\6\31\1\27\uff84\36",
+            "\11\36\2\35\2\36\1\35\22\36\1\35\1\36\1\32\4\36\1\33\1\21\1\22\1\34\1\23\1\7\1\23\1\5\1\24\12\30\1\36\1\2\1\25\1\11\1\26\2\36\32\31\1\3\1\36\1\4\1\6\1\31\1\36\1\15\2\31\1\13\1\31\1\20\2\31\1\10\3\31\1\14\1\16\1\12\1\1\3\31\1\17\6\31\1\27\uff84\36",
             "\1\37",
-            "\1\41",
-            "",
-            "",
             "",
             "",
             "",
             "",
             "\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\1\52",
             "",
+            "\1\47",
+            "",
+            "\1\51",
+            "\1\52",
+            "\1\53",
             "\1\54",
-            "\1\55",
-            "\1\56",
+            "\1\55\5\uffff\1\56",
             "\1\57",
-            "\1\60\5\uffff\1\61",
-            "\1\62",
-            "\1\63",
+            "\1\60",
+            "\1\61",
+            "",
             "\12\65",
             "\1\66\4\uffff\1\67",
             "",
@@ -1896,9 +1896,6 @@ public class InternalPascalLexer extends Lexer {
             "",
             "",
             "",
-            "",
-            "",
-            "",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
             "",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
@@ -1909,6 +1906,9 @@ public class InternalPascalLexer extends Lexer {
             "\1\110",
             "\1\111",
             "\1\112",
+            "",
+            "",
+            "",
             "",
             "\1\114\1\uffff\12\65\13\uffff\1\115\37\uffff\1\115",
             "",
@@ -2004,64 +2004,44 @@ public class InternalPascalLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA20_27 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA20_27>='\u0000' && LA20_27<='\uFFFF')) ) {s = 63;}
-
-                        else s = 30;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA20_23 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA20_23>='\u0000' && LA20_23<='\uFFFF')) ) {s = 58;}
-
-                        else s = 30;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA20_0 = input.LA(1);
 
                         s = -1;
                         if ( (LA20_0=='p') ) {s = 1;}
 
-                        else if ( (LA20_0=='(') ) {s = 2;}
+                        else if ( (LA20_0==';') ) {s = 2;}
 
-                        else if ( (LA20_0==')') ) {s = 3;}
+                        else if ( (LA20_0=='[') ) {s = 3;}
 
-                        else if ( (LA20_0==';') ) {s = 4;}
+                        else if ( (LA20_0==']') ) {s = 4;}
 
-                        else if ( (LA20_0==',') ) {s = 5;}
+                        else if ( (LA20_0=='.') ) {s = 5;}
 
-                        else if ( (LA20_0=='[') ) {s = 6;}
+                        else if ( (LA20_0=='^') ) {s = 6;}
 
-                        else if ( (LA20_0==']') ) {s = 7;}
+                        else if ( (LA20_0==',') ) {s = 7;}
 
-                        else if ( (LA20_0=='.') ) {s = 8;}
+                        else if ( (LA20_0=='i') ) {s = 8;}
 
-                        else if ( (LA20_0=='^') ) {s = 9;}
+                        else if ( (LA20_0=='=') ) {s = 9;}
 
-                        else if ( (LA20_0=='i') ) {s = 10;}
+                        else if ( (LA20_0=='o') ) {s = 10;}
 
-                        else if ( (LA20_0=='=') ) {s = 11;}
+                        else if ( (LA20_0=='d') ) {s = 11;}
 
-                        else if ( (LA20_0=='o') ) {s = 12;}
+                        else if ( (LA20_0=='m') ) {s = 12;}
 
-                        else if ( (LA20_0=='d') ) {s = 13;}
+                        else if ( (LA20_0=='a') ) {s = 13;}
 
-                        else if ( (LA20_0=='m') ) {s = 14;}
+                        else if ( (LA20_0=='n') ) {s = 14;}
 
-                        else if ( (LA20_0=='a') ) {s = 15;}
+                        else if ( (LA20_0=='t') ) {s = 15;}
 
-                        else if ( (LA20_0=='n') ) {s = 16;}
+                        else if ( (LA20_0=='f') ) {s = 16;}
 
-                        else if ( (LA20_0=='t') ) {s = 17;}
+                        else if ( (LA20_0=='(') ) {s = 17;}
 
-                        else if ( (LA20_0=='f') ) {s = 18;}
+                        else if ( (LA20_0==')') ) {s = 18;}
 
                         else if ( (LA20_0=='+'||LA20_0=='-') ) {s = 19;}
 
@@ -2086,6 +2066,26 @@ public class InternalPascalLexer extends Lexer {
                         else if ( ((LA20_0>='\t' && LA20_0<='\n')||LA20_0=='\r'||LA20_0==' ') ) {s = 29;}
 
                         else if ( ((LA20_0>='\u0000' && LA20_0<='\b')||(LA20_0>='\u000B' && LA20_0<='\f')||(LA20_0>='\u000E' && LA20_0<='\u001F')||LA20_0=='!'||(LA20_0>='#' && LA20_0<='&')||LA20_0==':'||(LA20_0>='?' && LA20_0<='@')||LA20_0=='\\'||LA20_0=='`'||(LA20_0>='|' && LA20_0<='\uFFFF')) ) {s = 30;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA20_27 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA20_27>='\u0000' && LA20_27<='\uFFFF')) ) {s = 63;}
+
+                        else s = 30;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA20_23 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA20_23>='\u0000' && LA20_23<='\uFFFF')) ) {s = 58;}
+
+                        else s = 30;
 
                         if ( s>=0 ) return s;
                         break;

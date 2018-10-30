@@ -17,7 +17,6 @@ import org.xtext.example.pascal.pascal.expression;
 import org.xtext.example.pascal.pascal.expression_list;
 import org.xtext.example.pascal.pascal.factor;
 import org.xtext.example.pascal.pascal.function_designator;
-import org.xtext.example.pascal.pascal.indentifier_list;
 import org.xtext.example.pascal.pascal.number;
 import org.xtext.example.pascal.pascal.program;
 import org.xtext.example.pascal.pascal.set;
@@ -40,13 +39,6 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
    * @generated
    */
   private EClass programEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass indentifier_listEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -206,36 +198,6 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
   public EAttribute getprogram_Name()
   {
     return (EAttribute)programEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getprogram_Identifiers()
-  {
-    return (EReference)programEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getindentifier_list()
-  {
-    return indentifier_listEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getindentifier_list_Names()
-  {
-    return (EAttribute)indentifier_listEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -700,10 +662,6 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
     // Create classes and their features
     programEClass = createEClass(PROGRAM);
     createEAttribute(programEClass, PROGRAM__NAME);
-    createEReference(programEClass, PROGRAM__IDENTIFIERS);
-
-    indentifier_listEClass = createEClass(INDENTIFIER_LIST);
-    createEAttribute(indentifier_listEClass, INDENTIFIER_LIST__NAMES);
 
     variableEClass = createEClass(VARIABLE);
     createEAttribute(variableEClass, VARIABLE__NAME);
@@ -793,10 +751,6 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
     // Initialize classes and features; add operations and parameters
     initEClass(programEClass, program.class, "program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getprogram_Name(), ecorePackage.getEString(), "name", null, 0, 1, program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getprogram_Identifiers(), this.getindentifier_list(), null, "identifiers", null, 0, 1, program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(indentifier_listEClass, indentifier_list.class, "indentifier_list", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getindentifier_list_Names(), ecorePackage.getEString(), "names", null, 0, -1, indentifier_list.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableEClass, variable.class, "variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getvariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

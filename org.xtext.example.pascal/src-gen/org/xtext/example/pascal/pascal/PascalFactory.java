@@ -33,15 +33,6 @@ public interface PascalFactory extends EFactory
   program createprogram();
 
   /**
-   * Returns a new object of class '<em>indentifier list</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>indentifier list</em>'.
-   * @generated
-   */
-  indentifier_list createindentifier_list();
-
-  /**
    * Returns a new object of class '<em>variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

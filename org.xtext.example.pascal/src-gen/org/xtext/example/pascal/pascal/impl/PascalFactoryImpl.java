@@ -66,7 +66,6 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
     switch (eClass.getClassifierID())
     {
       case PascalPackage.PROGRAM: return createprogram();
-      case PascalPackage.INDENTIFIER_LIST: return createindentifier_list();
       case PascalPackage.VARIABLE: return createvariable();
       case PascalPackage.VAR_: return createvar_();
       case PascalPackage.EXPRESSION_LIST: return createexpression_list();
@@ -92,17 +91,6 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
   {
     programImpl program = new programImpl();
     return program;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public indentifier_list createindentifier_list()
-  {
-    indentifier_listImpl indentifier_list = new indentifier_listImpl();
-    return indentifier_list;
   }
 
   /**

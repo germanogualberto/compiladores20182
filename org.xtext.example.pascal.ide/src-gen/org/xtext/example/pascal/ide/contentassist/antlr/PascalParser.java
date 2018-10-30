@@ -41,9 +41,6 @@ public class PascalParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSigned_numberAccess().getAlternatives(), "rule__Signed_number__Alternatives");
 			builder.put(grammarAccess.getUnsigned_numberAccess().getAlternatives(), "rule__Unsigned_number__Alternatives");
 			builder.put(grammarAccess.getProgramAccess().getGroup(), "rule__Program__Group__0");
-			builder.put(grammarAccess.getProgramAccess().getGroup_2(), "rule__Program__Group_2__0");
-			builder.put(grammarAccess.getIndentifier_listAccess().getGroup(), "rule__Indentifier_list__Group__0");
-			builder.put(grammarAccess.getIndentifier_listAccess().getGroup_1(), "rule__Indentifier_list__Group_1__0");
 			builder.put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
 			builder.put(grammarAccess.getVar_Access().getGroup_0(), "rule__Var___Group_0__0");
 			builder.put(grammarAccess.getVar_Access().getGroup_1(), "rule__Var___Group_1__0");
@@ -61,9 +58,6 @@ public class PascalParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFunction_designatorAccess().getGroup(), "rule__Function_designator__Group__0");
 			builder.put(grammarAccess.getSetAccess().getGroup(), "rule__Set__Group__0");
 			builder.put(grammarAccess.getProgramAccess().getNameAssignment_1(), "rule__Program__NameAssignment_1");
-			builder.put(grammarAccess.getProgramAccess().getIdentifiersAssignment_2_1(), "rule__Program__IdentifiersAssignment_2_1");
-			builder.put(grammarAccess.getIndentifier_listAccess().getNamesAssignment_0(), "rule__Indentifier_list__NamesAssignment_0");
-			builder.put(grammarAccess.getIndentifier_listAccess().getNamesAssignment_1_1(), "rule__Indentifier_list__NamesAssignment_1_1");
 			builder.put(grammarAccess.getVariableAccess().getNameAssignment_0(), "rule__Variable__NameAssignment_0");
 			builder.put(grammarAccess.getVariableAccess().getVariableAssignment_1(), "rule__Variable__VariableAssignment_1");
 			builder.put(grammarAccess.getVar_Access().getExpressionsAssignment_0_1(), "rule__Var___ExpressionsAssignment_0_1");

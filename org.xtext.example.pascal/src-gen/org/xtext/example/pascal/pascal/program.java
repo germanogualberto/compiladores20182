@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.pascal.pascal.program#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.program#getIdentifiers <em>Identifiers</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.pascal.pascal.PascalPackage#getprogram()
@@ -49,31 +48,5 @@ public interface program extends EObject
    * @generated
    */
   void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Identifiers</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Identifiers</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Identifiers</em>' containment reference.
-   * @see #setIdentifiers(indentifier_list)
-   * @see org.xtext.example.pascal.pascal.PascalPackage#getprogram_Identifiers()
-   * @model containment="true"
-   * @generated
-   */
-  indentifier_list getIdentifiers();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.pascal.pascal.program#getIdentifiers <em>Identifiers</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Identifiers</em>' containment reference.
-   * @see #getIdentifiers()
-   * @generated
-   */
-  void setIdentifiers(indentifier_list value);
 
 } // program

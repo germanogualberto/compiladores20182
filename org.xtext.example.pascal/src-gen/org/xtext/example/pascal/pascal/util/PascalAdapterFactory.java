@@ -81,11 +81,6 @@ public class PascalAdapterFactory extends AdapterFactoryImpl
         return createprogramAdapter();
       }
       @Override
-      public Adapter caseindentifier_list(indentifier_list object)
-      {
-        return createindentifier_listAdapter();
-      }
-      @Override
       public Adapter casevariable(variable object)
       {
         return createvariableAdapter();
@@ -173,21 +168,6 @@ public class PascalAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createprogramAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.indentifier_list <em>indentifier list</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.pascal.pascal.indentifier_list
-   * @generated
-   */
-  public Adapter createindentifier_listAdapter()
   {
     return null;
   }

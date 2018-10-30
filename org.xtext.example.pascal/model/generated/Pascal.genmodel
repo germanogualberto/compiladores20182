@@ -8,10 +8,6 @@
       fileExtensions="pas" ecorePackage="Pascal.ecore#/">
     <genClasses ecoreClass="Pascal.ecore#//program">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pascal.ecore#//program/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//program/identifiers"/>
-    </genClasses>
-    <genClasses ecoreClass="Pascal.ecore#//indentifier_list">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pascal.ecore#//indentifier_list/names"/>
     </genClasses>
     <genClasses ecoreClass="Pascal.ecore#//variable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pascal.ecore#//variable/name"/>

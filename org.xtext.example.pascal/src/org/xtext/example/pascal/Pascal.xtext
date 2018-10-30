@@ -3,11 +3,7 @@ grammar org.xtext.example.pascal.Pascal with org.eclipse.xtext.common.Terminals
 generate pascal "http://www.xtext.org/example/pascal/Pascal"
 
 program:
-	"program" name=ID ( "(" identifiers=indentifier_list ")" ) ? ";"
-;
-
-indentifier_list:
-	names+=ID ( "," names+=ID ) * 
+	"program" name=ID ";"
 ;
 
 variable: 

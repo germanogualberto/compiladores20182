@@ -77,50 +77,13 @@ public interface PascalPackage extends EPackage
   int PROGRAM__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Identifiers</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROGRAM__IDENTIFIERS = 1;
-
-  /**
    * The number of structural features of the '<em>program</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROGRAM_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.indentifier_listImpl <em>indentifier list</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.pascal.pascal.impl.indentifier_listImpl
-   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getindentifier_list()
-   * @generated
-   */
-  int INDENTIFIER_LIST = 1;
-
-  /**
-   * The feature id for the '<em><b>Names</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INDENTIFIER_LIST__NAMES = 0;
-
-  /**
-   * The number of structural features of the '<em>indentifier list</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INDENTIFIER_LIST_FEATURE_COUNT = 1;
+  int PROGRAM_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.variableImpl <em>variable</em>}' class.
@@ -130,7 +93,7 @@ public interface PascalPackage extends EPackage
    * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getvariable()
    * @generated
    */
-  int VARIABLE = 2;
+  int VARIABLE = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -167,7 +130,7 @@ public interface PascalPackage extends EPackage
    * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getvar_()
    * @generated
    */
-  int VAR_ = 3;
+  int VAR_ = 2;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference.
@@ -240,7 +203,7 @@ public interface PascalPackage extends EPackage
    * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getexpression_list()
    * @generated
    */
-  int EXPRESSION_LIST = 4;
+  int EXPRESSION_LIST = 3;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -268,7 +231,7 @@ public interface PascalPackage extends EPackage
    * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getexpression()
    * @generated
    */
-  int EXPRESSION = 5;
+  int EXPRESSION = 4;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -305,7 +268,7 @@ public interface PascalPackage extends EPackage
    * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getsimple_expression()
    * @generated
    */
-  int SIMPLE_EXPRESSION = 6;
+  int SIMPLE_EXPRESSION = 5;
 
   /**
    * The feature id for the '<em><b>Prefix Operator</b></em>' attribute.
@@ -351,7 +314,7 @@ public interface PascalPackage extends EPackage
    * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getterm()
    * @generated
    */
-  int TERM = 7;
+  int TERM = 6;
 
   /**
    * The feature id for the '<em><b>Factors</b></em>' containment reference list.
@@ -388,7 +351,7 @@ public interface PascalPackage extends EPackage
    * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getfactor()
    * @generated
    */
-  int FACTOR = 8;
+  int FACTOR = 7;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference.
@@ -488,7 +451,7 @@ public interface PascalPackage extends EPackage
    * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getfunction_designator()
    * @generated
    */
-  int FUNCTION_DESIGNATOR = 9;
+  int FUNCTION_DESIGNATOR = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -525,7 +488,7 @@ public interface PascalPackage extends EPackage
    * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getset()
    * @generated
    */
-  int SET = 10;
+  int SET = 9;
 
   /**
    * The feature id for the '<em><b>Brackets</b></em>' attribute list.
@@ -562,7 +525,7 @@ public interface PascalPackage extends EPackage
    * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getnumber()
    * @generated
    */
-  int NUMBER = 11;
+  int NUMBER = 10;
 
   /**
    * The feature id for the '<em><b>Number</b></em>' containment reference.
@@ -590,7 +553,7 @@ public interface PascalPackage extends EPackage
    * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getany_number()
    * @generated
    */
-  int ANY_NUMBER = 12;
+  int ANY_NUMBER = 11;
 
   /**
    * The feature id for the '<em><b>Integer</b></em>' attribute.
@@ -640,38 +603,6 @@ public interface PascalPackage extends EPackage
    * @generated
    */
   EAttribute getprogram_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.program#getIdentifiers <em>Identifiers</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Identifiers</em>'.
-   * @see org.xtext.example.pascal.pascal.program#getIdentifiers()
-   * @see #getprogram()
-   * @generated
-   */
-  EReference getprogram_Identifiers();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.indentifier_list <em>indentifier list</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>indentifier list</em>'.
-   * @see org.xtext.example.pascal.pascal.indentifier_list
-   * @generated
-   */
-  EClass getindentifier_list();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.xtext.example.pascal.pascal.indentifier_list#getNames <em>Names</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Names</em>'.
-   * @see org.xtext.example.pascal.pascal.indentifier_list#getNames()
-   * @see #getindentifier_list()
-   * @generated
-   */
-  EAttribute getindentifier_list_Names();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.variable <em>variable</em>}'.
@@ -1175,32 +1106,6 @@ public interface PascalPackage extends EPackage
      * @generated
      */
     EAttribute PROGRAM__NAME = eINSTANCE.getprogram_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Identifiers</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PROGRAM__IDENTIFIERS = eINSTANCE.getprogram_Identifiers();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.indentifier_listImpl <em>indentifier list</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.pascal.pascal.impl.indentifier_listImpl
-     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getindentifier_list()
-     * @generated
-     */
-    EClass INDENTIFIER_LIST = eINSTANCE.getindentifier_list();
-
-    /**
-     * The meta object literal for the '<em><b>Names</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INDENTIFIER_LIST__NAMES = eINSTANCE.getindentifier_list_Names();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.variableImpl <em>variable</em>}' class.

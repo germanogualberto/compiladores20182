@@ -20,7 +20,6 @@ import org.xtext.example.pascal.pascal.expression;
 import org.xtext.example.pascal.pascal.expression_list;
 import org.xtext.example.pascal.pascal.factor;
 import org.xtext.example.pascal.pascal.function_designator;
-import org.xtext.example.pascal.pascal.indentifier_list;
 import org.xtext.example.pascal.pascal.number;
 import org.xtext.example.pascal.pascal.program;
 import org.xtext.example.pascal.pascal.set;
@@ -69,9 +68,6 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case PascalPackage.FUNCTION_DESIGNATOR:
 				sequence_function_designator(context, (function_designator) semanticObject); 
-				return; 
-			case PascalPackage.INDENTIFIER_LIST:
-				sequence_indentifier_list(context, (indentifier_list) semanticObject); 
 				return; 
 			case PascalPackage.NUMBER:
 				sequence_number(context, (number) semanticObject); 
@@ -160,18 +156,6 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     indentifier_list returns indentifier_list
-	 *
-	 * Constraint:
-	 *     (names+=ID names+=ID*)
-	 */
-	protected void sequence_indentifier_list(ISerializationContext context, indentifier_list semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     number returns number
 	 *
 	 * Constraint:
@@ -193,10 +177,16 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     program returns program
 	 *
 	 * Constraint:
-	 *     (name=ID identifiers=indentifier_list?)
+	 *     name=ID
 	 */
 	protected void sequence_program(ISerializationContext context, program semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PascalPackage.Literals.PROGRAM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PascalPackage.Literals.PROGRAM__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProgramAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
