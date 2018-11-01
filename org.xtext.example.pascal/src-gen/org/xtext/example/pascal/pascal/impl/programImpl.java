@@ -4,14 +4,18 @@
 package org.xtext.example.pascal.pascal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.pascal.pascal.PascalPackage;
+import org.xtext.example.pascal.pascal.block;
 import org.xtext.example.pascal.pascal.program;
+import org.xtext.example.pascal.pascal.program_heading_block;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +25,8 @@ import org.xtext.example.pascal.pascal.program;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.pascal.pascal.impl.programImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.impl.programImpl#getHeading <em>Heading</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.impl.programImpl#getBlock <em>Block</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +34,24 @@ import org.xtext.example.pascal.pascal.program;
 public class programImpl extends MinimalEObjectImpl.Container implements program
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getHeading() <em>Heading</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getHeading()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected program_heading_block heading;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getBlock() <em>Block</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getBlock()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected block block;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +79,9 @@ public class programImpl extends MinimalEObjectImpl.Container implements program
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public program_heading_block getHeading()
   {
-    return name;
+    return heading;
   }
 
   /**
@@ -84,12 +89,103 @@ public class programImpl extends MinimalEObjectImpl.Container implements program
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public NotificationChain basicSetHeading(program_heading_block newHeading, NotificationChain msgs)
   {
-    String oldName = name;
-    name = newName;
+    program_heading_block oldHeading = heading;
+    heading = newHeading;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.PROGRAM__NAME, oldName, name));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PascalPackage.PROGRAM__HEADING, oldHeading, newHeading);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHeading(program_heading_block newHeading)
+  {
+    if (newHeading != heading)
+    {
+      NotificationChain msgs = null;
+      if (heading != null)
+        msgs = ((InternalEObject)heading).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PascalPackage.PROGRAM__HEADING, null, msgs);
+      if (newHeading != null)
+        msgs = ((InternalEObject)newHeading).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PascalPackage.PROGRAM__HEADING, null, msgs);
+      msgs = basicSetHeading(newHeading, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.PROGRAM__HEADING, newHeading, newHeading));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public block getBlock()
+  {
+    return block;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBlock(block newBlock, NotificationChain msgs)
+  {
+    block oldBlock = block;
+    block = newBlock;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PascalPackage.PROGRAM__BLOCK, oldBlock, newBlock);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBlock(block newBlock)
+  {
+    if (newBlock != block)
+    {
+      NotificationChain msgs = null;
+      if (block != null)
+        msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PascalPackage.PROGRAM__BLOCK, null, msgs);
+      if (newBlock != null)
+        msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PascalPackage.PROGRAM__BLOCK, null, msgs);
+      msgs = basicSetBlock(newBlock, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.PROGRAM__BLOCK, newBlock, newBlock));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case PascalPackage.PROGRAM__HEADING:
+        return basicSetHeading(null, msgs);
+      case PascalPackage.PROGRAM__BLOCK:
+        return basicSetBlock(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -102,8 +198,10 @@ public class programImpl extends MinimalEObjectImpl.Container implements program
   {
     switch (featureID)
     {
-      case PascalPackage.PROGRAM__NAME:
-        return getName();
+      case PascalPackage.PROGRAM__HEADING:
+        return getHeading();
+      case PascalPackage.PROGRAM__BLOCK:
+        return getBlock();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +216,11 @@ public class programImpl extends MinimalEObjectImpl.Container implements program
   {
     switch (featureID)
     {
-      case PascalPackage.PROGRAM__NAME:
-        setName((String)newValue);
+      case PascalPackage.PROGRAM__HEADING:
+        setHeading((program_heading_block)newValue);
+        return;
+      case PascalPackage.PROGRAM__BLOCK:
+        setBlock((block)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +236,11 @@ public class programImpl extends MinimalEObjectImpl.Container implements program
   {
     switch (featureID)
     {
-      case PascalPackage.PROGRAM__NAME:
-        setName(NAME_EDEFAULT);
+      case PascalPackage.PROGRAM__HEADING:
+        setHeading((program_heading_block)null);
+        return;
+      case PascalPackage.PROGRAM__BLOCK:
+        setBlock((block)null);
         return;
     }
     super.eUnset(featureID);
@@ -152,27 +256,12 @@ public class programImpl extends MinimalEObjectImpl.Container implements program
   {
     switch (featureID)
     {
-      case PascalPackage.PROGRAM__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case PascalPackage.PROGRAM__HEADING:
+        return heading != null;
+      case PascalPackage.PROGRAM__BLOCK:
+        return block != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //programImpl

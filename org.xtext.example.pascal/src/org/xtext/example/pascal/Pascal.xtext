@@ -2,8 +2,44 @@ grammar org.xtext.example.pascal.Pascal with org.eclipse.xtext.common.Terminals
 
 generate pascal "http://www.xtext.org/example/pascal/Pascal"
 
+pascal:
+	program += program
+; 
+
 program:
+	heading=program_heading_block block=block "." 
+;
+
+program_heading_block:
 	"program" name=ID ";"
+;
+
+block:
+	statement=statement_part
+;
+
+statement_part:
+	"begin" sequence=statement_sequence "end"	
+;
+
+statement_sequence:
+	statements+=statement ( ";" statements+=statement ) *
+;
+
+statement:  
+	( label=label ":" ) ? ( simple=simple_statement )
+;
+
+simple_statement:
+	( assignment=assignment_statement | function=function_designator | function_noargs=ID ) ?	
+;
+
+assignment_statement: 
+	variable=variable ":=" expression=expression	
+;
+
+label:
+	number=SIGNED_INTEGER_NUMBER | number=INTEGER_NUMBER
 ;
 
 variable: 
@@ -23,7 +59,7 @@ expression:
 ;
 
 simple_expression:
-	( prefixOperator=ADDITION_OP ) ? terms+=term ( ( operators+=ADDITION_OP | operators+="or" ) terms+=term | terms+=unsigned_number ) *
+	(prefixOperator=ADDITION_OP) ? terms+=term ( ( operators+=ADDITION_OP | operators+="or" ) terms+=term | terms+=unsigned_number ) *
 ;
 
 term:

@@ -13,14 +13,23 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.xtext.example.pascal.pascal.PascalFactory;
 import org.xtext.example.pascal.pascal.PascalPackage;
 import org.xtext.example.pascal.pascal.any_number;
+import org.xtext.example.pascal.pascal.assignment_statement;
+import org.xtext.example.pascal.pascal.block;
 import org.xtext.example.pascal.pascal.expression;
 import org.xtext.example.pascal.pascal.expression_list;
 import org.xtext.example.pascal.pascal.factor;
 import org.xtext.example.pascal.pascal.function_designator;
+import org.xtext.example.pascal.pascal.label;
 import org.xtext.example.pascal.pascal.number;
+import org.xtext.example.pascal.pascal.pascal;
 import org.xtext.example.pascal.pascal.program;
+import org.xtext.example.pascal.pascal.program_heading_block;
 import org.xtext.example.pascal.pascal.set;
 import org.xtext.example.pascal.pascal.simple_expression;
+import org.xtext.example.pascal.pascal.simple_statement;
+import org.xtext.example.pascal.pascal.statement;
+import org.xtext.example.pascal.pascal.statement_part;
+import org.xtext.example.pascal.pascal.statement_sequence;
 import org.xtext.example.pascal.pascal.term;
 import org.xtext.example.pascal.pascal.var_;
 import org.xtext.example.pascal.pascal.variable;
@@ -38,7 +47,70 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass pascalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass programEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass program_heading_blockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass blockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass statement_partEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass statement_sequenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass statementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass simple_statementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass assignment_statementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass labelEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -185,6 +257,26 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getpascal()
+  {
+    return pascalEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getpascal_Program()
+  {
+    return (EReference)pascalEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getprogram()
   {
     return programEClass;
@@ -195,9 +287,219 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getprogram_Name()
+  public EReference getprogram_Heading()
   {
-    return (EAttribute)programEClass.getEStructuralFeatures().get(0);
+    return (EReference)programEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getprogram_Block()
+  {
+    return (EReference)programEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getprogram_heading_block()
+  {
+    return program_heading_blockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getprogram_heading_block_Name()
+  {
+    return (EAttribute)program_heading_blockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getblock()
+  {
+    return blockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getblock_Statement()
+  {
+    return (EReference)blockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getstatement_part()
+  {
+    return statement_partEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getstatement_part_Sequence()
+  {
+    return (EReference)statement_partEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getstatement_sequence()
+  {
+    return statement_sequenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getstatement_sequence_Statements()
+  {
+    return (EReference)statement_sequenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getstatement()
+  {
+    return statementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getstatement_Label()
+  {
+    return (EReference)statementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getstatement_Simple()
+  {
+    return (EReference)statementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getsimple_statement()
+  {
+    return simple_statementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getsimple_statement_Assignment()
+  {
+    return (EReference)simple_statementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getsimple_statement_Function()
+  {
+    return (EReference)simple_statementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getsimple_statement_Function_noargs()
+  {
+    return (EAttribute)simple_statementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getassignment_statement()
+  {
+    return assignment_statementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getassignment_statement_Variable()
+  {
+    return (EReference)assignment_statementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getassignment_statement_Expression()
+  {
+    return (EReference)assignment_statementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getlabel()
+  {
+    return labelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getlabel_Number()
+  {
+    return (EAttribute)labelEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -660,8 +962,40 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
     isCreated = true;
 
     // Create classes and their features
+    pascalEClass = createEClass(PASCAL);
+    createEReference(pascalEClass, PASCAL__PROGRAM);
+
     programEClass = createEClass(PROGRAM);
-    createEAttribute(programEClass, PROGRAM__NAME);
+    createEReference(programEClass, PROGRAM__HEADING);
+    createEReference(programEClass, PROGRAM__BLOCK);
+
+    program_heading_blockEClass = createEClass(PROGRAM_HEADING_BLOCK);
+    createEAttribute(program_heading_blockEClass, PROGRAM_HEADING_BLOCK__NAME);
+
+    blockEClass = createEClass(BLOCK);
+    createEReference(blockEClass, BLOCK__STATEMENT);
+
+    statement_partEClass = createEClass(STATEMENT_PART);
+    createEReference(statement_partEClass, STATEMENT_PART__SEQUENCE);
+
+    statement_sequenceEClass = createEClass(STATEMENT_SEQUENCE);
+    createEReference(statement_sequenceEClass, STATEMENT_SEQUENCE__STATEMENTS);
+
+    statementEClass = createEClass(STATEMENT);
+    createEReference(statementEClass, STATEMENT__LABEL);
+    createEReference(statementEClass, STATEMENT__SIMPLE);
+
+    simple_statementEClass = createEClass(SIMPLE_STATEMENT);
+    createEReference(simple_statementEClass, SIMPLE_STATEMENT__ASSIGNMENT);
+    createEReference(simple_statementEClass, SIMPLE_STATEMENT__FUNCTION);
+    createEAttribute(simple_statementEClass, SIMPLE_STATEMENT__FUNCTION_NOARGS);
+
+    assignment_statementEClass = createEClass(ASSIGNMENT_STATEMENT);
+    createEReference(assignment_statementEClass, ASSIGNMENT_STATEMENT__VARIABLE);
+    createEReference(assignment_statementEClass, ASSIGNMENT_STATEMENT__EXPRESSION);
+
+    labelEClass = createEClass(LABEL);
+    createEAttribute(labelEClass, LABEL__NUMBER);
 
     variableEClass = createEClass(VARIABLE);
     createEAttribute(variableEClass, VARIABLE__NAME);
@@ -749,8 +1083,40 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
     // Add supertypes to classes
 
     // Initialize classes and features; add operations and parameters
+    initEClass(pascalEClass, pascal.class, "pascal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getpascal_Program(), this.getprogram(), null, "program", null, 0, -1, pascal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(programEClass, program.class, "program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getprogram_Name(), ecorePackage.getEString(), "name", null, 0, 1, program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getprogram_Heading(), this.getprogram_heading_block(), null, "heading", null, 0, 1, program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getprogram_Block(), this.getblock(), null, "block", null, 0, 1, program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(program_heading_blockEClass, program_heading_block.class, "program_heading_block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getprogram_heading_block_Name(), ecorePackage.getEString(), "name", null, 0, 1, program_heading_block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(blockEClass, block.class, "block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getblock_Statement(), this.getstatement_part(), null, "statement", null, 0, 1, block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(statement_partEClass, statement_part.class, "statement_part", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getstatement_part_Sequence(), this.getstatement_sequence(), null, "sequence", null, 0, 1, statement_part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(statement_sequenceEClass, statement_sequence.class, "statement_sequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getstatement_sequence_Statements(), this.getstatement(), null, "statements", null, 0, -1, statement_sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(statementEClass, statement.class, "statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getstatement_Label(), this.getlabel(), null, "label", null, 0, 1, statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getstatement_Simple(), this.getsimple_statement(), null, "simple", null, 0, 1, statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(simple_statementEClass, simple_statement.class, "simple_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getsimple_statement_Assignment(), this.getassignment_statement(), null, "assignment", null, 0, 1, simple_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getsimple_statement_Function(), this.getfunction_designator(), null, "function", null, 0, 1, simple_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getsimple_statement_Function_noargs(), ecorePackage.getEString(), "function_noargs", null, 0, 1, simple_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(assignment_statementEClass, assignment_statement.class, "assignment_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getassignment_statement_Variable(), this.getvariable(), null, "variable", null, 0, 1, assignment_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getassignment_statement_Expression(), this.getexpression(), null, "expression", null, 0, 1, assignment_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(labelEClass, label.class, "label", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getlabel_Number(), ecorePackage.getEString(), "number", null, 0, 1, label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableEClass, variable.class, "variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getvariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

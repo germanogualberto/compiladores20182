@@ -31,6 +31,8 @@ public class PascalParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, PascalGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getSimple_statementAccess().getAlternatives(), "rule__Simple_statement__Alternatives");
+			builder.put(grammarAccess.getLabelAccess().getAlternatives(), "rule__Label__Alternatives");
 			builder.put(grammarAccess.getVar_Access().getAlternatives(), "rule__Var___Alternatives");
 			builder.put(grammarAccess.getExpressionAccess().getAlternatives_1_0(), "rule__Expression__Alternatives_1_0");
 			builder.put(grammarAccess.getSimple_expressionAccess().getAlternatives_2(), "rule__Simple_expression__Alternatives_2");
@@ -41,6 +43,13 @@ public class PascalParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSigned_numberAccess().getAlternatives(), "rule__Signed_number__Alternatives");
 			builder.put(grammarAccess.getUnsigned_numberAccess().getAlternatives(), "rule__Unsigned_number__Alternatives");
 			builder.put(grammarAccess.getProgramAccess().getGroup(), "rule__Program__Group__0");
+			builder.put(grammarAccess.getProgram_heading_blockAccess().getGroup(), "rule__Program_heading_block__Group__0");
+			builder.put(grammarAccess.getStatement_partAccess().getGroup(), "rule__Statement_part__Group__0");
+			builder.put(grammarAccess.getStatement_sequenceAccess().getGroup(), "rule__Statement_sequence__Group__0");
+			builder.put(grammarAccess.getStatement_sequenceAccess().getGroup_1(), "rule__Statement_sequence__Group_1__0");
+			builder.put(grammarAccess.getStatementAccess().getGroup(), "rule__Statement__Group__0");
+			builder.put(grammarAccess.getStatementAccess().getGroup_0(), "rule__Statement__Group_0__0");
+			builder.put(grammarAccess.getAssignment_statementAccess().getGroup(), "rule__Assignment_statement__Group__0");
 			builder.put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
 			builder.put(grammarAccess.getVar_Access().getGroup_0(), "rule__Var___Group_0__0");
 			builder.put(grammarAccess.getVar_Access().getGroup_1(), "rule__Var___Group_1__0");
@@ -57,7 +66,23 @@ public class PascalParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFactorAccess().getGroup_9(), "rule__Factor__Group_9__0");
 			builder.put(grammarAccess.getFunction_designatorAccess().getGroup(), "rule__Function_designator__Group__0");
 			builder.put(grammarAccess.getSetAccess().getGroup(), "rule__Set__Group__0");
-			builder.put(grammarAccess.getProgramAccess().getNameAssignment_1(), "rule__Program__NameAssignment_1");
+			builder.put(grammarAccess.getPascalAccess().getProgramAssignment(), "rule__Pascal__ProgramAssignment");
+			builder.put(grammarAccess.getProgramAccess().getHeadingAssignment_0(), "rule__Program__HeadingAssignment_0");
+			builder.put(grammarAccess.getProgramAccess().getBlockAssignment_1(), "rule__Program__BlockAssignment_1");
+			builder.put(grammarAccess.getProgram_heading_blockAccess().getNameAssignment_1(), "rule__Program_heading_block__NameAssignment_1");
+			builder.put(grammarAccess.getBlockAccess().getStatementAssignment(), "rule__Block__StatementAssignment");
+			builder.put(grammarAccess.getStatement_partAccess().getSequenceAssignment_1(), "rule__Statement_part__SequenceAssignment_1");
+			builder.put(grammarAccess.getStatement_sequenceAccess().getStatementsAssignment_0(), "rule__Statement_sequence__StatementsAssignment_0");
+			builder.put(grammarAccess.getStatement_sequenceAccess().getStatementsAssignment_1_1(), "rule__Statement_sequence__StatementsAssignment_1_1");
+			builder.put(grammarAccess.getStatementAccess().getLabelAssignment_0_0(), "rule__Statement__LabelAssignment_0_0");
+			builder.put(grammarAccess.getStatementAccess().getSimpleAssignment_1(), "rule__Statement__SimpleAssignment_1");
+			builder.put(grammarAccess.getSimple_statementAccess().getAssignmentAssignment_0(), "rule__Simple_statement__AssignmentAssignment_0");
+			builder.put(grammarAccess.getSimple_statementAccess().getFunctionAssignment_1(), "rule__Simple_statement__FunctionAssignment_1");
+			builder.put(grammarAccess.getSimple_statementAccess().getFunction_noargsAssignment_2(), "rule__Simple_statement__Function_noargsAssignment_2");
+			builder.put(grammarAccess.getAssignment_statementAccess().getVariableAssignment_0(), "rule__Assignment_statement__VariableAssignment_0");
+			builder.put(grammarAccess.getAssignment_statementAccess().getExpressionAssignment_2(), "rule__Assignment_statement__ExpressionAssignment_2");
+			builder.put(grammarAccess.getLabelAccess().getNumberAssignment_0(), "rule__Label__NumberAssignment_0");
+			builder.put(grammarAccess.getLabelAccess().getNumberAssignment_1(), "rule__Label__NumberAssignment_1");
 			builder.put(grammarAccess.getVariableAccess().getNameAssignment_0(), "rule__Variable__NameAssignment_0");
 			builder.put(grammarAccess.getVariableAccess().getVariableAssignment_1(), "rule__Variable__VariableAssignment_1");
 			builder.put(grammarAccess.getVar_Access().getExpressionsAssignment_0_1(), "rule__Var___ExpressionsAssignment_0_1");

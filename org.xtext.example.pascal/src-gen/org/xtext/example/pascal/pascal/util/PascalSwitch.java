@@ -73,10 +73,73 @@ public class PascalSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
+      case PascalPackage.PASCAL:
+      {
+        pascal pascal = (pascal)theEObject;
+        T result = casepascal(pascal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case PascalPackage.PROGRAM:
       {
         program program = (program)theEObject;
         T result = caseprogram(program);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.PROGRAM_HEADING_BLOCK:
+      {
+        program_heading_block program_heading_block = (program_heading_block)theEObject;
+        T result = caseprogram_heading_block(program_heading_block);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.BLOCK:
+      {
+        block block = (block)theEObject;
+        T result = caseblock(block);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.STATEMENT_PART:
+      {
+        statement_part statement_part = (statement_part)theEObject;
+        T result = casestatement_part(statement_part);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.STATEMENT_SEQUENCE:
+      {
+        statement_sequence statement_sequence = (statement_sequence)theEObject;
+        T result = casestatement_sequence(statement_sequence);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.STATEMENT:
+      {
+        statement statement = (statement)theEObject;
+        T result = casestatement(statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.SIMPLE_STATEMENT:
+      {
+        simple_statement simple_statement = (simple_statement)theEObject;
+        T result = casesimple_statement(simple_statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.ASSIGNMENT_STATEMENT:
+      {
+        assignment_statement assignment_statement = (assignment_statement)theEObject;
+        T result = caseassignment_statement(assignment_statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.LABEL:
+      {
+        label label = (label)theEObject;
+        T result = caselabel(label);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -162,6 +225,22 @@ public class PascalSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>pascal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>pascal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casepascal(pascal object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>program</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -173,6 +252,134 @@ public class PascalSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseprogram(program object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>program heading block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>program heading block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseprogram_heading_block(program_heading_block object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseblock(block object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>statement part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>statement part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casestatement_part(statement_part object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>statement sequence</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>statement sequence</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casestatement_sequence(statement_sequence object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casestatement(statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>simple statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>simple statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casesimple_statement(simple_statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>assignment statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>assignment statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseassignment_statement(assignment_statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>label</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>label</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caselabel(label object)
   {
     return null;
   }

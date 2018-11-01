@@ -24,6 +24,15 @@ public interface PascalFactory extends EFactory
   PascalFactory eINSTANCE = org.xtext.example.pascal.pascal.impl.PascalFactoryImpl.init();
 
   /**
+   * Returns a new object of class '<em>pascal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>pascal</em>'.
+   * @generated
+   */
+  pascal createpascal();
+
+  /**
    * Returns a new object of class '<em>program</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -31,6 +40,78 @@ public interface PascalFactory extends EFactory
    * @generated
    */
   program createprogram();
+
+  /**
+   * Returns a new object of class '<em>program heading block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>program heading block</em>'.
+   * @generated
+   */
+  program_heading_block createprogram_heading_block();
+
+  /**
+   * Returns a new object of class '<em>block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>block</em>'.
+   * @generated
+   */
+  block createblock();
+
+  /**
+   * Returns a new object of class '<em>statement part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>statement part</em>'.
+   * @generated
+   */
+  statement_part createstatement_part();
+
+  /**
+   * Returns a new object of class '<em>statement sequence</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>statement sequence</em>'.
+   * @generated
+   */
+  statement_sequence createstatement_sequence();
+
+  /**
+   * Returns a new object of class '<em>statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>statement</em>'.
+   * @generated
+   */
+  statement createstatement();
+
+  /**
+   * Returns a new object of class '<em>simple statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>simple statement</em>'.
+   * @generated
+   */
+  simple_statement createsimple_statement();
+
+  /**
+   * Returns a new object of class '<em>assignment statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>assignment statement</em>'.
+   * @generated
+   */
+  assignment_statement createassignment_statement();
+
+  /**
+   * Returns a new object of class '<em>label</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>label</em>'.
+   * @generated
+   */
+  label createlabel();
 
   /**
    * Returns a new object of class '<em>variable</em>'.

@@ -65,7 +65,16 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
   {
     switch (eClass.getClassifierID())
     {
+      case PascalPackage.PASCAL: return createpascal();
       case PascalPackage.PROGRAM: return createprogram();
+      case PascalPackage.PROGRAM_HEADING_BLOCK: return createprogram_heading_block();
+      case PascalPackage.BLOCK: return createblock();
+      case PascalPackage.STATEMENT_PART: return createstatement_part();
+      case PascalPackage.STATEMENT_SEQUENCE: return createstatement_sequence();
+      case PascalPackage.STATEMENT: return createstatement();
+      case PascalPackage.SIMPLE_STATEMENT: return createsimple_statement();
+      case PascalPackage.ASSIGNMENT_STATEMENT: return createassignment_statement();
+      case PascalPackage.LABEL: return createlabel();
       case PascalPackage.VARIABLE: return createvariable();
       case PascalPackage.VAR_: return createvar_();
       case PascalPackage.EXPRESSION_LIST: return createexpression_list();
@@ -87,10 +96,109 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public pascal createpascal()
+  {
+    pascalImpl pascal = new pascalImpl();
+    return pascal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public program createprogram()
   {
     programImpl program = new programImpl();
     return program;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public program_heading_block createprogram_heading_block()
+  {
+    program_heading_blockImpl program_heading_block = new program_heading_blockImpl();
+    return program_heading_block;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public block createblock()
+  {
+    blockImpl block = new blockImpl();
+    return block;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public statement_part createstatement_part()
+  {
+    statement_partImpl statement_part = new statement_partImpl();
+    return statement_part;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public statement_sequence createstatement_sequence()
+  {
+    statement_sequenceImpl statement_sequence = new statement_sequenceImpl();
+    return statement_sequence;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public statement createstatement()
+  {
+    statementImpl statement = new statementImpl();
+    return statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public simple_statement createsimple_statement()
+  {
+    simple_statementImpl simple_statement = new simple_statementImpl();
+    return simple_statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public assignment_statement createassignment_statement()
+  {
+    assignment_statementImpl assignment_statement = new assignment_statementImpl();
+    return assignment_statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public label createlabel()
+  {
+    labelImpl label = new labelImpl();
+    return label;
   }
 
   /**

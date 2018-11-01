@@ -1,8 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pascal" nsURI="http://www.xtext.org/example/pascal/Pascal" nsPrefix="pascal">
+  <eClassifiers xsi:type="ecore:EClass" name="pascal">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="program" upperBound="-1"
+        eType="#//program" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="program">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="heading" eType="#//program_heading_block"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="#//block"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="program_heading_block">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="block">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="#//statement_part"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="statement_part">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sequence" eType="#//statement_sequence"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="statement_sequence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//statement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="label" eType="#//label"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simple" eType="#//simple_statement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="simple_statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignment" eType="#//assignment_statement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="function" eType="#//function_designator"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="function_noargs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="assignment_statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//variable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="label">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
