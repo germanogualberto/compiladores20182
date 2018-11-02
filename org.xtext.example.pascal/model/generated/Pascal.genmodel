@@ -17,6 +17,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pascal.ecore#//program_heading_block/name"/>
     </genClasses>
     <genClasses ecoreClass="Pascal.ecore#//block">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//block/abstraction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//block/statement"/>
     </genClasses>
     <genClasses ecoreClass="Pascal.ecore#//statement_part">
@@ -83,6 +84,50 @@
     <genClasses ecoreClass="Pascal.ecore#//function_designator">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pascal.ecore#//function_designator/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//function_designator/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="Pascal.ecore#//function_procedure_declaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//function_procedure_declaration/procedures"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//function_procedure_declaration/functions"/>
+    </genClasses>
+    <genClasses ecoreClass="Pascal.ecore#//function_heading">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pascal.ecore#//function_heading/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//function_heading/parameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pascal.ecore#//function_heading/returnType"/>
+    </genClasses>
+    <genClasses ecoreClass="Pascal.ecore#//function_declaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//function_declaration/heading"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//function_declaration/block"/>
+    </genClasses>
+    <genClasses ecoreClass="Pascal.ecore#//formal_parameter_list">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//formal_parameter_list/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="Pascal.ecore#//formal_parameter_section">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//formal_parameter_section/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//formal_parameter_section/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//formal_parameter_section/procedure"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//formal_parameter_section/function"/>
+    </genClasses>
+    <genClasses ecoreClass="Pascal.ecore#//value_parameter_section">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//value_parameter_section/identifiers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//value_parameter_section/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Pascal.ecore#//identifier_list">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pascal.ecore#//identifier_list/names"/>
+    </genClasses>
+    <genClasses ecoreClass="Pascal.ecore#//parameter_type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pascal.ecore#//parameter_type/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Pascal.ecore#//variable_parameter_section">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//variable_parameter_section/indentifiers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//variable_parameter_section/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Pascal.ecore#//procedure_declaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//procedure_declaration/heading"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//procedure_declaration/block"/>
+    </genClasses>
+    <genClasses ecoreClass="Pascal.ecore#//procedure_heading">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pascal.ecore#//procedure_heading/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//procedure_heading/parameters"/>
     </genClasses>
     <genClasses ecoreClass="Pascal.ecore#//set">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pascal.ecore#//set/brackets"/>

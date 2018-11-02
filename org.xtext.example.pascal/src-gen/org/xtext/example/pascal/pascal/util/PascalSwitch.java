@@ -199,6 +199,83 @@ public class PascalSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PascalPackage.FUNCTION_PROCEDURE_DECLARATION:
+      {
+        function_procedure_declaration function_procedure_declaration = (function_procedure_declaration)theEObject;
+        T result = casefunction_procedure_declaration(function_procedure_declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.FUNCTION_HEADING:
+      {
+        function_heading function_heading = (function_heading)theEObject;
+        T result = casefunction_heading(function_heading);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.FUNCTION_DECLARATION:
+      {
+        function_declaration function_declaration = (function_declaration)theEObject;
+        T result = casefunction_declaration(function_declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.FORMAL_PARAMETER_LIST:
+      {
+        formal_parameter_list formal_parameter_list = (formal_parameter_list)theEObject;
+        T result = caseformal_parameter_list(formal_parameter_list);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.FORMAL_PARAMETER_SECTION:
+      {
+        formal_parameter_section formal_parameter_section = (formal_parameter_section)theEObject;
+        T result = caseformal_parameter_section(formal_parameter_section);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.VALUE_PARAMETER_SECTION:
+      {
+        value_parameter_section value_parameter_section = (value_parameter_section)theEObject;
+        T result = casevalue_parameter_section(value_parameter_section);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.IDENTIFIER_LIST:
+      {
+        identifier_list identifier_list = (identifier_list)theEObject;
+        T result = caseidentifier_list(identifier_list);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.PARAMETER_TYPE:
+      {
+        parameter_type parameter_type = (parameter_type)theEObject;
+        T result = caseparameter_type(parameter_type);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.VARIABLE_PARAMETER_SECTION:
+      {
+        variable_parameter_section variable_parameter_section = (variable_parameter_section)theEObject;
+        T result = casevariable_parameter_section(variable_parameter_section);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.PROCEDURE_DECLARATION:
+      {
+        procedure_declaration procedure_declaration = (procedure_declaration)theEObject;
+        T result = caseprocedure_declaration(procedure_declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.PROCEDURE_HEADING:
+      {
+        procedure_heading procedure_heading = (procedure_heading)theEObject;
+        T result = caseprocedure_heading(procedure_heading);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case PascalPackage.SET:
       {
         set set = (set)theEObject;
@@ -508,6 +585,182 @@ public class PascalSwitch<T> extends Switch<T>
    * @generated
    */
   public T casefunction_designator(function_designator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>function procedure declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>function procedure declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefunction_procedure_declaration(function_procedure_declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>function heading</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>function heading</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefunction_heading(function_heading object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>function declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>function declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefunction_declaration(function_declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>formal parameter list</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>formal parameter list</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseformal_parameter_list(formal_parameter_list object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>formal parameter section</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>formal parameter section</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseformal_parameter_section(formal_parameter_section object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>value parameter section</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>value parameter section</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casevalue_parameter_section(value_parameter_section object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>identifier list</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>identifier list</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseidentifier_list(identifier_list object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>parameter type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>parameter type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseparameter_type(parameter_type object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>variable parameter section</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>variable parameter section</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casevariable_parameter_section(variable_parameter_section object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>procedure declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>procedure declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseprocedure_declaration(procedure_declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>procedure heading</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>procedure heading</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseprocedure_heading(procedure_heading object)
   {
     return null;
   }

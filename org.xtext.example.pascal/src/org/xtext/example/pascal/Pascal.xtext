@@ -15,6 +15,7 @@ program_heading_block:
 ;
 
 block:
+	( abstraction=function_procedure_declaration) ? 
 	statement=statement_part
 ;
 
@@ -31,7 +32,7 @@ statement:
 ;
 
 simple_statement:
-	( assignment=assignment_statement | function=function_designator | function_noargs=ID ) ?	
+	( assignment=assignment_statement | function=function_designator | function_noargs=ID) ?	
 ;
 
 assignment_statement: 
@@ -72,6 +73,50 @@ factor:
 
 function_designator:
 	name=ID "(" expressions=expression_list ? ")"
+;
+
+function_procedure_declaration:
+	( (procedures+=function_declaration | functions+=procedure_declaration) ";" )+
+;
+
+function_heading:
+	"function" name=ID (parameters=formal_parameter_list)? ":" returnType=ID
+;
+
+function_declaration:
+	heading=function_heading ";" block=block
+;
+
+formal_parameter_list:
+	"(" parameters+=formal_parameter_section ( ";" parameters+=formal_parameter_section)* ")"
+;
+
+formal_parameter_section:
+	value=value_parameter_section | variable=variable_parameter_section | procedure=procedure_heading | function=function_heading
+;
+
+value_parameter_section:
+	identifiers=identifier_list ":" type=parameter_type
+;
+
+identifier_list:
+	names+=ID ( "," names+=ID ) *	
+;
+
+parameter_type:
+	name=ID
+;
+
+variable_parameter_section:
+	"var" indentifiers=identifier_list ":" type=parameter_type
+;
+
+procedure_declaration:
+	heading=procedure_heading ";" block=block
+;
+
+procedure_heading:
+	"procedure" name=ID (parameters=formal_parameter_list)? 
 ;
 
 set:

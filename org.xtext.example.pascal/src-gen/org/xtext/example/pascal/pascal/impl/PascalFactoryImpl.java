@@ -83,6 +83,17 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
       case PascalPackage.TERM: return createterm();
       case PascalPackage.FACTOR: return createfactor();
       case PascalPackage.FUNCTION_DESIGNATOR: return createfunction_designator();
+      case PascalPackage.FUNCTION_PROCEDURE_DECLARATION: return createfunction_procedure_declaration();
+      case PascalPackage.FUNCTION_HEADING: return createfunction_heading();
+      case PascalPackage.FUNCTION_DECLARATION: return createfunction_declaration();
+      case PascalPackage.FORMAL_PARAMETER_LIST: return createformal_parameter_list();
+      case PascalPackage.FORMAL_PARAMETER_SECTION: return createformal_parameter_section();
+      case PascalPackage.VALUE_PARAMETER_SECTION: return createvalue_parameter_section();
+      case PascalPackage.IDENTIFIER_LIST: return createidentifier_list();
+      case PascalPackage.PARAMETER_TYPE: return createparameter_type();
+      case PascalPackage.VARIABLE_PARAMETER_SECTION: return createvariable_parameter_section();
+      case PascalPackage.PROCEDURE_DECLARATION: return createprocedure_declaration();
+      case PascalPackage.PROCEDURE_HEADING: return createprocedure_heading();
       case PascalPackage.SET: return createset();
       case PascalPackage.NUMBER: return createnumber();
       case PascalPackage.ANY_NUMBER: return createany_number();
@@ -287,6 +298,127 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
   {
     function_designatorImpl function_designator = new function_designatorImpl();
     return function_designator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public function_procedure_declaration createfunction_procedure_declaration()
+  {
+    function_procedure_declarationImpl function_procedure_declaration = new function_procedure_declarationImpl();
+    return function_procedure_declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public function_heading createfunction_heading()
+  {
+    function_headingImpl function_heading = new function_headingImpl();
+    return function_heading;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public function_declaration createfunction_declaration()
+  {
+    function_declarationImpl function_declaration = new function_declarationImpl();
+    return function_declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public formal_parameter_list createformal_parameter_list()
+  {
+    formal_parameter_listImpl formal_parameter_list = new formal_parameter_listImpl();
+    return formal_parameter_list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public formal_parameter_section createformal_parameter_section()
+  {
+    formal_parameter_sectionImpl formal_parameter_section = new formal_parameter_sectionImpl();
+    return formal_parameter_section;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public value_parameter_section createvalue_parameter_section()
+  {
+    value_parameter_sectionImpl value_parameter_section = new value_parameter_sectionImpl();
+    return value_parameter_section;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public identifier_list createidentifier_list()
+  {
+    identifier_listImpl identifier_list = new identifier_listImpl();
+    return identifier_list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public parameter_type createparameter_type()
+  {
+    parameter_typeImpl parameter_type = new parameter_typeImpl();
+    return parameter_type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public variable_parameter_section createvariable_parameter_section()
+  {
+    variable_parameter_sectionImpl variable_parameter_section = new variable_parameter_sectionImpl();
+    return variable_parameter_section;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public procedure_declaration createprocedure_declaration()
+  {
+    procedure_declarationImpl procedure_declaration = new procedure_declarationImpl();
+    return procedure_declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public procedure_heading createprocedure_heading()
+  {
+    procedure_headingImpl procedure_heading = new procedure_headingImpl();
+    return procedure_heading;
   }
 
   /**

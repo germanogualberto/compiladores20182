@@ -97,18 +97,31 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class BlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.block");
-		private final Assignment cStatementAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cStatementStatement_partParserRuleCall_0 = (RuleCall)cStatementAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cAbstractionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cAbstractionFunction_procedure_declarationParserRuleCall_0_0 = (RuleCall)cAbstractionAssignment_0.eContents().get(0);
+		private final Assignment cStatementAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cStatementStatement_partParserRuleCall_1_0 = (RuleCall)cStatementAssignment_1.eContents().get(0);
 		
 		//block:
+		//	abstraction=function_procedure_declaration?
 		//	statement=statement_part;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//abstraction=function_procedure_declaration? statement=statement_part
+		public Group getGroup() { return cGroup; }
+		
+		//abstraction=function_procedure_declaration?
+		public Assignment getAbstractionAssignment_0() { return cAbstractionAssignment_0; }
+		
+		//function_procedure_declaration
+		public RuleCall getAbstractionFunction_procedure_declarationParserRuleCall_0_0() { return cAbstractionFunction_procedure_declarationParserRuleCall_0_0; }
+		
 		//statement=statement_part
-		public Assignment getStatementAssignment() { return cStatementAssignment; }
+		public Assignment getStatementAssignment_1() { return cStatementAssignment_1; }
 		
 		//statement_part
-		public RuleCall getStatementStatement_partParserRuleCall_0() { return cStatementStatement_partParserRuleCall_0; }
+		public RuleCall getStatementStatement_partParserRuleCall_1_0() { return cStatementStatement_partParserRuleCall_1_0; }
 	}
 	public class Statement_partElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.statement_part");
@@ -796,6 +809,381 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
+	public class Function_procedure_declarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.function_procedure_declaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Assignment cProceduresAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
+		private final RuleCall cProceduresFunction_declarationParserRuleCall_0_0_0 = (RuleCall)cProceduresAssignment_0_0.eContents().get(0);
+		private final Assignment cFunctionsAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
+		private final RuleCall cFunctionsProcedure_declarationParserRuleCall_0_1_0 = (RuleCall)cFunctionsAssignment_0_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//function_procedure_declaration:
+		//	((procedures+=function_declaration | functions+=procedure_declaration) ";")+;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//((procedures+=function_declaration | functions+=procedure_declaration) ";")+
+		public Group getGroup() { return cGroup; }
+		
+		//procedures+=function_declaration | functions+=procedure_declaration
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
+		//procedures+=function_declaration
+		public Assignment getProceduresAssignment_0_0() { return cProceduresAssignment_0_0; }
+		
+		//function_declaration
+		public RuleCall getProceduresFunction_declarationParserRuleCall_0_0_0() { return cProceduresFunction_declarationParserRuleCall_0_0_0; }
+		
+		//functions+=procedure_declaration
+		public Assignment getFunctionsAssignment_0_1() { return cFunctionsAssignment_0_1; }
+		
+		//procedure_declaration
+		public RuleCall getFunctionsProcedure_declarationParserRuleCall_0_1_0() { return cFunctionsProcedure_declarationParserRuleCall_0_1_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
+	}
+	public class Function_headingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.function_heading");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFunctionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cParametersAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParametersFormal_parameter_listParserRuleCall_2_0 = (RuleCall)cParametersAssignment_2.eContents().get(0);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cReturnTypeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cReturnTypeIDTerminalRuleCall_4_0 = (RuleCall)cReturnTypeAssignment_4.eContents().get(0);
+		
+		//function_heading:
+		//	"function" name=ID parameters=formal_parameter_list? ":" returnType=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"function" name=ID parameters=formal_parameter_list? ":" returnType=ID
+		public Group getGroup() { return cGroup; }
+		
+		//"function"
+		public Keyword getFunctionKeyword_0() { return cFunctionKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//parameters=formal_parameter_list?
+		public Assignment getParametersAssignment_2() { return cParametersAssignment_2; }
+		
+		//formal_parameter_list
+		public RuleCall getParametersFormal_parameter_listParserRuleCall_2_0() { return cParametersFormal_parameter_listParserRuleCall_2_0; }
+		
+		//":"
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//returnType=ID
+		public Assignment getReturnTypeAssignment_4() { return cReturnTypeAssignment_4; }
+		
+		//ID
+		public RuleCall getReturnTypeIDTerminalRuleCall_4_0() { return cReturnTypeIDTerminalRuleCall_4_0; }
+	}
+	public class Function_declarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.function_declaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cHeadingAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cHeadingFunction_headingParserRuleCall_0_0 = (RuleCall)cHeadingAssignment_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cBlockAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cBlockBlockParserRuleCall_2_0 = (RuleCall)cBlockAssignment_2.eContents().get(0);
+		
+		//function_declaration:
+		//	heading=function_heading ";" block=block;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//heading=function_heading ";" block=block
+		public Group getGroup() { return cGroup; }
+		
+		//heading=function_heading
+		public Assignment getHeadingAssignment_0() { return cHeadingAssignment_0; }
+		
+		//function_heading
+		public RuleCall getHeadingFunction_headingParserRuleCall_0_0() { return cHeadingFunction_headingParserRuleCall_0_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
+		
+		//block=block
+		public Assignment getBlockAssignment_2() { return cBlockAssignment_2; }
+		
+		//block
+		public RuleCall getBlockBlockParserRuleCall_2_0() { return cBlockBlockParserRuleCall_2_0; }
+	}
+	public class Formal_parameter_listElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.formal_parameter_list");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cParametersAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cParametersFormal_parameter_sectionParserRuleCall_1_0 = (RuleCall)cParametersAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cSemicolonKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cParametersAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cParametersFormal_parameter_sectionParserRuleCall_2_1_0 = (RuleCall)cParametersAssignment_2_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//formal_parameter_list:
+		//	"(" parameters+=formal_parameter_section (";" parameters+=formal_parameter_section)* ")";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"(" parameters+=formal_parameter_section (";" parameters+=formal_parameter_section)* ")"
+		public Group getGroup() { return cGroup; }
+		
+		//"("
+		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
+		
+		//parameters+=formal_parameter_section
+		public Assignment getParametersAssignment_1() { return cParametersAssignment_1; }
+		
+		//formal_parameter_section
+		public RuleCall getParametersFormal_parameter_sectionParserRuleCall_1_0() { return cParametersFormal_parameter_sectionParserRuleCall_1_0; }
+		
+		//(";" parameters+=formal_parameter_section)*
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_2_0() { return cSemicolonKeyword_2_0; }
+		
+		//parameters+=formal_parameter_section
+		public Assignment getParametersAssignment_2_1() { return cParametersAssignment_2_1; }
+		
+		//formal_parameter_section
+		public RuleCall getParametersFormal_parameter_sectionParserRuleCall_2_1_0() { return cParametersFormal_parameter_sectionParserRuleCall_2_1_0; }
+		
+		//")"
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class Formal_parameter_sectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.formal_parameter_section");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cValueValue_parameter_sectionParserRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
+		private final Assignment cVariableAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cVariableVariable_parameter_sectionParserRuleCall_1_0 = (RuleCall)cVariableAssignment_1.eContents().get(0);
+		private final Assignment cProcedureAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cProcedureProcedure_headingParserRuleCall_2_0 = (RuleCall)cProcedureAssignment_2.eContents().get(0);
+		private final Assignment cFunctionAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cFunctionFunction_headingParserRuleCall_3_0 = (RuleCall)cFunctionAssignment_3.eContents().get(0);
+		
+		//formal_parameter_section:
+		//	value=value_parameter_section | variable=variable_parameter_section | procedure=procedure_heading |
+		//	function=function_heading;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//value=value_parameter_section | variable=variable_parameter_section | procedure=procedure_heading |
+		//function=function_heading
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//value=value_parameter_section
+		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
+		
+		//value_parameter_section
+		public RuleCall getValueValue_parameter_sectionParserRuleCall_0_0() { return cValueValue_parameter_sectionParserRuleCall_0_0; }
+		
+		//variable=variable_parameter_section
+		public Assignment getVariableAssignment_1() { return cVariableAssignment_1; }
+		
+		//variable_parameter_section
+		public RuleCall getVariableVariable_parameter_sectionParserRuleCall_1_0() { return cVariableVariable_parameter_sectionParserRuleCall_1_0; }
+		
+		//procedure=procedure_heading
+		public Assignment getProcedureAssignment_2() { return cProcedureAssignment_2; }
+		
+		//procedure_heading
+		public RuleCall getProcedureProcedure_headingParserRuleCall_2_0() { return cProcedureProcedure_headingParserRuleCall_2_0; }
+		
+		//function=function_heading
+		public Assignment getFunctionAssignment_3() { return cFunctionAssignment_3; }
+		
+		//function_heading
+		public RuleCall getFunctionFunction_headingParserRuleCall_3_0() { return cFunctionFunction_headingParserRuleCall_3_0; }
+	}
+	public class Value_parameter_sectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.value_parameter_section");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cIdentifiersAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cIdentifiersIdentifier_listParserRuleCall_0_0 = (RuleCall)cIdentifiersAssignment_0.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeParameter_typeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		
+		//value_parameter_section:
+		//	identifiers=identifier_list ":" type=parameter_type;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//identifiers=identifier_list ":" type=parameter_type
+		public Group getGroup() { return cGroup; }
+		
+		//identifiers=identifier_list
+		public Assignment getIdentifiersAssignment_0() { return cIdentifiersAssignment_0; }
+		
+		//identifier_list
+		public RuleCall getIdentifiersIdentifier_listParserRuleCall_0_0() { return cIdentifiersIdentifier_listParserRuleCall_0_0; }
+		
+		//":"
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//type=parameter_type
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+		
+		//parameter_type
+		public RuleCall getTypeParameter_typeParserRuleCall_2_0() { return cTypeParameter_typeParserRuleCall_2_0; }
+	}
+	public class Identifier_listElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.identifier_list");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNamesAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNamesIDTerminalRuleCall_0_0 = (RuleCall)cNamesAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cNamesAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cNamesIDTerminalRuleCall_1_1_0 = (RuleCall)cNamesAssignment_1_1.eContents().get(0);
+		
+		//identifier_list:
+		//	names+=ID ("," names+=ID)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//names+=ID ("," names+=ID)*
+		public Group getGroup() { return cGroup; }
+		
+		//names+=ID
+		public Assignment getNamesAssignment_0() { return cNamesAssignment_0; }
+		
+		//ID
+		public RuleCall getNamesIDTerminalRuleCall_0_0() { return cNamesIDTerminalRuleCall_0_0; }
+		
+		//("," names+=ID)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//","
+		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+		
+		//names+=ID
+		public Assignment getNamesAssignment_1_1() { return cNamesAssignment_1_1; }
+		
+		//ID
+		public RuleCall getNamesIDTerminalRuleCall_1_1_0() { return cNamesIDTerminalRuleCall_1_1_0; }
+	}
+	public class Parameter_typeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.parameter_type");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//parameter_type:
+		//	name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=ID
+		public Assignment getNameAssignment() { return cNameAssignment; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+	}
+	public class Variable_parameter_sectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.variable_parameter_section");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cVarKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cIndentifiersAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIndentifiersIdentifier_listParserRuleCall_1_0 = (RuleCall)cIndentifiersAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTypeParameter_typeParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
+		
+		//variable_parameter_section:
+		//	"var" indentifiers=identifier_list ":" type=parameter_type;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"var" indentifiers=identifier_list ":" type=parameter_type
+		public Group getGroup() { return cGroup; }
+		
+		//"var"
+		public Keyword getVarKeyword_0() { return cVarKeyword_0; }
+		
+		//indentifiers=identifier_list
+		public Assignment getIndentifiersAssignment_1() { return cIndentifiersAssignment_1; }
+		
+		//identifier_list
+		public RuleCall getIndentifiersIdentifier_listParserRuleCall_1_0() { return cIndentifiersIdentifier_listParserRuleCall_1_0; }
+		
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//type=parameter_type
+		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
+		
+		//parameter_type
+		public RuleCall getTypeParameter_typeParserRuleCall_3_0() { return cTypeParameter_typeParserRuleCall_3_0; }
+	}
+	public class Procedure_declarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.procedure_declaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cHeadingAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cHeadingProcedure_headingParserRuleCall_0_0 = (RuleCall)cHeadingAssignment_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cBlockAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cBlockBlockParserRuleCall_2_0 = (RuleCall)cBlockAssignment_2.eContents().get(0);
+		
+		//procedure_declaration:
+		//	heading=procedure_heading ";" block=block;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//heading=procedure_heading ";" block=block
+		public Group getGroup() { return cGroup; }
+		
+		//heading=procedure_heading
+		public Assignment getHeadingAssignment_0() { return cHeadingAssignment_0; }
+		
+		//procedure_heading
+		public RuleCall getHeadingProcedure_headingParserRuleCall_0_0() { return cHeadingProcedure_headingParserRuleCall_0_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
+		
+		//block=block
+		public Assignment getBlockAssignment_2() { return cBlockAssignment_2; }
+		
+		//block
+		public RuleCall getBlockBlockParserRuleCall_2_0() { return cBlockBlockParserRuleCall_2_0; }
+	}
+	public class Procedure_headingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.procedure_heading");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cProcedureKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cParametersAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParametersFormal_parameter_listParserRuleCall_2_0 = (RuleCall)cParametersAssignment_2.eContents().get(0);
+		
+		//procedure_heading:
+		//	"procedure" name=ID parameters=formal_parameter_list?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"procedure" name=ID parameters=formal_parameter_list?
+		public Group getGroup() { return cGroup; }
+		
+		//"procedure"
+		public Keyword getProcedureKeyword_0() { return cProcedureKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//parameters=formal_parameter_list?
+		public Assignment getParametersAssignment_2() { return cParametersAssignment_2; }
+		
+		//formal_parameter_list
+		public RuleCall getParametersFormal_parameter_listParserRuleCall_2_0() { return cParametersFormal_parameter_listParserRuleCall_2_0; }
+	}
 	public class SetElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.set");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -939,6 +1327,17 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	private final TermElements pTerm;
 	private final FactorElements pFactor;
 	private final Function_designatorElements pFunction_designator;
+	private final Function_procedure_declarationElements pFunction_procedure_declaration;
+	private final Function_headingElements pFunction_heading;
+	private final Function_declarationElements pFunction_declaration;
+	private final Formal_parameter_listElements pFormal_parameter_list;
+	private final Formal_parameter_sectionElements pFormal_parameter_section;
+	private final Value_parameter_sectionElements pValue_parameter_section;
+	private final Identifier_listElements pIdentifier_list;
+	private final Parameter_typeElements pParameter_type;
+	private final Variable_parameter_sectionElements pVariable_parameter_section;
+	private final Procedure_declarationElements pProcedure_declaration;
+	private final Procedure_headingElements pProcedure_heading;
 	private final SetElements pSet;
 	private final NumberElements pNumber;
 	private final Any_numberElements pAny_number;
@@ -983,6 +1382,17 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTerm = new TermElements();
 		this.pFactor = new FactorElements();
 		this.pFunction_designator = new Function_designatorElements();
+		this.pFunction_procedure_declaration = new Function_procedure_declarationElements();
+		this.pFunction_heading = new Function_headingElements();
+		this.pFunction_declaration = new Function_declarationElements();
+		this.pFormal_parameter_list = new Formal_parameter_listElements();
+		this.pFormal_parameter_section = new Formal_parameter_sectionElements();
+		this.pValue_parameter_section = new Value_parameter_sectionElements();
+		this.pIdentifier_list = new Identifier_listElements();
+		this.pParameter_type = new Parameter_typeElements();
+		this.pVariable_parameter_section = new Variable_parameter_sectionElements();
+		this.pProcedure_declaration = new Procedure_declarationElements();
+		this.pProcedure_heading = new Procedure_headingElements();
 		this.pSet = new SetElements();
 		this.pNumber = new NumberElements();
 		this.pAny_number = new Any_numberElements();
@@ -1059,6 +1469,7 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//block:
+	//	abstraction=function_procedure_declaration?
 	//	statement=statement_part;
 	public BlockElements getBlockAccess() {
 		return pBlock;
@@ -1210,6 +1621,117 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getFunction_designatorRule() {
 		return getFunction_designatorAccess().getRule();
+	}
+	
+	//function_procedure_declaration:
+	//	((procedures+=function_declaration | functions+=procedure_declaration) ";")+;
+	public Function_procedure_declarationElements getFunction_procedure_declarationAccess() {
+		return pFunction_procedure_declaration;
+	}
+	
+	public ParserRule getFunction_procedure_declarationRule() {
+		return getFunction_procedure_declarationAccess().getRule();
+	}
+	
+	//function_heading:
+	//	"function" name=ID parameters=formal_parameter_list? ":" returnType=ID;
+	public Function_headingElements getFunction_headingAccess() {
+		return pFunction_heading;
+	}
+	
+	public ParserRule getFunction_headingRule() {
+		return getFunction_headingAccess().getRule();
+	}
+	
+	//function_declaration:
+	//	heading=function_heading ";" block=block;
+	public Function_declarationElements getFunction_declarationAccess() {
+		return pFunction_declaration;
+	}
+	
+	public ParserRule getFunction_declarationRule() {
+		return getFunction_declarationAccess().getRule();
+	}
+	
+	//formal_parameter_list:
+	//	"(" parameters+=formal_parameter_section (";" parameters+=formal_parameter_section)* ")";
+	public Formal_parameter_listElements getFormal_parameter_listAccess() {
+		return pFormal_parameter_list;
+	}
+	
+	public ParserRule getFormal_parameter_listRule() {
+		return getFormal_parameter_listAccess().getRule();
+	}
+	
+	//formal_parameter_section:
+	//	value=value_parameter_section | variable=variable_parameter_section | procedure=procedure_heading |
+	//	function=function_heading;
+	public Formal_parameter_sectionElements getFormal_parameter_sectionAccess() {
+		return pFormal_parameter_section;
+	}
+	
+	public ParserRule getFormal_parameter_sectionRule() {
+		return getFormal_parameter_sectionAccess().getRule();
+	}
+	
+	//value_parameter_section:
+	//	identifiers=identifier_list ":" type=parameter_type;
+	public Value_parameter_sectionElements getValue_parameter_sectionAccess() {
+		return pValue_parameter_section;
+	}
+	
+	public ParserRule getValue_parameter_sectionRule() {
+		return getValue_parameter_sectionAccess().getRule();
+	}
+	
+	//identifier_list:
+	//	names+=ID ("," names+=ID)*;
+	public Identifier_listElements getIdentifier_listAccess() {
+		return pIdentifier_list;
+	}
+	
+	public ParserRule getIdentifier_listRule() {
+		return getIdentifier_listAccess().getRule();
+	}
+	
+	//parameter_type:
+	//	name=ID;
+	public Parameter_typeElements getParameter_typeAccess() {
+		return pParameter_type;
+	}
+	
+	public ParserRule getParameter_typeRule() {
+		return getParameter_typeAccess().getRule();
+	}
+	
+	//variable_parameter_section:
+	//	"var" indentifiers=identifier_list ":" type=parameter_type;
+	public Variable_parameter_sectionElements getVariable_parameter_sectionAccess() {
+		return pVariable_parameter_section;
+	}
+	
+	public ParserRule getVariable_parameter_sectionRule() {
+		return getVariable_parameter_sectionAccess().getRule();
+	}
+	
+	//procedure_declaration:
+	//	heading=procedure_heading ";" block=block;
+	public Procedure_declarationElements getProcedure_declarationAccess() {
+		return pProcedure_declaration;
+	}
+	
+	public ParserRule getProcedure_declarationRule() {
+		return getProcedure_declarationAccess().getRule();
+	}
+	
+	//procedure_heading:
+	//	"procedure" name=ID parameters=formal_parameter_list?;
+	public Procedure_headingElements getProcedure_headingAccess() {
+		return pProcedure_heading;
+	}
+	
+	public ParserRule getProcedure_headingRule() {
+		return getProcedure_headingAccess().getRule();
 	}
 	
 	//set:

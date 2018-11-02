@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.pascal.pascal.PascalPackage;
 import org.xtext.example.pascal.pascal.block;
+import org.xtext.example.pascal.pascal.function_procedure_declaration;
 import org.xtext.example.pascal.pascal.statement_part;
 
 /**
@@ -24,6 +25,7 @@ import org.xtext.example.pascal.pascal.statement_part;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.pascal.pascal.impl.blockImpl#getAbstraction <em>Abstraction</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.blockImpl#getStatement <em>Statement</em>}</li>
  * </ul>
  *
@@ -31,6 +33,16 @@ import org.xtext.example.pascal.pascal.statement_part;
  */
 public class blockImpl extends MinimalEObjectImpl.Container implements block
 {
+  /**
+   * The cached value of the '{@link #getAbstraction() <em>Abstraction</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAbstraction()
+   * @generated
+   * @ordered
+   */
+  protected function_procedure_declaration abstraction;
+
   /**
    * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -60,6 +72,54 @@ public class blockImpl extends MinimalEObjectImpl.Container implements block
   protected EClass eStaticClass()
   {
     return PascalPackage.Literals.BLOCK;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public function_procedure_declaration getAbstraction()
+  {
+    return abstraction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAbstraction(function_procedure_declaration newAbstraction, NotificationChain msgs)
+  {
+    function_procedure_declaration oldAbstraction = abstraction;
+    abstraction = newAbstraction;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PascalPackage.BLOCK__ABSTRACTION, oldAbstraction, newAbstraction);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAbstraction(function_procedure_declaration newAbstraction)
+  {
+    if (newAbstraction != abstraction)
+    {
+      NotificationChain msgs = null;
+      if (abstraction != null)
+        msgs = ((InternalEObject)abstraction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PascalPackage.BLOCK__ABSTRACTION, null, msgs);
+      if (newAbstraction != null)
+        msgs = ((InternalEObject)newAbstraction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PascalPackage.BLOCK__ABSTRACTION, null, msgs);
+      msgs = basicSetAbstraction(newAbstraction, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.BLOCK__ABSTRACTION, newAbstraction, newAbstraction));
   }
 
   /**
@@ -120,6 +180,8 @@ public class blockImpl extends MinimalEObjectImpl.Container implements block
   {
     switch (featureID)
     {
+      case PascalPackage.BLOCK__ABSTRACTION:
+        return basicSetAbstraction(null, msgs);
       case PascalPackage.BLOCK__STATEMENT:
         return basicSetStatement(null, msgs);
     }
@@ -136,6 +198,8 @@ public class blockImpl extends MinimalEObjectImpl.Container implements block
   {
     switch (featureID)
     {
+      case PascalPackage.BLOCK__ABSTRACTION:
+        return getAbstraction();
       case PascalPackage.BLOCK__STATEMENT:
         return getStatement();
     }
@@ -152,6 +216,9 @@ public class blockImpl extends MinimalEObjectImpl.Container implements block
   {
     switch (featureID)
     {
+      case PascalPackage.BLOCK__ABSTRACTION:
+        setAbstraction((function_procedure_declaration)newValue);
+        return;
       case PascalPackage.BLOCK__STATEMENT:
         setStatement((statement_part)newValue);
         return;
@@ -169,6 +236,9 @@ public class blockImpl extends MinimalEObjectImpl.Container implements block
   {
     switch (featureID)
     {
+      case PascalPackage.BLOCK__ABSTRACTION:
+        setAbstraction((function_procedure_declaration)null);
+        return;
       case PascalPackage.BLOCK__STATEMENT:
         setStatement((statement_part)null);
         return;
@@ -186,6 +256,8 @@ public class blockImpl extends MinimalEObjectImpl.Container implements block
   {
     switch (featureID)
     {
+      case PascalPackage.BLOCK__ABSTRACTION:
+        return abstraction != null;
       case PascalPackage.BLOCK__STATEMENT:
         return statement != null;
     }

@@ -186,6 +186,105 @@ public interface PascalFactory extends EFactory
   function_designator createfunction_designator();
 
   /**
+   * Returns a new object of class '<em>function procedure declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>function procedure declaration</em>'.
+   * @generated
+   */
+  function_procedure_declaration createfunction_procedure_declaration();
+
+  /**
+   * Returns a new object of class '<em>function heading</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>function heading</em>'.
+   * @generated
+   */
+  function_heading createfunction_heading();
+
+  /**
+   * Returns a new object of class '<em>function declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>function declaration</em>'.
+   * @generated
+   */
+  function_declaration createfunction_declaration();
+
+  /**
+   * Returns a new object of class '<em>formal parameter list</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>formal parameter list</em>'.
+   * @generated
+   */
+  formal_parameter_list createformal_parameter_list();
+
+  /**
+   * Returns a new object of class '<em>formal parameter section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>formal parameter section</em>'.
+   * @generated
+   */
+  formal_parameter_section createformal_parameter_section();
+
+  /**
+   * Returns a new object of class '<em>value parameter section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>value parameter section</em>'.
+   * @generated
+   */
+  value_parameter_section createvalue_parameter_section();
+
+  /**
+   * Returns a new object of class '<em>identifier list</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>identifier list</em>'.
+   * @generated
+   */
+  identifier_list createidentifier_list();
+
+  /**
+   * Returns a new object of class '<em>parameter type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>parameter type</em>'.
+   * @generated
+   */
+  parameter_type createparameter_type();
+
+  /**
+   * Returns a new object of class '<em>variable parameter section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>variable parameter section</em>'.
+   * @generated
+   */
+  variable_parameter_section createvariable_parameter_section();
+
+  /**
+   * Returns a new object of class '<em>procedure declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>procedure declaration</em>'.
+   * @generated
+   */
+  procedure_declaration createprocedure_declaration();
+
+  /**
+   * Returns a new object of class '<em>procedure heading</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>procedure heading</em>'.
+   * @generated
+   */
+  procedure_heading createprocedure_heading();
+
+  /**
    * Returns a new object of class '<em>set</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

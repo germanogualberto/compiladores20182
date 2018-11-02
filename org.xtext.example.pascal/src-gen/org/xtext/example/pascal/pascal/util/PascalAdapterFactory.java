@@ -166,6 +166,61 @@ public class PascalAdapterFactory extends AdapterFactoryImpl
         return createfunction_designatorAdapter();
       }
       @Override
+      public Adapter casefunction_procedure_declaration(function_procedure_declaration object)
+      {
+        return createfunction_procedure_declarationAdapter();
+      }
+      @Override
+      public Adapter casefunction_heading(function_heading object)
+      {
+        return createfunction_headingAdapter();
+      }
+      @Override
+      public Adapter casefunction_declaration(function_declaration object)
+      {
+        return createfunction_declarationAdapter();
+      }
+      @Override
+      public Adapter caseformal_parameter_list(formal_parameter_list object)
+      {
+        return createformal_parameter_listAdapter();
+      }
+      @Override
+      public Adapter caseformal_parameter_section(formal_parameter_section object)
+      {
+        return createformal_parameter_sectionAdapter();
+      }
+      @Override
+      public Adapter casevalue_parameter_section(value_parameter_section object)
+      {
+        return createvalue_parameter_sectionAdapter();
+      }
+      @Override
+      public Adapter caseidentifier_list(identifier_list object)
+      {
+        return createidentifier_listAdapter();
+      }
+      @Override
+      public Adapter caseparameter_type(parameter_type object)
+      {
+        return createparameter_typeAdapter();
+      }
+      @Override
+      public Adapter casevariable_parameter_section(variable_parameter_section object)
+      {
+        return createvariable_parameter_sectionAdapter();
+      }
+      @Override
+      public Adapter caseprocedure_declaration(procedure_declaration object)
+      {
+        return createprocedure_declarationAdapter();
+      }
+      @Override
+      public Adapter caseprocedure_heading(procedure_heading object)
+      {
+        return createprocedure_headingAdapter();
+      }
+      @Override
       public Adapter caseset(set object)
       {
         return createsetAdapter();
@@ -468,6 +523,171 @@ public class PascalAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createfunction_designatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.function_procedure_declaration <em>function procedure declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.function_procedure_declaration
+   * @generated
+   */
+  public Adapter createfunction_procedure_declarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.function_heading <em>function heading</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.function_heading
+   * @generated
+   */
+  public Adapter createfunction_headingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.function_declaration <em>function declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.function_declaration
+   * @generated
+   */
+  public Adapter createfunction_declarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.formal_parameter_list <em>formal parameter list</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.formal_parameter_list
+   * @generated
+   */
+  public Adapter createformal_parameter_listAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.formal_parameter_section <em>formal parameter section</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.formal_parameter_section
+   * @generated
+   */
+  public Adapter createformal_parameter_sectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.value_parameter_section <em>value parameter section</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.value_parameter_section
+   * @generated
+   */
+  public Adapter createvalue_parameter_sectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.identifier_list <em>identifier list</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.identifier_list
+   * @generated
+   */
+  public Adapter createidentifier_listAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.parameter_type <em>parameter type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.parameter_type
+   * @generated
+   */
+  public Adapter createparameter_typeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.variable_parameter_section <em>variable parameter section</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.variable_parameter_section
+   * @generated
+   */
+  public Adapter createvariable_parameter_sectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.procedure_declaration <em>procedure declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.procedure_declaration
+   * @generated
+   */
+  public Adapter createprocedure_declarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.procedure_heading <em>procedure heading</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.procedure_heading
+   * @generated
+   */
+  public Adapter createprocedure_headingAdapter()
   {
     return null;
   }
