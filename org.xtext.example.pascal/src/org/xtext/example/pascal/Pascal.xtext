@@ -15,6 +15,10 @@ program_heading_block:
 ;
 
 block:
+	( label=label_declaration) ?
+	( type=type_definition_part) ?
+	( variable=variable_declaration_part) ?
+	( constant=constant_definition_part) ?
 	( abstraction=function_procedure_declaration) ? 
 	statement=statement_part
 ;
@@ -131,12 +135,82 @@ any_number:
 	unsigned_number | signed_number
 ;
 
+label_declaration:
+	"label" labels+=label ("," labels+=label) * ";"
+;
+
+constant:
+	opterator=ADDITION_OP ? (name=ID | number=number) | string=STRING | boolLiteral="true" | boolLiteral="false"
+;
+
+
+constant_definition_part:
+	"const" ( consts+=constant_definition ";") +	
+;
+
+constant_definition:
+	name=ID "=" const=constant
+;
+
+type_definition_part:
+	"type" (types+=type_definition ";") +
+;
+
+type_definition:
+	name=ID "=" type=type
+;
+
+type:
+	simple=simple_type | structured=strutured_type | pointer=pointer_type
+;
+
+simple_type:
+	subrange=subrange_type | enumerated=enumerated_type | name=ID
+;
+
+subrange_type hidden(WS):
+	initialConst=constant ".." finalConst=constant | subrange=NUMERIC_SUBRANGE const=constant
+;
+
+enumerated_type:
+	"(" identifiers=identifier_list ")"
+;
+
+strutured_type:
+	( packed?="packed" ) ? type=unpacked_strutured_type
+;
+
+unpacked_strutured_type:
+	set=set_type
+;
+
+set_type:
+	"set" "of" type=type
+;
+
+pointer_type:
+	"^" type=type
+;
+
 signed_number returns any_number:
 	integer=SIGNED_INTEGER_NUMBER | real=SIGNED_REAL_NUMBER
 ;
 
 unsigned_number returns any_number:
 	integer=INTEGER_NUMBER | real=REAL_NUMBER
+;
+
+variable_declaration_part:
+	"var" sections+=variable_section ";" ( sections+=variable_section ";" ) *
+;
+
+variable_section:
+	identifiers=variable_identifier_list ":" type=type	
+
+;
+
+variable_identifier_list:
+	names+=ID ( "," names+=ID ) *
 ;
 
 terminal ADDITION_OP:

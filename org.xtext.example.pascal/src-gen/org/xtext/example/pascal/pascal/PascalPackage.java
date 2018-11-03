@@ -161,13 +161,49 @@ public interface PascalPackage extends EPackage
   int BLOCK = 3;
 
   /**
+   * The feature id for the '<em><b>Label</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLOCK__LABEL = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLOCK__TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLOCK__VARIABLE = 2;
+
+  /**
+   * The feature id for the '<em><b>Constant</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLOCK__CONSTANT = 3;
+
+  /**
    * The feature id for the '<em><b>Abstraction</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BLOCK__ABSTRACTION = 0;
+  int BLOCK__ABSTRACTION = 4;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -176,7 +212,7 @@ public interface PascalPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BLOCK__STATEMENT = 1;
+  int BLOCK__STATEMENT = 5;
 
   /**
    * The number of structural features of the '<em>block</em>' class.
@@ -185,7 +221,7 @@ public interface PascalPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BLOCK_FEATURE_COUNT = 2;
+  int BLOCK_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.statement_partImpl <em>statement part</em>}' class.
@@ -1295,6 +1331,617 @@ public interface PascalPackage extends EPackage
    */
   int ANY_NUMBER_FEATURE_COUNT = 2;
 
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.label_declarationImpl <em>label declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.label_declarationImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getlabel_declaration()
+   * @generated
+   */
+  int LABEL_DECLARATION = 32;
+
+  /**
+   * The feature id for the '<em><b>Labels</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABEL_DECLARATION__LABELS = 0;
+
+  /**
+   * The number of structural features of the '<em>label declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABEL_DECLARATION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.constantImpl <em>constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.constantImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getconstant()
+   * @generated
+   */
+  int CONSTANT = 33;
+
+  /**
+   * The feature id for the '<em><b>Opterator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT__OPTERATOR = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Number</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT__NUMBER = 2;
+
+  /**
+   * The feature id for the '<em><b>String</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT__STRING = 3;
+
+  /**
+   * The feature id for the '<em><b>Bool Literal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT__BOOL_LITERAL = 4;
+
+  /**
+   * The number of structural features of the '<em>constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.constant_definition_partImpl <em>constant definition part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.constant_definition_partImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getconstant_definition_part()
+   * @generated
+   */
+  int CONSTANT_DEFINITION_PART = 34;
+
+  /**
+   * The feature id for the '<em><b>Consts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT_DEFINITION_PART__CONSTS = 0;
+
+  /**
+   * The number of structural features of the '<em>constant definition part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT_DEFINITION_PART_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.constant_definitionImpl <em>constant definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.constant_definitionImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getconstant_definition()
+   * @generated
+   */
+  int CONSTANT_DEFINITION = 35;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT_DEFINITION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Const</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT_DEFINITION__CONST = 1;
+
+  /**
+   * The number of structural features of the '<em>constant definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT_DEFINITION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.type_definition_partImpl <em>type definition part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.type_definition_partImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#gettype_definition_part()
+   * @generated
+   */
+  int TYPE_DEFINITION_PART = 36;
+
+  /**
+   * The feature id for the '<em><b>Types</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_DEFINITION_PART__TYPES = 0;
+
+  /**
+   * The number of structural features of the '<em>type definition part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_DEFINITION_PART_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.type_definitionImpl <em>type definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.type_definitionImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#gettype_definition()
+   * @generated
+   */
+  int TYPE_DEFINITION = 37;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_DEFINITION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_DEFINITION__TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>type definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_DEFINITION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.typeImpl <em>type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.typeImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#gettype()
+   * @generated
+   */
+  int TYPE = 38;
+
+  /**
+   * The feature id for the '<em><b>Simple</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__SIMPLE = 0;
+
+  /**
+   * The feature id for the '<em><b>Structured</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__STRUCTURED = 1;
+
+  /**
+   * The feature id for the '<em><b>Pointer</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__POINTER = 2;
+
+  /**
+   * The number of structural features of the '<em>type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.simple_typeImpl <em>simple type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.simple_typeImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getsimple_type()
+   * @generated
+   */
+  int SIMPLE_TYPE = 39;
+
+  /**
+   * The feature id for the '<em><b>Subrange</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_TYPE__SUBRANGE = 0;
+
+  /**
+   * The feature id for the '<em><b>Enumerated</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_TYPE__ENUMERATED = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_TYPE__NAME = 2;
+
+  /**
+   * The number of structural features of the '<em>simple type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_TYPE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.subrange_typeImpl <em>subrange type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.subrange_typeImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getsubrange_type()
+   * @generated
+   */
+  int SUBRANGE_TYPE = 40;
+
+  /**
+   * The feature id for the '<em><b>Initial Const</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBRANGE_TYPE__INITIAL_CONST = 0;
+
+  /**
+   * The feature id for the '<em><b>Final Const</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBRANGE_TYPE__FINAL_CONST = 1;
+
+  /**
+   * The feature id for the '<em><b>Subrange</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBRANGE_TYPE__SUBRANGE = 2;
+
+  /**
+   * The feature id for the '<em><b>Const</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBRANGE_TYPE__CONST = 3;
+
+  /**
+   * The number of structural features of the '<em>subrange type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBRANGE_TYPE_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.enumerated_typeImpl <em>enumerated type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.enumerated_typeImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getenumerated_type()
+   * @generated
+   */
+  int ENUMERATED_TYPE = 41;
+
+  /**
+   * The feature id for the '<em><b>Identifiers</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATED_TYPE__IDENTIFIERS = 0;
+
+  /**
+   * The number of structural features of the '<em>enumerated type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATED_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.strutured_typeImpl <em>strutured type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.strutured_typeImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getstrutured_type()
+   * @generated
+   */
+  int STRUTURED_TYPE = 42;
+
+  /**
+   * The feature id for the '<em><b>Packed</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUTURED_TYPE__PACKED = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUTURED_TYPE__TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>strutured type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUTURED_TYPE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.unpacked_strutured_typeImpl <em>unpacked strutured type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.unpacked_strutured_typeImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getunpacked_strutured_type()
+   * @generated
+   */
+  int UNPACKED_STRUTURED_TYPE = 43;
+
+  /**
+   * The feature id for the '<em><b>Set</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNPACKED_STRUTURED_TYPE__SET = 0;
+
+  /**
+   * The number of structural features of the '<em>unpacked strutured type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNPACKED_STRUTURED_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.set_typeImpl <em>set type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.set_typeImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getset_type()
+   * @generated
+   */
+  int SET_TYPE = 44;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_TYPE__TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>set type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.pointer_typeImpl <em>pointer type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.pointer_typeImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getpointer_type()
+   * @generated
+   */
+  int POINTER_TYPE = 45;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINTER_TYPE__TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>pointer type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINTER_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.variable_declaration_partImpl <em>variable declaration part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.variable_declaration_partImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getvariable_declaration_part()
+   * @generated
+   */
+  int VARIABLE_DECLARATION_PART = 46;
+
+  /**
+   * The feature id for the '<em><b>Sections</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DECLARATION_PART__SECTIONS = 0;
+
+  /**
+   * The number of structural features of the '<em>variable declaration part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DECLARATION_PART_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.variable_sectionImpl <em>variable section</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.variable_sectionImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getvariable_section()
+   * @generated
+   */
+  int VARIABLE_SECTION = 47;
+
+  /**
+   * The feature id for the '<em><b>Identifiers</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_SECTION__IDENTIFIERS = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_SECTION__TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>variable section</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_SECTION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.pascal.pascal.impl.variable_identifier_listImpl <em>variable identifier list</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.pascal.pascal.impl.variable_identifier_listImpl
+   * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getvariable_identifier_list()
+   * @generated
+   */
+  int VARIABLE_IDENTIFIER_LIST = 48;
+
+  /**
+   * The feature id for the '<em><b>Names</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_IDENTIFIER_LIST__NAMES = 0;
+
+  /**
+   * The number of structural features of the '<em>variable identifier list</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_IDENTIFIER_LIST_FEATURE_COUNT = 1;
+
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.pascal <em>pascal</em>}'.
@@ -1379,6 +2026,50 @@ public interface PascalPackage extends EPackage
    * @generated
    */
   EClass getblock();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.block#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Label</em>'.
+   * @see org.xtext.example.pascal.pascal.block#getLabel()
+   * @see #getblock()
+   * @generated
+   */
+  EReference getblock_Label();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.block#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.example.pascal.pascal.block#getType()
+   * @see #getblock()
+   * @generated
+   */
+  EReference getblock_Type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.block#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable</em>'.
+   * @see org.xtext.example.pascal.pascal.block#getVariable()
+   * @see #getblock()
+   * @generated
+   */
+  EReference getblock_Variable();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.block#getConstant <em>Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Constant</em>'.
+   * @see org.xtext.example.pascal.pascal.block#getConstant()
+   * @see #getblock()
+   * @generated
+   */
+  EReference getblock_Constant();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.block#getAbstraction <em>Abstraction</em>}'.
@@ -2387,6 +3078,528 @@ public interface PascalPackage extends EPackage
   EAttribute getany_number_Real();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.label_declaration <em>label declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>label declaration</em>'.
+   * @see org.xtext.example.pascal.pascal.label_declaration
+   * @generated
+   */
+  EClass getlabel_declaration();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.pascal.pascal.label_declaration#getLabels <em>Labels</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Labels</em>'.
+   * @see org.xtext.example.pascal.pascal.label_declaration#getLabels()
+   * @see #getlabel_declaration()
+   * @generated
+   */
+  EReference getlabel_declaration_Labels();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.constant <em>constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>constant</em>'.
+   * @see org.xtext.example.pascal.pascal.constant
+   * @generated
+   */
+  EClass getconstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.pascal.pascal.constant#getOpterator <em>Opterator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Opterator</em>'.
+   * @see org.xtext.example.pascal.pascal.constant#getOpterator()
+   * @see #getconstant()
+   * @generated
+   */
+  EAttribute getconstant_Opterator();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.pascal.pascal.constant#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.pascal.pascal.constant#getName()
+   * @see #getconstant()
+   * @generated
+   */
+  EAttribute getconstant_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.constant#getNumber <em>Number</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Number</em>'.
+   * @see org.xtext.example.pascal.pascal.constant#getNumber()
+   * @see #getconstant()
+   * @generated
+   */
+  EReference getconstant_Number();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.pascal.pascal.constant#getString <em>String</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>String</em>'.
+   * @see org.xtext.example.pascal.pascal.constant#getString()
+   * @see #getconstant()
+   * @generated
+   */
+  EAttribute getconstant_String();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.pascal.pascal.constant#getBoolLiteral <em>Bool Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Bool Literal</em>'.
+   * @see org.xtext.example.pascal.pascal.constant#getBoolLiteral()
+   * @see #getconstant()
+   * @generated
+   */
+  EAttribute getconstant_BoolLiteral();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.constant_definition_part <em>constant definition part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>constant definition part</em>'.
+   * @see org.xtext.example.pascal.pascal.constant_definition_part
+   * @generated
+   */
+  EClass getconstant_definition_part();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.pascal.pascal.constant_definition_part#getConsts <em>Consts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Consts</em>'.
+   * @see org.xtext.example.pascal.pascal.constant_definition_part#getConsts()
+   * @see #getconstant_definition_part()
+   * @generated
+   */
+  EReference getconstant_definition_part_Consts();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.constant_definition <em>constant definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>constant definition</em>'.
+   * @see org.xtext.example.pascal.pascal.constant_definition
+   * @generated
+   */
+  EClass getconstant_definition();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.pascal.pascal.constant_definition#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.pascal.pascal.constant_definition#getName()
+   * @see #getconstant_definition()
+   * @generated
+   */
+  EAttribute getconstant_definition_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.constant_definition#getConst <em>Const</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Const</em>'.
+   * @see org.xtext.example.pascal.pascal.constant_definition#getConst()
+   * @see #getconstant_definition()
+   * @generated
+   */
+  EReference getconstant_definition_Const();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.type_definition_part <em>type definition part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type definition part</em>'.
+   * @see org.xtext.example.pascal.pascal.type_definition_part
+   * @generated
+   */
+  EClass gettype_definition_part();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.pascal.pascal.type_definition_part#getTypes <em>Types</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Types</em>'.
+   * @see org.xtext.example.pascal.pascal.type_definition_part#getTypes()
+   * @see #gettype_definition_part()
+   * @generated
+   */
+  EReference gettype_definition_part_Types();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.type_definition <em>type definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type definition</em>'.
+   * @see org.xtext.example.pascal.pascal.type_definition
+   * @generated
+   */
+  EClass gettype_definition();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.pascal.pascal.type_definition#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.pascal.pascal.type_definition#getName()
+   * @see #gettype_definition()
+   * @generated
+   */
+  EAttribute gettype_definition_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.type_definition#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.example.pascal.pascal.type_definition#getType()
+   * @see #gettype_definition()
+   * @generated
+   */
+  EReference gettype_definition_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.type <em>type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type</em>'.
+   * @see org.xtext.example.pascal.pascal.type
+   * @generated
+   */
+  EClass gettype();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.type#getSimple <em>Simple</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Simple</em>'.
+   * @see org.xtext.example.pascal.pascal.type#getSimple()
+   * @see #gettype()
+   * @generated
+   */
+  EReference gettype_Simple();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.type#getStructured <em>Structured</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Structured</em>'.
+   * @see org.xtext.example.pascal.pascal.type#getStructured()
+   * @see #gettype()
+   * @generated
+   */
+  EReference gettype_Structured();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.type#getPointer <em>Pointer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pointer</em>'.
+   * @see org.xtext.example.pascal.pascal.type#getPointer()
+   * @see #gettype()
+   * @generated
+   */
+  EReference gettype_Pointer();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.simple_type <em>simple type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>simple type</em>'.
+   * @see org.xtext.example.pascal.pascal.simple_type
+   * @generated
+   */
+  EClass getsimple_type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.simple_type#getSubrange <em>Subrange</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Subrange</em>'.
+   * @see org.xtext.example.pascal.pascal.simple_type#getSubrange()
+   * @see #getsimple_type()
+   * @generated
+   */
+  EReference getsimple_type_Subrange();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.simple_type#getEnumerated <em>Enumerated</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Enumerated</em>'.
+   * @see org.xtext.example.pascal.pascal.simple_type#getEnumerated()
+   * @see #getsimple_type()
+   * @generated
+   */
+  EReference getsimple_type_Enumerated();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.pascal.pascal.simple_type#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.pascal.pascal.simple_type#getName()
+   * @see #getsimple_type()
+   * @generated
+   */
+  EAttribute getsimple_type_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.subrange_type <em>subrange type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>subrange type</em>'.
+   * @see org.xtext.example.pascal.pascal.subrange_type
+   * @generated
+   */
+  EClass getsubrange_type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.subrange_type#getInitialConst <em>Initial Const</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Initial Const</em>'.
+   * @see org.xtext.example.pascal.pascal.subrange_type#getInitialConst()
+   * @see #getsubrange_type()
+   * @generated
+   */
+  EReference getsubrange_type_InitialConst();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.subrange_type#getFinalConst <em>Final Const</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Final Const</em>'.
+   * @see org.xtext.example.pascal.pascal.subrange_type#getFinalConst()
+   * @see #getsubrange_type()
+   * @generated
+   */
+  EReference getsubrange_type_FinalConst();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.pascal.pascal.subrange_type#getSubrange <em>Subrange</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Subrange</em>'.
+   * @see org.xtext.example.pascal.pascal.subrange_type#getSubrange()
+   * @see #getsubrange_type()
+   * @generated
+   */
+  EAttribute getsubrange_type_Subrange();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.subrange_type#getConst <em>Const</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Const</em>'.
+   * @see org.xtext.example.pascal.pascal.subrange_type#getConst()
+   * @see #getsubrange_type()
+   * @generated
+   */
+  EReference getsubrange_type_Const();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.enumerated_type <em>enumerated type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>enumerated type</em>'.
+   * @see org.xtext.example.pascal.pascal.enumerated_type
+   * @generated
+   */
+  EClass getenumerated_type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.enumerated_type#getIdentifiers <em>Identifiers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Identifiers</em>'.
+   * @see org.xtext.example.pascal.pascal.enumerated_type#getIdentifiers()
+   * @see #getenumerated_type()
+   * @generated
+   */
+  EReference getenumerated_type_Identifiers();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.strutured_type <em>strutured type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>strutured type</em>'.
+   * @see org.xtext.example.pascal.pascal.strutured_type
+   * @generated
+   */
+  EClass getstrutured_type();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.pascal.pascal.strutured_type#isPacked <em>Packed</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Packed</em>'.
+   * @see org.xtext.example.pascal.pascal.strutured_type#isPacked()
+   * @see #getstrutured_type()
+   * @generated
+   */
+  EAttribute getstrutured_type_Packed();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.strutured_type#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.example.pascal.pascal.strutured_type#getType()
+   * @see #getstrutured_type()
+   * @generated
+   */
+  EReference getstrutured_type_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.unpacked_strutured_type <em>unpacked strutured type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>unpacked strutured type</em>'.
+   * @see org.xtext.example.pascal.pascal.unpacked_strutured_type
+   * @generated
+   */
+  EClass getunpacked_strutured_type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.unpacked_strutured_type#getSet <em>Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Set</em>'.
+   * @see org.xtext.example.pascal.pascal.unpacked_strutured_type#getSet()
+   * @see #getunpacked_strutured_type()
+   * @generated
+   */
+  EReference getunpacked_strutured_type_Set();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.set_type <em>set type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>set type</em>'.
+   * @see org.xtext.example.pascal.pascal.set_type
+   * @generated
+   */
+  EClass getset_type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.set_type#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.example.pascal.pascal.set_type#getType()
+   * @see #getset_type()
+   * @generated
+   */
+  EReference getset_type_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.pointer_type <em>pointer type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>pointer type</em>'.
+   * @see org.xtext.example.pascal.pascal.pointer_type
+   * @generated
+   */
+  EClass getpointer_type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.pointer_type#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.example.pascal.pascal.pointer_type#getType()
+   * @see #getpointer_type()
+   * @generated
+   */
+  EReference getpointer_type_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.variable_declaration_part <em>variable declaration part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>variable declaration part</em>'.
+   * @see org.xtext.example.pascal.pascal.variable_declaration_part
+   * @generated
+   */
+  EClass getvariable_declaration_part();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.pascal.pascal.variable_declaration_part#getSections <em>Sections</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Sections</em>'.
+   * @see org.xtext.example.pascal.pascal.variable_declaration_part#getSections()
+   * @see #getvariable_declaration_part()
+   * @generated
+   */
+  EReference getvariable_declaration_part_Sections();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.variable_section <em>variable section</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>variable section</em>'.
+   * @see org.xtext.example.pascal.pascal.variable_section
+   * @generated
+   */
+  EClass getvariable_section();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.variable_section#getIdentifiers <em>Identifiers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Identifiers</em>'.
+   * @see org.xtext.example.pascal.pascal.variable_section#getIdentifiers()
+   * @see #getvariable_section()
+   * @generated
+   */
+  EReference getvariable_section_Identifiers();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.pascal.pascal.variable_section#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.xtext.example.pascal.pascal.variable_section#getType()
+   * @see #getvariable_section()
+   * @generated
+   */
+  EReference getvariable_section_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.pascal.pascal.variable_identifier_list <em>variable identifier list</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>variable identifier list</em>'.
+   * @see org.xtext.example.pascal.pascal.variable_identifier_list
+   * @generated
+   */
+  EClass getvariable_identifier_list();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.example.pascal.pascal.variable_identifier_list#getNames <em>Names</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Names</em>'.
+   * @see org.xtext.example.pascal.pascal.variable_identifier_list#getNames()
+   * @see #getvariable_identifier_list()
+   * @generated
+   */
+  EAttribute getvariable_identifier_list_Names();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2480,6 +3693,38 @@ public interface PascalPackage extends EPackage
      * @generated
      */
     EClass BLOCK = eINSTANCE.getblock();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BLOCK__LABEL = eINSTANCE.getblock_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BLOCK__TYPE = eINSTANCE.getblock_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BLOCK__VARIABLE = eINSTANCE.getblock_Variable();
+
+    /**
+     * The meta object literal for the '<em><b>Constant</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BLOCK__CONSTANT = eINSTANCE.getblock_Constant();
 
     /**
      * The meta object literal for the '<em><b>Abstraction</b></em>' containment reference feature.
@@ -3288,6 +4533,432 @@ public interface PascalPackage extends EPackage
      * @generated
      */
     EAttribute ANY_NUMBER__REAL = eINSTANCE.getany_number_Real();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.label_declarationImpl <em>label declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.label_declarationImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getlabel_declaration()
+     * @generated
+     */
+    EClass LABEL_DECLARATION = eINSTANCE.getlabel_declaration();
+
+    /**
+     * The meta object literal for the '<em><b>Labels</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LABEL_DECLARATION__LABELS = eINSTANCE.getlabel_declaration_Labels();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.constantImpl <em>constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.constantImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getconstant()
+     * @generated
+     */
+    EClass CONSTANT = eINSTANCE.getconstant();
+
+    /**
+     * The meta object literal for the '<em><b>Opterator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONSTANT__OPTERATOR = eINSTANCE.getconstant_Opterator();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONSTANT__NAME = eINSTANCE.getconstant_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Number</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONSTANT__NUMBER = eINSTANCE.getconstant_Number();
+
+    /**
+     * The meta object literal for the '<em><b>String</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONSTANT__STRING = eINSTANCE.getconstant_String();
+
+    /**
+     * The meta object literal for the '<em><b>Bool Literal</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONSTANT__BOOL_LITERAL = eINSTANCE.getconstant_BoolLiteral();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.constant_definition_partImpl <em>constant definition part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.constant_definition_partImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getconstant_definition_part()
+     * @generated
+     */
+    EClass CONSTANT_DEFINITION_PART = eINSTANCE.getconstant_definition_part();
+
+    /**
+     * The meta object literal for the '<em><b>Consts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONSTANT_DEFINITION_PART__CONSTS = eINSTANCE.getconstant_definition_part_Consts();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.constant_definitionImpl <em>constant definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.constant_definitionImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getconstant_definition()
+     * @generated
+     */
+    EClass CONSTANT_DEFINITION = eINSTANCE.getconstant_definition();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONSTANT_DEFINITION__NAME = eINSTANCE.getconstant_definition_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Const</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONSTANT_DEFINITION__CONST = eINSTANCE.getconstant_definition_Const();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.type_definition_partImpl <em>type definition part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.type_definition_partImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#gettype_definition_part()
+     * @generated
+     */
+    EClass TYPE_DEFINITION_PART = eINSTANCE.gettype_definition_part();
+
+    /**
+     * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_DEFINITION_PART__TYPES = eINSTANCE.gettype_definition_part_Types();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.type_definitionImpl <em>type definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.type_definitionImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#gettype_definition()
+     * @generated
+     */
+    EClass TYPE_DEFINITION = eINSTANCE.gettype_definition();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE_DEFINITION__NAME = eINSTANCE.gettype_definition_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_DEFINITION__TYPE = eINSTANCE.gettype_definition_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.typeImpl <em>type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.typeImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#gettype()
+     * @generated
+     */
+    EClass TYPE = eINSTANCE.gettype();
+
+    /**
+     * The meta object literal for the '<em><b>Simple</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE__SIMPLE = eINSTANCE.gettype_Simple();
+
+    /**
+     * The meta object literal for the '<em><b>Structured</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE__STRUCTURED = eINSTANCE.gettype_Structured();
+
+    /**
+     * The meta object literal for the '<em><b>Pointer</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE__POINTER = eINSTANCE.gettype_Pointer();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.simple_typeImpl <em>simple type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.simple_typeImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getsimple_type()
+     * @generated
+     */
+    EClass SIMPLE_TYPE = eINSTANCE.getsimple_type();
+
+    /**
+     * The meta object literal for the '<em><b>Subrange</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_TYPE__SUBRANGE = eINSTANCE.getsimple_type_Subrange();
+
+    /**
+     * The meta object literal for the '<em><b>Enumerated</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_TYPE__ENUMERATED = eINSTANCE.getsimple_type_Enumerated();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_TYPE__NAME = eINSTANCE.getsimple_type_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.subrange_typeImpl <em>subrange type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.subrange_typeImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getsubrange_type()
+     * @generated
+     */
+    EClass SUBRANGE_TYPE = eINSTANCE.getsubrange_type();
+
+    /**
+     * The meta object literal for the '<em><b>Initial Const</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBRANGE_TYPE__INITIAL_CONST = eINSTANCE.getsubrange_type_InitialConst();
+
+    /**
+     * The meta object literal for the '<em><b>Final Const</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBRANGE_TYPE__FINAL_CONST = eINSTANCE.getsubrange_type_FinalConst();
+
+    /**
+     * The meta object literal for the '<em><b>Subrange</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SUBRANGE_TYPE__SUBRANGE = eINSTANCE.getsubrange_type_Subrange();
+
+    /**
+     * The meta object literal for the '<em><b>Const</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBRANGE_TYPE__CONST = eINSTANCE.getsubrange_type_Const();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.enumerated_typeImpl <em>enumerated type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.enumerated_typeImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getenumerated_type()
+     * @generated
+     */
+    EClass ENUMERATED_TYPE = eINSTANCE.getenumerated_type();
+
+    /**
+     * The meta object literal for the '<em><b>Identifiers</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENUMERATED_TYPE__IDENTIFIERS = eINSTANCE.getenumerated_type_Identifiers();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.strutured_typeImpl <em>strutured type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.strutured_typeImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getstrutured_type()
+     * @generated
+     */
+    EClass STRUTURED_TYPE = eINSTANCE.getstrutured_type();
+
+    /**
+     * The meta object literal for the '<em><b>Packed</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRUTURED_TYPE__PACKED = eINSTANCE.getstrutured_type_Packed();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STRUTURED_TYPE__TYPE = eINSTANCE.getstrutured_type_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.unpacked_strutured_typeImpl <em>unpacked strutured type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.unpacked_strutured_typeImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getunpacked_strutured_type()
+     * @generated
+     */
+    EClass UNPACKED_STRUTURED_TYPE = eINSTANCE.getunpacked_strutured_type();
+
+    /**
+     * The meta object literal for the '<em><b>Set</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNPACKED_STRUTURED_TYPE__SET = eINSTANCE.getunpacked_strutured_type_Set();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.set_typeImpl <em>set type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.set_typeImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getset_type()
+     * @generated
+     */
+    EClass SET_TYPE = eINSTANCE.getset_type();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SET_TYPE__TYPE = eINSTANCE.getset_type_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.pointer_typeImpl <em>pointer type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.pointer_typeImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getpointer_type()
+     * @generated
+     */
+    EClass POINTER_TYPE = eINSTANCE.getpointer_type();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POINTER_TYPE__TYPE = eINSTANCE.getpointer_type_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.variable_declaration_partImpl <em>variable declaration part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.variable_declaration_partImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getvariable_declaration_part()
+     * @generated
+     */
+    EClass VARIABLE_DECLARATION_PART = eINSTANCE.getvariable_declaration_part();
+
+    /**
+     * The meta object literal for the '<em><b>Sections</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_DECLARATION_PART__SECTIONS = eINSTANCE.getvariable_declaration_part_Sections();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.variable_sectionImpl <em>variable section</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.variable_sectionImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getvariable_section()
+     * @generated
+     */
+    EClass VARIABLE_SECTION = eINSTANCE.getvariable_section();
+
+    /**
+     * The meta object literal for the '<em><b>Identifiers</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_SECTION__IDENTIFIERS = eINSTANCE.getvariable_section_Identifiers();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_SECTION__TYPE = eINSTANCE.getvariable_section_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.pascal.pascal.impl.variable_identifier_listImpl <em>variable identifier list</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.pascal.pascal.impl.variable_identifier_listImpl
+     * @see org.xtext.example.pascal.pascal.impl.PascalPackageImpl#getvariable_identifier_list()
+     * @generated
+     */
+    EClass VARIABLE_IDENTIFIER_LIST = eINSTANCE.getvariable_identifier_list();
+
+    /**
+     * The meta object literal for the '<em><b>Names</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE_IDENTIFIER_LIST__NAMES = eINSTANCE.getvariable_identifier_list_Names();
 
   }
 

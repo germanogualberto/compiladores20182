@@ -97,6 +97,23 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
       case PascalPackage.SET: return createset();
       case PascalPackage.NUMBER: return createnumber();
       case PascalPackage.ANY_NUMBER: return createany_number();
+      case PascalPackage.LABEL_DECLARATION: return createlabel_declaration();
+      case PascalPackage.CONSTANT: return createconstant();
+      case PascalPackage.CONSTANT_DEFINITION_PART: return createconstant_definition_part();
+      case PascalPackage.CONSTANT_DEFINITION: return createconstant_definition();
+      case PascalPackage.TYPE_DEFINITION_PART: return createtype_definition_part();
+      case PascalPackage.TYPE_DEFINITION: return createtype_definition();
+      case PascalPackage.TYPE: return createtype();
+      case PascalPackage.SIMPLE_TYPE: return createsimple_type();
+      case PascalPackage.SUBRANGE_TYPE: return createsubrange_type();
+      case PascalPackage.ENUMERATED_TYPE: return createenumerated_type();
+      case PascalPackage.STRUTURED_TYPE: return createstrutured_type();
+      case PascalPackage.UNPACKED_STRUTURED_TYPE: return createunpacked_strutured_type();
+      case PascalPackage.SET_TYPE: return createset_type();
+      case PascalPackage.POINTER_TYPE: return createpointer_type();
+      case PascalPackage.VARIABLE_DECLARATION_PART: return createvariable_declaration_part();
+      case PascalPackage.VARIABLE_SECTION: return createvariable_section();
+      case PascalPackage.VARIABLE_IDENTIFIER_LIST: return createvariable_identifier_list();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -452,6 +469,193 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
   {
     any_numberImpl any_number = new any_numberImpl();
     return any_number;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public label_declaration createlabel_declaration()
+  {
+    label_declarationImpl label_declaration = new label_declarationImpl();
+    return label_declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public constant createconstant()
+  {
+    constantImpl constant = new constantImpl();
+    return constant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public constant_definition_part createconstant_definition_part()
+  {
+    constant_definition_partImpl constant_definition_part = new constant_definition_partImpl();
+    return constant_definition_part;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public constant_definition createconstant_definition()
+  {
+    constant_definitionImpl constant_definition = new constant_definitionImpl();
+    return constant_definition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public type_definition_part createtype_definition_part()
+  {
+    type_definition_partImpl type_definition_part = new type_definition_partImpl();
+    return type_definition_part;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public type_definition createtype_definition()
+  {
+    type_definitionImpl type_definition = new type_definitionImpl();
+    return type_definition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public type createtype()
+  {
+    typeImpl type = new typeImpl();
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public simple_type createsimple_type()
+  {
+    simple_typeImpl simple_type = new simple_typeImpl();
+    return simple_type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public subrange_type createsubrange_type()
+  {
+    subrange_typeImpl subrange_type = new subrange_typeImpl();
+    return subrange_type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public enumerated_type createenumerated_type()
+  {
+    enumerated_typeImpl enumerated_type = new enumerated_typeImpl();
+    return enumerated_type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public strutured_type createstrutured_type()
+  {
+    strutured_typeImpl strutured_type = new strutured_typeImpl();
+    return strutured_type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public unpacked_strutured_type createunpacked_strutured_type()
+  {
+    unpacked_strutured_typeImpl unpacked_strutured_type = new unpacked_strutured_typeImpl();
+    return unpacked_strutured_type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public set_type createset_type()
+  {
+    set_typeImpl set_type = new set_typeImpl();
+    return set_type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public pointer_type createpointer_type()
+  {
+    pointer_typeImpl pointer_type = new pointer_typeImpl();
+    return pointer_type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public variable_declaration_part createvariable_declaration_part()
+  {
+    variable_declaration_partImpl variable_declaration_part = new variable_declaration_partImpl();
+    return variable_declaration_part;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public variable_section createvariable_section()
+  {
+    variable_sectionImpl variable_section = new variable_sectionImpl();
+    return variable_section;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public variable_identifier_list createvariable_identifier_list()
+  {
+    variable_identifier_listImpl variable_identifier_list = new variable_identifier_listImpl();
+    return variable_identifier_list;
   }
 
   /**

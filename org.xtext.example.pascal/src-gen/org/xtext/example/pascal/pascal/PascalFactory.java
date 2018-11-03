@@ -312,6 +312,159 @@ public interface PascalFactory extends EFactory
   any_number createany_number();
 
   /**
+   * Returns a new object of class '<em>label declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>label declaration</em>'.
+   * @generated
+   */
+  label_declaration createlabel_declaration();
+
+  /**
+   * Returns a new object of class '<em>constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>constant</em>'.
+   * @generated
+   */
+  constant createconstant();
+
+  /**
+   * Returns a new object of class '<em>constant definition part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>constant definition part</em>'.
+   * @generated
+   */
+  constant_definition_part createconstant_definition_part();
+
+  /**
+   * Returns a new object of class '<em>constant definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>constant definition</em>'.
+   * @generated
+   */
+  constant_definition createconstant_definition();
+
+  /**
+   * Returns a new object of class '<em>type definition part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>type definition part</em>'.
+   * @generated
+   */
+  type_definition_part createtype_definition_part();
+
+  /**
+   * Returns a new object of class '<em>type definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>type definition</em>'.
+   * @generated
+   */
+  type_definition createtype_definition();
+
+  /**
+   * Returns a new object of class '<em>type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>type</em>'.
+   * @generated
+   */
+  type createtype();
+
+  /**
+   * Returns a new object of class '<em>simple type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>simple type</em>'.
+   * @generated
+   */
+  simple_type createsimple_type();
+
+  /**
+   * Returns a new object of class '<em>subrange type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>subrange type</em>'.
+   * @generated
+   */
+  subrange_type createsubrange_type();
+
+  /**
+   * Returns a new object of class '<em>enumerated type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>enumerated type</em>'.
+   * @generated
+   */
+  enumerated_type createenumerated_type();
+
+  /**
+   * Returns a new object of class '<em>strutured type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>strutured type</em>'.
+   * @generated
+   */
+  strutured_type createstrutured_type();
+
+  /**
+   * Returns a new object of class '<em>unpacked strutured type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>unpacked strutured type</em>'.
+   * @generated
+   */
+  unpacked_strutured_type createunpacked_strutured_type();
+
+  /**
+   * Returns a new object of class '<em>set type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>set type</em>'.
+   * @generated
+   */
+  set_type createset_type();
+
+  /**
+   * Returns a new object of class '<em>pointer type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>pointer type</em>'.
+   * @generated
+   */
+  pointer_type createpointer_type();
+
+  /**
+   * Returns a new object of class '<em>variable declaration part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>variable declaration part</em>'.
+   * @generated
+   */
+  variable_declaration_part createvariable_declaration_part();
+
+  /**
+   * Returns a new object of class '<em>variable section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>variable section</em>'.
+   * @generated
+   */
+  variable_section createvariable_section();
+
+  /**
+   * Returns a new object of class '<em>variable identifier list</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>variable identifier list</em>'.
+   * @generated
+   */
+  variable_identifier_list createvariable_identifier_list();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

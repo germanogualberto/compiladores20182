@@ -14,6 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.pascal.pascal.block#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.block#getType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.block#getVariable <em>Variable</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.block#getConstant <em>Constant</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.block#getAbstraction <em>Abstraction</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.block#getStatement <em>Statement</em>}</li>
  * </ul>
@@ -24,6 +28,110 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface block extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Label</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Label</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Label</em>' containment reference.
+   * @see #setLabel(label_declaration)
+   * @see org.xtext.example.pascal.pascal.PascalPackage#getblock_Label()
+   * @model containment="true"
+   * @generated
+   */
+  label_declaration getLabel();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.pascal.pascal.block#getLabel <em>Label</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Label</em>' containment reference.
+   * @see #getLabel()
+   * @generated
+   */
+  void setLabel(label_declaration value);
+
+  /**
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(type_definition_part)
+   * @see org.xtext.example.pascal.pascal.PascalPackage#getblock_Type()
+   * @model containment="true"
+   * @generated
+   */
+  type_definition_part getType();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.pascal.pascal.block#getType <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Type</em>' containment reference.
+   * @see #getType()
+   * @generated
+   */
+  void setType(type_definition_part value);
+
+  /**
+   * Returns the value of the '<em><b>Variable</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Variable</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Variable</em>' containment reference.
+   * @see #setVariable(variable_declaration_part)
+   * @see org.xtext.example.pascal.pascal.PascalPackage#getblock_Variable()
+   * @model containment="true"
+   * @generated
+   */
+  variable_declaration_part getVariable();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.pascal.pascal.block#getVariable <em>Variable</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Variable</em>' containment reference.
+   * @see #getVariable()
+   * @generated
+   */
+  void setVariable(variable_declaration_part value);
+
+  /**
+   * Returns the value of the '<em><b>Constant</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Constant</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Constant</em>' containment reference.
+   * @see #setConstant(constant_definition_part)
+   * @see org.xtext.example.pascal.pascal.PascalPackage#getblock_Constant()
+   * @model containment="true"
+   * @generated
+   */
+  constant_definition_part getConstant();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.pascal.pascal.block#getConstant <em>Constant</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Constant</em>' containment reference.
+   * @see #getConstant()
+   * @generated
+   */
+  void setConstant(constant_definition_part value);
+
   /**
    * Returns the value of the '<em><b>Abstraction</b></em>' containment reference.
    * <!-- begin-user-doc -->
