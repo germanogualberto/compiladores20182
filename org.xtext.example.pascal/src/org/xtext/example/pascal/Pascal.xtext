@@ -161,7 +161,7 @@ type_definition:
 ;
 
 type:
-	simple=simple_type | structured=strutured_type | pointer=pointer_type
+	simple=simple_type | structured=structured_type | pointer=pointer_type
 ;
 
 simple_type:
@@ -176,16 +176,44 @@ enumerated_type:
 	"(" identifiers=identifier_list ")"
 ;
 
-strutured_type:
-	( packed?="packed" ) ? type=unpacked_strutured_type
+structured_type:
+	( packed?="packed" ) ? type=unpacked_structured_type
 ;
 
-unpacked_strutured_type:
-	set=set_type
+unpacked_structured_type:
+	record=record_type
 ;
 
-set_type:
-	"set" "of" type=type
+record_type:
+	recordKeyword="record" fields=field_list? endKeyword="end"	
+;
+
+field_list:
+	( fixed=fixed_part ( ";" variants+=variant_part ) ? | variants+=variant_part ) ( ";" ) ? 
+;
+
+fixed_part:
+	sections+=record_section ( ";" sections+=record_section ) *
+;
+
+record_section:
+	identifiers=identifier_list ":" type=type
+;
+
+variant_part:
+	"case" tag=tag_field? name=ID "of" variants+=variant ( ";" variants+=variant ) *  	
+;
+
+tag_field:
+	name=ID ":" 
+;
+
+variant:
+	labels=case_label_list ":" "(" fields=field_list? ")"	
+;
+
+case_label_list:
+	constants+=constant ( "," constants+=constant ) *	
 ;
 
 pointer_type:
@@ -205,7 +233,7 @@ variable_declaration_part:
 ;
 
 variable_section:
-	identifiers=variable_identifier_list ":" type=type	
+	identifiers=variable_identifier_list ":" type=type
 
 ;
 

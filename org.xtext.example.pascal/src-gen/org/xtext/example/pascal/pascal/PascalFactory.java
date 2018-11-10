@@ -402,31 +402,94 @@ public interface PascalFactory extends EFactory
   enumerated_type createenumerated_type();
 
   /**
-   * Returns a new object of class '<em>strutured type</em>'.
+   * Returns a new object of class '<em>structured type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>strutured type</em>'.
+   * @return a new object of class '<em>structured type</em>'.
    * @generated
    */
-  strutured_type createstrutured_type();
+  structured_type createstructured_type();
 
   /**
-   * Returns a new object of class '<em>unpacked strutured type</em>'.
+   * Returns a new object of class '<em>unpacked structured type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>unpacked strutured type</em>'.
+   * @return a new object of class '<em>unpacked structured type</em>'.
    * @generated
    */
-  unpacked_strutured_type createunpacked_strutured_type();
+  unpacked_structured_type createunpacked_structured_type();
 
   /**
-   * Returns a new object of class '<em>set type</em>'.
+   * Returns a new object of class '<em>record type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>set type</em>'.
+   * @return a new object of class '<em>record type</em>'.
    * @generated
    */
-  set_type createset_type();
+  record_type createrecord_type();
+
+  /**
+   * Returns a new object of class '<em>field list</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>field list</em>'.
+   * @generated
+   */
+  field_list createfield_list();
+
+  /**
+   * Returns a new object of class '<em>fixed part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>fixed part</em>'.
+   * @generated
+   */
+  fixed_part createfixed_part();
+
+  /**
+   * Returns a new object of class '<em>record section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>record section</em>'.
+   * @generated
+   */
+  record_section createrecord_section();
+
+  /**
+   * Returns a new object of class '<em>variant part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>variant part</em>'.
+   * @generated
+   */
+  variant_part createvariant_part();
+
+  /**
+   * Returns a new object of class '<em>tag field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>tag field</em>'.
+   * @generated
+   */
+  tag_field createtag_field();
+
+  /**
+   * Returns a new object of class '<em>variant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>variant</em>'.
+   * @generated
+   */
+  variant createvariant();
+
+  /**
+   * Returns a new object of class '<em>case label list</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>case label list</em>'.
+   * @generated
+   */
+  case_label_list createcase_label_list();
 
   /**
    * Returns a new object of class '<em>pointer type</em>'.

@@ -18,6 +18,7 @@ import org.xtext.example.pascal.pascal.PascalPackage;
 import org.xtext.example.pascal.pascal.any_number;
 import org.xtext.example.pascal.pascal.assignment_statement;
 import org.xtext.example.pascal.pascal.block;
+import org.xtext.example.pascal.pascal.case_label_list;
 import org.xtext.example.pascal.pascal.constant;
 import org.xtext.example.pascal.pascal.constant_definition;
 import org.xtext.example.pascal.pascal.constant_definition_part;
@@ -25,6 +26,8 @@ import org.xtext.example.pascal.pascal.enumerated_type;
 import org.xtext.example.pascal.pascal.expression;
 import org.xtext.example.pascal.pascal.expression_list;
 import org.xtext.example.pascal.pascal.factor;
+import org.xtext.example.pascal.pascal.field_list;
+import org.xtext.example.pascal.pascal.fixed_part;
 import org.xtext.example.pascal.pascal.formal_parameter_list;
 import org.xtext.example.pascal.pascal.formal_parameter_section;
 import org.xtext.example.pascal.pascal.function_declaration;
@@ -42,21 +45,23 @@ import org.xtext.example.pascal.pascal.procedure_declaration;
 import org.xtext.example.pascal.pascal.procedure_heading;
 import org.xtext.example.pascal.pascal.program;
 import org.xtext.example.pascal.pascal.program_heading_block;
+import org.xtext.example.pascal.pascal.record_section;
+import org.xtext.example.pascal.pascal.record_type;
 import org.xtext.example.pascal.pascal.set;
-import org.xtext.example.pascal.pascal.set_type;
 import org.xtext.example.pascal.pascal.simple_expression;
 import org.xtext.example.pascal.pascal.simple_statement;
 import org.xtext.example.pascal.pascal.simple_type;
 import org.xtext.example.pascal.pascal.statement;
 import org.xtext.example.pascal.pascal.statement_part;
 import org.xtext.example.pascal.pascal.statement_sequence;
-import org.xtext.example.pascal.pascal.strutured_type;
+import org.xtext.example.pascal.pascal.structured_type;
 import org.xtext.example.pascal.pascal.subrange_type;
+import org.xtext.example.pascal.pascal.tag_field;
 import org.xtext.example.pascal.pascal.term;
 import org.xtext.example.pascal.pascal.type;
 import org.xtext.example.pascal.pascal.type_definition;
 import org.xtext.example.pascal.pascal.type_definition_part;
-import org.xtext.example.pascal.pascal.unpacked_strutured_type;
+import org.xtext.example.pascal.pascal.unpacked_structured_type;
 import org.xtext.example.pascal.pascal.value_parameter_section;
 import org.xtext.example.pascal.pascal.var_;
 import org.xtext.example.pascal.pascal.variable;
@@ -64,6 +69,8 @@ import org.xtext.example.pascal.pascal.variable_declaration_part;
 import org.xtext.example.pascal.pascal.variable_identifier_list;
 import org.xtext.example.pascal.pascal.variable_parameter_section;
 import org.xtext.example.pascal.pascal.variable_section;
+import org.xtext.example.pascal.pascal.variant;
+import org.xtext.example.pascal.pascal.variant_part;
 import org.xtext.example.pascal.services.PascalGrammarAccess;
 
 @SuppressWarnings("all")
@@ -100,6 +107,9 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case PascalPackage.BLOCK:
 				sequence_block(context, (block) semanticObject); 
 				return; 
+			case PascalPackage.CASE_LABEL_LIST:
+				sequence_case_label_list(context, (case_label_list) semanticObject); 
+				return; 
 			case PascalPackage.CONSTANT:
 				sequence_constant(context, (constant) semanticObject); 
 				return; 
@@ -120,6 +130,12 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case PascalPackage.FACTOR:
 				sequence_factor(context, (factor) semanticObject); 
+				return; 
+			case PascalPackage.FIELD_LIST:
+				sequence_field_list(context, (field_list) semanticObject); 
+				return; 
+			case PascalPackage.FIXED_PART:
+				sequence_fixed_part(context, (fixed_part) semanticObject); 
 				return; 
 			case PascalPackage.FORMAL_PARAMETER_LIST:
 				sequence_formal_parameter_list(context, (formal_parameter_list) semanticObject); 
@@ -172,11 +188,14 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case PascalPackage.PROGRAM_HEADING_BLOCK:
 				sequence_program_heading_block(context, (program_heading_block) semanticObject); 
 				return; 
+			case PascalPackage.RECORD_SECTION:
+				sequence_record_section(context, (record_section) semanticObject); 
+				return; 
+			case PascalPackage.RECORD_TYPE:
+				sequence_record_type(context, (record_type) semanticObject); 
+				return; 
 			case PascalPackage.SET:
 				sequence_set(context, (set) semanticObject); 
-				return; 
-			case PascalPackage.SET_TYPE:
-				sequence_set_type(context, (set_type) semanticObject); 
 				return; 
 			case PascalPackage.SIMPLE_EXPRESSION:
 				sequence_simple_expression(context, (simple_expression) semanticObject); 
@@ -196,11 +215,14 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case PascalPackage.STATEMENT_SEQUENCE:
 				sequence_statement_sequence(context, (statement_sequence) semanticObject); 
 				return; 
-			case PascalPackage.STRUTURED_TYPE:
-				sequence_strutured_type(context, (strutured_type) semanticObject); 
+			case PascalPackage.STRUCTURED_TYPE:
+				sequence_structured_type(context, (structured_type) semanticObject); 
 				return; 
 			case PascalPackage.SUBRANGE_TYPE:
 				sequence_subrange_type(context, (subrange_type) semanticObject); 
+				return; 
+			case PascalPackage.TAG_FIELD:
+				sequence_tag_field(context, (tag_field) semanticObject); 
 				return; 
 			case PascalPackage.TERM:
 				sequence_term(context, (term) semanticObject); 
@@ -214,8 +236,8 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case PascalPackage.TYPE_DEFINITION_PART:
 				sequence_type_definition_part(context, (type_definition_part) semanticObject); 
 				return; 
-			case PascalPackage.UNPACKED_STRUTURED_TYPE:
-				sequence_unpacked_strutured_type(context, (unpacked_strutured_type) semanticObject); 
+			case PascalPackage.UNPACKED_STRUCTURED_TYPE:
+				sequence_unpacked_structured_type(context, (unpacked_structured_type) semanticObject); 
 				return; 
 			case PascalPackage.VALUE_PARAMETER_SECTION:
 				sequence_value_parameter_section(context, (value_parameter_section) semanticObject); 
@@ -237,6 +259,12 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case PascalPackage.VARIABLE_SECTION:
 				sequence_variable_section(context, (variable_section) semanticObject); 
+				return; 
+			case PascalPackage.VARIANT:
+				sequence_variant(context, (variant) semanticObject); 
+				return; 
+			case PascalPackage.VARIANT_PART:
+				sequence_variant_part(context, (variant_part) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -279,6 +307,18 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     )
 	 */
 	protected void sequence_block(ISerializationContext context, block semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     case_label_list returns case_label_list
+	 *
+	 * Constraint:
+	 *     (constants+=constant constants+=constant*)
+	 */
+	protected void sequence_case_label_list(ISerializationContext context, case_label_list semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -389,6 +429,30 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     )
 	 */
 	protected void sequence_factor(ISerializationContext context, factor semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     field_list returns field_list
+	 *
+	 * Constraint:
+	 *     ((fixed=fixed_part variants+=variant_part?) | variants+=variant_part)
+	 */
+	protected void sequence_field_list(ISerializationContext context, field_list semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     fixed_part returns fixed_part
+	 *
+	 * Constraint:
+	 *     (sections+=record_section sections+=record_section*)
+	 */
+	protected void sequence_fixed_part(ISerializationContext context, fixed_part semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -650,6 +714,39 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
+	 *     record_section returns record_section
+	 *
+	 * Constraint:
+	 *     (identifiers=identifier_list type=type)
+	 */
+	protected void sequence_record_section(ISerializationContext context, record_section semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PascalPackage.Literals.RECORD_SECTION__IDENTIFIERS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PascalPackage.Literals.RECORD_SECTION__IDENTIFIERS));
+			if (transientValues.isValueTransient(semanticObject, PascalPackage.Literals.RECORD_SECTION__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PascalPackage.Literals.RECORD_SECTION__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRecord_sectionAccess().getIdentifiersIdentifier_listParserRuleCall_0_0(), semanticObject.getIdentifiers());
+		feeder.accept(grammarAccess.getRecord_sectionAccess().getTypeTypeParserRuleCall_2_0(), semanticObject.getType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     record_type returns record_type
+	 *
+	 * Constraint:
+	 *     (recordKeyword='record' fields=field_list? endKeyword='end')
+	 */
+	protected void sequence_record_type(ISerializationContext context, record_type semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     set returns set
 	 *
 	 * Constraint:
@@ -657,24 +754,6 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 */
 	protected void sequence_set(ISerializationContext context, set semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     set_type returns set_type
-	 *
-	 * Constraint:
-	 *     type=type
-	 */
-	protected void sequence_set_type(ISerializationContext context, set_type semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PascalPackage.Literals.SET_TYPE__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PascalPackage.Literals.SET_TYPE__TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSet_typeAccess().getTypeTypeParserRuleCall_2_0(), semanticObject.getType());
-		feeder.finish();
 	}
 	
 	
@@ -782,12 +861,12 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     strutured_type returns strutured_type
+	 *     structured_type returns structured_type
 	 *
 	 * Constraint:
-	 *     (packed?='packed'? type=unpacked_strutured_type)
+	 *     (packed?='packed'? type=unpacked_structured_type)
 	 */
-	protected void sequence_strutured_type(ISerializationContext context, strutured_type semanticObject) {
+	protected void sequence_structured_type(ISerializationContext context, structured_type semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -801,6 +880,24 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 */
 	protected void sequence_subrange_type(ISerializationContext context, subrange_type semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     tag_field returns tag_field
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_tag_field(ISerializationContext context, tag_field semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PascalPackage.Literals.TAG_FIELD__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PascalPackage.Literals.TAG_FIELD__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTag_fieldAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
@@ -854,7 +951,7 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     type returns type
 	 *
 	 * Constraint:
-	 *     (simple=simple_type | structured=strutured_type | pointer=pointer_type)
+	 *     (simple=simple_type | structured=structured_type | pointer=pointer_type)
 	 */
 	protected void sequence_type(ISerializationContext context, type semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -863,18 +960,18 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     unpacked_strutured_type returns unpacked_strutured_type
+	 *     unpacked_structured_type returns unpacked_structured_type
 	 *
 	 * Constraint:
-	 *     set=set_type
+	 *     record=record_type
 	 */
-	protected void sequence_unpacked_strutured_type(ISerializationContext context, unpacked_strutured_type semanticObject) {
+	protected void sequence_unpacked_structured_type(ISerializationContext context, unpacked_structured_type semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PascalPackage.Literals.UNPACKED_STRUTURED_TYPE__SET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PascalPackage.Literals.UNPACKED_STRUTURED_TYPE__SET));
+			if (transientValues.isValueTransient(semanticObject, PascalPackage.Literals.UNPACKED_STRUCTURED_TYPE__RECORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PascalPackage.Literals.UNPACKED_STRUCTURED_TYPE__RECORD));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getUnpacked_strutured_typeAccess().getSetSet_typeParserRuleCall_0(), semanticObject.getSet());
+		feeder.accept(grammarAccess.getUnpacked_structured_typeAccess().getRecordRecord_typeParserRuleCall_0(), semanticObject.getRecord());
 		feeder.finish();
 	}
 	
@@ -1008,6 +1105,30 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getVariableAccess().getVariableVar_ParserRuleCall_1_0(), semanticObject.getVariable());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     variant_part returns variant_part
+	 *
+	 * Constraint:
+	 *     (tag=tag_field? name=ID variants+=variant variants+=variant*)
+	 */
+	protected void sequence_variant_part(ISerializationContext context, variant_part semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     variant returns variant
+	 *
+	 * Constraint:
+	 *     (labels=case_label_list fields=field_list?)
+	 */
+	protected void sequence_variant(ISerializationContext context, variant semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

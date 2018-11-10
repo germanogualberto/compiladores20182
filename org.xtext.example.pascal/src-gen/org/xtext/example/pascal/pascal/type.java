@@ -60,12 +60,12 @@ public interface type extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Structured</em>' containment reference.
-   * @see #setStructured(strutured_type)
+   * @see #setStructured(structured_type)
    * @see org.xtext.example.pascal.pascal.PascalPackage#gettype_Structured()
    * @model containment="true"
    * @generated
    */
-  strutured_type getStructured();
+  structured_type getStructured();
 
   /**
    * Sets the value of the '{@link org.xtext.example.pascal.pascal.type#getStructured <em>Structured</em>}' containment reference.
@@ -75,7 +75,7 @@ public interface type extends EObject
    * @see #getStructured()
    * @generated
    */
-  void setStructured(strutured_type value);
+  void setStructured(structured_type value);
 
   /**
    * Returns the value of the '<em><b>Pointer</b></em>' containment reference.

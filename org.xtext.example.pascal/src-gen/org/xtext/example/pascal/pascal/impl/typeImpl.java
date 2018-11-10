@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.xtext.example.pascal.pascal.PascalPackage;
 import org.xtext.example.pascal.pascal.pointer_type;
 import org.xtext.example.pascal.pascal.simple_type;
-import org.xtext.example.pascal.pascal.strutured_type;
+import org.xtext.example.pascal.pascal.structured_type;
 import org.xtext.example.pascal.pascal.type;
 
 /**
@@ -53,7 +53,7 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
    * @generated
    * @ordered
    */
-  protected strutured_type structured;
+  protected structured_type structured;
 
   /**
    * The cached value of the '{@link #getPointer() <em>Pointer</em>}' containment reference.
@@ -139,7 +139,7 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
    * <!-- end-user-doc -->
    * @generated
    */
-  public strutured_type getStructured()
+  public structured_type getStructured()
   {
     return structured;
   }
@@ -149,9 +149,9 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetStructured(strutured_type newStructured, NotificationChain msgs)
+  public NotificationChain basicSetStructured(structured_type newStructured, NotificationChain msgs)
   {
-    strutured_type oldStructured = structured;
+    structured_type oldStructured = structured;
     structured = newStructured;
     if (eNotificationRequired())
     {
@@ -166,7 +166,7 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setStructured(strutured_type newStructured)
+  public void setStructured(structured_type newStructured)
   {
     if (newStructured != structured)
     {
@@ -284,7 +284,7 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
         setSimple((simple_type)newValue);
         return;
       case PascalPackage.TYPE__STRUCTURED:
-        setStructured((strutured_type)newValue);
+        setStructured((structured_type)newValue);
         return;
       case PascalPackage.TYPE__POINTER:
         setPointer((pointer_type)newValue);
@@ -307,7 +307,7 @@ public class typeImpl extends MinimalEObjectImpl.Container implements type
         setSimple((simple_type)null);
         return;
       case PascalPackage.TYPE__STRUCTURED:
-        setStructured((strutured_type)null);
+        setStructured((structured_type)null);
         return;
       case PascalPackage.TYPE__POINTER:
         setPointer((pointer_type)null);

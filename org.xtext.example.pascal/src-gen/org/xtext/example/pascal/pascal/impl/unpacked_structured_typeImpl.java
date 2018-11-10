@@ -13,40 +13,40 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.pascal.pascal.PascalPackage;
-import org.xtext.example.pascal.pascal.set_type;
-import org.xtext.example.pascal.pascal.type;
+import org.xtext.example.pascal.pascal.record_type;
+import org.xtext.example.pascal.pascal.unpacked_structured_type;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>set type</b></em>'.
+ * An implementation of the model object '<em><b>unpacked structured type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.pascal.pascal.impl.set_typeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.impl.unpacked_structured_typeImpl#getRecord <em>Record</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class set_typeImpl extends MinimalEObjectImpl.Container implements set_type
+public class unpacked_structured_typeImpl extends MinimalEObjectImpl.Container implements unpacked_structured_type
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * The cached value of the '{@link #getRecord() <em>Record</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getRecord()
    * @generated
    * @ordered
    */
-  protected type type;
+  protected record_type record;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected set_typeImpl()
+  protected unpacked_structured_typeImpl()
   {
     super();
   }
@@ -59,7 +59,7 @@ public class set_typeImpl extends MinimalEObjectImpl.Container implements set_ty
   @Override
   protected EClass eStaticClass()
   {
-    return PascalPackage.Literals.SET_TYPE;
+    return PascalPackage.Literals.UNPACKED_STRUCTURED_TYPE;
   }
 
   /**
@@ -67,9 +67,9 @@ public class set_typeImpl extends MinimalEObjectImpl.Container implements set_ty
    * <!-- end-user-doc -->
    * @generated
    */
-  public type getType()
+  public record_type getRecord()
   {
-    return type;
+    return record;
   }
 
   /**
@@ -77,13 +77,13 @@ public class set_typeImpl extends MinimalEObjectImpl.Container implements set_ty
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetType(type newType, NotificationChain msgs)
+  public NotificationChain basicSetRecord(record_type newRecord, NotificationChain msgs)
   {
-    type oldType = type;
-    type = newType;
+    record_type oldRecord = record;
+    record = newRecord;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PascalPackage.SET_TYPE__TYPE, oldType, newType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PascalPackage.UNPACKED_STRUCTURED_TYPE__RECORD, oldRecord, newRecord);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +94,20 @@ public class set_typeImpl extends MinimalEObjectImpl.Container implements set_ty
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(type newType)
+  public void setRecord(record_type newRecord)
   {
-    if (newType != type)
+    if (newRecord != record)
     {
       NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PascalPackage.SET_TYPE__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PascalPackage.SET_TYPE__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
+      if (record != null)
+        msgs = ((InternalEObject)record).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PascalPackage.UNPACKED_STRUCTURED_TYPE__RECORD, null, msgs);
+      if (newRecord != null)
+        msgs = ((InternalEObject)newRecord).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PascalPackage.UNPACKED_STRUCTURED_TYPE__RECORD, null, msgs);
+      msgs = basicSetRecord(newRecord, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.SET_TYPE__TYPE, newType, newType));
+      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.UNPACKED_STRUCTURED_TYPE__RECORD, newRecord, newRecord));
   }
 
   /**
@@ -120,8 +120,8 @@ public class set_typeImpl extends MinimalEObjectImpl.Container implements set_ty
   {
     switch (featureID)
     {
-      case PascalPackage.SET_TYPE__TYPE:
-        return basicSetType(null, msgs);
+      case PascalPackage.UNPACKED_STRUCTURED_TYPE__RECORD:
+        return basicSetRecord(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +136,8 @@ public class set_typeImpl extends MinimalEObjectImpl.Container implements set_ty
   {
     switch (featureID)
     {
-      case PascalPackage.SET_TYPE__TYPE:
-        return getType();
+      case PascalPackage.UNPACKED_STRUCTURED_TYPE__RECORD:
+        return getRecord();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +152,8 @@ public class set_typeImpl extends MinimalEObjectImpl.Container implements set_ty
   {
     switch (featureID)
     {
-      case PascalPackage.SET_TYPE__TYPE:
-        setType((type)newValue);
+      case PascalPackage.UNPACKED_STRUCTURED_TYPE__RECORD:
+        setRecord((record_type)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +169,8 @@ public class set_typeImpl extends MinimalEObjectImpl.Container implements set_ty
   {
     switch (featureID)
     {
-      case PascalPackage.SET_TYPE__TYPE:
-        setType((type)null);
+      case PascalPackage.UNPACKED_STRUCTURED_TYPE__RECORD:
+        setRecord((record_type)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,10 +186,10 @@ public class set_typeImpl extends MinimalEObjectImpl.Container implements set_ty
   {
     switch (featureID)
     {
-      case PascalPackage.SET_TYPE__TYPE:
-        return type != null;
+      case PascalPackage.UNPACKED_STRUCTURED_TYPE__RECORD:
+        return record != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //set_typeImpl
+} //unpacked_structured_typeImpl

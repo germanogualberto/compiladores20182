@@ -367,24 +367,73 @@ public class PascalSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PascalPackage.STRUTURED_TYPE:
+      case PascalPackage.STRUCTURED_TYPE:
       {
-        strutured_type strutured_type = (strutured_type)theEObject;
-        T result = casestrutured_type(strutured_type);
+        structured_type structured_type = (structured_type)theEObject;
+        T result = casestructured_type(structured_type);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PascalPackage.UNPACKED_STRUTURED_TYPE:
+      case PascalPackage.UNPACKED_STRUCTURED_TYPE:
       {
-        unpacked_strutured_type unpacked_strutured_type = (unpacked_strutured_type)theEObject;
-        T result = caseunpacked_strutured_type(unpacked_strutured_type);
+        unpacked_structured_type unpacked_structured_type = (unpacked_structured_type)theEObject;
+        T result = caseunpacked_structured_type(unpacked_structured_type);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PascalPackage.SET_TYPE:
+      case PascalPackage.RECORD_TYPE:
       {
-        set_type set_type = (set_type)theEObject;
-        T result = caseset_type(set_type);
+        record_type record_type = (record_type)theEObject;
+        T result = caserecord_type(record_type);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.FIELD_LIST:
+      {
+        field_list field_list = (field_list)theEObject;
+        T result = casefield_list(field_list);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.FIXED_PART:
+      {
+        fixed_part fixed_part = (fixed_part)theEObject;
+        T result = casefixed_part(fixed_part);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.RECORD_SECTION:
+      {
+        record_section record_section = (record_section)theEObject;
+        T result = caserecord_section(record_section);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.VARIANT_PART:
+      {
+        variant_part variant_part = (variant_part)theEObject;
+        T result = casevariant_part(variant_part);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.TAG_FIELD:
+      {
+        tag_field tag_field = (tag_field)theEObject;
+        T result = casetag_field(tag_field);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.VARIANT:
+      {
+        variant variant = (variant)theEObject;
+        T result = casevariant(variant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.CASE_LABEL_LIST:
+      {
+        case_label_list case_label_list = (case_label_list)theEObject;
+        T result = casecase_label_list(case_label_list);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1093,49 +1142,161 @@ public class PascalSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>strutured type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>structured type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>strutured type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>structured type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casestrutured_type(strutured_type object)
+  public T casestructured_type(structured_type object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>unpacked strutured type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>unpacked structured type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>unpacked strutured type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>unpacked structured type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseunpacked_strutured_type(unpacked_strutured_type object)
+  public T caseunpacked_structured_type(unpacked_structured_type object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>set type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>record type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>set type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>record type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseset_type(set_type object)
+  public T caserecord_type(record_type object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>field list</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>field list</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefield_list(field_list object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>fixed part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>fixed part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefixed_part(fixed_part object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>record section</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>record section</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caserecord_section(record_section object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>variant part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>variant part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casevariant_part(variant_part object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>tag field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>tag field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetag_field(tag_field object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>variant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>variant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casevariant(variant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>case label list</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>case label list</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casecase_label_list(case_label_list object)
   {
     return null;
   }

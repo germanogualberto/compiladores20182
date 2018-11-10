@@ -12,6 +12,7 @@
 '^'=31
 'and'=50
 'begin'=25
+'case'=44
 'const'=40
 'div'=48
 'end'=26
@@ -27,7 +28,7 @@
 'packed'=54
 'procedure'=38
 'program'=23
-'set'=44
+'record'=55
 'true'=52
 'type'=42
 'var'=37
@@ -82,3 +83,4 @@ T__51=51
 T__52=52
 T__53=53
 T__54=54
+T__55=55

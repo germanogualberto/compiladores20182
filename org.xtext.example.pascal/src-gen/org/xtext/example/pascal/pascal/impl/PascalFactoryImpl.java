@@ -107,9 +107,16 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
       case PascalPackage.SIMPLE_TYPE: return createsimple_type();
       case PascalPackage.SUBRANGE_TYPE: return createsubrange_type();
       case PascalPackage.ENUMERATED_TYPE: return createenumerated_type();
-      case PascalPackage.STRUTURED_TYPE: return createstrutured_type();
-      case PascalPackage.UNPACKED_STRUTURED_TYPE: return createunpacked_strutured_type();
-      case PascalPackage.SET_TYPE: return createset_type();
+      case PascalPackage.STRUCTURED_TYPE: return createstructured_type();
+      case PascalPackage.UNPACKED_STRUCTURED_TYPE: return createunpacked_structured_type();
+      case PascalPackage.RECORD_TYPE: return createrecord_type();
+      case PascalPackage.FIELD_LIST: return createfield_list();
+      case PascalPackage.FIXED_PART: return createfixed_part();
+      case PascalPackage.RECORD_SECTION: return createrecord_section();
+      case PascalPackage.VARIANT_PART: return createvariant_part();
+      case PascalPackage.TAG_FIELD: return createtag_field();
+      case PascalPackage.VARIANT: return createvariant();
+      case PascalPackage.CASE_LABEL_LIST: return createcase_label_list();
       case PascalPackage.POINTER_TYPE: return createpointer_type();
       case PascalPackage.VARIABLE_DECLARATION_PART: return createvariable_declaration_part();
       case PascalPackage.VARIABLE_SECTION: return createvariable_section();
@@ -586,10 +593,10 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public strutured_type createstrutured_type()
+  public structured_type createstructured_type()
   {
-    strutured_typeImpl strutured_type = new strutured_typeImpl();
-    return strutured_type;
+    structured_typeImpl structured_type = new structured_typeImpl();
+    return structured_type;
   }
 
   /**
@@ -597,10 +604,10 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public unpacked_strutured_type createunpacked_strutured_type()
+  public unpacked_structured_type createunpacked_structured_type()
   {
-    unpacked_strutured_typeImpl unpacked_strutured_type = new unpacked_strutured_typeImpl();
-    return unpacked_strutured_type;
+    unpacked_structured_typeImpl unpacked_structured_type = new unpacked_structured_typeImpl();
+    return unpacked_structured_type;
   }
 
   /**
@@ -608,10 +615,87 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public set_type createset_type()
+  public record_type createrecord_type()
   {
-    set_typeImpl set_type = new set_typeImpl();
-    return set_type;
+    record_typeImpl record_type = new record_typeImpl();
+    return record_type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public field_list createfield_list()
+  {
+    field_listImpl field_list = new field_listImpl();
+    return field_list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public fixed_part createfixed_part()
+  {
+    fixed_partImpl fixed_part = new fixed_partImpl();
+    return fixed_part;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public record_section createrecord_section()
+  {
+    record_sectionImpl record_section = new record_sectionImpl();
+    return record_section;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public variant_part createvariant_part()
+  {
+    variant_partImpl variant_part = new variant_partImpl();
+    return variant_part;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public tag_field createtag_field()
+  {
+    tag_fieldImpl tag_field = new tag_fieldImpl();
+    return tag_field;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public variant createvariant()
+  {
+    variantImpl variant = new variantImpl();
+    return variant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public case_label_list createcase_label_list()
+  {
+    case_label_listImpl case_label_list = new case_label_listImpl();
+    return case_label_list;
   }
 
   /**
