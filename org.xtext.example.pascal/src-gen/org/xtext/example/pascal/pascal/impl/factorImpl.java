@@ -17,7 +17,6 @@ import org.xtext.example.pascal.pascal.expression;
 import org.xtext.example.pascal.pascal.factor;
 import org.xtext.example.pascal.pascal.function_designator;
 import org.xtext.example.pascal.pascal.number;
-import org.xtext.example.pascal.pascal.set;
 import org.xtext.example.pascal.pascal.variable;
 
 /**
@@ -31,8 +30,6 @@ import org.xtext.example.pascal.pascal.variable;
  *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getString <em>String</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getSet <em>Set</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#isNil <em>Nil</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getBoolean <em>Boolean</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getFunction <em>Function</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getExpression <em>Expression</em>}</li>
@@ -82,36 +79,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
    * @ordered
    */
   protected String string = STRING_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getSet() <em>Set</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSet()
-   * @generated
-   * @ordered
-   */
-  protected set set;
-
-  /**
-   * The default value of the '{@link #isNil() <em>Nil</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isNil()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean NIL_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isNil() <em>Nil</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isNil()
-   * @generated
-   * @ordered
-   */
-  protected boolean nil = NIL_EDEFAULT;
 
   /**
    * The default value of the '{@link #getBoolean() <em>Boolean</em>}' attribute.
@@ -308,77 +275,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
    * <!-- end-user-doc -->
    * @generated
    */
-  public set getSet()
-  {
-    return set;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetSet(set newSet, NotificationChain msgs)
-  {
-    set oldSet = set;
-    set = newSet;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PascalPackage.FACTOR__SET, oldSet, newSet);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSet(set newSet)
-  {
-    if (newSet != set)
-    {
-      NotificationChain msgs = null;
-      if (set != null)
-        msgs = ((InternalEObject)set).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PascalPackage.FACTOR__SET, null, msgs);
-      if (newSet != null)
-        msgs = ((InternalEObject)newSet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PascalPackage.FACTOR__SET, null, msgs);
-      msgs = basicSetSet(newSet, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.FACTOR__SET, newSet, newSet));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isNil()
-  {
-    return nil;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setNil(boolean newNil)
-  {
-    boolean oldNil = nil;
-    nil = newNil;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.FACTOR__NIL, oldNil, nil));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getBoolean()
   {
     return boolean_;
@@ -555,8 +451,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
         return basicSetVariable(null, msgs);
       case PascalPackage.FACTOR__NUMBER:
         return basicSetNumber(null, msgs);
-      case PascalPackage.FACTOR__SET:
-        return basicSetSet(null, msgs);
       case PascalPackage.FACTOR__FUNCTION:
         return basicSetFunction(null, msgs);
       case PascalPackage.FACTOR__EXPRESSION:
@@ -583,10 +477,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
         return getNumber();
       case PascalPackage.FACTOR__STRING:
         return getString();
-      case PascalPackage.FACTOR__SET:
-        return getSet();
-      case PascalPackage.FACTOR__NIL:
-        return isNil();
       case PascalPackage.FACTOR__BOOLEAN:
         return getBoolean();
       case PascalPackage.FACTOR__FUNCTION:
@@ -617,12 +507,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
         return;
       case PascalPackage.FACTOR__STRING:
         setString((String)newValue);
-        return;
-      case PascalPackage.FACTOR__SET:
-        setSet((set)newValue);
-        return;
-      case PascalPackage.FACTOR__NIL:
-        setNil((Boolean)newValue);
         return;
       case PascalPackage.FACTOR__BOOLEAN:
         setBoolean((String)newValue);
@@ -659,12 +543,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
       case PascalPackage.FACTOR__STRING:
         setString(STRING_EDEFAULT);
         return;
-      case PascalPackage.FACTOR__SET:
-        setSet((set)null);
-        return;
-      case PascalPackage.FACTOR__NIL:
-        setNil(NIL_EDEFAULT);
-        return;
       case PascalPackage.FACTOR__BOOLEAN:
         setBoolean(BOOLEAN_EDEFAULT);
         return;
@@ -697,10 +575,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
         return number != null;
       case PascalPackage.FACTOR__STRING:
         return STRING_EDEFAULT == null ? string != null : !STRING_EDEFAULT.equals(string);
-      case PascalPackage.FACTOR__SET:
-        return set != null;
-      case PascalPackage.FACTOR__NIL:
-        return nil != NIL_EDEFAULT;
       case PascalPackage.FACTOR__BOOLEAN:
         return BOOLEAN_EDEFAULT == null ? boolean_ != null : !BOOLEAN_EDEFAULT.equals(boolean_);
       case PascalPackage.FACTOR__FUNCTION:
@@ -726,8 +600,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (string: ");
     result.append(string);
-    result.append(", nil: ");
-    result.append(nil);
     result.append(", boolean: ");
     result.append(boolean_);
     result.append(')');

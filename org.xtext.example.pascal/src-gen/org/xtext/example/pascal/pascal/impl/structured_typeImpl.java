@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.pascal.pascal.PascalPackage;
+import org.xtext.example.pascal.pascal.record_type;
 import org.xtext.example.pascal.pascal.structured_type;
-import org.xtext.example.pascal.pascal.unpacked_structured_type;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +24,7 @@ import org.xtext.example.pascal.pascal.unpacked_structured_type;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.pascal.pascal.impl.structured_typeImpl#isPacked <em>Packed</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.impl.structured_typeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.impl.structured_typeImpl#getRecord <em>Record</em>}</li>
  * </ul>
  *
  * @generated
@@ -33,34 +32,14 @@ import org.xtext.example.pascal.pascal.unpacked_structured_type;
 public class structured_typeImpl extends MinimalEObjectImpl.Container implements structured_type
 {
   /**
-   * The default value of the '{@link #isPacked() <em>Packed</em>}' attribute.
+   * The cached value of the '{@link #getRecord() <em>Record</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isPacked()
+   * @see #getRecord()
    * @generated
    * @ordered
    */
-  protected static final boolean PACKED_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isPacked() <em>Packed</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isPacked()
-   * @generated
-   * @ordered
-   */
-  protected boolean packed = PACKED_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected unpacked_structured_type type;
+  protected record_type record;
 
   /**
    * <!-- begin-user-doc -->
@@ -88,9 +67,9 @@ public class structured_typeImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isPacked()
+  public record_type getRecord()
   {
-    return packed;
+    return record;
   }
 
   /**
@@ -98,36 +77,13 @@ public class structured_typeImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPacked(boolean newPacked)
+  public NotificationChain basicSetRecord(record_type newRecord, NotificationChain msgs)
   {
-    boolean oldPacked = packed;
-    packed = newPacked;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.STRUCTURED_TYPE__PACKED, oldPacked, packed));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public unpacked_structured_type getType()
-  {
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetType(unpacked_structured_type newType, NotificationChain msgs)
-  {
-    unpacked_structured_type oldType = type;
-    type = newType;
+    record_type oldRecord = record;
+    record = newRecord;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PascalPackage.STRUCTURED_TYPE__TYPE, oldType, newType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PascalPackage.STRUCTURED_TYPE__RECORD, oldRecord, newRecord);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -138,20 +94,20 @@ public class structured_typeImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(unpacked_structured_type newType)
+  public void setRecord(record_type newRecord)
   {
-    if (newType != type)
+    if (newRecord != record)
     {
       NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PascalPackage.STRUCTURED_TYPE__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PascalPackage.STRUCTURED_TYPE__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
+      if (record != null)
+        msgs = ((InternalEObject)record).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PascalPackage.STRUCTURED_TYPE__RECORD, null, msgs);
+      if (newRecord != null)
+        msgs = ((InternalEObject)newRecord).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PascalPackage.STRUCTURED_TYPE__RECORD, null, msgs);
+      msgs = basicSetRecord(newRecord, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.STRUCTURED_TYPE__TYPE, newType, newType));
+      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.STRUCTURED_TYPE__RECORD, newRecord, newRecord));
   }
 
   /**
@@ -164,8 +120,8 @@ public class structured_typeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case PascalPackage.STRUCTURED_TYPE__TYPE:
-        return basicSetType(null, msgs);
+      case PascalPackage.STRUCTURED_TYPE__RECORD:
+        return basicSetRecord(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -180,10 +136,8 @@ public class structured_typeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case PascalPackage.STRUCTURED_TYPE__PACKED:
-        return isPacked();
-      case PascalPackage.STRUCTURED_TYPE__TYPE:
-        return getType();
+      case PascalPackage.STRUCTURED_TYPE__RECORD:
+        return getRecord();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -198,11 +152,8 @@ public class structured_typeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case PascalPackage.STRUCTURED_TYPE__PACKED:
-        setPacked((Boolean)newValue);
-        return;
-      case PascalPackage.STRUCTURED_TYPE__TYPE:
-        setType((unpacked_structured_type)newValue);
+      case PascalPackage.STRUCTURED_TYPE__RECORD:
+        setRecord((record_type)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -218,11 +169,8 @@ public class structured_typeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case PascalPackage.STRUCTURED_TYPE__PACKED:
-        setPacked(PACKED_EDEFAULT);
-        return;
-      case PascalPackage.STRUCTURED_TYPE__TYPE:
-        setType((unpacked_structured_type)null);
+      case PascalPackage.STRUCTURED_TYPE__RECORD:
+        setRecord((record_type)null);
         return;
     }
     super.eUnset(featureID);
@@ -238,29 +186,10 @@ public class structured_typeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case PascalPackage.STRUCTURED_TYPE__PACKED:
-        return packed != PACKED_EDEFAULT;
-      case PascalPackage.STRUCTURED_TYPE__TYPE:
-        return type != null;
+      case PascalPackage.STRUCTURED_TYPE__RECORD:
+        return record != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (packed: ");
-    result.append(packed);
-    result.append(')');
-    return result.toString();
   }
 
 } //structured_typeImpl

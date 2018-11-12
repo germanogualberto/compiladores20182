@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.pascal.pascal.expression#getExpressions <em>Expressions</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.expression#getOperators <em>Operators</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.pascal.pascal.PascalPackage#getexpression()
@@ -41,21 +40,5 @@ public interface expression extends EObject
    * @generated
    */
   EList<simple_expression> getExpressions();
-
-  /**
-   * Returns the value of the '<em><b>Operators</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Operators</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Operators</em>' attribute list.
-   * @see org.xtext.example.pascal.pascal.PascalPackage#getexpression_Operators()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getOperators();
 
 } // expression

@@ -58,11 +58,7 @@ label:
 ;
 
 variable: 
-	name=ID variable=var_
-;
-
-var_:
-	( "[" expressions=expression_list "]" array=var_ | accessor?="." name=ID variable=var_ | "^" pointer=var_ ) ?
+	name=ID
 ;
 
 expression_list:
@@ -70,19 +66,27 @@ expression_list:
 ;
 
 expression:
-	expressions+=simple_expression ( ( operators+=RELATIONAL_OP | operators+="in" | operators+="=" ) expressions+=simple_expression ) ?
+	expressions+=simple_expression
 ;
+
 
 simple_expression:
 	(prefixOperator=ADDITION_OP) ? terms+=term ( ( operators+=ADDITION_OP | operators+="or" ) terms+=term | terms+=unsigned_number ) *
 ;
 
 term:
-	factors+=factor ( ( operators+=MULTIPLICATION_OP | operators+="div" | operators+="mod" | operators+="and" ) factors+=factor ) *
+	factors+=factor ( ( operators+=MULTIPLICATION_OP | operators+="and" ) factors+=factor ) *
 ;
 
 factor:
-	variable=variable | number=number | string=STRING | set=set | nil?="nil" | boolean="true" | boolean="false" | function=function_designator | "(" expression=expression ")" | "not" not=factor
+	variable=variable 
+	| number=number 
+	| string=STRING 
+	| boolean="true" 
+	| boolean="false" 
+	| function=function_designator 
+	| "(" expression=expression ")" 
+	| "not" not=factor
 ;
 
 function_designator:
@@ -133,16 +137,14 @@ procedure_heading:
 	"procedure" name=ID (parameters=formal_parameter_list)? 
 ;
 
-set:
-	brackets+="[" expressions=expression_list ? brackets+="]"
-;
 
 number:
 	number=any_number
 ;
 
 any_number:
-	unsigned_number | signed_number
+	unsigned_number 
+	| signed_number
 ;
 
 label_declaration:
@@ -150,7 +152,10 @@ label_declaration:
 ;
 
 constant:
-	opterator=ADDITION_OP ? (name=ID | number=number) | string=STRING | boolLiteral="true" | boolLiteral="false"
+	opterator=ADDITION_OP ? (name=ID | number=number) 
+	| string=STRING 
+	| boolLiteral="true" 
+	| boolLiteral="false"
 ;
 
 
@@ -171,26 +176,15 @@ type_definition:
 ;
 
 type:
-	simple=simple_type | structured=structured_type | pointer=pointer_type
+	simple=simple_type 
+	| structured=structured_type
 ;
 
 simple_type:
-	subrange=subrange_type | enumerated=enumerated_type | name=ID
-;
-
-subrange_type hidden(WS):
-	initialConst=constant ".." finalConst=constant | subrange=NUMERIC_SUBRANGE const=constant
-;
-
-enumerated_type:
-	"(" identifiers=identifier_list ")"
+	name=ID
 ;
 
 structured_type:
-	( packed?="packed" ) ? type=unpacked_structured_type
-;
-
-unpacked_structured_type:
 	record=record_type
 ;
 
@@ -199,10 +193,6 @@ record_type:
 ;
 
 field_list:
-	( fixed=fixed_part ( ";" variants+=variant_part ) ? | variants+=variant_part ) ( ";" ) ? 
-;
-
-fixed_part:
 	sections+=record_section ( ";" sections+=record_section ) *
 ;
 
@@ -210,32 +200,14 @@ record_section:
 	identifiers=identifier_list ":" type=type
 ;
 
-variant_part:
-	"case" tag=tag_field? name=ID "of" variants+=variant ( ";" variants+=variant ) *  	
-;
-
-tag_field:
-	name=ID ":" 
-;
-
-variant:
-	labels=case_label_list ":" "(" fields=field_list? ")"	
-;
-
-case_label_list:
-	constants+=constant ( "," constants+=constant ) *	
-;
-
-pointer_type:
-	"^" type=type
-;
-
 signed_number returns any_number:
-	integer=SIGNED_INTEGER_NUMBER | real=SIGNED_REAL_NUMBER
+	integer=SIGNED_INTEGER_NUMBER 
+	| real=SIGNED_REAL_NUMBER
 ;
 
 unsigned_number returns any_number:
-	integer=INTEGER_NUMBER | real=REAL_NUMBER
+	integer=INTEGER_NUMBER 
+	| real=REAL_NUMBER
 ;
 
 variable_declaration_part:
@@ -263,13 +235,11 @@ terminal MULTIPLICATION_OP:
 	"*" | "/"
 ;
 
+/* comentado pra tirar duvida com p prof sobre a expressao do while
 terminal RELATIONAL_OP:
 	"=" | "<>" | "<" | "<=" | ">" | ">="	
 ;
-
-terminal NUMERIC_SUBRANGE:
-	( INTEGER_NUMBER | REAL_NUMBER | SIGNED_INTEGER_NUMBER | SIGNED_REAL_NUMBER ) '..'
-;
+*/
 
 terminal DIGIT_SEQUENCE:
 	ADDITION_OP ? INTEGER_NUMBER

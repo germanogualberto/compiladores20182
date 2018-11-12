@@ -72,20 +72,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//var_"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="var_">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" eType="#//expression_list"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="array" eType="#//var_"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//var_"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pointer" eType="#//var_"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="expression_list">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
@@ -94,8 +80,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
         eType="#//simple_expression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operators" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="simple_expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefixOperator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -116,8 +100,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="number" eType="#//number"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="set" eType="#//set" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nil" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="boolean" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="function" eType="#//function_designator"
         containment="true"/>
@@ -193,12 +175,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" eType="#//formal_parameter_list"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="set">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="brackets" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" eType="#//expression_list"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="number">
     <eStructuralFeatures xsi:type="ecore:EReference" name="number" eType="#//any_number"
         containment="true"/>
@@ -241,35 +217,11 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="structured" eType="#//structured_type"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pointer" eType="#//pointer_type"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="simple_type">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subrange" eType="#//subrange_type"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="enumerated" eType="#//enumerated_type"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="subrange_type">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initialConst" eType="#//constant"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="finalConst" eType="#//constant"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subrange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="const" eType="#//constant"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="enumerated_type">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="identifiers" eType="#//identifier_list"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="structured_type">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//unpacked_structured_type"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="unpacked_structured_type">
     <eStructuralFeatures xsi:type="ecore:EReference" name="record" eType="#//record_type"
         containment="true"/>
   </eClassifiers>
@@ -280,41 +232,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endKeyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="field_list">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fixed" eType="#//fixed_part"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variants" upperBound="-1"
-        eType="#//variant_part" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="fixed_part">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
         eType="#//record_section" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="record_section">
     <eStructuralFeatures xsi:type="ecore:EReference" name="identifiers" eType="#//identifier_list"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//type" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="variant_part">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" eType="#//tag_field"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variants" upperBound="-1"
-        eType="#//variant" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="tag_field">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="variant">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="labels" eType="#//case_label_list"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" eType="#//field_list"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="case_label_list">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="constants" upperBound="-1"
-        eType="#//constant" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="pointer_type">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//type" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="variable_declaration_part">

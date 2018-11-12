@@ -141,15 +141,6 @@ public interface PascalFactory extends EFactory
   variable createvariable();
 
   /**
-   * Returns a new object of class '<em>var </em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>var </em>'.
-   * @generated
-   */
-  var_ createvar_();
-
-  /**
    * Returns a new object of class '<em>expression list</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -303,15 +294,6 @@ public interface PascalFactory extends EFactory
   procedure_heading createprocedure_heading();
 
   /**
-   * Returns a new object of class '<em>set</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>set</em>'.
-   * @generated
-   */
-  set createset();
-
-  /**
    * Returns a new object of class '<em>number</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -402,24 +384,6 @@ public interface PascalFactory extends EFactory
   simple_type createsimple_type();
 
   /**
-   * Returns a new object of class '<em>subrange type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>subrange type</em>'.
-   * @generated
-   */
-  subrange_type createsubrange_type();
-
-  /**
-   * Returns a new object of class '<em>enumerated type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>enumerated type</em>'.
-   * @generated
-   */
-  enumerated_type createenumerated_type();
-
-  /**
    * Returns a new object of class '<em>structured type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -427,15 +391,6 @@ public interface PascalFactory extends EFactory
    * @generated
    */
   structured_type createstructured_type();
-
-  /**
-   * Returns a new object of class '<em>unpacked structured type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>unpacked structured type</em>'.
-   * @generated
-   */
-  unpacked_structured_type createunpacked_structured_type();
 
   /**
    * Returns a new object of class '<em>record type</em>'.
@@ -456,15 +411,6 @@ public interface PascalFactory extends EFactory
   field_list createfield_list();
 
   /**
-   * Returns a new object of class '<em>fixed part</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>fixed part</em>'.
-   * @generated
-   */
-  fixed_part createfixed_part();
-
-  /**
    * Returns a new object of class '<em>record section</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -472,51 +418,6 @@ public interface PascalFactory extends EFactory
    * @generated
    */
   record_section createrecord_section();
-
-  /**
-   * Returns a new object of class '<em>variant part</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>variant part</em>'.
-   * @generated
-   */
-  variant_part createvariant_part();
-
-  /**
-   * Returns a new object of class '<em>tag field</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>tag field</em>'.
-   * @generated
-   */
-  tag_field createtag_field();
-
-  /**
-   * Returns a new object of class '<em>variant</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>variant</em>'.
-   * @generated
-   */
-  variant createvariant();
-
-  /**
-   * Returns a new object of class '<em>case label list</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>case label list</em>'.
-   * @generated
-   */
-  case_label_list createcase_label_list();
-
-  /**
-   * Returns a new object of class '<em>pointer type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>pointer type</em>'.
-   * @generated
-   */
-  pointer_type createpointer_type();
 
   /**
    * Returns a new object of class '<em>variable declaration part</em>'.

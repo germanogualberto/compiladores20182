@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.example.pascal.pascal.type#getSimple <em>Simple</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.type#getStructured <em>Structured</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.type#getPointer <em>Pointer</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.pascal.pascal.PascalPackage#gettype()
@@ -76,31 +75,5 @@ public interface type extends EObject
    * @generated
    */
   void setStructured(structured_type value);
-
-  /**
-   * Returns the value of the '<em><b>Pointer</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Pointer</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Pointer</em>' containment reference.
-   * @see #setPointer(pointer_type)
-   * @see org.xtext.example.pascal.pascal.PascalPackage#gettype_Pointer()
-   * @model containment="true"
-   * @generated
-   */
-  pointer_type getPointer();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.pascal.pascal.type#getPointer <em>Pointer</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Pointer</em>' containment reference.
-   * @see #getPointer()
-   * @generated
-   */
-  void setPointer(pointer_type value);
 
 } // type

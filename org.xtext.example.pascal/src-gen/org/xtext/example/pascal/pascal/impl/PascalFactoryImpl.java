@@ -78,7 +78,6 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
       case PascalPackage.ASSIGNMENT_STATEMENT: return createassignment_statement();
       case PascalPackage.LABEL: return createlabel();
       case PascalPackage.VARIABLE: return createvariable();
-      case PascalPackage.VAR_: return createvar_();
       case PascalPackage.EXPRESSION_LIST: return createexpression_list();
       case PascalPackage.EXPRESSION: return createexpression();
       case PascalPackage.SIMPLE_EXPRESSION: return createsimple_expression();
@@ -96,7 +95,6 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
       case PascalPackage.VARIABLE_PARAMETER_SECTION: return createvariable_parameter_section();
       case PascalPackage.PROCEDURE_DECLARATION: return createprocedure_declaration();
       case PascalPackage.PROCEDURE_HEADING: return createprocedure_heading();
-      case PascalPackage.SET: return createset();
       case PascalPackage.NUMBER: return createnumber();
       case PascalPackage.ANY_NUMBER: return createany_number();
       case PascalPackage.LABEL_DECLARATION: return createlabel_declaration();
@@ -107,19 +105,10 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
       case PascalPackage.TYPE_DEFINITION: return createtype_definition();
       case PascalPackage.TYPE: return createtype();
       case PascalPackage.SIMPLE_TYPE: return createsimple_type();
-      case PascalPackage.SUBRANGE_TYPE: return createsubrange_type();
-      case PascalPackage.ENUMERATED_TYPE: return createenumerated_type();
       case PascalPackage.STRUCTURED_TYPE: return createstructured_type();
-      case PascalPackage.UNPACKED_STRUCTURED_TYPE: return createunpacked_structured_type();
       case PascalPackage.RECORD_TYPE: return createrecord_type();
       case PascalPackage.FIELD_LIST: return createfield_list();
-      case PascalPackage.FIXED_PART: return createfixed_part();
       case PascalPackage.RECORD_SECTION: return createrecord_section();
-      case PascalPackage.VARIANT_PART: return createvariant_part();
-      case PascalPackage.TAG_FIELD: return createtag_field();
-      case PascalPackage.VARIANT: return createvariant();
-      case PascalPackage.CASE_LABEL_LIST: return createcase_label_list();
-      case PascalPackage.POINTER_TYPE: return createpointer_type();
       case PascalPackage.VARIABLE_DECLARATION_PART: return createvariable_declaration_part();
       case PascalPackage.VARIABLE_SECTION: return createvariable_section();
       case PascalPackage.VARIABLE_IDENTIFIER_LIST: return createvariable_identifier_list();
@@ -270,17 +259,6 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
   {
     variableImpl variable = new variableImpl();
     return variable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public var_ createvar_()
-  {
-    var_Impl var_ = new var_Impl();
-    return var_;
   }
 
   /**
@@ -475,17 +453,6 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public set createset()
-  {
-    setImpl set = new setImpl();
-    return set;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public number createnumber()
   {
     numberImpl number = new numberImpl();
@@ -596,43 +563,10 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public subrange_type createsubrange_type()
-  {
-    subrange_typeImpl subrange_type = new subrange_typeImpl();
-    return subrange_type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public enumerated_type createenumerated_type()
-  {
-    enumerated_typeImpl enumerated_type = new enumerated_typeImpl();
-    return enumerated_type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public structured_type createstructured_type()
   {
     structured_typeImpl structured_type = new structured_typeImpl();
     return structured_type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public unpacked_structured_type createunpacked_structured_type()
-  {
-    unpacked_structured_typeImpl unpacked_structured_type = new unpacked_structured_typeImpl();
-    return unpacked_structured_type;
   }
 
   /**
@@ -662,76 +596,10 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public fixed_part createfixed_part()
-  {
-    fixed_partImpl fixed_part = new fixed_partImpl();
-    return fixed_part;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public record_section createrecord_section()
   {
     record_sectionImpl record_section = new record_sectionImpl();
     return record_section;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public variant_part createvariant_part()
-  {
-    variant_partImpl variant_part = new variant_partImpl();
-    return variant_part;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public tag_field createtag_field()
-  {
-    tag_fieldImpl tag_field = new tag_fieldImpl();
-    return tag_field;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public variant createvariant()
-  {
-    variantImpl variant = new variantImpl();
-    return variant;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public case_label_list createcase_label_list()
-  {
-    case_label_listImpl case_label_list = new case_label_listImpl();
-    return case_label_list;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public pointer_type createpointer_type()
-  {
-    pointer_typeImpl pointer_type = new pointer_typeImpl();
-    return pointer_type;
   }
 
   /**

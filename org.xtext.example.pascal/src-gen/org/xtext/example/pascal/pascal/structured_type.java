@@ -14,8 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.pascal.pascal.structured_type#isPacked <em>Packed</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.structured_type#getType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.structured_type#getRecord <em>Record</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.pascal.pascal.PascalPackage#getstructured_type()
@@ -25,55 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface structured_type extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Packed</b></em>' attribute.
+   * Returns the value of the '<em><b>Record</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Packed</em>' attribute isn't clear,
+   * If the meaning of the '<em>Record</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Packed</em>' attribute.
-   * @see #setPacked(boolean)
-   * @see org.xtext.example.pascal.pascal.PascalPackage#getstructured_type_Packed()
-   * @model
-   * @generated
-   */
-  boolean isPacked();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.pascal.pascal.structured_type#isPacked <em>Packed</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Packed</em>' attribute.
-   * @see #isPacked()
-   * @generated
-   */
-  void setPacked(boolean value);
-
-  /**
-   * Returns the value of the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(unpacked_structured_type)
-   * @see org.xtext.example.pascal.pascal.PascalPackage#getstructured_type_Type()
+   * @return the value of the '<em>Record</em>' containment reference.
+   * @see #setRecord(record_type)
+   * @see org.xtext.example.pascal.pascal.PascalPackage#getstructured_type_Record()
    * @model containment="true"
    * @generated
    */
-  unpacked_structured_type getType();
+  record_type getRecord();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.pascal.pascal.structured_type#getType <em>Type</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.pascal.pascal.structured_type#getRecord <em>Record</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' containment reference.
-   * @see #getType()
+   * @param value the new value of the '<em>Record</em>' containment reference.
+   * @see #getRecord()
    * @generated
    */
-  void setType(unpacked_structured_type value);
+  void setRecord(record_type value);
 
 } // structured_type

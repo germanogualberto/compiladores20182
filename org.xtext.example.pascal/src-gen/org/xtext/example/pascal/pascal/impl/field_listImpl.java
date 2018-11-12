@@ -5,7 +5,6 @@ package org.xtext.example.pascal.pascal.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -13,7 +12,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -21,8 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.pascal.pascal.PascalPackage;
 import org.xtext.example.pascal.pascal.field_list;
-import org.xtext.example.pascal.pascal.fixed_part;
-import org.xtext.example.pascal.pascal.variant_part;
+import org.xtext.example.pascal.pascal.record_section;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,8 +29,7 @@ import org.xtext.example.pascal.pascal.variant_part;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.pascal.pascal.impl.field_listImpl#getFixed <em>Fixed</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.impl.field_listImpl#getVariants <em>Variants</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.impl.field_listImpl#getSections <em>Sections</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,24 +37,14 @@ import org.xtext.example.pascal.pascal.variant_part;
 public class field_listImpl extends MinimalEObjectImpl.Container implements field_list
 {
   /**
-   * The cached value of the '{@link #getFixed() <em>Fixed</em>}' containment reference.
+   * The cached value of the '{@link #getSections() <em>Sections</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFixed()
+   * @see #getSections()
    * @generated
    * @ordered
    */
-  protected fixed_part fixed;
-
-  /**
-   * The cached value of the '{@link #getVariants() <em>Variants</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVariants()
-   * @generated
-   * @ordered
-   */
-  protected EList<variant_part> variants;
+  protected EList<record_section> sections;
 
   /**
    * <!-- begin-user-doc -->
@@ -86,61 +72,13 @@ public class field_listImpl extends MinimalEObjectImpl.Container implements fiel
    * <!-- end-user-doc -->
    * @generated
    */
-  public fixed_part getFixed()
+  public EList<record_section> getSections()
   {
-    return fixed;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetFixed(fixed_part newFixed, NotificationChain msgs)
-  {
-    fixed_part oldFixed = fixed;
-    fixed = newFixed;
-    if (eNotificationRequired())
+    if (sections == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PascalPackage.FIELD_LIST__FIXED, oldFixed, newFixed);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      sections = new EObjectContainmentEList<record_section>(record_section.class, this, PascalPackage.FIELD_LIST__SECTIONS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFixed(fixed_part newFixed)
-  {
-    if (newFixed != fixed)
-    {
-      NotificationChain msgs = null;
-      if (fixed != null)
-        msgs = ((InternalEObject)fixed).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PascalPackage.FIELD_LIST__FIXED, null, msgs);
-      if (newFixed != null)
-        msgs = ((InternalEObject)newFixed).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PascalPackage.FIELD_LIST__FIXED, null, msgs);
-      msgs = basicSetFixed(newFixed, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.FIELD_LIST__FIXED, newFixed, newFixed));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<variant_part> getVariants()
-  {
-    if (variants == null)
-    {
-      variants = new EObjectContainmentEList<variant_part>(variant_part.class, this, PascalPackage.FIELD_LIST__VARIANTS);
-    }
-    return variants;
+    return sections;
   }
 
   /**
@@ -153,10 +91,8 @@ public class field_listImpl extends MinimalEObjectImpl.Container implements fiel
   {
     switch (featureID)
     {
-      case PascalPackage.FIELD_LIST__FIXED:
-        return basicSetFixed(null, msgs);
-      case PascalPackage.FIELD_LIST__VARIANTS:
-        return ((InternalEList<?>)getVariants()).basicRemove(otherEnd, msgs);
+      case PascalPackage.FIELD_LIST__SECTIONS:
+        return ((InternalEList<?>)getSections()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -171,10 +107,8 @@ public class field_listImpl extends MinimalEObjectImpl.Container implements fiel
   {
     switch (featureID)
     {
-      case PascalPackage.FIELD_LIST__FIXED:
-        return getFixed();
-      case PascalPackage.FIELD_LIST__VARIANTS:
-        return getVariants();
+      case PascalPackage.FIELD_LIST__SECTIONS:
+        return getSections();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -190,12 +124,9 @@ public class field_listImpl extends MinimalEObjectImpl.Container implements fiel
   {
     switch (featureID)
     {
-      case PascalPackage.FIELD_LIST__FIXED:
-        setFixed((fixed_part)newValue);
-        return;
-      case PascalPackage.FIELD_LIST__VARIANTS:
-        getVariants().clear();
-        getVariants().addAll((Collection<? extends variant_part>)newValue);
+      case PascalPackage.FIELD_LIST__SECTIONS:
+        getSections().clear();
+        getSections().addAll((Collection<? extends record_section>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -211,11 +142,8 @@ public class field_listImpl extends MinimalEObjectImpl.Container implements fiel
   {
     switch (featureID)
     {
-      case PascalPackage.FIELD_LIST__FIXED:
-        setFixed((fixed_part)null);
-        return;
-      case PascalPackage.FIELD_LIST__VARIANTS:
-        getVariants().clear();
+      case PascalPackage.FIELD_LIST__SECTIONS:
+        getSections().clear();
         return;
     }
     super.eUnset(featureID);
@@ -231,10 +159,8 @@ public class field_listImpl extends MinimalEObjectImpl.Container implements fiel
   {
     switch (featureID)
     {
-      case PascalPackage.FIELD_LIST__FIXED:
-        return fixed != null;
-      case PascalPackage.FIELD_LIST__VARIANTS:
-        return variants != null && !variants.isEmpty();
+      case PascalPackage.FIELD_LIST__SECTIONS:
+        return sections != null && !sections.isEmpty();
     }
     return super.eIsSet(featureID);
   }
