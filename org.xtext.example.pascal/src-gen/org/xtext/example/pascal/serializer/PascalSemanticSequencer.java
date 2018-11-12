@@ -19,6 +19,7 @@ import org.xtext.example.pascal.pascal.any_number;
 import org.xtext.example.pascal.pascal.assignment_statement;
 import org.xtext.example.pascal.pascal.block;
 import org.xtext.example.pascal.pascal.case_label_list;
+import org.xtext.example.pascal.pascal.compound_statement;
 import org.xtext.example.pascal.pascal.constant;
 import org.xtext.example.pascal.pascal.constant_definition;
 import org.xtext.example.pascal.pascal.constant_definition_part;
@@ -54,6 +55,7 @@ import org.xtext.example.pascal.pascal.simple_type;
 import org.xtext.example.pascal.pascal.statement;
 import org.xtext.example.pascal.pascal.statement_part;
 import org.xtext.example.pascal.pascal.statement_sequence;
+import org.xtext.example.pascal.pascal.structured_statement;
 import org.xtext.example.pascal.pascal.structured_type;
 import org.xtext.example.pascal.pascal.subrange_type;
 import org.xtext.example.pascal.pascal.tag_field;
@@ -71,6 +73,7 @@ import org.xtext.example.pascal.pascal.variable_parameter_section;
 import org.xtext.example.pascal.pascal.variable_section;
 import org.xtext.example.pascal.pascal.variant;
 import org.xtext.example.pascal.pascal.variant_part;
+import org.xtext.example.pascal.pascal.while_statement;
 import org.xtext.example.pascal.services.PascalGrammarAccess;
 
 @SuppressWarnings("all")
@@ -109,6 +112,9 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case PascalPackage.CASE_LABEL_LIST:
 				sequence_case_label_list(context, (case_label_list) semanticObject); 
+				return; 
+			case PascalPackage.COMPOUND_STATEMENT:
+				sequence_compound_statement(context, (compound_statement) semanticObject); 
 				return; 
 			case PascalPackage.CONSTANT:
 				sequence_constant(context, (constant) semanticObject); 
@@ -215,6 +221,9 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case PascalPackage.STATEMENT_SEQUENCE:
 				sequence_statement_sequence(context, (statement_sequence) semanticObject); 
 				return; 
+			case PascalPackage.STRUCTURED_STATEMENT:
+				sequence_structured_statement(context, (structured_statement) semanticObject); 
+				return; 
 			case PascalPackage.STRUCTURED_TYPE:
 				sequence_structured_type(context, (structured_type) semanticObject); 
 				return; 
@@ -265,6 +274,9 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case PascalPackage.VARIANT_PART:
 				sequence_variant_part(context, (variant_part) semanticObject); 
+				return; 
+			case PascalPackage.WHILE_STATEMENT:
+				sequence_while_statement(context, (while_statement) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -320,6 +332,24 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 */
 	protected void sequence_case_label_list(ISerializationContext context, case_label_list semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     compound_statement returns compound_statement
+	 *
+	 * Constraint:
+	 *     sequence=statement_sequence
+	 */
+	protected void sequence_compound_statement(ISerializationContext context, compound_statement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PascalPackage.Literals.COMPOUND_STATEMENT__SEQUENCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PascalPackage.Literals.COMPOUND_STATEMENT__SEQUENCE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCompound_statementAccess().getSequenceStatement_sequenceParserRuleCall_1_0(), semanticObject.getSequence());
+		feeder.finish();
 	}
 	
 	
@@ -852,9 +882,21 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     statement returns statement
 	 *
 	 * Constraint:
-	 *     (label=label? simple=simple_statement)
+	 *     (label=label? (simple=simple_statement | structured=structured_statement))
 	 */
 	protected void sequence_statement(ISerializationContext context, statement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     structured_statement returns structured_statement
+	 *
+	 * Constraint:
+	 *     (compound=compound_statement | while_stmt=while_statement)
+	 */
+	protected void sequence_structured_statement(ISerializationContext context, structured_statement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1129,6 +1171,27 @@ public class PascalSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 */
 	protected void sequence_variant(ISerializationContext context, variant semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     while_statement returns while_statement
+	 *
+	 * Constraint:
+	 *     (expression=expression statement=statement_sequence)
+	 */
+	protected void sequence_while_statement(ISerializationContext context, while_statement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PascalPackage.Literals.WHILE_STATEMENT__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PascalPackage.Literals.WHILE_STATEMENT__EXPRESSION));
+			if (transientValues.isValueTransient(semanticObject, PascalPackage.Literals.WHILE_STATEMENT__STATEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PascalPackage.Literals.WHILE_STATEMENT__STATEMENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getWhile_statementAccess().getExpressionExpressionParserRuleCall_1_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getWhile_statementAccess().getStatementStatement_sequenceParserRuleCall_3_0(), semanticObject.getStatement());
+		feeder.finish();
 	}
 	
 	

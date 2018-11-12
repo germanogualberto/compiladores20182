@@ -229,14 +229,17 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cLabelAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
 		private final RuleCall cLabelLabelParserRuleCall_0_0_0 = (RuleCall)cLabelAssignment_0_0.eContents().get(0);
 		private final Keyword cColonKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cSimpleAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cSimpleSimple_statementParserRuleCall_1_0 = (RuleCall)cSimpleAssignment_1.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Assignment cSimpleAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final RuleCall cSimpleSimple_statementParserRuleCall_1_0_0 = (RuleCall)cSimpleAssignment_1_0.eContents().get(0);
+		private final Assignment cStructuredAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final RuleCall cStructuredStructured_statementParserRuleCall_1_1_0 = (RuleCall)cStructuredAssignment_1_1.eContents().get(0);
 		
 		//statement:
-		//	(label=label ":")? simple=simple_statement;
+		//	(label=label ":")? (simple=simple_statement | structured=structured_statement);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(label=label ":")? simple=simple_statement
+		//(label=label ":")? (simple=simple_statement | structured=structured_statement)
 		public Group getGroup() { return cGroup; }
 		
 		//(label=label ":")?
@@ -251,11 +254,20 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_0_1() { return cColonKeyword_0_1; }
 		
+		//simple=simple_statement | structured=structured_statement
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
 		//simple=simple_statement
-		public Assignment getSimpleAssignment_1() { return cSimpleAssignment_1; }
+		public Assignment getSimpleAssignment_1_0() { return cSimpleAssignment_1_0; }
 		
 		//simple_statement
-		public RuleCall getSimpleSimple_statementParserRuleCall_1_0() { return cSimpleSimple_statementParserRuleCall_1_0; }
+		public RuleCall getSimpleSimple_statementParserRuleCall_1_0_0() { return cSimpleSimple_statementParserRuleCall_1_0_0; }
+		
+		//structured=structured_statement
+		public Assignment getStructuredAssignment_1_1() { return cStructuredAssignment_1_1; }
+		
+		//structured_statement
+		public RuleCall getStructuredStructured_statementParserRuleCall_1_1_0() { return cStructuredStructured_statementParserRuleCall_1_1_0; }
 	}
 	public class Simple_statementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.simple_statement");
@@ -291,6 +303,61 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getFunction_noargsIDTerminalRuleCall_2_0() { return cFunction_noargsIDTerminalRuleCall_2_0; }
+	}
+	public class Structured_statementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.structured_statement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cCompoundAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cCompoundCompound_statementParserRuleCall_0_0 = (RuleCall)cCompoundAssignment_0.eContents().get(0);
+		private final Assignment cWhile_stmtAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cWhile_stmtWhile_statementParserRuleCall_1_0 = (RuleCall)cWhile_stmtAssignment_1.eContents().get(0);
+		
+		//structured_statement:
+		//	compound=compound_statement
+		//	| while_stmt=while_statement;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//compound=compound_statement | while_stmt=while_statement
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//compound=compound_statement
+		public Assignment getCompoundAssignment_0() { return cCompoundAssignment_0; }
+		
+		//compound_statement
+		public RuleCall getCompoundCompound_statementParserRuleCall_0_0() { return cCompoundCompound_statementParserRuleCall_0_0; }
+		
+		//while_stmt=while_statement
+		public Assignment getWhile_stmtAssignment_1() { return cWhile_stmtAssignment_1; }
+		
+		//while_statement
+		public RuleCall getWhile_stmtWhile_statementParserRuleCall_1_0() { return cWhile_stmtWhile_statementParserRuleCall_1_0; }
+	}
+	public class Compound_statementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.compound_statement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cBeginKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSequenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSequenceStatement_sequenceParserRuleCall_1_0 = (RuleCall)cSequenceAssignment_1.eContents().get(0);
+		private final Keyword cEndKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//compound_statement:
+		//	"begin" sequence=statement_sequence "end";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"begin" sequence=statement_sequence "end"
+		public Group getGroup() { return cGroup; }
+		
+		//"begin"
+		public Keyword getBeginKeyword_0() { return cBeginKeyword_0; }
+		
+		//sequence=statement_sequence
+		public Assignment getSequenceAssignment_1() { return cSequenceAssignment_1; }
+		
+		//statement_sequence
+		public RuleCall getSequenceStatement_sequenceParserRuleCall_1_0() { return cSequenceStatement_sequenceParserRuleCall_1_0; }
+		
+		//"end"
+		public Keyword getEndKeyword_2() { return cEndKeyword_2; }
 	}
 	public class Assignment_statementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.assignment_statement");
@@ -2216,6 +2283,41 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNamesIDTerminalRuleCall_1_1_0() { return cNamesIDTerminalRuleCall_1_1_0; }
 	}
+	public class While_statementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.while_statement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cWhileKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cExpressionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExpressionExpressionParserRuleCall_1_0 = (RuleCall)cExpressionAssignment_1.eContents().get(0);
+		private final Keyword cDoKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cStatementAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStatementStatement_sequenceParserRuleCall_3_0 = (RuleCall)cStatementAssignment_3.eContents().get(0);
+		
+		//while_statement:
+		//	"while" expression=expression "do" statement=statement_sequence;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"while" expression=expression "do" statement=statement_sequence
+		public Group getGroup() { return cGroup; }
+		
+		//"while"
+		public Keyword getWhileKeyword_0() { return cWhileKeyword_0; }
+		
+		//expression=expression
+		public Assignment getExpressionAssignment_1() { return cExpressionAssignment_1; }
+		
+		//expression
+		public RuleCall getExpressionExpressionParserRuleCall_1_0() { return cExpressionExpressionParserRuleCall_1_0; }
+		
+		//"do"
+		public Keyword getDoKeyword_2() { return cDoKeyword_2; }
+		
+		//statement=statement_sequence
+		public Assignment getStatementAssignment_3() { return cStatementAssignment_3; }
+		
+		//statement_sequence
+		public RuleCall getStatementStatement_sequenceParserRuleCall_3_0() { return cStatementStatement_sequenceParserRuleCall_3_0; }
+	}
 	
 	
 	private final PascalElements pPascal;
@@ -2226,6 +2328,8 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	private final Statement_sequenceElements pStatement_sequence;
 	private final StatementElements pStatement;
 	private final Simple_statementElements pSimple_statement;
+	private final Structured_statementElements pStructured_statement;
+	private final Compound_statementElements pCompound_statement;
 	private final Assignment_statementElements pAssignment_statement;
 	private final LabelElements pLabel;
 	private final VariableElements pVariable;
@@ -2276,11 +2380,10 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	private final Variable_declaration_partElements pVariable_declaration_part;
 	private final Variable_sectionElements pVariable_section;
 	private final Variable_identifier_listElements pVariable_identifier_list;
+	private final While_statementElements pWhile_statement;
 	private final TerminalRule tADDITION_OP;
 	private final TerminalRule tMULTIPLICATION_OP;
 	private final TerminalRule tRELATIONAL_OP;
-	private final TerminalRule tPARENTHESES_COMMENT;
-	private final TerminalRule tCURLY_BRACKETS_COMMENT;
 	private final TerminalRule tNUMERIC_SUBRANGE;
 	private final TerminalRule tDIGIT_SEQUENCE;
 	private final TerminalRule tSIGNED_INTEGER_NUMBER;
@@ -2305,6 +2408,8 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		this.pStatement_sequence = new Statement_sequenceElements();
 		this.pStatement = new StatementElements();
 		this.pSimple_statement = new Simple_statementElements();
+		this.pStructured_statement = new Structured_statementElements();
+		this.pCompound_statement = new Compound_statementElements();
 		this.pAssignment_statement = new Assignment_statementElements();
 		this.pLabel = new LabelElements();
 		this.pVariable = new VariableElements();
@@ -2355,11 +2460,10 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		this.pVariable_declaration_part = new Variable_declaration_partElements();
 		this.pVariable_section = new Variable_sectionElements();
 		this.pVariable_identifier_list = new Variable_identifier_listElements();
+		this.pWhile_statement = new While_statementElements();
 		this.tADDITION_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.ADDITION_OP");
 		this.tMULTIPLICATION_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.MULTIPLICATION_OP");
 		this.tRELATIONAL_OP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.RELATIONAL_OP");
-		this.tPARENTHESES_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.PARENTHESES_COMMENT");
-		this.tCURLY_BRACKETS_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.CURLY_BRACKETS_COMMENT");
 		this.tNUMERIC_SUBRANGE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.NUMERIC_SUBRANGE");
 		this.tDIGIT_SEQUENCE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.DIGIT_SEQUENCE");
 		this.tSIGNED_INTEGER_NUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.pascal.Pascal.SIGNED_INTEGER_NUMBER");
@@ -2461,7 +2565,7 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//statement:
-	//	(label=label ":")? simple=simple_statement;
+	//	(label=label ":")? (simple=simple_statement | structured=structured_statement);
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}
@@ -2478,6 +2582,27 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getSimple_statementRule() {
 		return getSimple_statementAccess().getRule();
+	}
+	
+	//structured_statement:
+	//	compound=compound_statement
+	//	| while_stmt=while_statement;
+	public Structured_statementElements getStructured_statementAccess() {
+		return pStructured_statement;
+	}
+	
+	public ParserRule getStructured_statementRule() {
+		return getStructured_statementAccess().getRule();
+	}
+	
+	//compound_statement:
+	//	"begin" sequence=statement_sequence "end";
+	public Compound_statementElements getCompound_statementAccess() {
+		return pCompound_statement;
+	}
+	
+	public ParserRule getCompound_statementRule() {
+		return getCompound_statementAccess().getRule();
 	}
 	
 	//assignment_statement:
@@ -2985,6 +3110,16 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 		return getVariable_identifier_listAccess().getRule();
 	}
 	
+	//while_statement:
+	//	"while" expression=expression "do" statement=statement_sequence;
+	public While_statementElements getWhile_statementAccess() {
+		return pWhile_statement;
+	}
+	
+	public ParserRule getWhile_statementRule() {
+		return getWhile_statementAccess().getRule();
+	}
+	
 	//terminal ADDITION_OP:
 	//	"+" | "-";
 	public TerminalRule getADDITION_OPRule() {
@@ -3001,18 +3136,6 @@ public class PascalGrammarAccess extends AbstractGrammarElementFinder {
 	//	"=" | "<>" | "<" | "<=" | ">" | ">=";
 	public TerminalRule getRELATIONAL_OPRule() {
 		return tRELATIONAL_OP;
-	}
-	
-	//terminal PARENTHESES_COMMENT:
-	//	'(*'->'*)';
-	public TerminalRule getPARENTHESES_COMMENTRule() {
-		return tPARENTHESES_COMMENT;
-	}
-	
-	//terminal CURLY_BRACKETS_COMMENT:
-	//	'{'->'}';
-	public TerminalRule getCURLY_BRACKETS_COMMENTRule() {
-		return tCURLY_BRACKETS_COMMENT;
 	}
 	
 	//terminal NUMERIC_SUBRANGE:

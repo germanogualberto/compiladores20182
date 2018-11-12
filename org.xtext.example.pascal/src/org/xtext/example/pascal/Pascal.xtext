@@ -32,11 +32,21 @@ statement_sequence:
 ;
 
 statement:  
-	( label=label ":" ) ? ( simple=simple_statement )
+	( label=label ":" ) ? ( simple=simple_statement | structured=structured_statement )
 ;
 
 simple_statement:
-	( assignment=assignment_statement | function=function_designator | function_noargs=ID) ?	
+	( assignment=assignment_statement | function=function_designator | function_noargs=ID ) ?	
+;
+
+structured_statement:
+	 compound = compound_statement
+	 | while_stmt = while_statement
+;
+
+
+compound_statement:
+	"begin" sequence=statement_sequence "end"
 ;
 
 assignment_statement: 
@@ -241,6 +251,10 @@ variable_identifier_list:
 	names+=ID ( "," names+=ID ) *
 ;
 
+while_statement:
+	"while" expression=expression "do" statement=statement_sequence
+;
+
 terminal ADDITION_OP:
 	"+" | "-"
 ;
@@ -251,14 +265,6 @@ terminal MULTIPLICATION_OP:
 
 terminal RELATIONAL_OP:
 	"=" | "<>" | "<" | "<=" | ">" | ">="	
-;
-
-terminal PARENTHESES_COMMENT: 
-	'(*' -> '*)'
-;
-
-terminal CURLY_BRACKETS_COMMENT:
-	'{' -> '}'
 ;
 
 terminal NUMERIC_SUBRANGE:

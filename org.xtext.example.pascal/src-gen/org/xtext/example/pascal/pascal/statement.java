@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.example.pascal.pascal.statement#getLabel <em>Label</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.statement#getSimple <em>Simple</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.statement#getStructured <em>Structured</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.pascal.pascal.PascalPackage#getstatement()
@@ -75,5 +76,31 @@ public interface statement extends EObject
    * @generated
    */
   void setSimple(simple_statement value);
+
+  /**
+   * Returns the value of the '<em><b>Structured</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Structured</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Structured</em>' containment reference.
+   * @see #setStructured(structured_statement)
+   * @see org.xtext.example.pascal.pascal.PascalPackage#getstatement_Structured()
+   * @model containment="true"
+   * @generated
+   */
+  structured_statement getStructured();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.pascal.pascal.statement#getStructured <em>Structured</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Structured</em>' containment reference.
+   * @see #getStructured()
+   * @generated
+   */
+  void setStructured(structured_statement value);
 
 } // statement

@@ -73,6 +73,8 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
       case PascalPackage.STATEMENT_SEQUENCE: return createstatement_sequence();
       case PascalPackage.STATEMENT: return createstatement();
       case PascalPackage.SIMPLE_STATEMENT: return createsimple_statement();
+      case PascalPackage.STRUCTURED_STATEMENT: return createstructured_statement();
+      case PascalPackage.COMPOUND_STATEMENT: return createcompound_statement();
       case PascalPackage.ASSIGNMENT_STATEMENT: return createassignment_statement();
       case PascalPackage.LABEL: return createlabel();
       case PascalPackage.VARIABLE: return createvariable();
@@ -121,6 +123,7 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
       case PascalPackage.VARIABLE_DECLARATION_PART: return createvariable_declaration_part();
       case PascalPackage.VARIABLE_SECTION: return createvariable_section();
       case PascalPackage.VARIABLE_IDENTIFIER_LIST: return createvariable_identifier_list();
+      case PascalPackage.WHILE_STATEMENT: return createwhile_statement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -212,6 +215,28 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
   {
     simple_statementImpl simple_statement = new simple_statementImpl();
     return simple_statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public structured_statement createstructured_statement()
+  {
+    structured_statementImpl structured_statement = new structured_statementImpl();
+    return structured_statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public compound_statement createcompound_statement()
+  {
+    compound_statementImpl compound_statement = new compound_statementImpl();
+    return compound_statement;
   }
 
   /**
@@ -740,6 +765,17 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
   {
     variable_identifier_listImpl variable_identifier_list = new variable_identifier_listImpl();
     return variable_identifier_list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public while_statement createwhile_statement()
+  {
+    while_statementImpl while_statement = new while_statementImpl();
+    return while_statement;
   }
 
   /**

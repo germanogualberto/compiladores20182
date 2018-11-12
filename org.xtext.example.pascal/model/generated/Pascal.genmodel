@@ -33,11 +33,19 @@
     <genClasses ecoreClass="Pascal.ecore#//statement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//statement/label"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//statement/simple"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//statement/structured"/>
     </genClasses>
     <genClasses ecoreClass="Pascal.ecore#//simple_statement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//simple_statement/assignment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//simple_statement/function"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pascal.ecore#//simple_statement/function_noargs"/>
+    </genClasses>
+    <genClasses ecoreClass="Pascal.ecore#//structured_statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//structured_statement/compound"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//structured_statement/while_stmt"/>
+    </genClasses>
+    <genClasses ecoreClass="Pascal.ecore#//compound_statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//compound_statement/sequence"/>
     </genClasses>
     <genClasses ecoreClass="Pascal.ecore#//assignment_statement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//assignment_statement/variable"/>
@@ -237,6 +245,10 @@
     </genClasses>
     <genClasses ecoreClass="Pascal.ecore#//variable_identifier_list">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pascal.ecore#//variable_identifier_list/names"/>
+    </genClasses>
+    <genClasses ecoreClass="Pascal.ecore#//while_statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//while_statement/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pascal.ecore#//while_statement/statement"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

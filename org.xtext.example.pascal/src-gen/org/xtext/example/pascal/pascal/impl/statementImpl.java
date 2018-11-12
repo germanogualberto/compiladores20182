@@ -16,6 +16,7 @@ import org.xtext.example.pascal.pascal.PascalPackage;
 import org.xtext.example.pascal.pascal.label;
 import org.xtext.example.pascal.pascal.simple_statement;
 import org.xtext.example.pascal.pascal.statement;
+import org.xtext.example.pascal.pascal.structured_statement;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +28,7 @@ import org.xtext.example.pascal.pascal.statement;
  * <ul>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.statementImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.statementImpl#getSimple <em>Simple</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.impl.statementImpl#getStructured <em>Structured</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,6 +54,16 @@ public class statementImpl extends MinimalEObjectImpl.Container implements state
    * @ordered
    */
   protected simple_statement simple;
+
+  /**
+   * The cached value of the '{@link #getStructured() <em>Structured</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStructured()
+   * @generated
+   * @ordered
+   */
+  protected structured_statement structured;
 
   /**
    * <!-- begin-user-doc -->
@@ -175,6 +187,54 @@ public class statementImpl extends MinimalEObjectImpl.Container implements state
    * <!-- end-user-doc -->
    * @generated
    */
+  public structured_statement getStructured()
+  {
+    return structured;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStructured(structured_statement newStructured, NotificationChain msgs)
+  {
+    structured_statement oldStructured = structured;
+    structured = newStructured;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PascalPackage.STATEMENT__STRUCTURED, oldStructured, newStructured);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStructured(structured_statement newStructured)
+  {
+    if (newStructured != structured)
+    {
+      NotificationChain msgs = null;
+      if (structured != null)
+        msgs = ((InternalEObject)structured).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PascalPackage.STATEMENT__STRUCTURED, null, msgs);
+      if (newStructured != null)
+        msgs = ((InternalEObject)newStructured).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PascalPackage.STATEMENT__STRUCTURED, null, msgs);
+      msgs = basicSetStructured(newStructured, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.STATEMENT__STRUCTURED, newStructured, newStructured));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -184,6 +244,8 @@ public class statementImpl extends MinimalEObjectImpl.Container implements state
         return basicSetLabel(null, msgs);
       case PascalPackage.STATEMENT__SIMPLE:
         return basicSetSimple(null, msgs);
+      case PascalPackage.STATEMENT__STRUCTURED:
+        return basicSetStructured(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -202,6 +264,8 @@ public class statementImpl extends MinimalEObjectImpl.Container implements state
         return getLabel();
       case PascalPackage.STATEMENT__SIMPLE:
         return getSimple();
+      case PascalPackage.STATEMENT__STRUCTURED:
+        return getStructured();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -221,6 +285,9 @@ public class statementImpl extends MinimalEObjectImpl.Container implements state
         return;
       case PascalPackage.STATEMENT__SIMPLE:
         setSimple((simple_statement)newValue);
+        return;
+      case PascalPackage.STATEMENT__STRUCTURED:
+        setStructured((structured_statement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -242,6 +309,9 @@ public class statementImpl extends MinimalEObjectImpl.Container implements state
       case PascalPackage.STATEMENT__SIMPLE:
         setSimple((simple_statement)null);
         return;
+      case PascalPackage.STATEMENT__STRUCTURED:
+        setStructured((structured_statement)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -260,6 +330,8 @@ public class statementImpl extends MinimalEObjectImpl.Container implements state
         return label != null;
       case PascalPackage.STATEMENT__SIMPLE:
         return simple != null;
+      case PascalPackage.STATEMENT__STRUCTURED:
+        return structured != null;
     }
     return super.eIsSet(featureID);
   }

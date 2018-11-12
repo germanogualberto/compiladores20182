@@ -96,6 +96,24 @@ public interface PascalFactory extends EFactory
   simple_statement createsimple_statement();
 
   /**
+   * Returns a new object of class '<em>structured statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>structured statement</em>'.
+   * @generated
+   */
+  structured_statement createstructured_statement();
+
+  /**
+   * Returns a new object of class '<em>compound statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>compound statement</em>'.
+   * @generated
+   */
+  compound_statement createcompound_statement();
+
+  /**
    * Returns a new object of class '<em>assignment statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -526,6 +544,15 @@ public interface PascalFactory extends EFactory
    * @generated
    */
   variable_identifier_list createvariable_identifier_list();
+
+  /**
+   * Returns a new object of class '<em>while statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>while statement</em>'.
+   * @generated
+   */
+  while_statement createwhile_statement();
 
   /**
    * Returns the package supported by this factory.

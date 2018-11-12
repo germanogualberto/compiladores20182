@@ -41,6 +41,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="simple" eType="#//simple_statement"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structured" eType="#//structured_statement"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="simple_statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="assignment" eType="#//assignment_statement"
@@ -48,6 +50,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="function" eType="#//function_designator"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="function_noargs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="structured_statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compound" eType="#//compound_statement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="while_stmt" eType="#//while_statement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="compound_statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sequence" eType="#//statement_sequence"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="assignment_statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//variable"
@@ -317,5 +329,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="variable_identifier_list">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="names" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="while_statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="#//statement_sequence"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

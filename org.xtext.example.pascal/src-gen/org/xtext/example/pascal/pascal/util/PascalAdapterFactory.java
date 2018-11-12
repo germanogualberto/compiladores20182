@@ -116,6 +116,16 @@ public class PascalAdapterFactory extends AdapterFactoryImpl
         return createsimple_statementAdapter();
       }
       @Override
+      public Adapter casestructured_statement(structured_statement object)
+      {
+        return createstructured_statementAdapter();
+      }
+      @Override
+      public Adapter casecompound_statement(compound_statement object)
+      {
+        return createcompound_statementAdapter();
+      }
+      @Override
       public Adapter caseassignment_statement(assignment_statement object)
       {
         return createassignment_statementAdapter();
@@ -356,6 +366,11 @@ public class PascalAdapterFactory extends AdapterFactoryImpl
         return createvariable_identifier_listAdapter();
       }
       @Override
+      public Adapter casewhile_statement(while_statement object)
+      {
+        return createwhile_statementAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -493,6 +508,36 @@ public class PascalAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createsimple_statementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.structured_statement <em>structured statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.structured_statement
+   * @generated
+   */
+  public Adapter createstructured_statementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.compound_statement <em>compound statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.compound_statement
+   * @generated
+   */
+  public Adapter createcompound_statementAdapter()
   {
     return null;
   }
@@ -1213,6 +1258,21 @@ public class PascalAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createvariable_identifier_listAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.pascal.pascal.while_statement <em>while statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.pascal.pascal.while_statement
+   * @generated
+   */
+  public Adapter createwhile_statementAdapter()
   {
     return null;
   }

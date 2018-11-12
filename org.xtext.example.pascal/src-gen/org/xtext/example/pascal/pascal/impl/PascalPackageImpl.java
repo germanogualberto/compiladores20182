@@ -16,6 +16,7 @@ import org.xtext.example.pascal.pascal.any_number;
 import org.xtext.example.pascal.pascal.assignment_statement;
 import org.xtext.example.pascal.pascal.block;
 import org.xtext.example.pascal.pascal.case_label_list;
+import org.xtext.example.pascal.pascal.compound_statement;
 import org.xtext.example.pascal.pascal.constant;
 import org.xtext.example.pascal.pascal.constant_definition;
 import org.xtext.example.pascal.pascal.constant_definition_part;
@@ -51,6 +52,7 @@ import org.xtext.example.pascal.pascal.simple_type;
 import org.xtext.example.pascal.pascal.statement;
 import org.xtext.example.pascal.pascal.statement_part;
 import org.xtext.example.pascal.pascal.statement_sequence;
+import org.xtext.example.pascal.pascal.structured_statement;
 import org.xtext.example.pascal.pascal.structured_type;
 import org.xtext.example.pascal.pascal.subrange_type;
 import org.xtext.example.pascal.pascal.tag_field;
@@ -68,6 +70,7 @@ import org.xtext.example.pascal.pascal.variable_parameter_section;
 import org.xtext.example.pascal.pascal.variable_section;
 import org.xtext.example.pascal.pascal.variant;
 import org.xtext.example.pascal.pascal.variant_part;
+import org.xtext.example.pascal.pascal.while_statement;
 
 /**
  * <!-- begin-user-doc -->
@@ -132,6 +135,20 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
    * @generated
    */
   private EClass simple_statementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass structured_statementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass compound_statementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -470,6 +487,13 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
   private EClass variable_identifier_listEClass = null;
 
   /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass while_statementEClass = null;
+
+  /**
    * Creates an instance of the model <b>Package</b>, registered with
    * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
    * package URI value.
@@ -747,6 +771,16 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getstatement_Structured()
+  {
+    return (EReference)statementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getsimple_statement()
   {
     return simple_statementEClass;
@@ -780,6 +814,56 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
   public EAttribute getsimple_statement_Function_noargs()
   {
     return (EAttribute)simple_statementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getstructured_statement()
+  {
+    return structured_statementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getstructured_statement_Compound()
+  {
+    return (EReference)structured_statementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getstructured_statement_While_stmt()
+  {
+    return (EReference)structured_statementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getcompound_statement()
+  {
+    return compound_statementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getcompound_statement_Sequence()
+  {
+    return (EReference)compound_statementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2297,6 +2381,36 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getwhile_statement()
+  {
+    return while_statementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getwhile_statement_Expression()
+  {
+    return (EReference)while_statementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getwhile_statement_Statement()
+  {
+    return (EReference)while_statementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public PascalFactory getPascalFactory()
   {
     return (PascalFactory)getEFactoryInstance();
@@ -2349,11 +2463,19 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
     statementEClass = createEClass(STATEMENT);
     createEReference(statementEClass, STATEMENT__LABEL);
     createEReference(statementEClass, STATEMENT__SIMPLE);
+    createEReference(statementEClass, STATEMENT__STRUCTURED);
 
     simple_statementEClass = createEClass(SIMPLE_STATEMENT);
     createEReference(simple_statementEClass, SIMPLE_STATEMENT__ASSIGNMENT);
     createEReference(simple_statementEClass, SIMPLE_STATEMENT__FUNCTION);
     createEAttribute(simple_statementEClass, SIMPLE_STATEMENT__FUNCTION_NOARGS);
+
+    structured_statementEClass = createEClass(STRUCTURED_STATEMENT);
+    createEReference(structured_statementEClass, STRUCTURED_STATEMENT__COMPOUND);
+    createEReference(structured_statementEClass, STRUCTURED_STATEMENT__WHILE_STMT);
+
+    compound_statementEClass = createEClass(COMPOUND_STATEMENT);
+    createEReference(compound_statementEClass, COMPOUND_STATEMENT__SEQUENCE);
 
     assignment_statementEClass = createEClass(ASSIGNMENT_STATEMENT);
     createEReference(assignment_statementEClass, ASSIGNMENT_STATEMENT__VARIABLE);
@@ -2553,6 +2675,10 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
 
     variable_identifier_listEClass = createEClass(VARIABLE_IDENTIFIER_LIST);
     createEAttribute(variable_identifier_listEClass, VARIABLE_IDENTIFIER_LIST__NAMES);
+
+    while_statementEClass = createEClass(WHILE_STATEMENT);
+    createEReference(while_statementEClass, WHILE_STATEMENT__EXPRESSION);
+    createEReference(while_statementEClass, WHILE_STATEMENT__STATEMENT);
   }
 
   /**
@@ -2613,11 +2739,19 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
     initEClass(statementEClass, statement.class, "statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getstatement_Label(), this.getlabel(), null, "label", null, 0, 1, statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getstatement_Simple(), this.getsimple_statement(), null, "simple", null, 0, 1, statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getstatement_Structured(), this.getstructured_statement(), null, "structured", null, 0, 1, statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(simple_statementEClass, simple_statement.class, "simple_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getsimple_statement_Assignment(), this.getassignment_statement(), null, "assignment", null, 0, 1, simple_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getsimple_statement_Function(), this.getfunction_designator(), null, "function", null, 0, 1, simple_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getsimple_statement_Function_noargs(), ecorePackage.getEString(), "function_noargs", null, 0, 1, simple_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(structured_statementEClass, structured_statement.class, "structured_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getstructured_statement_Compound(), this.getcompound_statement(), null, "compound", null, 0, 1, structured_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getstructured_statement_While_stmt(), this.getwhile_statement(), null, "while_stmt", null, 0, 1, structured_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(compound_statementEClass, compound_statement.class, "compound_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getcompound_statement_Sequence(), this.getstatement_sequence(), null, "sequence", null, 0, 1, compound_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(assignment_statementEClass, assignment_statement.class, "assignment_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getassignment_statement_Variable(), this.getvariable(), null, "variable", null, 0, 1, assignment_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2817,6 +2951,10 @@ public class PascalPackageImpl extends EPackageImpl implements PascalPackage
 
     initEClass(variable_identifier_listEClass, variable_identifier_list.class, "variable_identifier_list", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getvariable_identifier_list_Names(), ecorePackage.getEString(), "names", null, 0, -1, variable_identifier_list.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(while_statementEClass, while_statement.class, "while_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getwhile_statement_Expression(), this.getexpression(), null, "expression", null, 0, 1, while_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getwhile_statement_Statement(), this.getstatement_sequence(), null, "statement", null, 0, 1, while_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

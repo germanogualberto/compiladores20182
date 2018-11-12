@@ -129,6 +129,20 @@ public class PascalSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PascalPackage.STRUCTURED_STATEMENT:
+      {
+        structured_statement structured_statement = (structured_statement)theEObject;
+        T result = casestructured_statement(structured_statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PascalPackage.COMPOUND_STATEMENT:
+      {
+        compound_statement compound_statement = (compound_statement)theEObject;
+        T result = casecompound_statement(compound_statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case PascalPackage.ASSIGNMENT_STATEMENT:
       {
         assignment_statement assignment_statement = (assignment_statement)theEObject;
@@ -465,6 +479,13 @@ public class PascalSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PascalPackage.WHILE_STATEMENT:
+      {
+        while_statement while_statement = (while_statement)theEObject;
+        T result = casewhile_statement(while_statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -593,6 +614,38 @@ public class PascalSwitch<T> extends Switch<T>
    * @generated
    */
   public T casesimple_statement(simple_statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>structured statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>structured statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casestructured_statement(structured_statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>compound statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>compound statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casecompound_statement(compound_statement object)
   {
     return null;
   }
@@ -1361,6 +1414,22 @@ public class PascalSwitch<T> extends Switch<T>
    * @generated
    */
   public T casevariable_identifier_list(variable_identifier_list object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>while statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>while statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casewhile_statement(while_statement object)
   {
     return null;
   }
