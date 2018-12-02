@@ -40,7 +40,7 @@ simple_statement:
 ;
 
 assignment_statement: 
-	variable=variable ":=" expression=expression	
+	variable=variable ":=" expression=expression
 ;
 
 label:
@@ -72,7 +72,7 @@ term:
 ;
 
 factor:
-	variable=variable | number=number | string=STRING | set=set | nil?="nil" | boolean="true" | boolean="false" | function=function_designator | "(" expression=expression ")" | "not" not=factor
+	variable=variable | number=number | string=STRING | set=set | nil?="nil" | boolean="true" | boolean="false" | "(" expression=expression ")" | "not" not=factor
 ;
 
 function_designator:
@@ -80,15 +80,23 @@ function_designator:
 ;
 
 function_procedure_declaration:
-	( (procedures+=function_declaration | functions+=procedure_declaration) ";" )+
+	( procedures+=procedure_declaration ";" ) +
 ;
 
-function_heading:
-	"function" name=ID (parameters=formal_parameter_list)? ":" returnType=ID
+abstraction_declaration:
+	procedure_declaration
 ;
 
-function_declaration:
-	heading=function_heading ";" block=block
+abstraction_heading:
+	procedure_heading
+;
+
+procedure_declaration returns abstraction_heading:
+	heading=procedure_heading ";" block=block
+;
+
+procedure_heading returns abstraction_heading: 
+	"procedure" name=ID ( parameters=formal_parameter_list ) ?	
 ;
 
 formal_parameter_list:
@@ -96,7 +104,7 @@ formal_parameter_list:
 ;
 
 formal_parameter_section:
-	value=value_parameter_section | variable=variable_parameter_section | procedure=procedure_heading | function=function_heading
+	value=value_parameter_section | variable=variable_parameter_section | procedure=procedure_heading
 ;
 
 value_parameter_section:
@@ -113,14 +121,6 @@ parameter_type:
 
 variable_parameter_section:
 	"var" indentifiers=identifier_list ":" type=parameter_type
-;
-
-procedure_declaration:
-	heading=procedure_heading ";" block=block
-;
-
-procedure_heading:
-	"procedure" name=ID (parameters=formal_parameter_list)? 
 ;
 
 set:

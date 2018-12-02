@@ -22,12 +22,11 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalPascalParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_SIGNED_INTEGER_NUMBER", "RULE_INTEGER_NUMBER", "RULE_RELATIONAL_OP", "RULE_ADDITION_OP", "RULE_MULTIPLICATION_OP", "RULE_STRING", "RULE_NUMERIC_SUBRANGE", "RULE_SIGNED_REAL_NUMBER", "RULE_REAL_NUMBER", "RULE_PARENTHESES_COMMENT", "RULE_CURLY_BRACKETS_COMMENT", "RULE_DIGIT_SEQUENCE", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'program'", "';'", "'begin'", "'end'", "':'", "':='", "'['", "']'", "'^'", "','", "'in'", "'='", "'or'", "'div'", "'mod'", "'and'", "'nil'", "'true'", "'false'", "'('", "')'", "'not'", "'function'", "'var'", "'procedure'", "'label'", "'const'", "'type'", "'..'", "'packed'", "'record'", "'case'", "'of'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_SIGNED_INTEGER_NUMBER", "RULE_INTEGER_NUMBER", "RULE_RELATIONAL_OP", "RULE_ADDITION_OP", "RULE_MULTIPLICATION_OP", "RULE_STRING", "RULE_NUMERIC_SUBRANGE", "RULE_SIGNED_REAL_NUMBER", "RULE_REAL_NUMBER", "RULE_PARENTHESES_COMMENT", "RULE_CURLY_BRACKETS_COMMENT", "RULE_DIGIT_SEQUENCE", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'program'", "';'", "'begin'", "'end'", "':'", "':='", "'['", "']'", "'^'", "','", "'in'", "'='", "'or'", "'div'", "'mod'", "'and'", "'nil'", "'true'", "'false'", "'('", "')'", "'not'", "'procedure'", "'var'", "'label'", "'const'", "'type'", "'..'", "'packed'", "'record'", "'case'", "'of'"
     };
     public static final int RULE_PARENTHESES_COMMENT=14;
     public static final int T__50=50;
     public static final int RULE_REAL_NUMBER=13;
-    public static final int T__55=55;
     public static final int T__51=51;
     public static final int RULE_NUMERIC_SUBRANGE=11;
     public static final int T__52=52;
@@ -591,7 +590,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==48) ) {
+            if ( (LA1_0==47) ) {
                 alt1=1;
             }
             switch (alt1) {
@@ -637,7 +636,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==50) ) {
+            if ( (LA2_0==49) ) {
                 alt2=1;
             }
             switch (alt2) {
@@ -729,7 +728,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==49) ) {
+            if ( (LA4_0==48) ) {
                 alt4=1;
             }
             switch (alt4) {
@@ -775,7 +774,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==45||LA5_0==47) ) {
+            if ( (LA5_0==45) ) {
                 alt5=1;
             }
             switch (alt5) {
@@ -1434,6 +1433,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             if ( (LA8_0==RULE_ID) ) {
                 switch ( input.LA(2) ) {
+                    case 42:
+                        {
+                        alt8=2;
+                        }
+                        break;
                     case 22:
                     case 28:
                     case 29:
@@ -1447,11 +1451,6 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                     case 26:
                         {
                         alt8=3;
-                        }
-                        break;
-                    case 42:
-                        {
-                        alt8=2;
                         }
                         break;
                 }
@@ -3681,7 +3680,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefactor"
-    // InternalPascal.g:1351:1: rulefactor returns [EObject current=null] : ( ( (lv_variable_0_0= rulevariable ) ) | ( (lv_number_1_0= rulenumber ) ) | ( (lv_string_2_0= RULE_STRING ) ) | ( (lv_set_3_0= ruleset ) ) | ( (lv_nil_4_0= 'nil' ) ) | ( (lv_boolean_5_0= 'true' ) ) | ( (lv_boolean_6_0= 'false' ) ) | ( (lv_function_7_0= rulefunction_designator ) ) | (otherlv_8= '(' ( (lv_expression_9_0= ruleexpression ) ) otherlv_10= ')' ) | (otherlv_11= 'not' ( (lv_not_12_0= rulefactor ) ) ) ) ;
+    // InternalPascal.g:1351:1: rulefactor returns [EObject current=null] : ( ( (lv_variable_0_0= rulevariable ) ) | ( (lv_number_1_0= rulenumber ) ) | ( (lv_string_2_0= RULE_STRING ) ) | ( (lv_set_3_0= ruleset ) ) | ( (lv_nil_4_0= 'nil' ) ) | ( (lv_boolean_5_0= 'true' ) ) | ( (lv_boolean_6_0= 'false' ) ) | (otherlv_7= '(' ( (lv_expression_8_0= ruleexpression ) ) otherlv_9= ')' ) | (otherlv_10= 'not' ( (lv_not_11_0= rulefactor ) ) ) ) ;
     public final EObject rulefactor() throws RecognitionException {
         EObject current = null;
 
@@ -3689,32 +3688,86 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         Token lv_nil_4_0=null;
         Token lv_boolean_5_0=null;
         Token lv_boolean_6_0=null;
-        Token otherlv_8=null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
         Token otherlv_10=null;
-        Token otherlv_11=null;
         EObject lv_variable_0_0 = null;
 
         EObject lv_number_1_0 = null;
 
         EObject lv_set_3_0 = null;
 
-        EObject lv_function_7_0 = null;
+        EObject lv_expression_8_0 = null;
 
-        EObject lv_expression_9_0 = null;
-
-        EObject lv_not_12_0 = null;
+        EObject lv_not_11_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalPascal.g:1357:2: ( ( ( (lv_variable_0_0= rulevariable ) ) | ( (lv_number_1_0= rulenumber ) ) | ( (lv_string_2_0= RULE_STRING ) ) | ( (lv_set_3_0= ruleset ) ) | ( (lv_nil_4_0= 'nil' ) ) | ( (lv_boolean_5_0= 'true' ) ) | ( (lv_boolean_6_0= 'false' ) ) | ( (lv_function_7_0= rulefunction_designator ) ) | (otherlv_8= '(' ( (lv_expression_9_0= ruleexpression ) ) otherlv_10= ')' ) | (otherlv_11= 'not' ( (lv_not_12_0= rulefactor ) ) ) ) )
-            // InternalPascal.g:1358:2: ( ( (lv_variable_0_0= rulevariable ) ) | ( (lv_number_1_0= rulenumber ) ) | ( (lv_string_2_0= RULE_STRING ) ) | ( (lv_set_3_0= ruleset ) ) | ( (lv_nil_4_0= 'nil' ) ) | ( (lv_boolean_5_0= 'true' ) ) | ( (lv_boolean_6_0= 'false' ) ) | ( (lv_function_7_0= rulefunction_designator ) ) | (otherlv_8= '(' ( (lv_expression_9_0= ruleexpression ) ) otherlv_10= ')' ) | (otherlv_11= 'not' ( (lv_not_12_0= rulefactor ) ) ) )
+            // InternalPascal.g:1357:2: ( ( ( (lv_variable_0_0= rulevariable ) ) | ( (lv_number_1_0= rulenumber ) ) | ( (lv_string_2_0= RULE_STRING ) ) | ( (lv_set_3_0= ruleset ) ) | ( (lv_nil_4_0= 'nil' ) ) | ( (lv_boolean_5_0= 'true' ) ) | ( (lv_boolean_6_0= 'false' ) ) | (otherlv_7= '(' ( (lv_expression_8_0= ruleexpression ) ) otherlv_9= ')' ) | (otherlv_10= 'not' ( (lv_not_11_0= rulefactor ) ) ) ) )
+            // InternalPascal.g:1358:2: ( ( (lv_variable_0_0= rulevariable ) ) | ( (lv_number_1_0= rulenumber ) ) | ( (lv_string_2_0= RULE_STRING ) ) | ( (lv_set_3_0= ruleset ) ) | ( (lv_nil_4_0= 'nil' ) ) | ( (lv_boolean_5_0= 'true' ) ) | ( (lv_boolean_6_0= 'false' ) ) | (otherlv_7= '(' ( (lv_expression_8_0= ruleexpression ) ) otherlv_9= ')' ) | (otherlv_10= 'not' ( (lv_not_11_0= rulefactor ) ) ) )
             {
-            // InternalPascal.g:1358:2: ( ( (lv_variable_0_0= rulevariable ) ) | ( (lv_number_1_0= rulenumber ) ) | ( (lv_string_2_0= RULE_STRING ) ) | ( (lv_set_3_0= ruleset ) ) | ( (lv_nil_4_0= 'nil' ) ) | ( (lv_boolean_5_0= 'true' ) ) | ( (lv_boolean_6_0= 'false' ) ) | ( (lv_function_7_0= rulefunction_designator ) ) | (otherlv_8= '(' ( (lv_expression_9_0= ruleexpression ) ) otherlv_10= ')' ) | (otherlv_11= 'not' ( (lv_not_12_0= rulefactor ) ) ) )
-            int alt19=10;
-            alt19 = dfa19.predict(input);
+            // InternalPascal.g:1358:2: ( ( (lv_variable_0_0= rulevariable ) ) | ( (lv_number_1_0= rulenumber ) ) | ( (lv_string_2_0= RULE_STRING ) ) | ( (lv_set_3_0= ruleset ) ) | ( (lv_nil_4_0= 'nil' ) ) | ( (lv_boolean_5_0= 'true' ) ) | ( (lv_boolean_6_0= 'false' ) ) | (otherlv_7= '(' ( (lv_expression_8_0= ruleexpression ) ) otherlv_9= ')' ) | (otherlv_10= 'not' ( (lv_not_11_0= rulefactor ) ) ) )
+            int alt19=9;
+            switch ( input.LA(1) ) {
+            case RULE_ID:
+                {
+                alt19=1;
+                }
+                break;
+            case RULE_SIGNED_INTEGER_NUMBER:
+            case RULE_INTEGER_NUMBER:
+            case RULE_SIGNED_REAL_NUMBER:
+            case RULE_REAL_NUMBER:
+                {
+                alt19=2;
+                }
+                break;
+            case RULE_STRING:
+                {
+                alt19=3;
+                }
+                break;
+            case 29:
+                {
+                alt19=4;
+                }
+                break;
+            case 39:
+                {
+                alt19=5;
+                }
+                break;
+            case 40:
+                {
+                alt19=6;
+                }
+                break;
+            case 41:
+                {
+                alt19=7;
+                }
+                break;
+            case 42:
+                {
+                alt19=8;
+                }
+                break;
+            case 44:
+                {
+                alt19=9;
+                }
+                break;
+            default:
+                if (state.backtracking>0) {state.failed=true; return current;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 19, 0, input);
+
+                throw nvae;
+            }
+
             switch (alt19) {
                 case 1 :
                     // InternalPascal.g:1359:3: ( (lv_variable_0_0= rulevariable ) )
@@ -3972,71 +4025,30 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalPascal.g:1483:3: ( (lv_function_7_0= rulefunction_designator ) )
+                    // InternalPascal.g:1483:3: (otherlv_7= '(' ( (lv_expression_8_0= ruleexpression ) ) otherlv_9= ')' )
                     {
-                    // InternalPascal.g:1483:3: ( (lv_function_7_0= rulefunction_designator ) )
-                    // InternalPascal.g:1484:4: (lv_function_7_0= rulefunction_designator )
+                    // InternalPascal.g:1483:3: (otherlv_7= '(' ( (lv_expression_8_0= ruleexpression ) ) otherlv_9= ')' )
+                    // InternalPascal.g:1484:4: otherlv_7= '(' ( (lv_expression_8_0= ruleexpression ) ) otherlv_9= ')'
                     {
-                    // InternalPascal.g:1484:4: (lv_function_7_0= rulefunction_designator )
-                    // InternalPascal.g:1485:5: lv_function_7_0= rulefunction_designator
-                    {
+                    otherlv_7=(Token)match(input,42,FOLLOW_12); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      					newCompositeNode(grammarAccess.getFactorAccess().getFunctionFunction_designatorParserRuleCall_7_0());
-                      				
-                    }
-                    pushFollow(FOLLOW_2);
-                    lv_function_7_0=rulefunction_designator();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      					if (current==null) {
-                      						current = createModelElementForParent(grammarAccess.getFactorRule());
-                      					}
-                      					set(
-                      						current,
-                      						"function",
-                      						lv_function_7_0,
-                      						"org.xtext.example.pascal.Pascal.function_designator");
-                      					afterParserOrEnumRuleCall();
-                      				
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 9 :
-                    // InternalPascal.g:1503:3: (otherlv_8= '(' ( (lv_expression_9_0= ruleexpression ) ) otherlv_10= ')' )
-                    {
-                    // InternalPascal.g:1503:3: (otherlv_8= '(' ( (lv_expression_9_0= ruleexpression ) ) otherlv_10= ')' )
-                    // InternalPascal.g:1504:4: otherlv_8= '(' ( (lv_expression_9_0= ruleexpression ) ) otherlv_10= ')'
-                    {
-                    otherlv_8=(Token)match(input,42,FOLLOW_12); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      				newLeafNode(otherlv_8, grammarAccess.getFactorAccess().getLeftParenthesisKeyword_8_0());
+                      				newLeafNode(otherlv_7, grammarAccess.getFactorAccess().getLeftParenthesisKeyword_7_0());
                       			
                     }
-                    // InternalPascal.g:1508:4: ( (lv_expression_9_0= ruleexpression ) )
-                    // InternalPascal.g:1509:5: (lv_expression_9_0= ruleexpression )
+                    // InternalPascal.g:1488:4: ( (lv_expression_8_0= ruleexpression ) )
+                    // InternalPascal.g:1489:5: (lv_expression_8_0= ruleexpression )
                     {
-                    // InternalPascal.g:1509:5: (lv_expression_9_0= ruleexpression )
-                    // InternalPascal.g:1510:6: lv_expression_9_0= ruleexpression
+                    // InternalPascal.g:1489:5: (lv_expression_8_0= ruleexpression )
+                    // InternalPascal.g:1490:6: lv_expression_8_0= ruleexpression
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getFactorAccess().getExpressionExpressionParserRuleCall_8_1_0());
+                      						newCompositeNode(grammarAccess.getFactorAccess().getExpressionExpressionParserRuleCall_7_1_0());
                       					
                     }
                     pushFollow(FOLLOW_19);
-                    lv_expression_9_0=ruleexpression();
+                    lv_expression_8_0=ruleexpression();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -4048,7 +4060,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                       						set(
                       							current,
                       							"expression",
-                      							lv_expression_9_0,
+                      							lv_expression_8_0,
                       							"org.xtext.example.pascal.Pascal.expression");
                       						afterParserOrEnumRuleCall();
                       					
@@ -4059,10 +4071,10 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_10=(Token)match(input,43,FOLLOW_2); if (state.failed) return current;
+                    otherlv_9=(Token)match(input,43,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_10, grammarAccess.getFactorAccess().getRightParenthesisKeyword_8_2());
+                      				newLeafNode(otherlv_9, grammarAccess.getFactorAccess().getRightParenthesisKeyword_7_2());
                       			
                     }
 
@@ -4071,31 +4083,31 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 10 :
-                    // InternalPascal.g:1533:3: (otherlv_11= 'not' ( (lv_not_12_0= rulefactor ) ) )
+                case 9 :
+                    // InternalPascal.g:1513:3: (otherlv_10= 'not' ( (lv_not_11_0= rulefactor ) ) )
                     {
-                    // InternalPascal.g:1533:3: (otherlv_11= 'not' ( (lv_not_12_0= rulefactor ) ) )
-                    // InternalPascal.g:1534:4: otherlv_11= 'not' ( (lv_not_12_0= rulefactor ) )
+                    // InternalPascal.g:1513:3: (otherlv_10= 'not' ( (lv_not_11_0= rulefactor ) ) )
+                    // InternalPascal.g:1514:4: otherlv_10= 'not' ( (lv_not_11_0= rulefactor ) )
                     {
-                    otherlv_11=(Token)match(input,44,FOLLOW_12); if (state.failed) return current;
+                    otherlv_10=(Token)match(input,44,FOLLOW_12); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_11, grammarAccess.getFactorAccess().getNotKeyword_9_0());
+                      				newLeafNode(otherlv_10, grammarAccess.getFactorAccess().getNotKeyword_8_0());
                       			
                     }
-                    // InternalPascal.g:1538:4: ( (lv_not_12_0= rulefactor ) )
-                    // InternalPascal.g:1539:5: (lv_not_12_0= rulefactor )
+                    // InternalPascal.g:1518:4: ( (lv_not_11_0= rulefactor ) )
+                    // InternalPascal.g:1519:5: (lv_not_11_0= rulefactor )
                     {
-                    // InternalPascal.g:1539:5: (lv_not_12_0= rulefactor )
-                    // InternalPascal.g:1540:6: lv_not_12_0= rulefactor
+                    // InternalPascal.g:1519:5: (lv_not_11_0= rulefactor )
+                    // InternalPascal.g:1520:6: lv_not_11_0= rulefactor
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getFactorAccess().getNotFactorParserRuleCall_9_1_0());
+                      						newCompositeNode(grammarAccess.getFactorAccess().getNotFactorParserRuleCall_8_1_0());
                       					
                     }
                     pushFollow(FOLLOW_2);
-                    lv_not_12_0=rulefactor();
+                    lv_not_11_0=rulefactor();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -4107,7 +4119,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                       						set(
                       							current,
                       							"not",
-                      							lv_not_12_0,
+                      							lv_not_11_0,
                       							"org.xtext.example.pascal.Pascal.factor");
                       						afterParserOrEnumRuleCall();
                       					
@@ -4149,7 +4161,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulefunction_designator"
-    // InternalPascal.g:1562:1: entryRulefunction_designator returns [EObject current=null] : iv_rulefunction_designator= rulefunction_designator EOF ;
+    // InternalPascal.g:1542:1: entryRulefunction_designator returns [EObject current=null] : iv_rulefunction_designator= rulefunction_designator EOF ;
     public final EObject entryRulefunction_designator() throws RecognitionException {
         EObject current = null;
 
@@ -4157,8 +4169,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:1562:60: (iv_rulefunction_designator= rulefunction_designator EOF )
-            // InternalPascal.g:1563:2: iv_rulefunction_designator= rulefunction_designator EOF
+            // InternalPascal.g:1542:60: (iv_rulefunction_designator= rulefunction_designator EOF )
+            // InternalPascal.g:1543:2: iv_rulefunction_designator= rulefunction_designator EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFunction_designatorRule()); 
@@ -4189,7 +4201,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefunction_designator"
-    // InternalPascal.g:1569:1: rulefunction_designator returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_expressions_2_0= ruleexpression_list ) )? otherlv_3= ')' ) ;
+    // InternalPascal.g:1549:1: rulefunction_designator returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_expressions_2_0= ruleexpression_list ) )? otherlv_3= ')' ) ;
     public final EObject rulefunction_designator() throws RecognitionException {
         EObject current = null;
 
@@ -4203,17 +4215,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:1575:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_expressions_2_0= ruleexpression_list ) )? otherlv_3= ')' ) )
-            // InternalPascal.g:1576:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_expressions_2_0= ruleexpression_list ) )? otherlv_3= ')' )
+            // InternalPascal.g:1555:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_expressions_2_0= ruleexpression_list ) )? otherlv_3= ')' ) )
+            // InternalPascal.g:1556:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_expressions_2_0= ruleexpression_list ) )? otherlv_3= ')' )
             {
-            // InternalPascal.g:1576:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_expressions_2_0= ruleexpression_list ) )? otherlv_3= ')' )
-            // InternalPascal.g:1577:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_expressions_2_0= ruleexpression_list ) )? otherlv_3= ')'
+            // InternalPascal.g:1556:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_expressions_2_0= ruleexpression_list ) )? otherlv_3= ')' )
+            // InternalPascal.g:1557:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_expressions_2_0= ruleexpression_list ) )? otherlv_3= ')'
             {
-            // InternalPascal.g:1577:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalPascal.g:1578:4: (lv_name_0_0= RULE_ID )
+            // InternalPascal.g:1557:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalPascal.g:1558:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalPascal.g:1578:4: (lv_name_0_0= RULE_ID )
-            // InternalPascal.g:1579:5: lv_name_0_0= RULE_ID
+            // InternalPascal.g:1558:4: (lv_name_0_0= RULE_ID )
+            // InternalPascal.g:1559:5: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_20); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -4245,7 +4257,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getFunction_designatorAccess().getLeftParenthesisKeyword_1());
               		
             }
-            // InternalPascal.g:1599:3: ( (lv_expressions_2_0= ruleexpression_list ) )?
+            // InternalPascal.g:1579:3: ( (lv_expressions_2_0= ruleexpression_list ) )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -4254,10 +4266,10 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             }
             switch (alt20) {
                 case 1 :
-                    // InternalPascal.g:1600:4: (lv_expressions_2_0= ruleexpression_list )
+                    // InternalPascal.g:1580:4: (lv_expressions_2_0= ruleexpression_list )
                     {
-                    // InternalPascal.g:1600:4: (lv_expressions_2_0= ruleexpression_list )
-                    // InternalPascal.g:1601:5: lv_expressions_2_0= ruleexpression_list
+                    // InternalPascal.g:1580:4: (lv_expressions_2_0= ruleexpression_list )
+                    // InternalPascal.g:1581:5: lv_expressions_2_0= ruleexpression_list
                     {
                     if ( state.backtracking==0 ) {
 
@@ -4322,7 +4334,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulefunction_procedure_declaration"
-    // InternalPascal.g:1626:1: entryRulefunction_procedure_declaration returns [EObject current=null] : iv_rulefunction_procedure_declaration= rulefunction_procedure_declaration EOF ;
+    // InternalPascal.g:1606:1: entryRulefunction_procedure_declaration returns [EObject current=null] : iv_rulefunction_procedure_declaration= rulefunction_procedure_declaration EOF ;
     public final EObject entryRulefunction_procedure_declaration() throws RecognitionException {
         EObject current = null;
 
@@ -4330,8 +4342,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:1626:71: (iv_rulefunction_procedure_declaration= rulefunction_procedure_declaration EOF )
-            // InternalPascal.g:1627:2: iv_rulefunction_procedure_declaration= rulefunction_procedure_declaration EOF
+            // InternalPascal.g:1606:71: (iv_rulefunction_procedure_declaration= rulefunction_procedure_declaration EOF )
+            // InternalPascal.g:1607:2: iv_rulefunction_procedure_declaration= rulefunction_procedure_declaration EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFunction_procedure_declarationRule()); 
@@ -4362,146 +4374,76 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefunction_procedure_declaration"
-    // InternalPascal.g:1633:1: rulefunction_procedure_declaration returns [EObject current=null] : ( ( ( (lv_procedures_0_0= rulefunction_declaration ) ) | ( (lv_functions_1_0= ruleprocedure_declaration ) ) ) otherlv_2= ';' )+ ;
+    // InternalPascal.g:1613:1: rulefunction_procedure_declaration returns [EObject current=null] : ( ( (lv_procedures_0_0= ruleprocedure_declaration ) ) otherlv_1= ';' )+ ;
     public final EObject rulefunction_procedure_declaration() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_2=null;
+        Token otherlv_1=null;
         EObject lv_procedures_0_0 = null;
-
-        EObject lv_functions_1_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalPascal.g:1639:2: ( ( ( ( (lv_procedures_0_0= rulefunction_declaration ) ) | ( (lv_functions_1_0= ruleprocedure_declaration ) ) ) otherlv_2= ';' )+ )
-            // InternalPascal.g:1640:2: ( ( ( (lv_procedures_0_0= rulefunction_declaration ) ) | ( (lv_functions_1_0= ruleprocedure_declaration ) ) ) otherlv_2= ';' )+
+            // InternalPascal.g:1619:2: ( ( ( (lv_procedures_0_0= ruleprocedure_declaration ) ) otherlv_1= ';' )+ )
+            // InternalPascal.g:1620:2: ( ( (lv_procedures_0_0= ruleprocedure_declaration ) ) otherlv_1= ';' )+
             {
-            // InternalPascal.g:1640:2: ( ( ( (lv_procedures_0_0= rulefunction_declaration ) ) | ( (lv_functions_1_0= ruleprocedure_declaration ) ) ) otherlv_2= ';' )+
-            int cnt22=0;
-            loop22:
+            // InternalPascal.g:1620:2: ( ( (lv_procedures_0_0= ruleprocedure_declaration ) ) otherlv_1= ';' )+
+            int cnt21=0;
+            loop21:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt21=2;
+                int LA21_0 = input.LA(1);
 
-                if ( (LA22_0==45||LA22_0==47) ) {
-                    alt22=1;
+                if ( (LA21_0==45) ) {
+                    alt21=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt21) {
             	case 1 :
-            	    // InternalPascal.g:1641:3: ( ( (lv_procedures_0_0= rulefunction_declaration ) ) | ( (lv_functions_1_0= ruleprocedure_declaration ) ) ) otherlv_2= ';'
+            	    // InternalPascal.g:1621:3: ( (lv_procedures_0_0= ruleprocedure_declaration ) ) otherlv_1= ';'
             	    {
-            	    // InternalPascal.g:1641:3: ( ( (lv_procedures_0_0= rulefunction_declaration ) ) | ( (lv_functions_1_0= ruleprocedure_declaration ) ) )
-            	    int alt21=2;
-            	    int LA21_0 = input.LA(1);
-
-            	    if ( (LA21_0==45) ) {
-            	        alt21=1;
-            	    }
-            	    else if ( (LA21_0==47) ) {
-            	        alt21=2;
-            	    }
-            	    else {
-            	        if (state.backtracking>0) {state.failed=true; return current;}
-            	        NoViableAltException nvae =
-            	            new NoViableAltException("", 21, 0, input);
-
-            	        throw nvae;
-            	    }
-            	    switch (alt21) {
-            	        case 1 :
-            	            // InternalPascal.g:1642:4: ( (lv_procedures_0_0= rulefunction_declaration ) )
-            	            {
-            	            // InternalPascal.g:1642:4: ( (lv_procedures_0_0= rulefunction_declaration ) )
-            	            // InternalPascal.g:1643:5: (lv_procedures_0_0= rulefunction_declaration )
-            	            {
-            	            // InternalPascal.g:1643:5: (lv_procedures_0_0= rulefunction_declaration )
-            	            // InternalPascal.g:1644:6: lv_procedures_0_0= rulefunction_declaration
-            	            {
-            	            if ( state.backtracking==0 ) {
-
-            	              						newCompositeNode(grammarAccess.getFunction_procedure_declarationAccess().getProceduresFunction_declarationParserRuleCall_0_0_0());
-            	              					
-            	            }
-            	            pushFollow(FOLLOW_6);
-            	            lv_procedures_0_0=rulefunction_declaration();
-
-            	            state._fsp--;
-            	            if (state.failed) return current;
-            	            if ( state.backtracking==0 ) {
-
-            	              						if (current==null) {
-            	              							current = createModelElementForParent(grammarAccess.getFunction_procedure_declarationRule());
-            	              						}
-            	              						add(
-            	              							current,
-            	              							"procedures",
-            	              							lv_procedures_0_0,
-            	              							"org.xtext.example.pascal.Pascal.function_declaration");
-            	              						afterParserOrEnumRuleCall();
-            	              					
-            	            }
-
-            	            }
-
-
-            	            }
-
-
-            	            }
-            	            break;
-            	        case 2 :
-            	            // InternalPascal.g:1662:4: ( (lv_functions_1_0= ruleprocedure_declaration ) )
-            	            {
-            	            // InternalPascal.g:1662:4: ( (lv_functions_1_0= ruleprocedure_declaration ) )
-            	            // InternalPascal.g:1663:5: (lv_functions_1_0= ruleprocedure_declaration )
-            	            {
-            	            // InternalPascal.g:1663:5: (lv_functions_1_0= ruleprocedure_declaration )
-            	            // InternalPascal.g:1664:6: lv_functions_1_0= ruleprocedure_declaration
-            	            {
-            	            if ( state.backtracking==0 ) {
-
-            	              						newCompositeNode(grammarAccess.getFunction_procedure_declarationAccess().getFunctionsProcedure_declarationParserRuleCall_0_1_0());
-            	              					
-            	            }
-            	            pushFollow(FOLLOW_6);
-            	            lv_functions_1_0=ruleprocedure_declaration();
-
-            	            state._fsp--;
-            	            if (state.failed) return current;
-            	            if ( state.backtracking==0 ) {
-
-            	              						if (current==null) {
-            	              							current = createModelElementForParent(grammarAccess.getFunction_procedure_declarationRule());
-            	              						}
-            	              						add(
-            	              							current,
-            	              							"functions",
-            	              							lv_functions_1_0,
-            	              							"org.xtext.example.pascal.Pascal.procedure_declaration");
-            	              						afterParserOrEnumRuleCall();
-            	              					
-            	            }
-
-            	            }
-
-
-            	            }
-
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    otherlv_2=(Token)match(input,24,FOLLOW_22); if (state.failed) return current;
+            	    // InternalPascal.g:1621:3: ( (lv_procedures_0_0= ruleprocedure_declaration ) )
+            	    // InternalPascal.g:1622:4: (lv_procedures_0_0= ruleprocedure_declaration )
+            	    {
+            	    // InternalPascal.g:1622:4: (lv_procedures_0_0= ruleprocedure_declaration )
+            	    // InternalPascal.g:1623:5: lv_procedures_0_0= ruleprocedure_declaration
+            	    {
             	    if ( state.backtracking==0 ) {
 
-            	      			newLeafNode(otherlv_2, grammarAccess.getFunction_procedure_declarationAccess().getSemicolonKeyword_1());
+            	      					newCompositeNode(grammarAccess.getFunction_procedure_declarationAccess().getProceduresProcedure_declarationParserRuleCall_0_0());
+            	      				
+            	    }
+            	    pushFollow(FOLLOW_6);
+            	    lv_procedures_0_0=ruleprocedure_declaration();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      					if (current==null) {
+            	      						current = createModelElementForParent(grammarAccess.getFunction_procedure_declarationRule());
+            	      					}
+            	      					add(
+            	      						current,
+            	      						"procedures",
+            	      						lv_procedures_0_0,
+            	      						"org.xtext.example.pascal.Pascal.procedure_declaration");
+            	      					afterParserOrEnumRuleCall();
+            	      				
+            	    }
+
+            	    }
+
+
+            	    }
+
+            	    otherlv_1=(Token)match(input,24,FOLLOW_22); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      			newLeafNode(otherlv_1, grammarAccess.getFunction_procedure_declarationAccess().getSemicolonKeyword_1());
             	      		
             	    }
 
@@ -4509,13 +4451,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt22 >= 1 ) break loop22;
+            	    if ( cnt21 >= 1 ) break loop21;
             	    if (state.backtracking>0) {state.failed=true; return current;}
                         EarlyExitException eee =
-                            new EarlyExitException(22, input);
+                            new EarlyExitException(21, input);
                         throw eee;
                 }
-                cnt22++;
+                cnt21++;
             } while (true);
 
 
@@ -4539,1460 +4481,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
     // $ANTLR end "rulefunction_procedure_declaration"
 
 
-    // $ANTLR start "entryRulefunction_heading"
-    // InternalPascal.g:1690:1: entryRulefunction_heading returns [EObject current=null] : iv_rulefunction_heading= rulefunction_heading EOF ;
-    public final EObject entryRulefunction_heading() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_rulefunction_heading = null;
-
-
-        try {
-            // InternalPascal.g:1690:57: (iv_rulefunction_heading= rulefunction_heading EOF )
-            // InternalPascal.g:1691:2: iv_rulefunction_heading= rulefunction_heading EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getFunction_headingRule()); 
-            }
-            pushFollow(FOLLOW_1);
-            iv_rulefunction_heading=rulefunction_heading();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_rulefunction_heading; 
-            }
-            match(input,EOF,FOLLOW_2); if (state.failed) return current;
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRulefunction_heading"
-
-
-    // $ANTLR start "rulefunction_heading"
-    // InternalPascal.g:1697:1: rulefunction_heading returns [EObject current=null] : (otherlv_0= 'function' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )? otherlv_3= ':' ( (lv_returnType_4_0= RULE_ID ) ) ) ;
-    public final EObject rulefunction_heading() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token lv_name_1_0=null;
-        Token otherlv_3=null;
-        Token lv_returnType_4_0=null;
-        EObject lv_parameters_2_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalPascal.g:1703:2: ( (otherlv_0= 'function' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )? otherlv_3= ':' ( (lv_returnType_4_0= RULE_ID ) ) ) )
-            // InternalPascal.g:1704:2: (otherlv_0= 'function' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )? otherlv_3= ':' ( (lv_returnType_4_0= RULE_ID ) ) )
-            {
-            // InternalPascal.g:1704:2: (otherlv_0= 'function' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )? otherlv_3= ':' ( (lv_returnType_4_0= RULE_ID ) ) )
-            // InternalPascal.g:1705:3: otherlv_0= 'function' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )? otherlv_3= ':' ( (lv_returnType_4_0= RULE_ID ) )
-            {
-            otherlv_0=(Token)match(input,45,FOLLOW_5); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			newLeafNode(otherlv_0, grammarAccess.getFunction_headingAccess().getFunctionKeyword_0());
-              		
-            }
-            // InternalPascal.g:1709:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalPascal.g:1710:4: (lv_name_1_0= RULE_ID )
-            {
-            // InternalPascal.g:1710:4: (lv_name_1_0= RULE_ID )
-            // InternalPascal.g:1711:5: lv_name_1_0= RULE_ID
-            {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_23); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              					newLeafNode(lv_name_1_0, grammarAccess.getFunction_headingAccess().getNameIDTerminalRuleCall_1_0());
-              				
-            }
-            if ( state.backtracking==0 ) {
-
-              					if (current==null) {
-              						current = createModelElement(grammarAccess.getFunction_headingRule());
-              					}
-              					setWithLastConsumed(
-              						current,
-              						"name",
-              						lv_name_1_0,
-              						"org.eclipse.xtext.common.Terminals.ID");
-              				
-            }
-
-            }
-
-
-            }
-
-            // InternalPascal.g:1727:3: ( (lv_parameters_2_0= ruleformal_parameter_list ) )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
-
-            if ( (LA23_0==42) ) {
-                alt23=1;
-            }
-            switch (alt23) {
-                case 1 :
-                    // InternalPascal.g:1728:4: (lv_parameters_2_0= ruleformal_parameter_list )
-                    {
-                    // InternalPascal.g:1728:4: (lv_parameters_2_0= ruleformal_parameter_list )
-                    // InternalPascal.g:1729:5: lv_parameters_2_0= ruleformal_parameter_list
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      					newCompositeNode(grammarAccess.getFunction_headingAccess().getParametersFormal_parameter_listParserRuleCall_2_0());
-                      				
-                    }
-                    pushFollow(FOLLOW_10);
-                    lv_parameters_2_0=ruleformal_parameter_list();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      					if (current==null) {
-                      						current = createModelElementForParent(grammarAccess.getFunction_headingRule());
-                      					}
-                      					set(
-                      						current,
-                      						"parameters",
-                      						lv_parameters_2_0,
-                      						"org.xtext.example.pascal.Pascal.formal_parameter_list");
-                      					afterParserOrEnumRuleCall();
-                      				
-                    }
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            otherlv_3=(Token)match(input,27,FOLLOW_5); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			newLeafNode(otherlv_3, grammarAccess.getFunction_headingAccess().getColonKeyword_3());
-              		
-            }
-            // InternalPascal.g:1750:3: ( (lv_returnType_4_0= RULE_ID ) )
-            // InternalPascal.g:1751:4: (lv_returnType_4_0= RULE_ID )
-            {
-            // InternalPascal.g:1751:4: (lv_returnType_4_0= RULE_ID )
-            // InternalPascal.g:1752:5: lv_returnType_4_0= RULE_ID
-            {
-            lv_returnType_4_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              					newLeafNode(lv_returnType_4_0, grammarAccess.getFunction_headingAccess().getReturnTypeIDTerminalRuleCall_4_0());
-              				
-            }
-            if ( state.backtracking==0 ) {
-
-              					if (current==null) {
-              						current = createModelElement(grammarAccess.getFunction_headingRule());
-              					}
-              					setWithLastConsumed(
-              						current,
-              						"returnType",
-              						lv_returnType_4_0,
-              						"org.eclipse.xtext.common.Terminals.ID");
-              				
-            }
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-
-              	leaveRule();
-
-            }
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "rulefunction_heading"
-
-
-    // $ANTLR start "entryRulefunction_declaration"
-    // InternalPascal.g:1772:1: entryRulefunction_declaration returns [EObject current=null] : iv_rulefunction_declaration= rulefunction_declaration EOF ;
-    public final EObject entryRulefunction_declaration() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_rulefunction_declaration = null;
-
-
-        try {
-            // InternalPascal.g:1772:61: (iv_rulefunction_declaration= rulefunction_declaration EOF )
-            // InternalPascal.g:1773:2: iv_rulefunction_declaration= rulefunction_declaration EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getFunction_declarationRule()); 
-            }
-            pushFollow(FOLLOW_1);
-            iv_rulefunction_declaration=rulefunction_declaration();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_rulefunction_declaration; 
-            }
-            match(input,EOF,FOLLOW_2); if (state.failed) return current;
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRulefunction_declaration"
-
-
-    // $ANTLR start "rulefunction_declaration"
-    // InternalPascal.g:1779:1: rulefunction_declaration returns [EObject current=null] : ( ( (lv_heading_0_0= rulefunction_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) ) ) ;
-    public final EObject rulefunction_declaration() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        EObject lv_heading_0_0 = null;
-
-        EObject lv_block_2_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalPascal.g:1785:2: ( ( ( (lv_heading_0_0= rulefunction_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) ) ) )
-            // InternalPascal.g:1786:2: ( ( (lv_heading_0_0= rulefunction_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) ) )
-            {
-            // InternalPascal.g:1786:2: ( ( (lv_heading_0_0= rulefunction_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) ) )
-            // InternalPascal.g:1787:3: ( (lv_heading_0_0= rulefunction_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) )
-            {
-            // InternalPascal.g:1787:3: ( (lv_heading_0_0= rulefunction_heading ) )
-            // InternalPascal.g:1788:4: (lv_heading_0_0= rulefunction_heading )
-            {
-            // InternalPascal.g:1788:4: (lv_heading_0_0= rulefunction_heading )
-            // InternalPascal.g:1789:5: lv_heading_0_0= rulefunction_heading
-            {
-            if ( state.backtracking==0 ) {
-
-              					newCompositeNode(grammarAccess.getFunction_declarationAccess().getHeadingFunction_headingParserRuleCall_0_0());
-              				
-            }
-            pushFollow(FOLLOW_6);
-            lv_heading_0_0=rulefunction_heading();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              					if (current==null) {
-              						current = createModelElementForParent(grammarAccess.getFunction_declarationRule());
-              					}
-              					set(
-              						current,
-              						"heading",
-              						lv_heading_0_0,
-              						"org.xtext.example.pascal.Pascal.function_heading");
-              					afterParserOrEnumRuleCall();
-              				
-            }
-
-            }
-
-
-            }
-
-            otherlv_1=(Token)match(input,24,FOLLOW_3); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			newLeafNode(otherlv_1, grammarAccess.getFunction_declarationAccess().getSemicolonKeyword_1());
-              		
-            }
-            // InternalPascal.g:1810:3: ( (lv_block_2_0= ruleblock ) )
-            // InternalPascal.g:1811:4: (lv_block_2_0= ruleblock )
-            {
-            // InternalPascal.g:1811:4: (lv_block_2_0= ruleblock )
-            // InternalPascal.g:1812:5: lv_block_2_0= ruleblock
-            {
-            if ( state.backtracking==0 ) {
-
-              					newCompositeNode(grammarAccess.getFunction_declarationAccess().getBlockBlockParserRuleCall_2_0());
-              				
-            }
-            pushFollow(FOLLOW_2);
-            lv_block_2_0=ruleblock();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              					if (current==null) {
-              						current = createModelElementForParent(grammarAccess.getFunction_declarationRule());
-              					}
-              					set(
-              						current,
-              						"block",
-              						lv_block_2_0,
-              						"org.xtext.example.pascal.Pascal.block");
-              					afterParserOrEnumRuleCall();
-              				
-            }
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-
-              	leaveRule();
-
-            }
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "rulefunction_declaration"
-
-
-    // $ANTLR start "entryRuleformal_parameter_list"
-    // InternalPascal.g:1833:1: entryRuleformal_parameter_list returns [EObject current=null] : iv_ruleformal_parameter_list= ruleformal_parameter_list EOF ;
-    public final EObject entryRuleformal_parameter_list() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleformal_parameter_list = null;
-
-
-        try {
-            // InternalPascal.g:1833:62: (iv_ruleformal_parameter_list= ruleformal_parameter_list EOF )
-            // InternalPascal.g:1834:2: iv_ruleformal_parameter_list= ruleformal_parameter_list EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getFormal_parameter_listRule()); 
-            }
-            pushFollow(FOLLOW_1);
-            iv_ruleformal_parameter_list=ruleformal_parameter_list();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_ruleformal_parameter_list; 
-            }
-            match(input,EOF,FOLLOW_2); if (state.failed) return current;
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleformal_parameter_list"
-
-
-    // $ANTLR start "ruleformal_parameter_list"
-    // InternalPascal.g:1840:1: ruleformal_parameter_list returns [EObject current=null] : (otherlv_0= '(' ( (lv_parameters_1_0= ruleformal_parameter_section ) ) (otherlv_2= ';' ( (lv_parameters_3_0= ruleformal_parameter_section ) ) )* otherlv_4= ')' ) ;
-    public final EObject ruleformal_parameter_list() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        EObject lv_parameters_1_0 = null;
-
-        EObject lv_parameters_3_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalPascal.g:1846:2: ( (otherlv_0= '(' ( (lv_parameters_1_0= ruleformal_parameter_section ) ) (otherlv_2= ';' ( (lv_parameters_3_0= ruleformal_parameter_section ) ) )* otherlv_4= ')' ) )
-            // InternalPascal.g:1847:2: (otherlv_0= '(' ( (lv_parameters_1_0= ruleformal_parameter_section ) ) (otherlv_2= ';' ( (lv_parameters_3_0= ruleformal_parameter_section ) ) )* otherlv_4= ')' )
-            {
-            // InternalPascal.g:1847:2: (otherlv_0= '(' ( (lv_parameters_1_0= ruleformal_parameter_section ) ) (otherlv_2= ';' ( (lv_parameters_3_0= ruleformal_parameter_section ) ) )* otherlv_4= ')' )
-            // InternalPascal.g:1848:3: otherlv_0= '(' ( (lv_parameters_1_0= ruleformal_parameter_section ) ) (otherlv_2= ';' ( (lv_parameters_3_0= ruleformal_parameter_section ) ) )* otherlv_4= ')'
-            {
-            otherlv_0=(Token)match(input,42,FOLLOW_24); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			newLeafNode(otherlv_0, grammarAccess.getFormal_parameter_listAccess().getLeftParenthesisKeyword_0());
-              		
-            }
-            // InternalPascal.g:1852:3: ( (lv_parameters_1_0= ruleformal_parameter_section ) )
-            // InternalPascal.g:1853:4: (lv_parameters_1_0= ruleformal_parameter_section )
-            {
-            // InternalPascal.g:1853:4: (lv_parameters_1_0= ruleformal_parameter_section )
-            // InternalPascal.g:1854:5: lv_parameters_1_0= ruleformal_parameter_section
-            {
-            if ( state.backtracking==0 ) {
-
-              					newCompositeNode(grammarAccess.getFormal_parameter_listAccess().getParametersFormal_parameter_sectionParserRuleCall_1_0());
-              				
-            }
-            pushFollow(FOLLOW_25);
-            lv_parameters_1_0=ruleformal_parameter_section();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              					if (current==null) {
-              						current = createModelElementForParent(grammarAccess.getFormal_parameter_listRule());
-              					}
-              					add(
-              						current,
-              						"parameters",
-              						lv_parameters_1_0,
-              						"org.xtext.example.pascal.Pascal.formal_parameter_section");
-              					afterParserOrEnumRuleCall();
-              				
-            }
-
-            }
-
-
-            }
-
-            // InternalPascal.g:1871:3: (otherlv_2= ';' ( (lv_parameters_3_0= ruleformal_parameter_section ) ) )*
-            loop24:
-            do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
-
-                if ( (LA24_0==24) ) {
-                    alt24=1;
-                }
-
-
-                switch (alt24) {
-            	case 1 :
-            	    // InternalPascal.g:1872:4: otherlv_2= ';' ( (lv_parameters_3_0= ruleformal_parameter_section ) )
-            	    {
-            	    otherlv_2=(Token)match(input,24,FOLLOW_24); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      				newLeafNode(otherlv_2, grammarAccess.getFormal_parameter_listAccess().getSemicolonKeyword_2_0());
-            	      			
-            	    }
-            	    // InternalPascal.g:1876:4: ( (lv_parameters_3_0= ruleformal_parameter_section ) )
-            	    // InternalPascal.g:1877:5: (lv_parameters_3_0= ruleformal_parameter_section )
-            	    {
-            	    // InternalPascal.g:1877:5: (lv_parameters_3_0= ruleformal_parameter_section )
-            	    // InternalPascal.g:1878:6: lv_parameters_3_0= ruleformal_parameter_section
-            	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      						newCompositeNode(grammarAccess.getFormal_parameter_listAccess().getParametersFormal_parameter_sectionParserRuleCall_2_1_0());
-            	      					
-            	    }
-            	    pushFollow(FOLLOW_25);
-            	    lv_parameters_3_0=ruleformal_parameter_section();
-
-            	    state._fsp--;
-            	    if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      						if (current==null) {
-            	      							current = createModelElementForParent(grammarAccess.getFormal_parameter_listRule());
-            	      						}
-            	      						add(
-            	      							current,
-            	      							"parameters",
-            	      							lv_parameters_3_0,
-            	      							"org.xtext.example.pascal.Pascal.formal_parameter_section");
-            	      						afterParserOrEnumRuleCall();
-            	      					
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop24;
-                }
-            } while (true);
-
-            otherlv_4=(Token)match(input,43,FOLLOW_2); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			newLeafNode(otherlv_4, grammarAccess.getFormal_parameter_listAccess().getRightParenthesisKeyword_3());
-              		
-            }
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-
-              	leaveRule();
-
-            }
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleformal_parameter_list"
-
-
-    // $ANTLR start "entryRuleformal_parameter_section"
-    // InternalPascal.g:1904:1: entryRuleformal_parameter_section returns [EObject current=null] : iv_ruleformal_parameter_section= ruleformal_parameter_section EOF ;
-    public final EObject entryRuleformal_parameter_section() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleformal_parameter_section = null;
-
-
-        try {
-            // InternalPascal.g:1904:65: (iv_ruleformal_parameter_section= ruleformal_parameter_section EOF )
-            // InternalPascal.g:1905:2: iv_ruleformal_parameter_section= ruleformal_parameter_section EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getFormal_parameter_sectionRule()); 
-            }
-            pushFollow(FOLLOW_1);
-            iv_ruleformal_parameter_section=ruleformal_parameter_section();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_ruleformal_parameter_section; 
-            }
-            match(input,EOF,FOLLOW_2); if (state.failed) return current;
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleformal_parameter_section"
-
-
-    // $ANTLR start "ruleformal_parameter_section"
-    // InternalPascal.g:1911:1: ruleformal_parameter_section returns [EObject current=null] : ( ( (lv_value_0_0= rulevalue_parameter_section ) ) | ( (lv_variable_1_0= rulevariable_parameter_section ) ) | ( (lv_procedure_2_0= ruleprocedure_heading ) ) | ( (lv_function_3_0= rulefunction_heading ) ) ) ;
-    public final EObject ruleformal_parameter_section() throws RecognitionException {
-        EObject current = null;
-
-        EObject lv_value_0_0 = null;
-
-        EObject lv_variable_1_0 = null;
-
-        EObject lv_procedure_2_0 = null;
-
-        EObject lv_function_3_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalPascal.g:1917:2: ( ( ( (lv_value_0_0= rulevalue_parameter_section ) ) | ( (lv_variable_1_0= rulevariable_parameter_section ) ) | ( (lv_procedure_2_0= ruleprocedure_heading ) ) | ( (lv_function_3_0= rulefunction_heading ) ) ) )
-            // InternalPascal.g:1918:2: ( ( (lv_value_0_0= rulevalue_parameter_section ) ) | ( (lv_variable_1_0= rulevariable_parameter_section ) ) | ( (lv_procedure_2_0= ruleprocedure_heading ) ) | ( (lv_function_3_0= rulefunction_heading ) ) )
-            {
-            // InternalPascal.g:1918:2: ( ( (lv_value_0_0= rulevalue_parameter_section ) ) | ( (lv_variable_1_0= rulevariable_parameter_section ) ) | ( (lv_procedure_2_0= ruleprocedure_heading ) ) | ( (lv_function_3_0= rulefunction_heading ) ) )
-            int alt25=4;
-            switch ( input.LA(1) ) {
-            case RULE_ID:
-                {
-                alt25=1;
-                }
-                break;
-            case 46:
-                {
-                alt25=2;
-                }
-                break;
-            case 47:
-                {
-                alt25=3;
-                }
-                break;
-            case 45:
-                {
-                alt25=4;
-                }
-                break;
-            default:
-                if (state.backtracking>0) {state.failed=true; return current;}
-                NoViableAltException nvae =
-                    new NoViableAltException("", 25, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt25) {
-                case 1 :
-                    // InternalPascal.g:1919:3: ( (lv_value_0_0= rulevalue_parameter_section ) )
-                    {
-                    // InternalPascal.g:1919:3: ( (lv_value_0_0= rulevalue_parameter_section ) )
-                    // InternalPascal.g:1920:4: (lv_value_0_0= rulevalue_parameter_section )
-                    {
-                    // InternalPascal.g:1920:4: (lv_value_0_0= rulevalue_parameter_section )
-                    // InternalPascal.g:1921:5: lv_value_0_0= rulevalue_parameter_section
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      					newCompositeNode(grammarAccess.getFormal_parameter_sectionAccess().getValueValue_parameter_sectionParserRuleCall_0_0());
-                      				
-                    }
-                    pushFollow(FOLLOW_2);
-                    lv_value_0_0=rulevalue_parameter_section();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      					if (current==null) {
-                      						current = createModelElementForParent(grammarAccess.getFormal_parameter_sectionRule());
-                      					}
-                      					set(
-                      						current,
-                      						"value",
-                      						lv_value_0_0,
-                      						"org.xtext.example.pascal.Pascal.value_parameter_section");
-                      					afterParserOrEnumRuleCall();
-                      				
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalPascal.g:1939:3: ( (lv_variable_1_0= rulevariable_parameter_section ) )
-                    {
-                    // InternalPascal.g:1939:3: ( (lv_variable_1_0= rulevariable_parameter_section ) )
-                    // InternalPascal.g:1940:4: (lv_variable_1_0= rulevariable_parameter_section )
-                    {
-                    // InternalPascal.g:1940:4: (lv_variable_1_0= rulevariable_parameter_section )
-                    // InternalPascal.g:1941:5: lv_variable_1_0= rulevariable_parameter_section
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      					newCompositeNode(grammarAccess.getFormal_parameter_sectionAccess().getVariableVariable_parameter_sectionParserRuleCall_1_0());
-                      				
-                    }
-                    pushFollow(FOLLOW_2);
-                    lv_variable_1_0=rulevariable_parameter_section();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      					if (current==null) {
-                      						current = createModelElementForParent(grammarAccess.getFormal_parameter_sectionRule());
-                      					}
-                      					set(
-                      						current,
-                      						"variable",
-                      						lv_variable_1_0,
-                      						"org.xtext.example.pascal.Pascal.variable_parameter_section");
-                      					afterParserOrEnumRuleCall();
-                      				
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalPascal.g:1959:3: ( (lv_procedure_2_0= ruleprocedure_heading ) )
-                    {
-                    // InternalPascal.g:1959:3: ( (lv_procedure_2_0= ruleprocedure_heading ) )
-                    // InternalPascal.g:1960:4: (lv_procedure_2_0= ruleprocedure_heading )
-                    {
-                    // InternalPascal.g:1960:4: (lv_procedure_2_0= ruleprocedure_heading )
-                    // InternalPascal.g:1961:5: lv_procedure_2_0= ruleprocedure_heading
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      					newCompositeNode(grammarAccess.getFormal_parameter_sectionAccess().getProcedureProcedure_headingParserRuleCall_2_0());
-                      				
-                    }
-                    pushFollow(FOLLOW_2);
-                    lv_procedure_2_0=ruleprocedure_heading();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      					if (current==null) {
-                      						current = createModelElementForParent(grammarAccess.getFormal_parameter_sectionRule());
-                      					}
-                      					set(
-                      						current,
-                      						"procedure",
-                      						lv_procedure_2_0,
-                      						"org.xtext.example.pascal.Pascal.procedure_heading");
-                      					afterParserOrEnumRuleCall();
-                      				
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalPascal.g:1979:3: ( (lv_function_3_0= rulefunction_heading ) )
-                    {
-                    // InternalPascal.g:1979:3: ( (lv_function_3_0= rulefunction_heading ) )
-                    // InternalPascal.g:1980:4: (lv_function_3_0= rulefunction_heading )
-                    {
-                    // InternalPascal.g:1980:4: (lv_function_3_0= rulefunction_heading )
-                    // InternalPascal.g:1981:5: lv_function_3_0= rulefunction_heading
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      					newCompositeNode(grammarAccess.getFormal_parameter_sectionAccess().getFunctionFunction_headingParserRuleCall_3_0());
-                      				
-                    }
-                    pushFollow(FOLLOW_2);
-                    lv_function_3_0=rulefunction_heading();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      					if (current==null) {
-                      						current = createModelElementForParent(grammarAccess.getFormal_parameter_sectionRule());
-                      					}
-                      					set(
-                      						current,
-                      						"function",
-                      						lv_function_3_0,
-                      						"org.xtext.example.pascal.Pascal.function_heading");
-                      					afterParserOrEnumRuleCall();
-                      				
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-
-              	leaveRule();
-
-            }
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleformal_parameter_section"
-
-
-    // $ANTLR start "entryRulevalue_parameter_section"
-    // InternalPascal.g:2002:1: entryRulevalue_parameter_section returns [EObject current=null] : iv_rulevalue_parameter_section= rulevalue_parameter_section EOF ;
-    public final EObject entryRulevalue_parameter_section() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_rulevalue_parameter_section = null;
-
-
-        try {
-            // InternalPascal.g:2002:64: (iv_rulevalue_parameter_section= rulevalue_parameter_section EOF )
-            // InternalPascal.g:2003:2: iv_rulevalue_parameter_section= rulevalue_parameter_section EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getValue_parameter_sectionRule()); 
-            }
-            pushFollow(FOLLOW_1);
-            iv_rulevalue_parameter_section=rulevalue_parameter_section();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_rulevalue_parameter_section; 
-            }
-            match(input,EOF,FOLLOW_2); if (state.failed) return current;
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRulevalue_parameter_section"
-
-
-    // $ANTLR start "rulevalue_parameter_section"
-    // InternalPascal.g:2009:1: rulevalue_parameter_section returns [EObject current=null] : ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruleparameter_type ) ) ) ;
-    public final EObject rulevalue_parameter_section() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        EObject lv_identifiers_0_0 = null;
-
-        EObject lv_type_2_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalPascal.g:2015:2: ( ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruleparameter_type ) ) ) )
-            // InternalPascal.g:2016:2: ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruleparameter_type ) ) )
-            {
-            // InternalPascal.g:2016:2: ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruleparameter_type ) ) )
-            // InternalPascal.g:2017:3: ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruleparameter_type ) )
-            {
-            // InternalPascal.g:2017:3: ( (lv_identifiers_0_0= ruleidentifier_list ) )
-            // InternalPascal.g:2018:4: (lv_identifiers_0_0= ruleidentifier_list )
-            {
-            // InternalPascal.g:2018:4: (lv_identifiers_0_0= ruleidentifier_list )
-            // InternalPascal.g:2019:5: lv_identifiers_0_0= ruleidentifier_list
-            {
-            if ( state.backtracking==0 ) {
-
-              					newCompositeNode(grammarAccess.getValue_parameter_sectionAccess().getIdentifiersIdentifier_listParserRuleCall_0_0());
-              				
-            }
-            pushFollow(FOLLOW_10);
-            lv_identifiers_0_0=ruleidentifier_list();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              					if (current==null) {
-              						current = createModelElementForParent(grammarAccess.getValue_parameter_sectionRule());
-              					}
-              					set(
-              						current,
-              						"identifiers",
-              						lv_identifiers_0_0,
-              						"org.xtext.example.pascal.Pascal.identifier_list");
-              					afterParserOrEnumRuleCall();
-              				
-            }
-
-            }
-
-
-            }
-
-            otherlv_1=(Token)match(input,27,FOLLOW_5); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			newLeafNode(otherlv_1, grammarAccess.getValue_parameter_sectionAccess().getColonKeyword_1());
-              		
-            }
-            // InternalPascal.g:2040:3: ( (lv_type_2_0= ruleparameter_type ) )
-            // InternalPascal.g:2041:4: (lv_type_2_0= ruleparameter_type )
-            {
-            // InternalPascal.g:2041:4: (lv_type_2_0= ruleparameter_type )
-            // InternalPascal.g:2042:5: lv_type_2_0= ruleparameter_type
-            {
-            if ( state.backtracking==0 ) {
-
-              					newCompositeNode(grammarAccess.getValue_parameter_sectionAccess().getTypeParameter_typeParserRuleCall_2_0());
-              				
-            }
-            pushFollow(FOLLOW_2);
-            lv_type_2_0=ruleparameter_type();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              					if (current==null) {
-              						current = createModelElementForParent(grammarAccess.getValue_parameter_sectionRule());
-              					}
-              					set(
-              						current,
-              						"type",
-              						lv_type_2_0,
-              						"org.xtext.example.pascal.Pascal.parameter_type");
-              					afterParserOrEnumRuleCall();
-              				
-            }
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-
-              	leaveRule();
-
-            }
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "rulevalue_parameter_section"
-
-
-    // $ANTLR start "entryRuleidentifier_list"
-    // InternalPascal.g:2063:1: entryRuleidentifier_list returns [EObject current=null] : iv_ruleidentifier_list= ruleidentifier_list EOF ;
-    public final EObject entryRuleidentifier_list() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleidentifier_list = null;
-
-
-        try {
-            // InternalPascal.g:2063:56: (iv_ruleidentifier_list= ruleidentifier_list EOF )
-            // InternalPascal.g:2064:2: iv_ruleidentifier_list= ruleidentifier_list EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getIdentifier_listRule()); 
-            }
-            pushFollow(FOLLOW_1);
-            iv_ruleidentifier_list=ruleidentifier_list();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_ruleidentifier_list; 
-            }
-            match(input,EOF,FOLLOW_2); if (state.failed) return current;
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleidentifier_list"
-
-
-    // $ANTLR start "ruleidentifier_list"
-    // InternalPascal.g:2070:1: ruleidentifier_list returns [EObject current=null] : ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* ) ;
-    public final EObject ruleidentifier_list() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_names_0_0=null;
-        Token otherlv_1=null;
-        Token lv_names_2_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalPascal.g:2076:2: ( ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* ) )
-            // InternalPascal.g:2077:2: ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* )
-            {
-            // InternalPascal.g:2077:2: ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* )
-            // InternalPascal.g:2078:3: ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )*
-            {
-            // InternalPascal.g:2078:3: ( (lv_names_0_0= RULE_ID ) )
-            // InternalPascal.g:2079:4: (lv_names_0_0= RULE_ID )
-            {
-            // InternalPascal.g:2079:4: (lv_names_0_0= RULE_ID )
-            // InternalPascal.g:2080:5: lv_names_0_0= RULE_ID
-            {
-            lv_names_0_0=(Token)match(input,RULE_ID,FOLLOW_15); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              					newLeafNode(lv_names_0_0, grammarAccess.getIdentifier_listAccess().getNamesIDTerminalRuleCall_0_0());
-              				
-            }
-            if ( state.backtracking==0 ) {
-
-              					if (current==null) {
-              						current = createModelElement(grammarAccess.getIdentifier_listRule());
-              					}
-              					addWithLastConsumed(
-              						current,
-              						"names",
-              						lv_names_0_0,
-              						"org.eclipse.xtext.common.Terminals.ID");
-              				
-            }
-
-            }
-
-
-            }
-
-            // InternalPascal.g:2096:3: (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )*
-            loop26:
-            do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
-
-                if ( (LA26_0==32) ) {
-                    alt26=1;
-                }
-
-
-                switch (alt26) {
-            	case 1 :
-            	    // InternalPascal.g:2097:4: otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) )
-            	    {
-            	    otherlv_1=(Token)match(input,32,FOLLOW_5); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      				newLeafNode(otherlv_1, grammarAccess.getIdentifier_listAccess().getCommaKeyword_1_0());
-            	      			
-            	    }
-            	    // InternalPascal.g:2101:4: ( (lv_names_2_0= RULE_ID ) )
-            	    // InternalPascal.g:2102:5: (lv_names_2_0= RULE_ID )
-            	    {
-            	    // InternalPascal.g:2102:5: (lv_names_2_0= RULE_ID )
-            	    // InternalPascal.g:2103:6: lv_names_2_0= RULE_ID
-            	    {
-            	    lv_names_2_0=(Token)match(input,RULE_ID,FOLLOW_15); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      						newLeafNode(lv_names_2_0, grammarAccess.getIdentifier_listAccess().getNamesIDTerminalRuleCall_1_1_0());
-            	      					
-            	    }
-            	    if ( state.backtracking==0 ) {
-
-            	      						if (current==null) {
-            	      							current = createModelElement(grammarAccess.getIdentifier_listRule());
-            	      						}
-            	      						addWithLastConsumed(
-            	      							current,
-            	      							"names",
-            	      							lv_names_2_0,
-            	      							"org.eclipse.xtext.common.Terminals.ID");
-            	      					
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop26;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-
-              	leaveRule();
-
-            }
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleidentifier_list"
-
-
-    // $ANTLR start "entryRuleparameter_type"
-    // InternalPascal.g:2124:1: entryRuleparameter_type returns [EObject current=null] : iv_ruleparameter_type= ruleparameter_type EOF ;
-    public final EObject entryRuleparameter_type() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleparameter_type = null;
-
-
-        try {
-            // InternalPascal.g:2124:55: (iv_ruleparameter_type= ruleparameter_type EOF )
-            // InternalPascal.g:2125:2: iv_ruleparameter_type= ruleparameter_type EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getParameter_typeRule()); 
-            }
-            pushFollow(FOLLOW_1);
-            iv_ruleparameter_type=ruleparameter_type();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_ruleparameter_type; 
-            }
-            match(input,EOF,FOLLOW_2); if (state.failed) return current;
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleparameter_type"
-
-
-    // $ANTLR start "ruleparameter_type"
-    // InternalPascal.g:2131:1: ruleparameter_type returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
-    public final EObject ruleparameter_type() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_name_0_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalPascal.g:2137:2: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // InternalPascal.g:2138:2: ( (lv_name_0_0= RULE_ID ) )
-            {
-            // InternalPascal.g:2138:2: ( (lv_name_0_0= RULE_ID ) )
-            // InternalPascal.g:2139:3: (lv_name_0_0= RULE_ID )
-            {
-            // InternalPascal.g:2139:3: (lv_name_0_0= RULE_ID )
-            // InternalPascal.g:2140:4: lv_name_0_0= RULE_ID
-            {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              				newLeafNode(lv_name_0_0, grammarAccess.getParameter_typeAccess().getNameIDTerminalRuleCall_0());
-              			
-            }
-            if ( state.backtracking==0 ) {
-
-              				if (current==null) {
-              					current = createModelElement(grammarAccess.getParameter_typeRule());
-              				}
-              				setWithLastConsumed(
-              					current,
-              					"name",
-              					lv_name_0_0,
-              					"org.eclipse.xtext.common.Terminals.ID");
-              			
-            }
-
-            }
-
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-
-              	leaveRule();
-
-            }
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleparameter_type"
-
-
-    // $ANTLR start "entryRulevariable_parameter_section"
-    // InternalPascal.g:2159:1: entryRulevariable_parameter_section returns [EObject current=null] : iv_rulevariable_parameter_section= rulevariable_parameter_section EOF ;
-    public final EObject entryRulevariable_parameter_section() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_rulevariable_parameter_section = null;
-
-
-        try {
-            // InternalPascal.g:2159:67: (iv_rulevariable_parameter_section= rulevariable_parameter_section EOF )
-            // InternalPascal.g:2160:2: iv_rulevariable_parameter_section= rulevariable_parameter_section EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getVariable_parameter_sectionRule()); 
-            }
-            pushFollow(FOLLOW_1);
-            iv_rulevariable_parameter_section=rulevariable_parameter_section();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_rulevariable_parameter_section; 
-            }
-            match(input,EOF,FOLLOW_2); if (state.failed) return current;
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRulevariable_parameter_section"
-
-
-    // $ANTLR start "rulevariable_parameter_section"
-    // InternalPascal.g:2166:1: rulevariable_parameter_section returns [EObject current=null] : (otherlv_0= 'var' ( (lv_indentifiers_1_0= ruleidentifier_list ) ) otherlv_2= ':' ( (lv_type_3_0= ruleparameter_type ) ) ) ;
-    public final EObject rulevariable_parameter_section() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_2=null;
-        EObject lv_indentifiers_1_0 = null;
-
-        EObject lv_type_3_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalPascal.g:2172:2: ( (otherlv_0= 'var' ( (lv_indentifiers_1_0= ruleidentifier_list ) ) otherlv_2= ':' ( (lv_type_3_0= ruleparameter_type ) ) ) )
-            // InternalPascal.g:2173:2: (otherlv_0= 'var' ( (lv_indentifiers_1_0= ruleidentifier_list ) ) otherlv_2= ':' ( (lv_type_3_0= ruleparameter_type ) ) )
-            {
-            // InternalPascal.g:2173:2: (otherlv_0= 'var' ( (lv_indentifiers_1_0= ruleidentifier_list ) ) otherlv_2= ':' ( (lv_type_3_0= ruleparameter_type ) ) )
-            // InternalPascal.g:2174:3: otherlv_0= 'var' ( (lv_indentifiers_1_0= ruleidentifier_list ) ) otherlv_2= ':' ( (lv_type_3_0= ruleparameter_type ) )
-            {
-            otherlv_0=(Token)match(input,46,FOLLOW_5); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			newLeafNode(otherlv_0, grammarAccess.getVariable_parameter_sectionAccess().getVarKeyword_0());
-              		
-            }
-            // InternalPascal.g:2178:3: ( (lv_indentifiers_1_0= ruleidentifier_list ) )
-            // InternalPascal.g:2179:4: (lv_indentifiers_1_0= ruleidentifier_list )
-            {
-            // InternalPascal.g:2179:4: (lv_indentifiers_1_0= ruleidentifier_list )
-            // InternalPascal.g:2180:5: lv_indentifiers_1_0= ruleidentifier_list
-            {
-            if ( state.backtracking==0 ) {
-
-              					newCompositeNode(grammarAccess.getVariable_parameter_sectionAccess().getIndentifiersIdentifier_listParserRuleCall_1_0());
-              				
-            }
-            pushFollow(FOLLOW_10);
-            lv_indentifiers_1_0=ruleidentifier_list();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              					if (current==null) {
-              						current = createModelElementForParent(grammarAccess.getVariable_parameter_sectionRule());
-              					}
-              					set(
-              						current,
-              						"indentifiers",
-              						lv_indentifiers_1_0,
-              						"org.xtext.example.pascal.Pascal.identifier_list");
-              					afterParserOrEnumRuleCall();
-              				
-            }
-
-            }
-
-
-            }
-
-            otherlv_2=(Token)match(input,27,FOLLOW_5); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			newLeafNode(otherlv_2, grammarAccess.getVariable_parameter_sectionAccess().getColonKeyword_2());
-              		
-            }
-            // InternalPascal.g:2201:3: ( (lv_type_3_0= ruleparameter_type ) )
-            // InternalPascal.g:2202:4: (lv_type_3_0= ruleparameter_type )
-            {
-            // InternalPascal.g:2202:4: (lv_type_3_0= ruleparameter_type )
-            // InternalPascal.g:2203:5: lv_type_3_0= ruleparameter_type
-            {
-            if ( state.backtracking==0 ) {
-
-              					newCompositeNode(grammarAccess.getVariable_parameter_sectionAccess().getTypeParameter_typeParserRuleCall_3_0());
-              				
-            }
-            pushFollow(FOLLOW_2);
-            lv_type_3_0=ruleparameter_type();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              					if (current==null) {
-              						current = createModelElementForParent(grammarAccess.getVariable_parameter_sectionRule());
-              					}
-              					set(
-              						current,
-              						"type",
-              						lv_type_3_0,
-              						"org.xtext.example.pascal.Pascal.parameter_type");
-              					afterParserOrEnumRuleCall();
-              				
-            }
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-
-              	leaveRule();
-
-            }
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "rulevariable_parameter_section"
-
-
     // $ANTLR start "entryRuleprocedure_declaration"
-    // InternalPascal.g:2224:1: entryRuleprocedure_declaration returns [EObject current=null] : iv_ruleprocedure_declaration= ruleprocedure_declaration EOF ;
+    // InternalPascal.g:1648:1: entryRuleprocedure_declaration returns [EObject current=null] : iv_ruleprocedure_declaration= ruleprocedure_declaration EOF ;
     public final EObject entryRuleprocedure_declaration() throws RecognitionException {
         EObject current = null;
 
@@ -6000,8 +4490,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:2224:62: (iv_ruleprocedure_declaration= ruleprocedure_declaration EOF )
-            // InternalPascal.g:2225:2: iv_ruleprocedure_declaration= ruleprocedure_declaration EOF
+            // InternalPascal.g:1648:62: (iv_ruleprocedure_declaration= ruleprocedure_declaration EOF )
+            // InternalPascal.g:1649:2: iv_ruleprocedure_declaration= ruleprocedure_declaration EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getProcedure_declarationRule()); 
@@ -6032,7 +4522,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleprocedure_declaration"
-    // InternalPascal.g:2231:1: ruleprocedure_declaration returns [EObject current=null] : ( ( (lv_heading_0_0= ruleprocedure_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) ) ) ;
+    // InternalPascal.g:1655:1: ruleprocedure_declaration returns [EObject current=null] : ( ( (lv_heading_0_0= ruleprocedure_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) ) ) ;
     public final EObject ruleprocedure_declaration() throws RecognitionException {
         EObject current = null;
 
@@ -6046,17 +4536,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:2237:2: ( ( ( (lv_heading_0_0= ruleprocedure_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) ) ) )
-            // InternalPascal.g:2238:2: ( ( (lv_heading_0_0= ruleprocedure_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) ) )
+            // InternalPascal.g:1661:2: ( ( ( (lv_heading_0_0= ruleprocedure_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) ) ) )
+            // InternalPascal.g:1662:2: ( ( (lv_heading_0_0= ruleprocedure_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) ) )
             {
-            // InternalPascal.g:2238:2: ( ( (lv_heading_0_0= ruleprocedure_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) ) )
-            // InternalPascal.g:2239:3: ( (lv_heading_0_0= ruleprocedure_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) )
+            // InternalPascal.g:1662:2: ( ( (lv_heading_0_0= ruleprocedure_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) ) )
+            // InternalPascal.g:1663:3: ( (lv_heading_0_0= ruleprocedure_heading ) ) otherlv_1= ';' ( (lv_block_2_0= ruleblock ) )
             {
-            // InternalPascal.g:2239:3: ( (lv_heading_0_0= ruleprocedure_heading ) )
-            // InternalPascal.g:2240:4: (lv_heading_0_0= ruleprocedure_heading )
+            // InternalPascal.g:1663:3: ( (lv_heading_0_0= ruleprocedure_heading ) )
+            // InternalPascal.g:1664:4: (lv_heading_0_0= ruleprocedure_heading )
             {
-            // InternalPascal.g:2240:4: (lv_heading_0_0= ruleprocedure_heading )
-            // InternalPascal.g:2241:5: lv_heading_0_0= ruleprocedure_heading
+            // InternalPascal.g:1664:4: (lv_heading_0_0= ruleprocedure_heading )
+            // InternalPascal.g:1665:5: lv_heading_0_0= ruleprocedure_heading
             {
             if ( state.backtracking==0 ) {
 
@@ -6093,11 +4583,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getProcedure_declarationAccess().getSemicolonKeyword_1());
               		
             }
-            // InternalPascal.g:2262:3: ( (lv_block_2_0= ruleblock ) )
-            // InternalPascal.g:2263:4: (lv_block_2_0= ruleblock )
+            // InternalPascal.g:1686:3: ( (lv_block_2_0= ruleblock ) )
+            // InternalPascal.g:1687:4: (lv_block_2_0= ruleblock )
             {
-            // InternalPascal.g:2263:4: (lv_block_2_0= ruleblock )
-            // InternalPascal.g:2264:5: lv_block_2_0= ruleblock
+            // InternalPascal.g:1687:4: (lv_block_2_0= ruleblock )
+            // InternalPascal.g:1688:5: lv_block_2_0= ruleblock
             {
             if ( state.backtracking==0 ) {
 
@@ -6153,7 +4643,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleprocedure_heading"
-    // InternalPascal.g:2285:1: entryRuleprocedure_heading returns [EObject current=null] : iv_ruleprocedure_heading= ruleprocedure_heading EOF ;
+    // InternalPascal.g:1709:1: entryRuleprocedure_heading returns [EObject current=null] : iv_ruleprocedure_heading= ruleprocedure_heading EOF ;
     public final EObject entryRuleprocedure_heading() throws RecognitionException {
         EObject current = null;
 
@@ -6161,8 +4651,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:2285:58: (iv_ruleprocedure_heading= ruleprocedure_heading EOF )
-            // InternalPascal.g:2286:2: iv_ruleprocedure_heading= ruleprocedure_heading EOF
+            // InternalPascal.g:1709:58: (iv_ruleprocedure_heading= ruleprocedure_heading EOF )
+            // InternalPascal.g:1710:2: iv_ruleprocedure_heading= ruleprocedure_heading EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getProcedure_headingRule()); 
@@ -6193,7 +4683,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleprocedure_heading"
-    // InternalPascal.g:2292:1: ruleprocedure_heading returns [EObject current=null] : (otherlv_0= 'procedure' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )? ) ;
+    // InternalPascal.g:1716:1: ruleprocedure_heading returns [EObject current=null] : (otherlv_0= 'procedure' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )? ) ;
     public final EObject ruleprocedure_heading() throws RecognitionException {
         EObject current = null;
 
@@ -6206,25 +4696,25 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:2298:2: ( (otherlv_0= 'procedure' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )? ) )
-            // InternalPascal.g:2299:2: (otherlv_0= 'procedure' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )? )
+            // InternalPascal.g:1722:2: ( (otherlv_0= 'procedure' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )? ) )
+            // InternalPascal.g:1723:2: (otherlv_0= 'procedure' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )? )
             {
-            // InternalPascal.g:2299:2: (otherlv_0= 'procedure' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )? )
-            // InternalPascal.g:2300:3: otherlv_0= 'procedure' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )?
+            // InternalPascal.g:1723:2: (otherlv_0= 'procedure' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )? )
+            // InternalPascal.g:1724:3: otherlv_0= 'procedure' ( (lv_name_1_0= RULE_ID ) ) ( (lv_parameters_2_0= ruleformal_parameter_list ) )?
             {
-            otherlv_0=(Token)match(input,47,FOLLOW_5); if (state.failed) return current;
+            otherlv_0=(Token)match(input,45,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getProcedure_headingAccess().getProcedureKeyword_0());
               		
             }
-            // InternalPascal.g:2304:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalPascal.g:2305:4: (lv_name_1_0= RULE_ID )
+            // InternalPascal.g:1728:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalPascal.g:1729:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalPascal.g:2305:4: (lv_name_1_0= RULE_ID )
-            // InternalPascal.g:2306:5: lv_name_1_0= RULE_ID
+            // InternalPascal.g:1729:4: (lv_name_1_0= RULE_ID )
+            // InternalPascal.g:1730:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_26); if (state.failed) return current;
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_23); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               					newLeafNode(lv_name_1_0, grammarAccess.getProcedure_headingAccess().getNameIDTerminalRuleCall_1_0());
@@ -6248,19 +4738,19 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPascal.g:2322:3: ( (lv_parameters_2_0= ruleformal_parameter_list ) )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            // InternalPascal.g:1746:3: ( (lv_parameters_2_0= ruleformal_parameter_list ) )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA27_0==42) ) {
-                alt27=1;
+            if ( (LA22_0==42) ) {
+                alt22=1;
             }
-            switch (alt27) {
+            switch (alt22) {
                 case 1 :
-                    // InternalPascal.g:2323:4: (lv_parameters_2_0= ruleformal_parameter_list )
+                    // InternalPascal.g:1747:4: (lv_parameters_2_0= ruleformal_parameter_list )
                     {
-                    // InternalPascal.g:2323:4: (lv_parameters_2_0= ruleformal_parameter_list )
-                    // InternalPascal.g:2324:5: lv_parameters_2_0= ruleformal_parameter_list
+                    // InternalPascal.g:1747:4: (lv_parameters_2_0= ruleformal_parameter_list )
+                    // InternalPascal.g:1748:5: lv_parameters_2_0= ruleformal_parameter_list
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6318,8 +4808,1047 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleprocedure_heading"
 
 
+    // $ANTLR start "entryRuleformal_parameter_list"
+    // InternalPascal.g:1769:1: entryRuleformal_parameter_list returns [EObject current=null] : iv_ruleformal_parameter_list= ruleformal_parameter_list EOF ;
+    public final EObject entryRuleformal_parameter_list() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleformal_parameter_list = null;
+
+
+        try {
+            // InternalPascal.g:1769:62: (iv_ruleformal_parameter_list= ruleformal_parameter_list EOF )
+            // InternalPascal.g:1770:2: iv_ruleformal_parameter_list= ruleformal_parameter_list EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getFormal_parameter_listRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_ruleformal_parameter_list=ruleformal_parameter_list();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleformal_parameter_list; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleformal_parameter_list"
+
+
+    // $ANTLR start "ruleformal_parameter_list"
+    // InternalPascal.g:1776:1: ruleformal_parameter_list returns [EObject current=null] : (otherlv_0= '(' ( (lv_parameters_1_0= ruleformal_parameter_section ) ) (otherlv_2= ';' ( (lv_parameters_3_0= ruleformal_parameter_section ) ) )* otherlv_4= ')' ) ;
+    public final EObject ruleformal_parameter_list() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        EObject lv_parameters_1_0 = null;
+
+        EObject lv_parameters_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalPascal.g:1782:2: ( (otherlv_0= '(' ( (lv_parameters_1_0= ruleformal_parameter_section ) ) (otherlv_2= ';' ( (lv_parameters_3_0= ruleformal_parameter_section ) ) )* otherlv_4= ')' ) )
+            // InternalPascal.g:1783:2: (otherlv_0= '(' ( (lv_parameters_1_0= ruleformal_parameter_section ) ) (otherlv_2= ';' ( (lv_parameters_3_0= ruleformal_parameter_section ) ) )* otherlv_4= ')' )
+            {
+            // InternalPascal.g:1783:2: (otherlv_0= '(' ( (lv_parameters_1_0= ruleformal_parameter_section ) ) (otherlv_2= ';' ( (lv_parameters_3_0= ruleformal_parameter_section ) ) )* otherlv_4= ')' )
+            // InternalPascal.g:1784:3: otherlv_0= '(' ( (lv_parameters_1_0= ruleformal_parameter_section ) ) (otherlv_2= ';' ( (lv_parameters_3_0= ruleformal_parameter_section ) ) )* otherlv_4= ')'
+            {
+            otherlv_0=(Token)match(input,42,FOLLOW_24); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              			newLeafNode(otherlv_0, grammarAccess.getFormal_parameter_listAccess().getLeftParenthesisKeyword_0());
+              		
+            }
+            // InternalPascal.g:1788:3: ( (lv_parameters_1_0= ruleformal_parameter_section ) )
+            // InternalPascal.g:1789:4: (lv_parameters_1_0= ruleformal_parameter_section )
+            {
+            // InternalPascal.g:1789:4: (lv_parameters_1_0= ruleformal_parameter_section )
+            // InternalPascal.g:1790:5: lv_parameters_1_0= ruleformal_parameter_section
+            {
+            if ( state.backtracking==0 ) {
+
+              					newCompositeNode(grammarAccess.getFormal_parameter_listAccess().getParametersFormal_parameter_sectionParserRuleCall_1_0());
+              				
+            }
+            pushFollow(FOLLOW_25);
+            lv_parameters_1_0=ruleformal_parameter_section();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              					if (current==null) {
+              						current = createModelElementForParent(grammarAccess.getFormal_parameter_listRule());
+              					}
+              					add(
+              						current,
+              						"parameters",
+              						lv_parameters_1_0,
+              						"org.xtext.example.pascal.Pascal.formal_parameter_section");
+              					afterParserOrEnumRuleCall();
+              				
+            }
+
+            }
+
+
+            }
+
+            // InternalPascal.g:1807:3: (otherlv_2= ';' ( (lv_parameters_3_0= ruleformal_parameter_section ) ) )*
+            loop23:
+            do {
+                int alt23=2;
+                int LA23_0 = input.LA(1);
+
+                if ( (LA23_0==24) ) {
+                    alt23=1;
+                }
+
+
+                switch (alt23) {
+            	case 1 :
+            	    // InternalPascal.g:1808:4: otherlv_2= ';' ( (lv_parameters_3_0= ruleformal_parameter_section ) )
+            	    {
+            	    otherlv_2=(Token)match(input,24,FOLLOW_24); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      				newLeafNode(otherlv_2, grammarAccess.getFormal_parameter_listAccess().getSemicolonKeyword_2_0());
+            	      			
+            	    }
+            	    // InternalPascal.g:1812:4: ( (lv_parameters_3_0= ruleformal_parameter_section ) )
+            	    // InternalPascal.g:1813:5: (lv_parameters_3_0= ruleformal_parameter_section )
+            	    {
+            	    // InternalPascal.g:1813:5: (lv_parameters_3_0= ruleformal_parameter_section )
+            	    // InternalPascal.g:1814:6: lv_parameters_3_0= ruleformal_parameter_section
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      						newCompositeNode(grammarAccess.getFormal_parameter_listAccess().getParametersFormal_parameter_sectionParserRuleCall_2_1_0());
+            	      					
+            	    }
+            	    pushFollow(FOLLOW_25);
+            	    lv_parameters_3_0=ruleformal_parameter_section();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getFormal_parameter_listRule());
+            	      						}
+            	      						add(
+            	      							current,
+            	      							"parameters",
+            	      							lv_parameters_3_0,
+            	      							"org.xtext.example.pascal.Pascal.formal_parameter_section");
+            	      						afterParserOrEnumRuleCall();
+            	      					
+            	    }
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop23;
+                }
+            } while (true);
+
+            otherlv_4=(Token)match(input,43,FOLLOW_2); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              			newLeafNode(otherlv_4, grammarAccess.getFormal_parameter_listAccess().getRightParenthesisKeyword_3());
+              		
+            }
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleformal_parameter_list"
+
+
+    // $ANTLR start "entryRuleformal_parameter_section"
+    // InternalPascal.g:1840:1: entryRuleformal_parameter_section returns [EObject current=null] : iv_ruleformal_parameter_section= ruleformal_parameter_section EOF ;
+    public final EObject entryRuleformal_parameter_section() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleformal_parameter_section = null;
+
+
+        try {
+            // InternalPascal.g:1840:65: (iv_ruleformal_parameter_section= ruleformal_parameter_section EOF )
+            // InternalPascal.g:1841:2: iv_ruleformal_parameter_section= ruleformal_parameter_section EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getFormal_parameter_sectionRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_ruleformal_parameter_section=ruleformal_parameter_section();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleformal_parameter_section; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleformal_parameter_section"
+
+
+    // $ANTLR start "ruleformal_parameter_section"
+    // InternalPascal.g:1847:1: ruleformal_parameter_section returns [EObject current=null] : ( ( (lv_value_0_0= rulevalue_parameter_section ) ) | ( (lv_variable_1_0= rulevariable_parameter_section ) ) | ( (lv_procedure_2_0= ruleprocedure_heading ) ) ) ;
+    public final EObject ruleformal_parameter_section() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_value_0_0 = null;
+
+        EObject lv_variable_1_0 = null;
+
+        EObject lv_procedure_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalPascal.g:1853:2: ( ( ( (lv_value_0_0= rulevalue_parameter_section ) ) | ( (lv_variable_1_0= rulevariable_parameter_section ) ) | ( (lv_procedure_2_0= ruleprocedure_heading ) ) ) )
+            // InternalPascal.g:1854:2: ( ( (lv_value_0_0= rulevalue_parameter_section ) ) | ( (lv_variable_1_0= rulevariable_parameter_section ) ) | ( (lv_procedure_2_0= ruleprocedure_heading ) ) )
+            {
+            // InternalPascal.g:1854:2: ( ( (lv_value_0_0= rulevalue_parameter_section ) ) | ( (lv_variable_1_0= rulevariable_parameter_section ) ) | ( (lv_procedure_2_0= ruleprocedure_heading ) ) )
+            int alt24=3;
+            switch ( input.LA(1) ) {
+            case RULE_ID:
+                {
+                alt24=1;
+                }
+                break;
+            case 46:
+                {
+                alt24=2;
+                }
+                break;
+            case 45:
+                {
+                alt24=3;
+                }
+                break;
+            default:
+                if (state.backtracking>0) {state.failed=true; return current;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 24, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt24) {
+                case 1 :
+                    // InternalPascal.g:1855:3: ( (lv_value_0_0= rulevalue_parameter_section ) )
+                    {
+                    // InternalPascal.g:1855:3: ( (lv_value_0_0= rulevalue_parameter_section ) )
+                    // InternalPascal.g:1856:4: (lv_value_0_0= rulevalue_parameter_section )
+                    {
+                    // InternalPascal.g:1856:4: (lv_value_0_0= rulevalue_parameter_section )
+                    // InternalPascal.g:1857:5: lv_value_0_0= rulevalue_parameter_section
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					newCompositeNode(grammarAccess.getFormal_parameter_sectionAccess().getValueValue_parameter_sectionParserRuleCall_0_0());
+                      				
+                    }
+                    pushFollow(FOLLOW_2);
+                    lv_value_0_0=rulevalue_parameter_section();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      					if (current==null) {
+                      						current = createModelElementForParent(grammarAccess.getFormal_parameter_sectionRule());
+                      					}
+                      					set(
+                      						current,
+                      						"value",
+                      						lv_value_0_0,
+                      						"org.xtext.example.pascal.Pascal.value_parameter_section");
+                      					afterParserOrEnumRuleCall();
+                      				
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalPascal.g:1875:3: ( (lv_variable_1_0= rulevariable_parameter_section ) )
+                    {
+                    // InternalPascal.g:1875:3: ( (lv_variable_1_0= rulevariable_parameter_section ) )
+                    // InternalPascal.g:1876:4: (lv_variable_1_0= rulevariable_parameter_section )
+                    {
+                    // InternalPascal.g:1876:4: (lv_variable_1_0= rulevariable_parameter_section )
+                    // InternalPascal.g:1877:5: lv_variable_1_0= rulevariable_parameter_section
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					newCompositeNode(grammarAccess.getFormal_parameter_sectionAccess().getVariableVariable_parameter_sectionParserRuleCall_1_0());
+                      				
+                    }
+                    pushFollow(FOLLOW_2);
+                    lv_variable_1_0=rulevariable_parameter_section();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      					if (current==null) {
+                      						current = createModelElementForParent(grammarAccess.getFormal_parameter_sectionRule());
+                      					}
+                      					set(
+                      						current,
+                      						"variable",
+                      						lv_variable_1_0,
+                      						"org.xtext.example.pascal.Pascal.variable_parameter_section");
+                      					afterParserOrEnumRuleCall();
+                      				
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalPascal.g:1895:3: ( (lv_procedure_2_0= ruleprocedure_heading ) )
+                    {
+                    // InternalPascal.g:1895:3: ( (lv_procedure_2_0= ruleprocedure_heading ) )
+                    // InternalPascal.g:1896:4: (lv_procedure_2_0= ruleprocedure_heading )
+                    {
+                    // InternalPascal.g:1896:4: (lv_procedure_2_0= ruleprocedure_heading )
+                    // InternalPascal.g:1897:5: lv_procedure_2_0= ruleprocedure_heading
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					newCompositeNode(grammarAccess.getFormal_parameter_sectionAccess().getProcedureProcedure_headingParserRuleCall_2_0());
+                      				
+                    }
+                    pushFollow(FOLLOW_2);
+                    lv_procedure_2_0=ruleprocedure_heading();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      					if (current==null) {
+                      						current = createModelElementForParent(grammarAccess.getFormal_parameter_sectionRule());
+                      					}
+                      					set(
+                      						current,
+                      						"procedure",
+                      						lv_procedure_2_0,
+                      						"org.xtext.example.pascal.Pascal.procedure_heading");
+                      					afterParserOrEnumRuleCall();
+                      				
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleformal_parameter_section"
+
+
+    // $ANTLR start "entryRulevalue_parameter_section"
+    // InternalPascal.g:1918:1: entryRulevalue_parameter_section returns [EObject current=null] : iv_rulevalue_parameter_section= rulevalue_parameter_section EOF ;
+    public final EObject entryRulevalue_parameter_section() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulevalue_parameter_section = null;
+
+
+        try {
+            // InternalPascal.g:1918:64: (iv_rulevalue_parameter_section= rulevalue_parameter_section EOF )
+            // InternalPascal.g:1919:2: iv_rulevalue_parameter_section= rulevalue_parameter_section EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getValue_parameter_sectionRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_rulevalue_parameter_section=rulevalue_parameter_section();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_rulevalue_parameter_section; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulevalue_parameter_section"
+
+
+    // $ANTLR start "rulevalue_parameter_section"
+    // InternalPascal.g:1925:1: rulevalue_parameter_section returns [EObject current=null] : ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruleparameter_type ) ) ) ;
+    public final EObject rulevalue_parameter_section() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        EObject lv_identifiers_0_0 = null;
+
+        EObject lv_type_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalPascal.g:1931:2: ( ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruleparameter_type ) ) ) )
+            // InternalPascal.g:1932:2: ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruleparameter_type ) ) )
+            {
+            // InternalPascal.g:1932:2: ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruleparameter_type ) ) )
+            // InternalPascal.g:1933:3: ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruleparameter_type ) )
+            {
+            // InternalPascal.g:1933:3: ( (lv_identifiers_0_0= ruleidentifier_list ) )
+            // InternalPascal.g:1934:4: (lv_identifiers_0_0= ruleidentifier_list )
+            {
+            // InternalPascal.g:1934:4: (lv_identifiers_0_0= ruleidentifier_list )
+            // InternalPascal.g:1935:5: lv_identifiers_0_0= ruleidentifier_list
+            {
+            if ( state.backtracking==0 ) {
+
+              					newCompositeNode(grammarAccess.getValue_parameter_sectionAccess().getIdentifiersIdentifier_listParserRuleCall_0_0());
+              				
+            }
+            pushFollow(FOLLOW_10);
+            lv_identifiers_0_0=ruleidentifier_list();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              					if (current==null) {
+              						current = createModelElementForParent(grammarAccess.getValue_parameter_sectionRule());
+              					}
+              					set(
+              						current,
+              						"identifiers",
+              						lv_identifiers_0_0,
+              						"org.xtext.example.pascal.Pascal.identifier_list");
+              					afterParserOrEnumRuleCall();
+              				
+            }
+
+            }
+
+
+            }
+
+            otherlv_1=(Token)match(input,27,FOLLOW_5); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              			newLeafNode(otherlv_1, grammarAccess.getValue_parameter_sectionAccess().getColonKeyword_1());
+              		
+            }
+            // InternalPascal.g:1956:3: ( (lv_type_2_0= ruleparameter_type ) )
+            // InternalPascal.g:1957:4: (lv_type_2_0= ruleparameter_type )
+            {
+            // InternalPascal.g:1957:4: (lv_type_2_0= ruleparameter_type )
+            // InternalPascal.g:1958:5: lv_type_2_0= ruleparameter_type
+            {
+            if ( state.backtracking==0 ) {
+
+              					newCompositeNode(grammarAccess.getValue_parameter_sectionAccess().getTypeParameter_typeParserRuleCall_2_0());
+              				
+            }
+            pushFollow(FOLLOW_2);
+            lv_type_2_0=ruleparameter_type();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              					if (current==null) {
+              						current = createModelElementForParent(grammarAccess.getValue_parameter_sectionRule());
+              					}
+              					set(
+              						current,
+              						"type",
+              						lv_type_2_0,
+              						"org.xtext.example.pascal.Pascal.parameter_type");
+              					afterParserOrEnumRuleCall();
+              				
+            }
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulevalue_parameter_section"
+
+
+    // $ANTLR start "entryRuleidentifier_list"
+    // InternalPascal.g:1979:1: entryRuleidentifier_list returns [EObject current=null] : iv_ruleidentifier_list= ruleidentifier_list EOF ;
+    public final EObject entryRuleidentifier_list() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleidentifier_list = null;
+
+
+        try {
+            // InternalPascal.g:1979:56: (iv_ruleidentifier_list= ruleidentifier_list EOF )
+            // InternalPascal.g:1980:2: iv_ruleidentifier_list= ruleidentifier_list EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getIdentifier_listRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_ruleidentifier_list=ruleidentifier_list();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleidentifier_list; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleidentifier_list"
+
+
+    // $ANTLR start "ruleidentifier_list"
+    // InternalPascal.g:1986:1: ruleidentifier_list returns [EObject current=null] : ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* ) ;
+    public final EObject ruleidentifier_list() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_names_0_0=null;
+        Token otherlv_1=null;
+        Token lv_names_2_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalPascal.g:1992:2: ( ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* ) )
+            // InternalPascal.g:1993:2: ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* )
+            {
+            // InternalPascal.g:1993:2: ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* )
+            // InternalPascal.g:1994:3: ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )*
+            {
+            // InternalPascal.g:1994:3: ( (lv_names_0_0= RULE_ID ) )
+            // InternalPascal.g:1995:4: (lv_names_0_0= RULE_ID )
+            {
+            // InternalPascal.g:1995:4: (lv_names_0_0= RULE_ID )
+            // InternalPascal.g:1996:5: lv_names_0_0= RULE_ID
+            {
+            lv_names_0_0=(Token)match(input,RULE_ID,FOLLOW_15); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              					newLeafNode(lv_names_0_0, grammarAccess.getIdentifier_listAccess().getNamesIDTerminalRuleCall_0_0());
+              				
+            }
+            if ( state.backtracking==0 ) {
+
+              					if (current==null) {
+              						current = createModelElement(grammarAccess.getIdentifier_listRule());
+              					}
+              					addWithLastConsumed(
+              						current,
+              						"names",
+              						lv_names_0_0,
+              						"org.eclipse.xtext.common.Terminals.ID");
+              				
+            }
+
+            }
+
+
+            }
+
+            // InternalPascal.g:2012:3: (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )*
+            loop25:
+            do {
+                int alt25=2;
+                int LA25_0 = input.LA(1);
+
+                if ( (LA25_0==32) ) {
+                    alt25=1;
+                }
+
+
+                switch (alt25) {
+            	case 1 :
+            	    // InternalPascal.g:2013:4: otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) )
+            	    {
+            	    otherlv_1=(Token)match(input,32,FOLLOW_5); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      				newLeafNode(otherlv_1, grammarAccess.getIdentifier_listAccess().getCommaKeyword_1_0());
+            	      			
+            	    }
+            	    // InternalPascal.g:2017:4: ( (lv_names_2_0= RULE_ID ) )
+            	    // InternalPascal.g:2018:5: (lv_names_2_0= RULE_ID )
+            	    {
+            	    // InternalPascal.g:2018:5: (lv_names_2_0= RULE_ID )
+            	    // InternalPascal.g:2019:6: lv_names_2_0= RULE_ID
+            	    {
+            	    lv_names_2_0=(Token)match(input,RULE_ID,FOLLOW_15); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      						newLeafNode(lv_names_2_0, grammarAccess.getIdentifier_listAccess().getNamesIDTerminalRuleCall_1_1_0());
+            	      					
+            	    }
+            	    if ( state.backtracking==0 ) {
+
+            	      						if (current==null) {
+            	      							current = createModelElement(grammarAccess.getIdentifier_listRule());
+            	      						}
+            	      						addWithLastConsumed(
+            	      							current,
+            	      							"names",
+            	      							lv_names_2_0,
+            	      							"org.eclipse.xtext.common.Terminals.ID");
+            	      					
+            	    }
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop25;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleidentifier_list"
+
+
+    // $ANTLR start "entryRuleparameter_type"
+    // InternalPascal.g:2040:1: entryRuleparameter_type returns [EObject current=null] : iv_ruleparameter_type= ruleparameter_type EOF ;
+    public final EObject entryRuleparameter_type() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleparameter_type = null;
+
+
+        try {
+            // InternalPascal.g:2040:55: (iv_ruleparameter_type= ruleparameter_type EOF )
+            // InternalPascal.g:2041:2: iv_ruleparameter_type= ruleparameter_type EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getParameter_typeRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_ruleparameter_type=ruleparameter_type();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleparameter_type; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleparameter_type"
+
+
+    // $ANTLR start "ruleparameter_type"
+    // InternalPascal.g:2047:1: ruleparameter_type returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    public final EObject ruleparameter_type() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_name_0_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalPascal.g:2053:2: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalPascal.g:2054:2: ( (lv_name_0_0= RULE_ID ) )
+            {
+            // InternalPascal.g:2054:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalPascal.g:2055:3: (lv_name_0_0= RULE_ID )
+            {
+            // InternalPascal.g:2055:3: (lv_name_0_0= RULE_ID )
+            // InternalPascal.g:2056:4: lv_name_0_0= RULE_ID
+            {
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              				newLeafNode(lv_name_0_0, grammarAccess.getParameter_typeAccess().getNameIDTerminalRuleCall_0());
+              			
+            }
+            if ( state.backtracking==0 ) {
+
+              				if (current==null) {
+              					current = createModelElement(grammarAccess.getParameter_typeRule());
+              				}
+              				setWithLastConsumed(
+              					current,
+              					"name",
+              					lv_name_0_0,
+              					"org.eclipse.xtext.common.Terminals.ID");
+              			
+            }
+
+            }
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleparameter_type"
+
+
+    // $ANTLR start "entryRulevariable_parameter_section"
+    // InternalPascal.g:2075:1: entryRulevariable_parameter_section returns [EObject current=null] : iv_rulevariable_parameter_section= rulevariable_parameter_section EOF ;
+    public final EObject entryRulevariable_parameter_section() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulevariable_parameter_section = null;
+
+
+        try {
+            // InternalPascal.g:2075:67: (iv_rulevariable_parameter_section= rulevariable_parameter_section EOF )
+            // InternalPascal.g:2076:2: iv_rulevariable_parameter_section= rulevariable_parameter_section EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getVariable_parameter_sectionRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_rulevariable_parameter_section=rulevariable_parameter_section();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_rulevariable_parameter_section; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulevariable_parameter_section"
+
+
+    // $ANTLR start "rulevariable_parameter_section"
+    // InternalPascal.g:2082:1: rulevariable_parameter_section returns [EObject current=null] : (otherlv_0= 'var' ( (lv_indentifiers_1_0= ruleidentifier_list ) ) otherlv_2= ':' ( (lv_type_3_0= ruleparameter_type ) ) ) ;
+    public final EObject rulevariable_parameter_section() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        EObject lv_indentifiers_1_0 = null;
+
+        EObject lv_type_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalPascal.g:2088:2: ( (otherlv_0= 'var' ( (lv_indentifiers_1_0= ruleidentifier_list ) ) otherlv_2= ':' ( (lv_type_3_0= ruleparameter_type ) ) ) )
+            // InternalPascal.g:2089:2: (otherlv_0= 'var' ( (lv_indentifiers_1_0= ruleidentifier_list ) ) otherlv_2= ':' ( (lv_type_3_0= ruleparameter_type ) ) )
+            {
+            // InternalPascal.g:2089:2: (otherlv_0= 'var' ( (lv_indentifiers_1_0= ruleidentifier_list ) ) otherlv_2= ':' ( (lv_type_3_0= ruleparameter_type ) ) )
+            // InternalPascal.g:2090:3: otherlv_0= 'var' ( (lv_indentifiers_1_0= ruleidentifier_list ) ) otherlv_2= ':' ( (lv_type_3_0= ruleparameter_type ) )
+            {
+            otherlv_0=(Token)match(input,46,FOLLOW_5); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              			newLeafNode(otherlv_0, grammarAccess.getVariable_parameter_sectionAccess().getVarKeyword_0());
+              		
+            }
+            // InternalPascal.g:2094:3: ( (lv_indentifiers_1_0= ruleidentifier_list ) )
+            // InternalPascal.g:2095:4: (lv_indentifiers_1_0= ruleidentifier_list )
+            {
+            // InternalPascal.g:2095:4: (lv_indentifiers_1_0= ruleidentifier_list )
+            // InternalPascal.g:2096:5: lv_indentifiers_1_0= ruleidentifier_list
+            {
+            if ( state.backtracking==0 ) {
+
+              					newCompositeNode(grammarAccess.getVariable_parameter_sectionAccess().getIndentifiersIdentifier_listParserRuleCall_1_0());
+              				
+            }
+            pushFollow(FOLLOW_10);
+            lv_indentifiers_1_0=ruleidentifier_list();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              					if (current==null) {
+              						current = createModelElementForParent(grammarAccess.getVariable_parameter_sectionRule());
+              					}
+              					set(
+              						current,
+              						"indentifiers",
+              						lv_indentifiers_1_0,
+              						"org.xtext.example.pascal.Pascal.identifier_list");
+              					afterParserOrEnumRuleCall();
+              				
+            }
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,27,FOLLOW_5); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              			newLeafNode(otherlv_2, grammarAccess.getVariable_parameter_sectionAccess().getColonKeyword_2());
+              		
+            }
+            // InternalPascal.g:2117:3: ( (lv_type_3_0= ruleparameter_type ) )
+            // InternalPascal.g:2118:4: (lv_type_3_0= ruleparameter_type )
+            {
+            // InternalPascal.g:2118:4: (lv_type_3_0= ruleparameter_type )
+            // InternalPascal.g:2119:5: lv_type_3_0= ruleparameter_type
+            {
+            if ( state.backtracking==0 ) {
+
+              					newCompositeNode(grammarAccess.getVariable_parameter_sectionAccess().getTypeParameter_typeParserRuleCall_3_0());
+              				
+            }
+            pushFollow(FOLLOW_2);
+            lv_type_3_0=ruleparameter_type();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              					if (current==null) {
+              						current = createModelElementForParent(grammarAccess.getVariable_parameter_sectionRule());
+              					}
+              					set(
+              						current,
+              						"type",
+              						lv_type_3_0,
+              						"org.xtext.example.pascal.Pascal.parameter_type");
+              					afterParserOrEnumRuleCall();
+              				
+            }
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulevariable_parameter_section"
+
+
     // $ANTLR start "entryRuleset"
-    // InternalPascal.g:2345:1: entryRuleset returns [EObject current=null] : iv_ruleset= ruleset EOF ;
+    // InternalPascal.g:2140:1: entryRuleset returns [EObject current=null] : iv_ruleset= ruleset EOF ;
     public final EObject entryRuleset() throws RecognitionException {
         EObject current = null;
 
@@ -6327,8 +5856,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:2345:44: (iv_ruleset= ruleset EOF )
-            // InternalPascal.g:2346:2: iv_ruleset= ruleset EOF
+            // InternalPascal.g:2140:44: (iv_ruleset= ruleset EOF )
+            // InternalPascal.g:2141:2: iv_ruleset= ruleset EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSetRule()); 
@@ -6359,7 +5888,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleset"
-    // InternalPascal.g:2352:1: ruleset returns [EObject current=null] : ( ( (lv_brackets_0_0= '[' ) ) ( (lv_expressions_1_0= ruleexpression_list ) )? ( (lv_brackets_2_0= ']' ) ) ) ;
+    // InternalPascal.g:2147:1: ruleset returns [EObject current=null] : ( ( (lv_brackets_0_0= '[' ) ) ( (lv_expressions_1_0= ruleexpression_list ) )? ( (lv_brackets_2_0= ']' ) ) ) ;
     public final EObject ruleset() throws RecognitionException {
         EObject current = null;
 
@@ -6372,19 +5901,19 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:2358:2: ( ( ( (lv_brackets_0_0= '[' ) ) ( (lv_expressions_1_0= ruleexpression_list ) )? ( (lv_brackets_2_0= ']' ) ) ) )
-            // InternalPascal.g:2359:2: ( ( (lv_brackets_0_0= '[' ) ) ( (lv_expressions_1_0= ruleexpression_list ) )? ( (lv_brackets_2_0= ']' ) ) )
+            // InternalPascal.g:2153:2: ( ( ( (lv_brackets_0_0= '[' ) ) ( (lv_expressions_1_0= ruleexpression_list ) )? ( (lv_brackets_2_0= ']' ) ) ) )
+            // InternalPascal.g:2154:2: ( ( (lv_brackets_0_0= '[' ) ) ( (lv_expressions_1_0= ruleexpression_list ) )? ( (lv_brackets_2_0= ']' ) ) )
             {
-            // InternalPascal.g:2359:2: ( ( (lv_brackets_0_0= '[' ) ) ( (lv_expressions_1_0= ruleexpression_list ) )? ( (lv_brackets_2_0= ']' ) ) )
-            // InternalPascal.g:2360:3: ( (lv_brackets_0_0= '[' ) ) ( (lv_expressions_1_0= ruleexpression_list ) )? ( (lv_brackets_2_0= ']' ) )
+            // InternalPascal.g:2154:2: ( ( (lv_brackets_0_0= '[' ) ) ( (lv_expressions_1_0= ruleexpression_list ) )? ( (lv_brackets_2_0= ']' ) ) )
+            // InternalPascal.g:2155:3: ( (lv_brackets_0_0= '[' ) ) ( (lv_expressions_1_0= ruleexpression_list ) )? ( (lv_brackets_2_0= ']' ) )
             {
-            // InternalPascal.g:2360:3: ( (lv_brackets_0_0= '[' ) )
-            // InternalPascal.g:2361:4: (lv_brackets_0_0= '[' )
+            // InternalPascal.g:2155:3: ( (lv_brackets_0_0= '[' ) )
+            // InternalPascal.g:2156:4: (lv_brackets_0_0= '[' )
             {
-            // InternalPascal.g:2361:4: (lv_brackets_0_0= '[' )
-            // InternalPascal.g:2362:5: lv_brackets_0_0= '['
+            // InternalPascal.g:2156:4: (lv_brackets_0_0= '[' )
+            // InternalPascal.g:2157:5: lv_brackets_0_0= '['
             {
-            lv_brackets_0_0=(Token)match(input,29,FOLLOW_27); if (state.failed) return current;
+            lv_brackets_0_0=(Token)match(input,29,FOLLOW_26); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               					newLeafNode(lv_brackets_0_0, grammarAccess.getSetAccess().getBracketsLeftSquareBracketKeyword_0_0());
@@ -6404,19 +5933,19 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPascal.g:2374:3: ( (lv_expressions_1_0= ruleexpression_list ) )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            // InternalPascal.g:2169:3: ( (lv_expressions_1_0= ruleexpression_list ) )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( ((LA28_0>=RULE_ID && LA28_0<=RULE_INTEGER_NUMBER)||LA28_0==RULE_ADDITION_OP||LA28_0==RULE_STRING||(LA28_0>=RULE_SIGNED_REAL_NUMBER && LA28_0<=RULE_REAL_NUMBER)||LA28_0==29||(LA28_0>=39 && LA28_0<=42)||LA28_0==44) ) {
-                alt28=1;
+            if ( ((LA26_0>=RULE_ID && LA26_0<=RULE_INTEGER_NUMBER)||LA26_0==RULE_ADDITION_OP||LA26_0==RULE_STRING||(LA26_0>=RULE_SIGNED_REAL_NUMBER && LA26_0<=RULE_REAL_NUMBER)||LA26_0==29||(LA26_0>=39 && LA26_0<=42)||LA26_0==44) ) {
+                alt26=1;
             }
-            switch (alt28) {
+            switch (alt26) {
                 case 1 :
-                    // InternalPascal.g:2375:4: (lv_expressions_1_0= ruleexpression_list )
+                    // InternalPascal.g:2170:4: (lv_expressions_1_0= ruleexpression_list )
                     {
-                    // InternalPascal.g:2375:4: (lv_expressions_1_0= ruleexpression_list )
-                    // InternalPascal.g:2376:5: lv_expressions_1_0= ruleexpression_list
+                    // InternalPascal.g:2170:4: (lv_expressions_1_0= ruleexpression_list )
+                    // InternalPascal.g:2171:5: lv_expressions_1_0= ruleexpression_list
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6450,11 +5979,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPascal.g:2393:3: ( (lv_brackets_2_0= ']' ) )
-            // InternalPascal.g:2394:4: (lv_brackets_2_0= ']' )
+            // InternalPascal.g:2188:3: ( (lv_brackets_2_0= ']' ) )
+            // InternalPascal.g:2189:4: (lv_brackets_2_0= ']' )
             {
-            // InternalPascal.g:2394:4: (lv_brackets_2_0= ']' )
-            // InternalPascal.g:2395:5: lv_brackets_2_0= ']'
+            // InternalPascal.g:2189:4: (lv_brackets_2_0= ']' )
+            // InternalPascal.g:2190:5: lv_brackets_2_0= ']'
             {
             lv_brackets_2_0=(Token)match(input,30,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -6501,7 +6030,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulenumber"
-    // InternalPascal.g:2411:1: entryRulenumber returns [EObject current=null] : iv_rulenumber= rulenumber EOF ;
+    // InternalPascal.g:2206:1: entryRulenumber returns [EObject current=null] : iv_rulenumber= rulenumber EOF ;
     public final EObject entryRulenumber() throws RecognitionException {
         EObject current = null;
 
@@ -6509,8 +6038,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:2411:47: (iv_rulenumber= rulenumber EOF )
-            // InternalPascal.g:2412:2: iv_rulenumber= rulenumber EOF
+            // InternalPascal.g:2206:47: (iv_rulenumber= rulenumber EOF )
+            // InternalPascal.g:2207:2: iv_rulenumber= rulenumber EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNumberRule()); 
@@ -6541,7 +6070,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulenumber"
-    // InternalPascal.g:2418:1: rulenumber returns [EObject current=null] : ( (lv_number_0_0= ruleany_number ) ) ;
+    // InternalPascal.g:2213:1: rulenumber returns [EObject current=null] : ( (lv_number_0_0= ruleany_number ) ) ;
     public final EObject rulenumber() throws RecognitionException {
         EObject current = null;
 
@@ -6552,14 +6081,14 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:2424:2: ( ( (lv_number_0_0= ruleany_number ) ) )
-            // InternalPascal.g:2425:2: ( (lv_number_0_0= ruleany_number ) )
+            // InternalPascal.g:2219:2: ( ( (lv_number_0_0= ruleany_number ) ) )
+            // InternalPascal.g:2220:2: ( (lv_number_0_0= ruleany_number ) )
             {
-            // InternalPascal.g:2425:2: ( (lv_number_0_0= ruleany_number ) )
-            // InternalPascal.g:2426:3: (lv_number_0_0= ruleany_number )
+            // InternalPascal.g:2220:2: ( (lv_number_0_0= ruleany_number ) )
+            // InternalPascal.g:2221:3: (lv_number_0_0= ruleany_number )
             {
-            // InternalPascal.g:2426:3: (lv_number_0_0= ruleany_number )
-            // InternalPascal.g:2427:4: lv_number_0_0= ruleany_number
+            // InternalPascal.g:2221:3: (lv_number_0_0= ruleany_number )
+            // InternalPascal.g:2222:4: lv_number_0_0= ruleany_number
             {
             if ( state.backtracking==0 ) {
 
@@ -6612,7 +6141,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleany_number"
-    // InternalPascal.g:2447:1: entryRuleany_number returns [EObject current=null] : iv_ruleany_number= ruleany_number EOF ;
+    // InternalPascal.g:2242:1: entryRuleany_number returns [EObject current=null] : iv_ruleany_number= ruleany_number EOF ;
     public final EObject entryRuleany_number() throws RecognitionException {
         EObject current = null;
 
@@ -6620,8 +6149,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:2447:51: (iv_ruleany_number= ruleany_number EOF )
-            // InternalPascal.g:2448:2: iv_ruleany_number= ruleany_number EOF
+            // InternalPascal.g:2242:51: (iv_ruleany_number= ruleany_number EOF )
+            // InternalPascal.g:2243:2: iv_ruleany_number= ruleany_number EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAny_numberRule()); 
@@ -6652,7 +6181,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleany_number"
-    // InternalPascal.g:2454:1: ruleany_number returns [EObject current=null] : (this_unsigned_number_0= ruleunsigned_number | this_signed_number_1= rulesigned_number ) ;
+    // InternalPascal.g:2249:1: ruleany_number returns [EObject current=null] : (this_unsigned_number_0= ruleunsigned_number | this_signed_number_1= rulesigned_number ) ;
     public final EObject ruleany_number() throws RecognitionException {
         EObject current = null;
 
@@ -6665,29 +6194,29 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:2460:2: ( (this_unsigned_number_0= ruleunsigned_number | this_signed_number_1= rulesigned_number ) )
-            // InternalPascal.g:2461:2: (this_unsigned_number_0= ruleunsigned_number | this_signed_number_1= rulesigned_number )
+            // InternalPascal.g:2255:2: ( (this_unsigned_number_0= ruleunsigned_number | this_signed_number_1= rulesigned_number ) )
+            // InternalPascal.g:2256:2: (this_unsigned_number_0= ruleunsigned_number | this_signed_number_1= rulesigned_number )
             {
-            // InternalPascal.g:2461:2: (this_unsigned_number_0= ruleunsigned_number | this_signed_number_1= rulesigned_number )
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // InternalPascal.g:2256:2: (this_unsigned_number_0= ruleunsigned_number | this_signed_number_1= rulesigned_number )
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA29_0==RULE_INTEGER_NUMBER||LA29_0==RULE_REAL_NUMBER) ) {
-                alt29=1;
+            if ( (LA27_0==RULE_INTEGER_NUMBER||LA27_0==RULE_REAL_NUMBER) ) {
+                alt27=1;
             }
-            else if ( (LA29_0==RULE_SIGNED_INTEGER_NUMBER||LA29_0==RULE_SIGNED_REAL_NUMBER) ) {
-                alt29=2;
+            else if ( (LA27_0==RULE_SIGNED_INTEGER_NUMBER||LA27_0==RULE_SIGNED_REAL_NUMBER) ) {
+                alt27=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 29, 0, input);
+                    new NoViableAltException("", 27, 0, input);
 
                 throw nvae;
             }
-            switch (alt29) {
+            switch (alt27) {
                 case 1 :
-                    // InternalPascal.g:2462:3: this_unsigned_number_0= ruleunsigned_number
+                    // InternalPascal.g:2257:3: this_unsigned_number_0= ruleunsigned_number
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6714,7 +6243,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPascal.g:2474:3: this_signed_number_1= rulesigned_number
+                    // InternalPascal.g:2269:3: this_signed_number_1= rulesigned_number
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6765,7 +6294,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulelabel_declaration"
-    // InternalPascal.g:2489:1: entryRulelabel_declaration returns [EObject current=null] : iv_rulelabel_declaration= rulelabel_declaration EOF ;
+    // InternalPascal.g:2284:1: entryRulelabel_declaration returns [EObject current=null] : iv_rulelabel_declaration= rulelabel_declaration EOF ;
     public final EObject entryRulelabel_declaration() throws RecognitionException {
         EObject current = null;
 
@@ -6773,8 +6302,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:2489:58: (iv_rulelabel_declaration= rulelabel_declaration EOF )
-            // InternalPascal.g:2490:2: iv_rulelabel_declaration= rulelabel_declaration EOF
+            // InternalPascal.g:2284:58: (iv_rulelabel_declaration= rulelabel_declaration EOF )
+            // InternalPascal.g:2285:2: iv_rulelabel_declaration= rulelabel_declaration EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLabel_declarationRule()); 
@@ -6805,7 +6334,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulelabel_declaration"
-    // InternalPascal.g:2496:1: rulelabel_declaration returns [EObject current=null] : (otherlv_0= 'label' ( (lv_labels_1_0= rulelabel ) ) (otherlv_2= ',' ( (lv_labels_3_0= rulelabel ) ) )* otherlv_4= ';' ) ;
+    // InternalPascal.g:2291:1: rulelabel_declaration returns [EObject current=null] : (otherlv_0= 'label' ( (lv_labels_1_0= rulelabel ) ) (otherlv_2= ',' ( (lv_labels_3_0= rulelabel ) ) )* otherlv_4= ';' ) ;
     public final EObject rulelabel_declaration() throws RecognitionException {
         EObject current = null;
 
@@ -6821,30 +6350,30 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:2502:2: ( (otherlv_0= 'label' ( (lv_labels_1_0= rulelabel ) ) (otherlv_2= ',' ( (lv_labels_3_0= rulelabel ) ) )* otherlv_4= ';' ) )
-            // InternalPascal.g:2503:2: (otherlv_0= 'label' ( (lv_labels_1_0= rulelabel ) ) (otherlv_2= ',' ( (lv_labels_3_0= rulelabel ) ) )* otherlv_4= ';' )
+            // InternalPascal.g:2297:2: ( (otherlv_0= 'label' ( (lv_labels_1_0= rulelabel ) ) (otherlv_2= ',' ( (lv_labels_3_0= rulelabel ) ) )* otherlv_4= ';' ) )
+            // InternalPascal.g:2298:2: (otherlv_0= 'label' ( (lv_labels_1_0= rulelabel ) ) (otherlv_2= ',' ( (lv_labels_3_0= rulelabel ) ) )* otherlv_4= ';' )
             {
-            // InternalPascal.g:2503:2: (otherlv_0= 'label' ( (lv_labels_1_0= rulelabel ) ) (otherlv_2= ',' ( (lv_labels_3_0= rulelabel ) ) )* otherlv_4= ';' )
-            // InternalPascal.g:2504:3: otherlv_0= 'label' ( (lv_labels_1_0= rulelabel ) ) (otherlv_2= ',' ( (lv_labels_3_0= rulelabel ) ) )* otherlv_4= ';'
+            // InternalPascal.g:2298:2: (otherlv_0= 'label' ( (lv_labels_1_0= rulelabel ) ) (otherlv_2= ',' ( (lv_labels_3_0= rulelabel ) ) )* otherlv_4= ';' )
+            // InternalPascal.g:2299:3: otherlv_0= 'label' ( (lv_labels_1_0= rulelabel ) ) (otherlv_2= ',' ( (lv_labels_3_0= rulelabel ) ) )* otherlv_4= ';'
             {
-            otherlv_0=(Token)match(input,48,FOLLOW_28); if (state.failed) return current;
+            otherlv_0=(Token)match(input,47,FOLLOW_27); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getLabel_declarationAccess().getLabelKeyword_0());
               		
             }
-            // InternalPascal.g:2508:3: ( (lv_labels_1_0= rulelabel ) )
-            // InternalPascal.g:2509:4: (lv_labels_1_0= rulelabel )
+            // InternalPascal.g:2303:3: ( (lv_labels_1_0= rulelabel ) )
+            // InternalPascal.g:2304:4: (lv_labels_1_0= rulelabel )
             {
-            // InternalPascal.g:2509:4: (lv_labels_1_0= rulelabel )
-            // InternalPascal.g:2510:5: lv_labels_1_0= rulelabel
+            // InternalPascal.g:2304:4: (lv_labels_1_0= rulelabel )
+            // InternalPascal.g:2305:5: lv_labels_1_0= rulelabel
             {
             if ( state.backtracking==0 ) {
 
               					newCompositeNode(grammarAccess.getLabel_declarationAccess().getLabelsLabelParserRuleCall_1_0());
               				
             }
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_28);
             lv_labels_1_0=rulelabel();
 
             state._fsp--;
@@ -6868,39 +6397,39 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPascal.g:2527:3: (otherlv_2= ',' ( (lv_labels_3_0= rulelabel ) ) )*
-            loop30:
+            // InternalPascal.g:2322:3: (otherlv_2= ',' ( (lv_labels_3_0= rulelabel ) ) )*
+            loop28:
             do {
-                int alt30=2;
-                int LA30_0 = input.LA(1);
+                int alt28=2;
+                int LA28_0 = input.LA(1);
 
-                if ( (LA30_0==32) ) {
-                    alt30=1;
+                if ( (LA28_0==32) ) {
+                    alt28=1;
                 }
 
 
-                switch (alt30) {
+                switch (alt28) {
             	case 1 :
-            	    // InternalPascal.g:2528:4: otherlv_2= ',' ( (lv_labels_3_0= rulelabel ) )
+            	    // InternalPascal.g:2323:4: otherlv_2= ',' ( (lv_labels_3_0= rulelabel ) )
             	    {
-            	    otherlv_2=(Token)match(input,32,FOLLOW_28); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,32,FOLLOW_27); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_2, grammarAccess.getLabel_declarationAccess().getCommaKeyword_2_0());
             	      			
             	    }
-            	    // InternalPascal.g:2532:4: ( (lv_labels_3_0= rulelabel ) )
-            	    // InternalPascal.g:2533:5: (lv_labels_3_0= rulelabel )
+            	    // InternalPascal.g:2327:4: ( (lv_labels_3_0= rulelabel ) )
+            	    // InternalPascal.g:2328:5: (lv_labels_3_0= rulelabel )
             	    {
-            	    // InternalPascal.g:2533:5: (lv_labels_3_0= rulelabel )
-            	    // InternalPascal.g:2534:6: lv_labels_3_0= rulelabel
+            	    // InternalPascal.g:2328:5: (lv_labels_3_0= rulelabel )
+            	    // InternalPascal.g:2329:6: lv_labels_3_0= rulelabel
             	    {
             	    if ( state.backtracking==0 ) {
 
             	      						newCompositeNode(grammarAccess.getLabel_declarationAccess().getLabelsLabelParserRuleCall_2_1_0());
             	      					
             	    }
-            	    pushFollow(FOLLOW_29);
+            	    pushFollow(FOLLOW_28);
             	    lv_labels_3_0=rulelabel();
 
             	    state._fsp--;
@@ -6929,7 +6458,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop30;
+            	    break loop28;
                 }
             } while (true);
 
@@ -6964,7 +6493,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleconstant"
-    // InternalPascal.g:2560:1: entryRuleconstant returns [EObject current=null] : iv_ruleconstant= ruleconstant EOF ;
+    // InternalPascal.g:2355:1: entryRuleconstant returns [EObject current=null] : iv_ruleconstant= ruleconstant EOF ;
     public final EObject entryRuleconstant() throws RecognitionException {
         EObject current = null;
 
@@ -6972,8 +6501,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:2560:49: (iv_ruleconstant= ruleconstant EOF )
-            // InternalPascal.g:2561:2: iv_ruleconstant= ruleconstant EOF
+            // InternalPascal.g:2355:49: (iv_ruleconstant= ruleconstant EOF )
+            // InternalPascal.g:2356:2: iv_ruleconstant= ruleconstant EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getConstantRule()); 
@@ -7004,7 +6533,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleconstant"
-    // InternalPascal.g:2567:1: ruleconstant returns [EObject current=null] : ( ( ( (lv_opterator_0_0= RULE_ADDITION_OP ) )? ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) ) ) | ( (lv_string_3_0= RULE_STRING ) ) | ( (lv_boolLiteral_4_0= 'true' ) ) | ( (lv_boolLiteral_5_0= 'false' ) ) ) ;
+    // InternalPascal.g:2362:1: ruleconstant returns [EObject current=null] : ( ( ( (lv_opterator_0_0= RULE_ADDITION_OP ) )? ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) ) ) | ( (lv_string_3_0= RULE_STRING ) ) | ( (lv_boolLiteral_4_0= 'true' ) ) | ( (lv_boolLiteral_5_0= 'false' ) ) ) ;
     public final EObject ruleconstant() throws RecognitionException {
         EObject current = null;
 
@@ -7020,11 +6549,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:2573:2: ( ( ( ( (lv_opterator_0_0= RULE_ADDITION_OP ) )? ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) ) ) | ( (lv_string_3_0= RULE_STRING ) ) | ( (lv_boolLiteral_4_0= 'true' ) ) | ( (lv_boolLiteral_5_0= 'false' ) ) ) )
-            // InternalPascal.g:2574:2: ( ( ( (lv_opterator_0_0= RULE_ADDITION_OP ) )? ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) ) ) | ( (lv_string_3_0= RULE_STRING ) ) | ( (lv_boolLiteral_4_0= 'true' ) ) | ( (lv_boolLiteral_5_0= 'false' ) ) )
+            // InternalPascal.g:2368:2: ( ( ( ( (lv_opterator_0_0= RULE_ADDITION_OP ) )? ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) ) ) | ( (lv_string_3_0= RULE_STRING ) ) | ( (lv_boolLiteral_4_0= 'true' ) ) | ( (lv_boolLiteral_5_0= 'false' ) ) ) )
+            // InternalPascal.g:2369:2: ( ( ( (lv_opterator_0_0= RULE_ADDITION_OP ) )? ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) ) ) | ( (lv_string_3_0= RULE_STRING ) ) | ( (lv_boolLiteral_4_0= 'true' ) ) | ( (lv_boolLiteral_5_0= 'false' ) ) )
             {
-            // InternalPascal.g:2574:2: ( ( ( (lv_opterator_0_0= RULE_ADDITION_OP ) )? ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) ) ) | ( (lv_string_3_0= RULE_STRING ) ) | ( (lv_boolLiteral_4_0= 'true' ) ) | ( (lv_boolLiteral_5_0= 'false' ) ) )
-            int alt33=4;
+            // InternalPascal.g:2369:2: ( ( ( (lv_opterator_0_0= RULE_ADDITION_OP ) )? ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) ) ) | ( (lv_string_3_0= RULE_STRING ) ) | ( (lv_boolLiteral_4_0= 'true' ) ) | ( (lv_boolLiteral_5_0= 'false' ) ) )
+            int alt31=4;
             switch ( input.LA(1) ) {
             case RULE_ID:
             case RULE_SIGNED_INTEGER_NUMBER:
@@ -7033,54 +6562,54 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             case RULE_SIGNED_REAL_NUMBER:
             case RULE_REAL_NUMBER:
                 {
-                alt33=1;
+                alt31=1;
                 }
                 break;
             case RULE_STRING:
                 {
-                alt33=2;
+                alt31=2;
                 }
                 break;
             case 40:
                 {
-                alt33=3;
+                alt31=3;
                 }
                 break;
             case 41:
                 {
-                alt33=4;
+                alt31=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 33, 0, input);
+                    new NoViableAltException("", 31, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt33) {
+            switch (alt31) {
                 case 1 :
-                    // InternalPascal.g:2575:3: ( ( (lv_opterator_0_0= RULE_ADDITION_OP ) )? ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) ) )
+                    // InternalPascal.g:2370:3: ( ( (lv_opterator_0_0= RULE_ADDITION_OP ) )? ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) ) )
                     {
-                    // InternalPascal.g:2575:3: ( ( (lv_opterator_0_0= RULE_ADDITION_OP ) )? ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) ) )
-                    // InternalPascal.g:2576:4: ( (lv_opterator_0_0= RULE_ADDITION_OP ) )? ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) )
+                    // InternalPascal.g:2370:3: ( ( (lv_opterator_0_0= RULE_ADDITION_OP ) )? ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) ) )
+                    // InternalPascal.g:2371:4: ( (lv_opterator_0_0= RULE_ADDITION_OP ) )? ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) )
                     {
-                    // InternalPascal.g:2576:4: ( (lv_opterator_0_0= RULE_ADDITION_OP ) )?
-                    int alt31=2;
-                    int LA31_0 = input.LA(1);
+                    // InternalPascal.g:2371:4: ( (lv_opterator_0_0= RULE_ADDITION_OP ) )?
+                    int alt29=2;
+                    int LA29_0 = input.LA(1);
 
-                    if ( (LA31_0==RULE_ADDITION_OP) ) {
-                        alt31=1;
+                    if ( (LA29_0==RULE_ADDITION_OP) ) {
+                        alt29=1;
                     }
-                    switch (alt31) {
+                    switch (alt29) {
                         case 1 :
-                            // InternalPascal.g:2577:5: (lv_opterator_0_0= RULE_ADDITION_OP )
+                            // InternalPascal.g:2372:5: (lv_opterator_0_0= RULE_ADDITION_OP )
                             {
-                            // InternalPascal.g:2577:5: (lv_opterator_0_0= RULE_ADDITION_OP )
-                            // InternalPascal.g:2578:6: lv_opterator_0_0= RULE_ADDITION_OP
+                            // InternalPascal.g:2372:5: (lv_opterator_0_0= RULE_ADDITION_OP )
+                            // InternalPascal.g:2373:6: lv_opterator_0_0= RULE_ADDITION_OP
                             {
-                            lv_opterator_0_0=(Token)match(input,RULE_ADDITION_OP,FOLLOW_30); if (state.failed) return current;
+                            lv_opterator_0_0=(Token)match(input,RULE_ADDITION_OP,FOLLOW_29); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                               						newLeafNode(lv_opterator_0_0, grammarAccess.getConstantAccess().getOpteratorADDITION_OPTerminalRuleCall_0_0_0());
@@ -7107,32 +6636,32 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalPascal.g:2594:4: ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) )
-                    int alt32=2;
-                    int LA32_0 = input.LA(1);
+                    // InternalPascal.g:2389:4: ( ( (lv_name_1_0= RULE_ID ) ) | ( (lv_number_2_0= rulenumber ) ) )
+                    int alt30=2;
+                    int LA30_0 = input.LA(1);
 
-                    if ( (LA32_0==RULE_ID) ) {
-                        alt32=1;
+                    if ( (LA30_0==RULE_ID) ) {
+                        alt30=1;
                     }
-                    else if ( ((LA32_0>=RULE_SIGNED_INTEGER_NUMBER && LA32_0<=RULE_INTEGER_NUMBER)||(LA32_0>=RULE_SIGNED_REAL_NUMBER && LA32_0<=RULE_REAL_NUMBER)) ) {
-                        alt32=2;
+                    else if ( ((LA30_0>=RULE_SIGNED_INTEGER_NUMBER && LA30_0<=RULE_INTEGER_NUMBER)||(LA30_0>=RULE_SIGNED_REAL_NUMBER && LA30_0<=RULE_REAL_NUMBER)) ) {
+                        alt30=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return current;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 32, 0, input);
+                            new NoViableAltException("", 30, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt32) {
+                    switch (alt30) {
                         case 1 :
-                            // InternalPascal.g:2595:5: ( (lv_name_1_0= RULE_ID ) )
+                            // InternalPascal.g:2390:5: ( (lv_name_1_0= RULE_ID ) )
                             {
-                            // InternalPascal.g:2595:5: ( (lv_name_1_0= RULE_ID ) )
-                            // InternalPascal.g:2596:6: (lv_name_1_0= RULE_ID )
+                            // InternalPascal.g:2390:5: ( (lv_name_1_0= RULE_ID ) )
+                            // InternalPascal.g:2391:6: (lv_name_1_0= RULE_ID )
                             {
-                            // InternalPascal.g:2596:6: (lv_name_1_0= RULE_ID )
-                            // InternalPascal.g:2597:7: lv_name_1_0= RULE_ID
+                            // InternalPascal.g:2391:6: (lv_name_1_0= RULE_ID )
+                            // InternalPascal.g:2392:7: lv_name_1_0= RULE_ID
                             {
                             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
@@ -7162,13 +6691,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalPascal.g:2614:5: ( (lv_number_2_0= rulenumber ) )
+                            // InternalPascal.g:2409:5: ( (lv_number_2_0= rulenumber ) )
                             {
-                            // InternalPascal.g:2614:5: ( (lv_number_2_0= rulenumber ) )
-                            // InternalPascal.g:2615:6: (lv_number_2_0= rulenumber )
+                            // InternalPascal.g:2409:5: ( (lv_number_2_0= rulenumber ) )
+                            // InternalPascal.g:2410:6: (lv_number_2_0= rulenumber )
                             {
-                            // InternalPascal.g:2615:6: (lv_number_2_0= rulenumber )
-                            // InternalPascal.g:2616:7: lv_number_2_0= rulenumber
+                            // InternalPascal.g:2410:6: (lv_number_2_0= rulenumber )
+                            // InternalPascal.g:2411:7: lv_number_2_0= rulenumber
                             {
                             if ( state.backtracking==0 ) {
 
@@ -7212,13 +6741,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPascal.g:2636:3: ( (lv_string_3_0= RULE_STRING ) )
+                    // InternalPascal.g:2431:3: ( (lv_string_3_0= RULE_STRING ) )
                     {
-                    // InternalPascal.g:2636:3: ( (lv_string_3_0= RULE_STRING ) )
-                    // InternalPascal.g:2637:4: (lv_string_3_0= RULE_STRING )
+                    // InternalPascal.g:2431:3: ( (lv_string_3_0= RULE_STRING ) )
+                    // InternalPascal.g:2432:4: (lv_string_3_0= RULE_STRING )
                     {
-                    // InternalPascal.g:2637:4: (lv_string_3_0= RULE_STRING )
-                    // InternalPascal.g:2638:5: lv_string_3_0= RULE_STRING
+                    // InternalPascal.g:2432:4: (lv_string_3_0= RULE_STRING )
+                    // InternalPascal.g:2433:5: lv_string_3_0= RULE_STRING
                     {
                     lv_string_3_0=(Token)match(input,RULE_STRING,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -7248,13 +6777,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPascal.g:2655:3: ( (lv_boolLiteral_4_0= 'true' ) )
+                    // InternalPascal.g:2450:3: ( (lv_boolLiteral_4_0= 'true' ) )
                     {
-                    // InternalPascal.g:2655:3: ( (lv_boolLiteral_4_0= 'true' ) )
-                    // InternalPascal.g:2656:4: (lv_boolLiteral_4_0= 'true' )
+                    // InternalPascal.g:2450:3: ( (lv_boolLiteral_4_0= 'true' ) )
+                    // InternalPascal.g:2451:4: (lv_boolLiteral_4_0= 'true' )
                     {
-                    // InternalPascal.g:2656:4: (lv_boolLiteral_4_0= 'true' )
-                    // InternalPascal.g:2657:5: lv_boolLiteral_4_0= 'true'
+                    // InternalPascal.g:2451:4: (lv_boolLiteral_4_0= 'true' )
+                    // InternalPascal.g:2452:5: lv_boolLiteral_4_0= 'true'
                     {
                     lv_boolLiteral_4_0=(Token)match(input,40,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -7280,13 +6809,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalPascal.g:2670:3: ( (lv_boolLiteral_5_0= 'false' ) )
+                    // InternalPascal.g:2465:3: ( (lv_boolLiteral_5_0= 'false' ) )
                     {
-                    // InternalPascal.g:2670:3: ( (lv_boolLiteral_5_0= 'false' ) )
-                    // InternalPascal.g:2671:4: (lv_boolLiteral_5_0= 'false' )
+                    // InternalPascal.g:2465:3: ( (lv_boolLiteral_5_0= 'false' ) )
+                    // InternalPascal.g:2466:4: (lv_boolLiteral_5_0= 'false' )
                     {
-                    // InternalPascal.g:2671:4: (lv_boolLiteral_5_0= 'false' )
-                    // InternalPascal.g:2672:5: lv_boolLiteral_5_0= 'false'
+                    // InternalPascal.g:2466:4: (lv_boolLiteral_5_0= 'false' )
+                    // InternalPascal.g:2467:5: lv_boolLiteral_5_0= 'false'
                     {
                     lv_boolLiteral_5_0=(Token)match(input,41,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -7336,7 +6865,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleconstant_definition_part"
-    // InternalPascal.g:2688:1: entryRuleconstant_definition_part returns [EObject current=null] : iv_ruleconstant_definition_part= ruleconstant_definition_part EOF ;
+    // InternalPascal.g:2483:1: entryRuleconstant_definition_part returns [EObject current=null] : iv_ruleconstant_definition_part= ruleconstant_definition_part EOF ;
     public final EObject entryRuleconstant_definition_part() throws RecognitionException {
         EObject current = null;
 
@@ -7344,8 +6873,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:2688:65: (iv_ruleconstant_definition_part= ruleconstant_definition_part EOF )
-            // InternalPascal.g:2689:2: iv_ruleconstant_definition_part= ruleconstant_definition_part EOF
+            // InternalPascal.g:2483:65: (iv_ruleconstant_definition_part= ruleconstant_definition_part EOF )
+            // InternalPascal.g:2484:2: iv_ruleconstant_definition_part= ruleconstant_definition_part EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getConstant_definition_partRule()); 
@@ -7376,7 +6905,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleconstant_definition_part"
-    // InternalPascal.g:2695:1: ruleconstant_definition_part returns [EObject current=null] : (otherlv_0= 'const' ( ( (lv_consts_1_0= ruleconstant_definition ) ) otherlv_2= ';' )+ ) ;
+    // InternalPascal.g:2490:1: ruleconstant_definition_part returns [EObject current=null] : (otherlv_0= 'const' ( ( (lv_consts_1_0= ruleconstant_definition ) ) otherlv_2= ';' )+ ) ;
     public final EObject ruleconstant_definition_part() throws RecognitionException {
         EObject current = null;
 
@@ -7389,39 +6918,39 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:2701:2: ( (otherlv_0= 'const' ( ( (lv_consts_1_0= ruleconstant_definition ) ) otherlv_2= ';' )+ ) )
-            // InternalPascal.g:2702:2: (otherlv_0= 'const' ( ( (lv_consts_1_0= ruleconstant_definition ) ) otherlv_2= ';' )+ )
+            // InternalPascal.g:2496:2: ( (otherlv_0= 'const' ( ( (lv_consts_1_0= ruleconstant_definition ) ) otherlv_2= ';' )+ ) )
+            // InternalPascal.g:2497:2: (otherlv_0= 'const' ( ( (lv_consts_1_0= ruleconstant_definition ) ) otherlv_2= ';' )+ )
             {
-            // InternalPascal.g:2702:2: (otherlv_0= 'const' ( ( (lv_consts_1_0= ruleconstant_definition ) ) otherlv_2= ';' )+ )
-            // InternalPascal.g:2703:3: otherlv_0= 'const' ( ( (lv_consts_1_0= ruleconstant_definition ) ) otherlv_2= ';' )+
+            // InternalPascal.g:2497:2: (otherlv_0= 'const' ( ( (lv_consts_1_0= ruleconstant_definition ) ) otherlv_2= ';' )+ )
+            // InternalPascal.g:2498:3: otherlv_0= 'const' ( ( (lv_consts_1_0= ruleconstant_definition ) ) otherlv_2= ';' )+
             {
-            otherlv_0=(Token)match(input,49,FOLLOW_5); if (state.failed) return current;
+            otherlv_0=(Token)match(input,48,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getConstant_definition_partAccess().getConstKeyword_0());
               		
             }
-            // InternalPascal.g:2707:3: ( ( (lv_consts_1_0= ruleconstant_definition ) ) otherlv_2= ';' )+
-            int cnt34=0;
-            loop34:
+            // InternalPascal.g:2502:3: ( ( (lv_consts_1_0= ruleconstant_definition ) ) otherlv_2= ';' )+
+            int cnt32=0;
+            loop32:
             do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
+                int alt32=2;
+                int LA32_0 = input.LA(1);
 
-                if ( (LA34_0==RULE_ID) ) {
-                    alt34=1;
+                if ( (LA32_0==RULE_ID) ) {
+                    alt32=1;
                 }
 
 
-                switch (alt34) {
+                switch (alt32) {
             	case 1 :
-            	    // InternalPascal.g:2708:4: ( (lv_consts_1_0= ruleconstant_definition ) ) otherlv_2= ';'
+            	    // InternalPascal.g:2503:4: ( (lv_consts_1_0= ruleconstant_definition ) ) otherlv_2= ';'
             	    {
-            	    // InternalPascal.g:2708:4: ( (lv_consts_1_0= ruleconstant_definition ) )
-            	    // InternalPascal.g:2709:5: (lv_consts_1_0= ruleconstant_definition )
+            	    // InternalPascal.g:2503:4: ( (lv_consts_1_0= ruleconstant_definition ) )
+            	    // InternalPascal.g:2504:5: (lv_consts_1_0= ruleconstant_definition )
             	    {
-            	    // InternalPascal.g:2709:5: (lv_consts_1_0= ruleconstant_definition )
-            	    // InternalPascal.g:2710:6: lv_consts_1_0= ruleconstant_definition
+            	    // InternalPascal.g:2504:5: (lv_consts_1_0= ruleconstant_definition )
+            	    // InternalPascal.g:2505:6: lv_consts_1_0= ruleconstant_definition
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -7452,7 +6981,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_2=(Token)match(input,24,FOLLOW_31); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,24,FOLLOW_30); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_2, grammarAccess.getConstant_definition_partAccess().getSemicolonKeyword_1_1());
@@ -7463,13 +6992,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt34 >= 1 ) break loop34;
+            	    if ( cnt32 >= 1 ) break loop32;
             	    if (state.backtracking>0) {state.failed=true; return current;}
                         EarlyExitException eee =
-                            new EarlyExitException(34, input);
+                            new EarlyExitException(32, input);
                         throw eee;
                 }
-                cnt34++;
+                cnt32++;
             } while (true);
 
 
@@ -7497,7 +7026,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleconstant_definition"
-    // InternalPascal.g:2736:1: entryRuleconstant_definition returns [EObject current=null] : iv_ruleconstant_definition= ruleconstant_definition EOF ;
+    // InternalPascal.g:2531:1: entryRuleconstant_definition returns [EObject current=null] : iv_ruleconstant_definition= ruleconstant_definition EOF ;
     public final EObject entryRuleconstant_definition() throws RecognitionException {
         EObject current = null;
 
@@ -7505,8 +7034,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:2736:60: (iv_ruleconstant_definition= ruleconstant_definition EOF )
-            // InternalPascal.g:2737:2: iv_ruleconstant_definition= ruleconstant_definition EOF
+            // InternalPascal.g:2531:60: (iv_ruleconstant_definition= ruleconstant_definition EOF )
+            // InternalPascal.g:2532:2: iv_ruleconstant_definition= ruleconstant_definition EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getConstant_definitionRule()); 
@@ -7537,7 +7066,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleconstant_definition"
-    // InternalPascal.g:2743:1: ruleconstant_definition returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_const_2_0= ruleconstant ) ) ) ;
+    // InternalPascal.g:2538:1: ruleconstant_definition returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_const_2_0= ruleconstant ) ) ) ;
     public final EObject ruleconstant_definition() throws RecognitionException {
         EObject current = null;
 
@@ -7550,19 +7079,19 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:2749:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_const_2_0= ruleconstant ) ) ) )
-            // InternalPascal.g:2750:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_const_2_0= ruleconstant ) ) )
+            // InternalPascal.g:2544:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_const_2_0= ruleconstant ) ) ) )
+            // InternalPascal.g:2545:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_const_2_0= ruleconstant ) ) )
             {
-            // InternalPascal.g:2750:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_const_2_0= ruleconstant ) ) )
-            // InternalPascal.g:2751:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_const_2_0= ruleconstant ) )
+            // InternalPascal.g:2545:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_const_2_0= ruleconstant ) ) )
+            // InternalPascal.g:2546:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_const_2_0= ruleconstant ) )
             {
-            // InternalPascal.g:2751:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalPascal.g:2752:4: (lv_name_0_0= RULE_ID )
+            // InternalPascal.g:2546:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalPascal.g:2547:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalPascal.g:2752:4: (lv_name_0_0= RULE_ID )
-            // InternalPascal.g:2753:5: lv_name_0_0= RULE_ID
+            // InternalPascal.g:2547:4: (lv_name_0_0= RULE_ID )
+            // InternalPascal.g:2548:5: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_32); if (state.failed) return current;
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_31); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               					newLeafNode(lv_name_0_0, grammarAccess.getConstant_definitionAccess().getNameIDTerminalRuleCall_0_0());
@@ -7586,17 +7115,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,34,FOLLOW_33); if (state.failed) return current;
+            otherlv_1=(Token)match(input,34,FOLLOW_32); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getConstant_definitionAccess().getEqualsSignKeyword_1());
               		
             }
-            // InternalPascal.g:2773:3: ( (lv_const_2_0= ruleconstant ) )
-            // InternalPascal.g:2774:4: (lv_const_2_0= ruleconstant )
+            // InternalPascal.g:2568:3: ( (lv_const_2_0= ruleconstant ) )
+            // InternalPascal.g:2569:4: (lv_const_2_0= ruleconstant )
             {
-            // InternalPascal.g:2774:4: (lv_const_2_0= ruleconstant )
-            // InternalPascal.g:2775:5: lv_const_2_0= ruleconstant
+            // InternalPascal.g:2569:4: (lv_const_2_0= ruleconstant )
+            // InternalPascal.g:2570:5: lv_const_2_0= ruleconstant
             {
             if ( state.backtracking==0 ) {
 
@@ -7652,7 +7181,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuletype_definition_part"
-    // InternalPascal.g:2796:1: entryRuletype_definition_part returns [EObject current=null] : iv_ruletype_definition_part= ruletype_definition_part EOF ;
+    // InternalPascal.g:2591:1: entryRuletype_definition_part returns [EObject current=null] : iv_ruletype_definition_part= ruletype_definition_part EOF ;
     public final EObject entryRuletype_definition_part() throws RecognitionException {
         EObject current = null;
 
@@ -7660,8 +7189,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:2796:61: (iv_ruletype_definition_part= ruletype_definition_part EOF )
-            // InternalPascal.g:2797:2: iv_ruletype_definition_part= ruletype_definition_part EOF
+            // InternalPascal.g:2591:61: (iv_ruletype_definition_part= ruletype_definition_part EOF )
+            // InternalPascal.g:2592:2: iv_ruletype_definition_part= ruletype_definition_part EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getType_definition_partRule()); 
@@ -7692,7 +7221,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruletype_definition_part"
-    // InternalPascal.g:2803:1: ruletype_definition_part returns [EObject current=null] : (otherlv_0= 'type' ( ( (lv_types_1_0= ruletype_definition ) ) otherlv_2= ';' )+ ) ;
+    // InternalPascal.g:2598:1: ruletype_definition_part returns [EObject current=null] : (otherlv_0= 'type' ( ( (lv_types_1_0= ruletype_definition ) ) otherlv_2= ';' )+ ) ;
     public final EObject ruletype_definition_part() throws RecognitionException {
         EObject current = null;
 
@@ -7705,39 +7234,39 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:2809:2: ( (otherlv_0= 'type' ( ( (lv_types_1_0= ruletype_definition ) ) otherlv_2= ';' )+ ) )
-            // InternalPascal.g:2810:2: (otherlv_0= 'type' ( ( (lv_types_1_0= ruletype_definition ) ) otherlv_2= ';' )+ )
+            // InternalPascal.g:2604:2: ( (otherlv_0= 'type' ( ( (lv_types_1_0= ruletype_definition ) ) otherlv_2= ';' )+ ) )
+            // InternalPascal.g:2605:2: (otherlv_0= 'type' ( ( (lv_types_1_0= ruletype_definition ) ) otherlv_2= ';' )+ )
             {
-            // InternalPascal.g:2810:2: (otherlv_0= 'type' ( ( (lv_types_1_0= ruletype_definition ) ) otherlv_2= ';' )+ )
-            // InternalPascal.g:2811:3: otherlv_0= 'type' ( ( (lv_types_1_0= ruletype_definition ) ) otherlv_2= ';' )+
+            // InternalPascal.g:2605:2: (otherlv_0= 'type' ( ( (lv_types_1_0= ruletype_definition ) ) otherlv_2= ';' )+ )
+            // InternalPascal.g:2606:3: otherlv_0= 'type' ( ( (lv_types_1_0= ruletype_definition ) ) otherlv_2= ';' )+
             {
-            otherlv_0=(Token)match(input,50,FOLLOW_5); if (state.failed) return current;
+            otherlv_0=(Token)match(input,49,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getType_definition_partAccess().getTypeKeyword_0());
               		
             }
-            // InternalPascal.g:2815:3: ( ( (lv_types_1_0= ruletype_definition ) ) otherlv_2= ';' )+
-            int cnt35=0;
-            loop35:
+            // InternalPascal.g:2610:3: ( ( (lv_types_1_0= ruletype_definition ) ) otherlv_2= ';' )+
+            int cnt33=0;
+            loop33:
             do {
-                int alt35=2;
-                int LA35_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( (LA35_0==RULE_ID) ) {
-                    alt35=1;
+                if ( (LA33_0==RULE_ID) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt35) {
+                switch (alt33) {
             	case 1 :
-            	    // InternalPascal.g:2816:4: ( (lv_types_1_0= ruletype_definition ) ) otherlv_2= ';'
+            	    // InternalPascal.g:2611:4: ( (lv_types_1_0= ruletype_definition ) ) otherlv_2= ';'
             	    {
-            	    // InternalPascal.g:2816:4: ( (lv_types_1_0= ruletype_definition ) )
-            	    // InternalPascal.g:2817:5: (lv_types_1_0= ruletype_definition )
+            	    // InternalPascal.g:2611:4: ( (lv_types_1_0= ruletype_definition ) )
+            	    // InternalPascal.g:2612:5: (lv_types_1_0= ruletype_definition )
             	    {
-            	    // InternalPascal.g:2817:5: (lv_types_1_0= ruletype_definition )
-            	    // InternalPascal.g:2818:6: lv_types_1_0= ruletype_definition
+            	    // InternalPascal.g:2612:5: (lv_types_1_0= ruletype_definition )
+            	    // InternalPascal.g:2613:6: lv_types_1_0= ruletype_definition
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -7768,7 +7297,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_2=(Token)match(input,24,FOLLOW_31); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,24,FOLLOW_30); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_2, grammarAccess.getType_definition_partAccess().getSemicolonKeyword_1_1());
@@ -7779,13 +7308,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt35 >= 1 ) break loop35;
+            	    if ( cnt33 >= 1 ) break loop33;
             	    if (state.backtracking>0) {state.failed=true; return current;}
                         EarlyExitException eee =
-                            new EarlyExitException(35, input);
+                            new EarlyExitException(33, input);
                         throw eee;
                 }
-                cnt35++;
+                cnt33++;
             } while (true);
 
 
@@ -7813,7 +7342,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuletype_definition"
-    // InternalPascal.g:2844:1: entryRuletype_definition returns [EObject current=null] : iv_ruletype_definition= ruletype_definition EOF ;
+    // InternalPascal.g:2639:1: entryRuletype_definition returns [EObject current=null] : iv_ruletype_definition= ruletype_definition EOF ;
     public final EObject entryRuletype_definition() throws RecognitionException {
         EObject current = null;
 
@@ -7821,8 +7350,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:2844:56: (iv_ruletype_definition= ruletype_definition EOF )
-            // InternalPascal.g:2845:2: iv_ruletype_definition= ruletype_definition EOF
+            // InternalPascal.g:2639:56: (iv_ruletype_definition= ruletype_definition EOF )
+            // InternalPascal.g:2640:2: iv_ruletype_definition= ruletype_definition EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getType_definitionRule()); 
@@ -7853,7 +7382,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruletype_definition"
-    // InternalPascal.g:2851:1: ruletype_definition returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_type_2_0= ruletype ) ) ) ;
+    // InternalPascal.g:2646:1: ruletype_definition returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_type_2_0= ruletype ) ) ) ;
     public final EObject ruletype_definition() throws RecognitionException {
         EObject current = null;
 
@@ -7866,19 +7395,19 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:2857:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_type_2_0= ruletype ) ) ) )
-            // InternalPascal.g:2858:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_type_2_0= ruletype ) ) )
+            // InternalPascal.g:2652:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_type_2_0= ruletype ) ) ) )
+            // InternalPascal.g:2653:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_type_2_0= ruletype ) ) )
             {
-            // InternalPascal.g:2858:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_type_2_0= ruletype ) ) )
-            // InternalPascal.g:2859:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_type_2_0= ruletype ) )
+            // InternalPascal.g:2653:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_type_2_0= ruletype ) ) )
+            // InternalPascal.g:2654:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_type_2_0= ruletype ) )
             {
-            // InternalPascal.g:2859:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalPascal.g:2860:4: (lv_name_0_0= RULE_ID )
+            // InternalPascal.g:2654:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalPascal.g:2655:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalPascal.g:2860:4: (lv_name_0_0= RULE_ID )
-            // InternalPascal.g:2861:5: lv_name_0_0= RULE_ID
+            // InternalPascal.g:2655:4: (lv_name_0_0= RULE_ID )
+            // InternalPascal.g:2656:5: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_32); if (state.failed) return current;
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_31); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               					newLeafNode(lv_name_0_0, grammarAccess.getType_definitionAccess().getNameIDTerminalRuleCall_0_0());
@@ -7902,17 +7431,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,34,FOLLOW_34); if (state.failed) return current;
+            otherlv_1=(Token)match(input,34,FOLLOW_33); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getType_definitionAccess().getEqualsSignKeyword_1());
               		
             }
-            // InternalPascal.g:2881:3: ( (lv_type_2_0= ruletype ) )
-            // InternalPascal.g:2882:4: (lv_type_2_0= ruletype )
+            // InternalPascal.g:2676:3: ( (lv_type_2_0= ruletype ) )
+            // InternalPascal.g:2677:4: (lv_type_2_0= ruletype )
             {
-            // InternalPascal.g:2882:4: (lv_type_2_0= ruletype )
-            // InternalPascal.g:2883:5: lv_type_2_0= ruletype
+            // InternalPascal.g:2677:4: (lv_type_2_0= ruletype )
+            // InternalPascal.g:2678:5: lv_type_2_0= ruletype
             {
             if ( state.backtracking==0 ) {
 
@@ -7968,7 +7497,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuletype"
-    // InternalPascal.g:2904:1: entryRuletype returns [EObject current=null] : iv_ruletype= ruletype EOF ;
+    // InternalPascal.g:2699:1: entryRuletype returns [EObject current=null] : iv_ruletype= ruletype EOF ;
     public final EObject entryRuletype() throws RecognitionException {
         EObject current = null;
 
@@ -7976,8 +7505,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:2904:45: (iv_ruletype= ruletype EOF )
-            // InternalPascal.g:2905:2: iv_ruletype= ruletype EOF
+            // InternalPascal.g:2699:45: (iv_ruletype= ruletype EOF )
+            // InternalPascal.g:2700:2: iv_ruletype= ruletype EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getTypeRule()); 
@@ -8008,7 +7537,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruletype"
-    // InternalPascal.g:2911:1: ruletype returns [EObject current=null] : ( ( (lv_simple_0_0= rulesimple_type ) ) | ( (lv_structured_1_0= rulestructured_type ) ) | ( (lv_pointer_2_0= rulepointer_type ) ) ) ;
+    // InternalPascal.g:2706:1: ruletype returns [EObject current=null] : ( ( (lv_simple_0_0= rulesimple_type ) ) | ( (lv_structured_1_0= rulestructured_type ) ) | ( (lv_pointer_2_0= rulepointer_type ) ) ) ;
     public final EObject ruletype() throws RecognitionException {
         EObject current = null;
 
@@ -8023,11 +7552,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:2917:2: ( ( ( (lv_simple_0_0= rulesimple_type ) ) | ( (lv_structured_1_0= rulestructured_type ) ) | ( (lv_pointer_2_0= rulepointer_type ) ) ) )
-            // InternalPascal.g:2918:2: ( ( (lv_simple_0_0= rulesimple_type ) ) | ( (lv_structured_1_0= rulestructured_type ) ) | ( (lv_pointer_2_0= rulepointer_type ) ) )
+            // InternalPascal.g:2712:2: ( ( ( (lv_simple_0_0= rulesimple_type ) ) | ( (lv_structured_1_0= rulestructured_type ) ) | ( (lv_pointer_2_0= rulepointer_type ) ) ) )
+            // InternalPascal.g:2713:2: ( ( (lv_simple_0_0= rulesimple_type ) ) | ( (lv_structured_1_0= rulestructured_type ) ) | ( (lv_pointer_2_0= rulepointer_type ) ) )
             {
-            // InternalPascal.g:2918:2: ( ( (lv_simple_0_0= rulesimple_type ) ) | ( (lv_structured_1_0= rulestructured_type ) ) | ( (lv_pointer_2_0= rulepointer_type ) ) )
-            int alt36=3;
+            // InternalPascal.g:2713:2: ( ( (lv_simple_0_0= rulesimple_type ) ) | ( (lv_structured_1_0= rulestructured_type ) ) | ( (lv_pointer_2_0= rulepointer_type ) ) )
+            int alt34=3;
             switch ( input.LA(1) ) {
             case RULE_ID:
             case RULE_SIGNED_INTEGER_NUMBER:
@@ -8041,37 +7570,37 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             case 41:
             case 42:
                 {
-                alt36=1;
+                alt34=1;
                 }
                 break;
+            case 51:
             case 52:
-            case 53:
                 {
-                alt36=2;
+                alt34=2;
                 }
                 break;
             case 31:
                 {
-                alt36=3;
+                alt34=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 36, 0, input);
+                    new NoViableAltException("", 34, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt36) {
+            switch (alt34) {
                 case 1 :
-                    // InternalPascal.g:2919:3: ( (lv_simple_0_0= rulesimple_type ) )
+                    // InternalPascal.g:2714:3: ( (lv_simple_0_0= rulesimple_type ) )
                     {
-                    // InternalPascal.g:2919:3: ( (lv_simple_0_0= rulesimple_type ) )
-                    // InternalPascal.g:2920:4: (lv_simple_0_0= rulesimple_type )
+                    // InternalPascal.g:2714:3: ( (lv_simple_0_0= rulesimple_type ) )
+                    // InternalPascal.g:2715:4: (lv_simple_0_0= rulesimple_type )
                     {
-                    // InternalPascal.g:2920:4: (lv_simple_0_0= rulesimple_type )
-                    // InternalPascal.g:2921:5: lv_simple_0_0= rulesimple_type
+                    // InternalPascal.g:2715:4: (lv_simple_0_0= rulesimple_type )
+                    // InternalPascal.g:2716:5: lv_simple_0_0= rulesimple_type
                     {
                     if ( state.backtracking==0 ) {
 
@@ -8106,13 +7635,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPascal.g:2939:3: ( (lv_structured_1_0= rulestructured_type ) )
+                    // InternalPascal.g:2734:3: ( (lv_structured_1_0= rulestructured_type ) )
                     {
-                    // InternalPascal.g:2939:3: ( (lv_structured_1_0= rulestructured_type ) )
-                    // InternalPascal.g:2940:4: (lv_structured_1_0= rulestructured_type )
+                    // InternalPascal.g:2734:3: ( (lv_structured_1_0= rulestructured_type ) )
+                    // InternalPascal.g:2735:4: (lv_structured_1_0= rulestructured_type )
                     {
-                    // InternalPascal.g:2940:4: (lv_structured_1_0= rulestructured_type )
-                    // InternalPascal.g:2941:5: lv_structured_1_0= rulestructured_type
+                    // InternalPascal.g:2735:4: (lv_structured_1_0= rulestructured_type )
+                    // InternalPascal.g:2736:5: lv_structured_1_0= rulestructured_type
                     {
                     if ( state.backtracking==0 ) {
 
@@ -8147,13 +7676,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPascal.g:2959:3: ( (lv_pointer_2_0= rulepointer_type ) )
+                    // InternalPascal.g:2754:3: ( (lv_pointer_2_0= rulepointer_type ) )
                     {
-                    // InternalPascal.g:2959:3: ( (lv_pointer_2_0= rulepointer_type ) )
-                    // InternalPascal.g:2960:4: (lv_pointer_2_0= rulepointer_type )
+                    // InternalPascal.g:2754:3: ( (lv_pointer_2_0= rulepointer_type ) )
+                    // InternalPascal.g:2755:4: (lv_pointer_2_0= rulepointer_type )
                     {
-                    // InternalPascal.g:2960:4: (lv_pointer_2_0= rulepointer_type )
-                    // InternalPascal.g:2961:5: lv_pointer_2_0= rulepointer_type
+                    // InternalPascal.g:2755:4: (lv_pointer_2_0= rulepointer_type )
+                    // InternalPascal.g:2756:5: lv_pointer_2_0= rulepointer_type
                     {
                     if ( state.backtracking==0 ) {
 
@@ -8212,7 +7741,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulesimple_type"
-    // InternalPascal.g:2982:1: entryRulesimple_type returns [EObject current=null] : iv_rulesimple_type= rulesimple_type EOF ;
+    // InternalPascal.g:2777:1: entryRulesimple_type returns [EObject current=null] : iv_rulesimple_type= rulesimple_type EOF ;
     public final EObject entryRulesimple_type() throws RecognitionException {
         EObject current = null;
 
@@ -8220,8 +7749,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:2982:52: (iv_rulesimple_type= rulesimple_type EOF )
-            // InternalPascal.g:2983:2: iv_rulesimple_type= rulesimple_type EOF
+            // InternalPascal.g:2777:52: (iv_rulesimple_type= rulesimple_type EOF )
+            // InternalPascal.g:2778:2: iv_rulesimple_type= rulesimple_type EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSimple_typeRule()); 
@@ -8252,7 +7781,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulesimple_type"
-    // InternalPascal.g:2989:1: rulesimple_type returns [EObject current=null] : ( ( (lv_subrange_0_0= rulesubrange_type ) ) | ( (lv_enumerated_1_0= ruleenumerated_type ) ) | ( (lv_name_2_0= RULE_ID ) ) ) ;
+    // InternalPascal.g:2784:1: rulesimple_type returns [EObject current=null] : ( ( (lv_subrange_0_0= rulesubrange_type ) ) | ( (lv_enumerated_1_0= ruleenumerated_type ) ) | ( (lv_name_2_0= RULE_ID ) ) ) ;
     public final EObject rulesimple_type() throws RecognitionException {
         EObject current = null;
 
@@ -8266,11 +7795,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:2995:2: ( ( ( (lv_subrange_0_0= rulesubrange_type ) ) | ( (lv_enumerated_1_0= ruleenumerated_type ) ) | ( (lv_name_2_0= RULE_ID ) ) ) )
-            // InternalPascal.g:2996:2: ( ( (lv_subrange_0_0= rulesubrange_type ) ) | ( (lv_enumerated_1_0= ruleenumerated_type ) ) | ( (lv_name_2_0= RULE_ID ) ) )
+            // InternalPascal.g:2790:2: ( ( ( (lv_subrange_0_0= rulesubrange_type ) ) | ( (lv_enumerated_1_0= ruleenumerated_type ) ) | ( (lv_name_2_0= RULE_ID ) ) ) )
+            // InternalPascal.g:2791:2: ( ( (lv_subrange_0_0= rulesubrange_type ) ) | ( (lv_enumerated_1_0= ruleenumerated_type ) ) | ( (lv_name_2_0= RULE_ID ) ) )
             {
-            // InternalPascal.g:2996:2: ( ( (lv_subrange_0_0= rulesubrange_type ) ) | ( (lv_enumerated_1_0= ruleenumerated_type ) ) | ( (lv_name_2_0= RULE_ID ) ) )
-            int alt37=3;
+            // InternalPascal.g:2791:2: ( ( (lv_subrange_0_0= rulesubrange_type ) ) | ( (lv_enumerated_1_0= ruleenumerated_type ) ) | ( (lv_name_2_0= RULE_ID ) ) )
+            int alt35=3;
             switch ( input.LA(1) ) {
             case RULE_SIGNED_INTEGER_NUMBER:
             case RULE_INTEGER_NUMBER:
@@ -8282,23 +7811,23 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             case 40:
             case 41:
                 {
-                alt37=1;
+                alt35=1;
                 }
                 break;
             case RULE_ID:
                 {
-                int LA37_2 = input.LA(2);
+                int LA35_2 = input.LA(2);
 
-                if ( (LA37_2==EOF||LA37_2==24||LA37_2==26||LA37_2==43) ) {
-                    alt37=3;
+                if ( (LA35_2==50) ) {
+                    alt35=1;
                 }
-                else if ( (LA37_2==51) ) {
-                    alt37=1;
+                else if ( (LA35_2==EOF||LA35_2==24||LA35_2==26||LA35_2==43) ) {
+                    alt35=3;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 37, 2, input);
+                        new NoViableAltException("", 35, 2, input);
 
                     throw nvae;
                 }
@@ -8306,26 +7835,26 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                 break;
             case 42:
                 {
-                alt37=2;
+                alt35=2;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 37, 0, input);
+                    new NoViableAltException("", 35, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt37) {
+            switch (alt35) {
                 case 1 :
-                    // InternalPascal.g:2997:3: ( (lv_subrange_0_0= rulesubrange_type ) )
+                    // InternalPascal.g:2792:3: ( (lv_subrange_0_0= rulesubrange_type ) )
                     {
-                    // InternalPascal.g:2997:3: ( (lv_subrange_0_0= rulesubrange_type ) )
-                    // InternalPascal.g:2998:4: (lv_subrange_0_0= rulesubrange_type )
+                    // InternalPascal.g:2792:3: ( (lv_subrange_0_0= rulesubrange_type ) )
+                    // InternalPascal.g:2793:4: (lv_subrange_0_0= rulesubrange_type )
                     {
-                    // InternalPascal.g:2998:4: (lv_subrange_0_0= rulesubrange_type )
-                    // InternalPascal.g:2999:5: lv_subrange_0_0= rulesubrange_type
+                    // InternalPascal.g:2793:4: (lv_subrange_0_0= rulesubrange_type )
+                    // InternalPascal.g:2794:5: lv_subrange_0_0= rulesubrange_type
                     {
                     if ( state.backtracking==0 ) {
 
@@ -8360,13 +7889,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPascal.g:3017:3: ( (lv_enumerated_1_0= ruleenumerated_type ) )
+                    // InternalPascal.g:2812:3: ( (lv_enumerated_1_0= ruleenumerated_type ) )
                     {
-                    // InternalPascal.g:3017:3: ( (lv_enumerated_1_0= ruleenumerated_type ) )
-                    // InternalPascal.g:3018:4: (lv_enumerated_1_0= ruleenumerated_type )
+                    // InternalPascal.g:2812:3: ( (lv_enumerated_1_0= ruleenumerated_type ) )
+                    // InternalPascal.g:2813:4: (lv_enumerated_1_0= ruleenumerated_type )
                     {
-                    // InternalPascal.g:3018:4: (lv_enumerated_1_0= ruleenumerated_type )
-                    // InternalPascal.g:3019:5: lv_enumerated_1_0= ruleenumerated_type
+                    // InternalPascal.g:2813:4: (lv_enumerated_1_0= ruleenumerated_type )
+                    // InternalPascal.g:2814:5: lv_enumerated_1_0= ruleenumerated_type
                     {
                     if ( state.backtracking==0 ) {
 
@@ -8401,13 +7930,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPascal.g:3037:3: ( (lv_name_2_0= RULE_ID ) )
+                    // InternalPascal.g:2832:3: ( (lv_name_2_0= RULE_ID ) )
                     {
-                    // InternalPascal.g:3037:3: ( (lv_name_2_0= RULE_ID ) )
-                    // InternalPascal.g:3038:4: (lv_name_2_0= RULE_ID )
+                    // InternalPascal.g:2832:3: ( (lv_name_2_0= RULE_ID ) )
+                    // InternalPascal.g:2833:4: (lv_name_2_0= RULE_ID )
                     {
-                    // InternalPascal.g:3038:4: (lv_name_2_0= RULE_ID )
-                    // InternalPascal.g:3039:5: lv_name_2_0= RULE_ID
+                    // InternalPascal.g:2833:4: (lv_name_2_0= RULE_ID )
+                    // InternalPascal.g:2834:5: lv_name_2_0= RULE_ID
                     {
                     lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -8461,7 +7990,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulesubrange_type"
-    // InternalPascal.g:3059:1: entryRulesubrange_type returns [EObject current=null] : iv_rulesubrange_type= rulesubrange_type EOF ;
+    // InternalPascal.g:2854:1: entryRulesubrange_type returns [EObject current=null] : iv_rulesubrange_type= rulesubrange_type EOF ;
     public final EObject entryRulesubrange_type() throws RecognitionException {
         EObject current = null;
 
@@ -8472,8 +8001,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalPascal.g:3061:2: (iv_rulesubrange_type= rulesubrange_type EOF )
-            // InternalPascal.g:3062:2: iv_rulesubrange_type= rulesubrange_type EOF
+            // InternalPascal.g:2856:2: (iv_rulesubrange_type= rulesubrange_type EOF )
+            // InternalPascal.g:2857:2: iv_rulesubrange_type= rulesubrange_type EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSubrange_typeRule()); 
@@ -8507,7 +8036,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulesubrange_type"
-    // InternalPascal.g:3071:1: rulesubrange_type returns [EObject current=null] : ( ( ( (lv_initialConst_0_0= ruleconstant ) ) otherlv_1= '..' ( (lv_finalConst_2_0= ruleconstant ) ) ) | ( ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) ) ( (lv_const_4_0= ruleconstant ) ) ) ) ;
+    // InternalPascal.g:2866:1: rulesubrange_type returns [EObject current=null] : ( ( ( (lv_initialConst_0_0= ruleconstant ) ) otherlv_1= '..' ( (lv_finalConst_2_0= ruleconstant ) ) ) | ( ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) ) ( (lv_const_4_0= ruleconstant ) ) ) ) ;
     public final EObject rulesubrange_type() throws RecognitionException {
         EObject current = null;
 
@@ -8525,45 +8054,45 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalPascal.g:3078:2: ( ( ( ( (lv_initialConst_0_0= ruleconstant ) ) otherlv_1= '..' ( (lv_finalConst_2_0= ruleconstant ) ) ) | ( ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) ) ( (lv_const_4_0= ruleconstant ) ) ) ) )
-            // InternalPascal.g:3079:2: ( ( ( (lv_initialConst_0_0= ruleconstant ) ) otherlv_1= '..' ( (lv_finalConst_2_0= ruleconstant ) ) ) | ( ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) ) ( (lv_const_4_0= ruleconstant ) ) ) )
+            // InternalPascal.g:2873:2: ( ( ( ( (lv_initialConst_0_0= ruleconstant ) ) otherlv_1= '..' ( (lv_finalConst_2_0= ruleconstant ) ) ) | ( ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) ) ( (lv_const_4_0= ruleconstant ) ) ) ) )
+            // InternalPascal.g:2874:2: ( ( ( (lv_initialConst_0_0= ruleconstant ) ) otherlv_1= '..' ( (lv_finalConst_2_0= ruleconstant ) ) ) | ( ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) ) ( (lv_const_4_0= ruleconstant ) ) ) )
             {
-            // InternalPascal.g:3079:2: ( ( ( (lv_initialConst_0_0= ruleconstant ) ) otherlv_1= '..' ( (lv_finalConst_2_0= ruleconstant ) ) ) | ( ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) ) ( (lv_const_4_0= ruleconstant ) ) ) )
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            // InternalPascal.g:2874:2: ( ( ( (lv_initialConst_0_0= ruleconstant ) ) otherlv_1= '..' ( (lv_finalConst_2_0= ruleconstant ) ) ) | ( ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) ) ( (lv_const_4_0= ruleconstant ) ) ) )
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( ((LA38_0>=RULE_ID && LA38_0<=RULE_INTEGER_NUMBER)||LA38_0==RULE_ADDITION_OP||LA38_0==RULE_STRING||(LA38_0>=RULE_SIGNED_REAL_NUMBER && LA38_0<=RULE_REAL_NUMBER)||(LA38_0>=40 && LA38_0<=41)) ) {
-                alt38=1;
+            if ( ((LA36_0>=RULE_ID && LA36_0<=RULE_INTEGER_NUMBER)||LA36_0==RULE_ADDITION_OP||LA36_0==RULE_STRING||(LA36_0>=RULE_SIGNED_REAL_NUMBER && LA36_0<=RULE_REAL_NUMBER)||(LA36_0>=40 && LA36_0<=41)) ) {
+                alt36=1;
             }
-            else if ( (LA38_0==RULE_NUMERIC_SUBRANGE) ) {
-                alt38=2;
+            else if ( (LA36_0==RULE_NUMERIC_SUBRANGE) ) {
+                alt36=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 38, 0, input);
+                    new NoViableAltException("", 36, 0, input);
 
                 throw nvae;
             }
-            switch (alt38) {
+            switch (alt36) {
                 case 1 :
-                    // InternalPascal.g:3080:3: ( ( (lv_initialConst_0_0= ruleconstant ) ) otherlv_1= '..' ( (lv_finalConst_2_0= ruleconstant ) ) )
+                    // InternalPascal.g:2875:3: ( ( (lv_initialConst_0_0= ruleconstant ) ) otherlv_1= '..' ( (lv_finalConst_2_0= ruleconstant ) ) )
                     {
-                    // InternalPascal.g:3080:3: ( ( (lv_initialConst_0_0= ruleconstant ) ) otherlv_1= '..' ( (lv_finalConst_2_0= ruleconstant ) ) )
-                    // InternalPascal.g:3081:4: ( (lv_initialConst_0_0= ruleconstant ) ) otherlv_1= '..' ( (lv_finalConst_2_0= ruleconstant ) )
+                    // InternalPascal.g:2875:3: ( ( (lv_initialConst_0_0= ruleconstant ) ) otherlv_1= '..' ( (lv_finalConst_2_0= ruleconstant ) ) )
+                    // InternalPascal.g:2876:4: ( (lv_initialConst_0_0= ruleconstant ) ) otherlv_1= '..' ( (lv_finalConst_2_0= ruleconstant ) )
                     {
-                    // InternalPascal.g:3081:4: ( (lv_initialConst_0_0= ruleconstant ) )
-                    // InternalPascal.g:3082:5: (lv_initialConst_0_0= ruleconstant )
+                    // InternalPascal.g:2876:4: ( (lv_initialConst_0_0= ruleconstant ) )
+                    // InternalPascal.g:2877:5: (lv_initialConst_0_0= ruleconstant )
                     {
-                    // InternalPascal.g:3082:5: (lv_initialConst_0_0= ruleconstant )
-                    // InternalPascal.g:3083:6: lv_initialConst_0_0= ruleconstant
+                    // InternalPascal.g:2877:5: (lv_initialConst_0_0= ruleconstant )
+                    // InternalPascal.g:2878:6: lv_initialConst_0_0= ruleconstant
                     {
                     if ( state.backtracking==0 ) {
 
                       						newCompositeNode(grammarAccess.getSubrange_typeAccess().getInitialConstConstantParserRuleCall_0_0_0());
                       					
                     }
-                    pushFollow(FOLLOW_35);
+                    pushFollow(FOLLOW_34);
                     lv_initialConst_0_0=ruleconstant();
 
                     state._fsp--;
@@ -8587,17 +8116,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_1=(Token)match(input,51,FOLLOW_33); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,50,FOLLOW_32); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_1, grammarAccess.getSubrange_typeAccess().getFullStopFullStopKeyword_0_1());
                       			
                     }
-                    // InternalPascal.g:3104:4: ( (lv_finalConst_2_0= ruleconstant ) )
-                    // InternalPascal.g:3105:5: (lv_finalConst_2_0= ruleconstant )
+                    // InternalPascal.g:2899:4: ( (lv_finalConst_2_0= ruleconstant ) )
+                    // InternalPascal.g:2900:5: (lv_finalConst_2_0= ruleconstant )
                     {
-                    // InternalPascal.g:3105:5: (lv_finalConst_2_0= ruleconstant )
-                    // InternalPascal.g:3106:6: lv_finalConst_2_0= ruleconstant
+                    // InternalPascal.g:2900:5: (lv_finalConst_2_0= ruleconstant )
+                    // InternalPascal.g:2901:6: lv_finalConst_2_0= ruleconstant
                     {
                     if ( state.backtracking==0 ) {
 
@@ -8635,18 +8164,18 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPascal.g:3125:3: ( ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) ) ( (lv_const_4_0= ruleconstant ) ) )
+                    // InternalPascal.g:2920:3: ( ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) ) ( (lv_const_4_0= ruleconstant ) ) )
                     {
-                    // InternalPascal.g:3125:3: ( ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) ) ( (lv_const_4_0= ruleconstant ) ) )
-                    // InternalPascal.g:3126:4: ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) ) ( (lv_const_4_0= ruleconstant ) )
+                    // InternalPascal.g:2920:3: ( ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) ) ( (lv_const_4_0= ruleconstant ) ) )
+                    // InternalPascal.g:2921:4: ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) ) ( (lv_const_4_0= ruleconstant ) )
                     {
-                    // InternalPascal.g:3126:4: ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) )
-                    // InternalPascal.g:3127:5: (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE )
+                    // InternalPascal.g:2921:4: ( (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE ) )
+                    // InternalPascal.g:2922:5: (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE )
                     {
-                    // InternalPascal.g:3127:5: (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE )
-                    // InternalPascal.g:3128:6: lv_subrange_3_0= RULE_NUMERIC_SUBRANGE
+                    // InternalPascal.g:2922:5: (lv_subrange_3_0= RULE_NUMERIC_SUBRANGE )
+                    // InternalPascal.g:2923:6: lv_subrange_3_0= RULE_NUMERIC_SUBRANGE
                     {
-                    lv_subrange_3_0=(Token)match(input,RULE_NUMERIC_SUBRANGE,FOLLOW_33); if (state.failed) return current;
+                    lv_subrange_3_0=(Token)match(input,RULE_NUMERIC_SUBRANGE,FOLLOW_32); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       						newLeafNode(lv_subrange_3_0, grammarAccess.getSubrange_typeAccess().getSubrangeNUMERIC_SUBRANGETerminalRuleCall_1_0_0());
@@ -8670,11 +8199,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalPascal.g:3144:4: ( (lv_const_4_0= ruleconstant ) )
-                    // InternalPascal.g:3145:5: (lv_const_4_0= ruleconstant )
+                    // InternalPascal.g:2939:4: ( (lv_const_4_0= ruleconstant ) )
+                    // InternalPascal.g:2940:5: (lv_const_4_0= ruleconstant )
                     {
-                    // InternalPascal.g:3145:5: (lv_const_4_0= ruleconstant )
-                    // InternalPascal.g:3146:6: lv_const_4_0= ruleconstant
+                    // InternalPascal.g:2940:5: (lv_const_4_0= ruleconstant )
+                    // InternalPascal.g:2941:6: lv_const_4_0= ruleconstant
                     {
                     if ( state.backtracking==0 ) {
 
@@ -8739,7 +8268,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleenumerated_type"
-    // InternalPascal.g:3171:1: entryRuleenumerated_type returns [EObject current=null] : iv_ruleenumerated_type= ruleenumerated_type EOF ;
+    // InternalPascal.g:2966:1: entryRuleenumerated_type returns [EObject current=null] : iv_ruleenumerated_type= ruleenumerated_type EOF ;
     public final EObject entryRuleenumerated_type() throws RecognitionException {
         EObject current = null;
 
@@ -8747,8 +8276,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:3171:56: (iv_ruleenumerated_type= ruleenumerated_type EOF )
-            // InternalPascal.g:3172:2: iv_ruleenumerated_type= ruleenumerated_type EOF
+            // InternalPascal.g:2966:56: (iv_ruleenumerated_type= ruleenumerated_type EOF )
+            // InternalPascal.g:2967:2: iv_ruleenumerated_type= ruleenumerated_type EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEnumerated_typeRule()); 
@@ -8779,7 +8308,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleenumerated_type"
-    // InternalPascal.g:3178:1: ruleenumerated_type returns [EObject current=null] : (otherlv_0= '(' ( (lv_identifiers_1_0= ruleidentifier_list ) ) otherlv_2= ')' ) ;
+    // InternalPascal.g:2973:1: ruleenumerated_type returns [EObject current=null] : (otherlv_0= '(' ( (lv_identifiers_1_0= ruleidentifier_list ) ) otherlv_2= ')' ) ;
     public final EObject ruleenumerated_type() throws RecognitionException {
         EObject current = null;
 
@@ -8792,11 +8321,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:3184:2: ( (otherlv_0= '(' ( (lv_identifiers_1_0= ruleidentifier_list ) ) otherlv_2= ')' ) )
-            // InternalPascal.g:3185:2: (otherlv_0= '(' ( (lv_identifiers_1_0= ruleidentifier_list ) ) otherlv_2= ')' )
+            // InternalPascal.g:2979:2: ( (otherlv_0= '(' ( (lv_identifiers_1_0= ruleidentifier_list ) ) otherlv_2= ')' ) )
+            // InternalPascal.g:2980:2: (otherlv_0= '(' ( (lv_identifiers_1_0= ruleidentifier_list ) ) otherlv_2= ')' )
             {
-            // InternalPascal.g:3185:2: (otherlv_0= '(' ( (lv_identifiers_1_0= ruleidentifier_list ) ) otherlv_2= ')' )
-            // InternalPascal.g:3186:3: otherlv_0= '(' ( (lv_identifiers_1_0= ruleidentifier_list ) ) otherlv_2= ')'
+            // InternalPascal.g:2980:2: (otherlv_0= '(' ( (lv_identifiers_1_0= ruleidentifier_list ) ) otherlv_2= ')' )
+            // InternalPascal.g:2981:3: otherlv_0= '(' ( (lv_identifiers_1_0= ruleidentifier_list ) ) otherlv_2= ')'
             {
             otherlv_0=(Token)match(input,42,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -8804,11 +8333,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getEnumerated_typeAccess().getLeftParenthesisKeyword_0());
               		
             }
-            // InternalPascal.g:3190:3: ( (lv_identifiers_1_0= ruleidentifier_list ) )
-            // InternalPascal.g:3191:4: (lv_identifiers_1_0= ruleidentifier_list )
+            // InternalPascal.g:2985:3: ( (lv_identifiers_1_0= ruleidentifier_list ) )
+            // InternalPascal.g:2986:4: (lv_identifiers_1_0= ruleidentifier_list )
             {
-            // InternalPascal.g:3191:4: (lv_identifiers_1_0= ruleidentifier_list )
-            // InternalPascal.g:3192:5: lv_identifiers_1_0= ruleidentifier_list
+            // InternalPascal.g:2986:4: (lv_identifiers_1_0= ruleidentifier_list )
+            // InternalPascal.g:2987:5: lv_identifiers_1_0= ruleidentifier_list
             {
             if ( state.backtracking==0 ) {
 
@@ -8870,7 +8399,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulestructured_type"
-    // InternalPascal.g:3217:1: entryRulestructured_type returns [EObject current=null] : iv_rulestructured_type= rulestructured_type EOF ;
+    // InternalPascal.g:3012:1: entryRulestructured_type returns [EObject current=null] : iv_rulestructured_type= rulestructured_type EOF ;
     public final EObject entryRulestructured_type() throws RecognitionException {
         EObject current = null;
 
@@ -8878,8 +8407,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:3217:56: (iv_rulestructured_type= rulestructured_type EOF )
-            // InternalPascal.g:3218:2: iv_rulestructured_type= rulestructured_type EOF
+            // InternalPascal.g:3012:56: (iv_rulestructured_type= rulestructured_type EOF )
+            // InternalPascal.g:3013:2: iv_rulestructured_type= rulestructured_type EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getStructured_typeRule()); 
@@ -8910,7 +8439,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulestructured_type"
-    // InternalPascal.g:3224:1: rulestructured_type returns [EObject current=null] : ( ( (lv_packed_0_0= 'packed' ) )? ( (lv_type_1_0= ruleunpacked_structured_type ) ) ) ;
+    // InternalPascal.g:3019:1: rulestructured_type returns [EObject current=null] : ( ( (lv_packed_0_0= 'packed' ) )? ( (lv_type_1_0= ruleunpacked_structured_type ) ) ) ;
     public final EObject rulestructured_type() throws RecognitionException {
         EObject current = null;
 
@@ -8922,27 +8451,27 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:3230:2: ( ( ( (lv_packed_0_0= 'packed' ) )? ( (lv_type_1_0= ruleunpacked_structured_type ) ) ) )
-            // InternalPascal.g:3231:2: ( ( (lv_packed_0_0= 'packed' ) )? ( (lv_type_1_0= ruleunpacked_structured_type ) ) )
+            // InternalPascal.g:3025:2: ( ( ( (lv_packed_0_0= 'packed' ) )? ( (lv_type_1_0= ruleunpacked_structured_type ) ) ) )
+            // InternalPascal.g:3026:2: ( ( (lv_packed_0_0= 'packed' ) )? ( (lv_type_1_0= ruleunpacked_structured_type ) ) )
             {
-            // InternalPascal.g:3231:2: ( ( (lv_packed_0_0= 'packed' ) )? ( (lv_type_1_0= ruleunpacked_structured_type ) ) )
-            // InternalPascal.g:3232:3: ( (lv_packed_0_0= 'packed' ) )? ( (lv_type_1_0= ruleunpacked_structured_type ) )
+            // InternalPascal.g:3026:2: ( ( (lv_packed_0_0= 'packed' ) )? ( (lv_type_1_0= ruleunpacked_structured_type ) ) )
+            // InternalPascal.g:3027:3: ( (lv_packed_0_0= 'packed' ) )? ( (lv_type_1_0= ruleunpacked_structured_type ) )
             {
-            // InternalPascal.g:3232:3: ( (lv_packed_0_0= 'packed' ) )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // InternalPascal.g:3027:3: ( (lv_packed_0_0= 'packed' ) )?
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            if ( (LA39_0==52) ) {
-                alt39=1;
+            if ( (LA37_0==51) ) {
+                alt37=1;
             }
-            switch (alt39) {
+            switch (alt37) {
                 case 1 :
-                    // InternalPascal.g:3233:4: (lv_packed_0_0= 'packed' )
+                    // InternalPascal.g:3028:4: (lv_packed_0_0= 'packed' )
                     {
-                    // InternalPascal.g:3233:4: (lv_packed_0_0= 'packed' )
-                    // InternalPascal.g:3234:5: lv_packed_0_0= 'packed'
+                    // InternalPascal.g:3028:4: (lv_packed_0_0= 'packed' )
+                    // InternalPascal.g:3029:5: lv_packed_0_0= 'packed'
                     {
-                    lv_packed_0_0=(Token)match(input,52,FOLLOW_36); if (state.failed) return current;
+                    lv_packed_0_0=(Token)match(input,51,FOLLOW_35); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_packed_0_0, grammarAccess.getStructured_typeAccess().getPackedPackedKeyword_0_0());
@@ -8965,11 +8494,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPascal.g:3246:3: ( (lv_type_1_0= ruleunpacked_structured_type ) )
-            // InternalPascal.g:3247:4: (lv_type_1_0= ruleunpacked_structured_type )
+            // InternalPascal.g:3041:3: ( (lv_type_1_0= ruleunpacked_structured_type ) )
+            // InternalPascal.g:3042:4: (lv_type_1_0= ruleunpacked_structured_type )
             {
-            // InternalPascal.g:3247:4: (lv_type_1_0= ruleunpacked_structured_type )
-            // InternalPascal.g:3248:5: lv_type_1_0= ruleunpacked_structured_type
+            // InternalPascal.g:3042:4: (lv_type_1_0= ruleunpacked_structured_type )
+            // InternalPascal.g:3043:5: lv_type_1_0= ruleunpacked_structured_type
             {
             if ( state.backtracking==0 ) {
 
@@ -9025,7 +8554,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleunpacked_structured_type"
-    // InternalPascal.g:3269:1: entryRuleunpacked_structured_type returns [EObject current=null] : iv_ruleunpacked_structured_type= ruleunpacked_structured_type EOF ;
+    // InternalPascal.g:3064:1: entryRuleunpacked_structured_type returns [EObject current=null] : iv_ruleunpacked_structured_type= ruleunpacked_structured_type EOF ;
     public final EObject entryRuleunpacked_structured_type() throws RecognitionException {
         EObject current = null;
 
@@ -9033,8 +8562,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:3269:65: (iv_ruleunpacked_structured_type= ruleunpacked_structured_type EOF )
-            // InternalPascal.g:3270:2: iv_ruleunpacked_structured_type= ruleunpacked_structured_type EOF
+            // InternalPascal.g:3064:65: (iv_ruleunpacked_structured_type= ruleunpacked_structured_type EOF )
+            // InternalPascal.g:3065:2: iv_ruleunpacked_structured_type= ruleunpacked_structured_type EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnpacked_structured_typeRule()); 
@@ -9065,7 +8594,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleunpacked_structured_type"
-    // InternalPascal.g:3276:1: ruleunpacked_structured_type returns [EObject current=null] : ( (lv_record_0_0= rulerecord_type ) ) ;
+    // InternalPascal.g:3071:1: ruleunpacked_structured_type returns [EObject current=null] : ( (lv_record_0_0= rulerecord_type ) ) ;
     public final EObject ruleunpacked_structured_type() throws RecognitionException {
         EObject current = null;
 
@@ -9076,14 +8605,14 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:3282:2: ( ( (lv_record_0_0= rulerecord_type ) ) )
-            // InternalPascal.g:3283:2: ( (lv_record_0_0= rulerecord_type ) )
+            // InternalPascal.g:3077:2: ( ( (lv_record_0_0= rulerecord_type ) ) )
+            // InternalPascal.g:3078:2: ( (lv_record_0_0= rulerecord_type ) )
             {
-            // InternalPascal.g:3283:2: ( (lv_record_0_0= rulerecord_type ) )
-            // InternalPascal.g:3284:3: (lv_record_0_0= rulerecord_type )
+            // InternalPascal.g:3078:2: ( (lv_record_0_0= rulerecord_type ) )
+            // InternalPascal.g:3079:3: (lv_record_0_0= rulerecord_type )
             {
-            // InternalPascal.g:3284:3: (lv_record_0_0= rulerecord_type )
-            // InternalPascal.g:3285:4: lv_record_0_0= rulerecord_type
+            // InternalPascal.g:3079:3: (lv_record_0_0= rulerecord_type )
+            // InternalPascal.g:3080:4: lv_record_0_0= rulerecord_type
             {
             if ( state.backtracking==0 ) {
 
@@ -9136,7 +8665,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulerecord_type"
-    // InternalPascal.g:3305:1: entryRulerecord_type returns [EObject current=null] : iv_rulerecord_type= rulerecord_type EOF ;
+    // InternalPascal.g:3100:1: entryRulerecord_type returns [EObject current=null] : iv_rulerecord_type= rulerecord_type EOF ;
     public final EObject entryRulerecord_type() throws RecognitionException {
         EObject current = null;
 
@@ -9144,8 +8673,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:3305:52: (iv_rulerecord_type= rulerecord_type EOF )
-            // InternalPascal.g:3306:2: iv_rulerecord_type= rulerecord_type EOF
+            // InternalPascal.g:3100:52: (iv_rulerecord_type= rulerecord_type EOF )
+            // InternalPascal.g:3101:2: iv_rulerecord_type= rulerecord_type EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getRecord_typeRule()); 
@@ -9176,7 +8705,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulerecord_type"
-    // InternalPascal.g:3312:1: rulerecord_type returns [EObject current=null] : ( ( (lv_recordKeyword_0_0= 'record' ) ) ( (lv_fields_1_0= rulefield_list ) )? ( (lv_endKeyword_2_0= 'end' ) ) ) ;
+    // InternalPascal.g:3107:1: rulerecord_type returns [EObject current=null] : ( ( (lv_recordKeyword_0_0= 'record' ) ) ( (lv_fields_1_0= rulefield_list ) )? ( (lv_endKeyword_2_0= 'end' ) ) ) ;
     public final EObject rulerecord_type() throws RecognitionException {
         EObject current = null;
 
@@ -9189,19 +8718,19 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:3318:2: ( ( ( (lv_recordKeyword_0_0= 'record' ) ) ( (lv_fields_1_0= rulefield_list ) )? ( (lv_endKeyword_2_0= 'end' ) ) ) )
-            // InternalPascal.g:3319:2: ( ( (lv_recordKeyword_0_0= 'record' ) ) ( (lv_fields_1_0= rulefield_list ) )? ( (lv_endKeyword_2_0= 'end' ) ) )
+            // InternalPascal.g:3113:2: ( ( ( (lv_recordKeyword_0_0= 'record' ) ) ( (lv_fields_1_0= rulefield_list ) )? ( (lv_endKeyword_2_0= 'end' ) ) ) )
+            // InternalPascal.g:3114:2: ( ( (lv_recordKeyword_0_0= 'record' ) ) ( (lv_fields_1_0= rulefield_list ) )? ( (lv_endKeyword_2_0= 'end' ) ) )
             {
-            // InternalPascal.g:3319:2: ( ( (lv_recordKeyword_0_0= 'record' ) ) ( (lv_fields_1_0= rulefield_list ) )? ( (lv_endKeyword_2_0= 'end' ) ) )
-            // InternalPascal.g:3320:3: ( (lv_recordKeyword_0_0= 'record' ) ) ( (lv_fields_1_0= rulefield_list ) )? ( (lv_endKeyword_2_0= 'end' ) )
+            // InternalPascal.g:3114:2: ( ( (lv_recordKeyword_0_0= 'record' ) ) ( (lv_fields_1_0= rulefield_list ) )? ( (lv_endKeyword_2_0= 'end' ) ) )
+            // InternalPascal.g:3115:3: ( (lv_recordKeyword_0_0= 'record' ) ) ( (lv_fields_1_0= rulefield_list ) )? ( (lv_endKeyword_2_0= 'end' ) )
             {
-            // InternalPascal.g:3320:3: ( (lv_recordKeyword_0_0= 'record' ) )
-            // InternalPascal.g:3321:4: (lv_recordKeyword_0_0= 'record' )
+            // InternalPascal.g:3115:3: ( (lv_recordKeyword_0_0= 'record' ) )
+            // InternalPascal.g:3116:4: (lv_recordKeyword_0_0= 'record' )
             {
-            // InternalPascal.g:3321:4: (lv_recordKeyword_0_0= 'record' )
-            // InternalPascal.g:3322:5: lv_recordKeyword_0_0= 'record'
+            // InternalPascal.g:3116:4: (lv_recordKeyword_0_0= 'record' )
+            // InternalPascal.g:3117:5: lv_recordKeyword_0_0= 'record'
             {
-            lv_recordKeyword_0_0=(Token)match(input,53,FOLLOW_37); if (state.failed) return current;
+            lv_recordKeyword_0_0=(Token)match(input,52,FOLLOW_36); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               					newLeafNode(lv_recordKeyword_0_0, grammarAccess.getRecord_typeAccess().getRecordKeywordRecordKeyword_0_0());
@@ -9221,19 +8750,19 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPascal.g:3334:3: ( (lv_fields_1_0= rulefield_list ) )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            // InternalPascal.g:3129:3: ( (lv_fields_1_0= rulefield_list ) )?
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA40_0==RULE_ID||LA40_0==54) ) {
-                alt40=1;
+            if ( (LA38_0==RULE_ID||LA38_0==53) ) {
+                alt38=1;
             }
-            switch (alt40) {
+            switch (alt38) {
                 case 1 :
-                    // InternalPascal.g:3335:4: (lv_fields_1_0= rulefield_list )
+                    // InternalPascal.g:3130:4: (lv_fields_1_0= rulefield_list )
                     {
-                    // InternalPascal.g:3335:4: (lv_fields_1_0= rulefield_list )
-                    // InternalPascal.g:3336:5: lv_fields_1_0= rulefield_list
+                    // InternalPascal.g:3130:4: (lv_fields_1_0= rulefield_list )
+                    // InternalPascal.g:3131:5: lv_fields_1_0= rulefield_list
                     {
                     if ( state.backtracking==0 ) {
 
@@ -9267,11 +8796,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPascal.g:3353:3: ( (lv_endKeyword_2_0= 'end' ) )
-            // InternalPascal.g:3354:4: (lv_endKeyword_2_0= 'end' )
+            // InternalPascal.g:3148:3: ( (lv_endKeyword_2_0= 'end' ) )
+            // InternalPascal.g:3149:4: (lv_endKeyword_2_0= 'end' )
             {
-            // InternalPascal.g:3354:4: (lv_endKeyword_2_0= 'end' )
-            // InternalPascal.g:3355:5: lv_endKeyword_2_0= 'end'
+            // InternalPascal.g:3149:4: (lv_endKeyword_2_0= 'end' )
+            // InternalPascal.g:3150:5: lv_endKeyword_2_0= 'end'
             {
             lv_endKeyword_2_0=(Token)match(input,26,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -9318,7 +8847,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulefield_list"
-    // InternalPascal.g:3371:1: entryRulefield_list returns [EObject current=null] : iv_rulefield_list= rulefield_list EOF ;
+    // InternalPascal.g:3166:1: entryRulefield_list returns [EObject current=null] : iv_rulefield_list= rulefield_list EOF ;
     public final EObject entryRulefield_list() throws RecognitionException {
         EObject current = null;
 
@@ -9326,8 +8855,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:3371:51: (iv_rulefield_list= rulefield_list EOF )
-            // InternalPascal.g:3372:2: iv_rulefield_list= rulefield_list EOF
+            // InternalPascal.g:3166:51: (iv_rulefield_list= rulefield_list EOF )
+            // InternalPascal.g:3167:2: iv_rulefield_list= rulefield_list EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getField_listRule()); 
@@ -9358,7 +8887,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefield_list"
-    // InternalPascal.g:3378:1: rulefield_list returns [EObject current=null] : ( ( ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? ) | ( (lv_variants_3_0= rulevariant_part ) ) ) (otherlv_4= ';' )? ) ;
+    // InternalPascal.g:3173:1: rulefield_list returns [EObject current=null] : ( ( ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? ) | ( (lv_variants_3_0= rulevariant_part ) ) ) (otherlv_4= ';' )? ) ;
     public final EObject rulefield_list() throws RecognitionException {
         EObject current = null;
 
@@ -9375,41 +8904,41 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:3384:2: ( ( ( ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? ) | ( (lv_variants_3_0= rulevariant_part ) ) ) (otherlv_4= ';' )? ) )
-            // InternalPascal.g:3385:2: ( ( ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? ) | ( (lv_variants_3_0= rulevariant_part ) ) ) (otherlv_4= ';' )? )
+            // InternalPascal.g:3179:2: ( ( ( ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? ) | ( (lv_variants_3_0= rulevariant_part ) ) ) (otherlv_4= ';' )? ) )
+            // InternalPascal.g:3180:2: ( ( ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? ) | ( (lv_variants_3_0= rulevariant_part ) ) ) (otherlv_4= ';' )? )
             {
-            // InternalPascal.g:3385:2: ( ( ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? ) | ( (lv_variants_3_0= rulevariant_part ) ) ) (otherlv_4= ';' )? )
-            // InternalPascal.g:3386:3: ( ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? ) | ( (lv_variants_3_0= rulevariant_part ) ) ) (otherlv_4= ';' )?
+            // InternalPascal.g:3180:2: ( ( ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? ) | ( (lv_variants_3_0= rulevariant_part ) ) ) (otherlv_4= ';' )? )
+            // InternalPascal.g:3181:3: ( ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? ) | ( (lv_variants_3_0= rulevariant_part ) ) ) (otherlv_4= ';' )?
             {
-            // InternalPascal.g:3386:3: ( ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? ) | ( (lv_variants_3_0= rulevariant_part ) ) )
-            int alt42=2;
-            int LA42_0 = input.LA(1);
+            // InternalPascal.g:3181:3: ( ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? ) | ( (lv_variants_3_0= rulevariant_part ) ) )
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA42_0==RULE_ID) ) {
-                alt42=1;
+            if ( (LA40_0==RULE_ID) ) {
+                alt40=1;
             }
-            else if ( (LA42_0==54) ) {
-                alt42=2;
+            else if ( (LA40_0==53) ) {
+                alt40=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 42, 0, input);
+                    new NoViableAltException("", 40, 0, input);
 
                 throw nvae;
             }
-            switch (alt42) {
+            switch (alt40) {
                 case 1 :
-                    // InternalPascal.g:3387:4: ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? )
+                    // InternalPascal.g:3182:4: ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? )
                     {
-                    // InternalPascal.g:3387:4: ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? )
-                    // InternalPascal.g:3388:5: ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )?
+                    // InternalPascal.g:3182:4: ( ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )? )
+                    // InternalPascal.g:3183:5: ( (lv_fixed_0_0= rulefixed_part ) ) (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )?
                     {
-                    // InternalPascal.g:3388:5: ( (lv_fixed_0_0= rulefixed_part ) )
-                    // InternalPascal.g:3389:6: (lv_fixed_0_0= rulefixed_part )
+                    // InternalPascal.g:3183:5: ( (lv_fixed_0_0= rulefixed_part ) )
+                    // InternalPascal.g:3184:6: (lv_fixed_0_0= rulefixed_part )
                     {
-                    // InternalPascal.g:3389:6: (lv_fixed_0_0= rulefixed_part )
-                    // InternalPascal.g:3390:7: lv_fixed_0_0= rulefixed_part
+                    // InternalPascal.g:3184:6: (lv_fixed_0_0= rulefixed_part )
+                    // InternalPascal.g:3185:7: lv_fixed_0_0= rulefixed_part
                     {
                     if ( state.backtracking==0 ) {
 
@@ -9440,32 +8969,32 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalPascal.g:3407:5: (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )?
-                    int alt41=2;
-                    int LA41_0 = input.LA(1);
+                    // InternalPascal.g:3202:5: (otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) ) )?
+                    int alt39=2;
+                    int LA39_0 = input.LA(1);
 
-                    if ( (LA41_0==24) ) {
-                        int LA41_1 = input.LA(2);
+                    if ( (LA39_0==24) ) {
+                        int LA39_1 = input.LA(2);
 
-                        if ( (LA41_1==54) ) {
-                            alt41=1;
+                        if ( (LA39_1==53) ) {
+                            alt39=1;
                         }
                     }
-                    switch (alt41) {
+                    switch (alt39) {
                         case 1 :
-                            // InternalPascal.g:3408:6: otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) )
+                            // InternalPascal.g:3203:6: otherlv_1= ';' ( (lv_variants_2_0= rulevariant_part ) )
                             {
-                            otherlv_1=(Token)match(input,24,FOLLOW_38); if (state.failed) return current;
+                            otherlv_1=(Token)match(input,24,FOLLOW_37); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                               						newLeafNode(otherlv_1, grammarAccess.getField_listAccess().getSemicolonKeyword_0_0_1_0());
                               					
                             }
-                            // InternalPascal.g:3412:6: ( (lv_variants_2_0= rulevariant_part ) )
-                            // InternalPascal.g:3413:7: (lv_variants_2_0= rulevariant_part )
+                            // InternalPascal.g:3207:6: ( (lv_variants_2_0= rulevariant_part ) )
+                            // InternalPascal.g:3208:7: (lv_variants_2_0= rulevariant_part )
                             {
-                            // InternalPascal.g:3413:7: (lv_variants_2_0= rulevariant_part )
-                            // InternalPascal.g:3414:8: lv_variants_2_0= rulevariant_part
+                            // InternalPascal.g:3208:7: (lv_variants_2_0= rulevariant_part )
+                            // InternalPascal.g:3209:8: lv_variants_2_0= rulevariant_part
                             {
                             if ( state.backtracking==0 ) {
 
@@ -9509,13 +9038,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPascal.g:3434:4: ( (lv_variants_3_0= rulevariant_part ) )
+                    // InternalPascal.g:3229:4: ( (lv_variants_3_0= rulevariant_part ) )
                     {
-                    // InternalPascal.g:3434:4: ( (lv_variants_3_0= rulevariant_part ) )
-                    // InternalPascal.g:3435:5: (lv_variants_3_0= rulevariant_part )
+                    // InternalPascal.g:3229:4: ( (lv_variants_3_0= rulevariant_part ) )
+                    // InternalPascal.g:3230:5: (lv_variants_3_0= rulevariant_part )
                     {
-                    // InternalPascal.g:3435:5: (lv_variants_3_0= rulevariant_part )
-                    // InternalPascal.g:3436:6: lv_variants_3_0= rulevariant_part
+                    // InternalPascal.g:3230:5: (lv_variants_3_0= rulevariant_part )
+                    // InternalPascal.g:3231:6: lv_variants_3_0= rulevariant_part
                     {
                     if ( state.backtracking==0 ) {
 
@@ -9552,16 +9081,16 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPascal.g:3454:3: (otherlv_4= ';' )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            // InternalPascal.g:3249:3: (otherlv_4= ';' )?
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA43_0==24) ) {
-                alt43=1;
+            if ( (LA41_0==24) ) {
+                alt41=1;
             }
-            switch (alt43) {
+            switch (alt41) {
                 case 1 :
-                    // InternalPascal.g:3455:4: otherlv_4= ';'
+                    // InternalPascal.g:3250:4: otherlv_4= ';'
                     {
                     otherlv_4=(Token)match(input,24,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -9600,7 +9129,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulefixed_part"
-    // InternalPascal.g:3464:1: entryRulefixed_part returns [EObject current=null] : iv_rulefixed_part= rulefixed_part EOF ;
+    // InternalPascal.g:3259:1: entryRulefixed_part returns [EObject current=null] : iv_rulefixed_part= rulefixed_part EOF ;
     public final EObject entryRulefixed_part() throws RecognitionException {
         EObject current = null;
 
@@ -9608,8 +9137,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:3464:51: (iv_rulefixed_part= rulefixed_part EOF )
-            // InternalPascal.g:3465:2: iv_rulefixed_part= rulefixed_part EOF
+            // InternalPascal.g:3259:51: (iv_rulefixed_part= rulefixed_part EOF )
+            // InternalPascal.g:3260:2: iv_rulefixed_part= rulefixed_part EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFixed_partRule()); 
@@ -9640,7 +9169,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefixed_part"
-    // InternalPascal.g:3471:1: rulefixed_part returns [EObject current=null] : ( ( (lv_sections_0_0= rulerecord_section ) ) (otherlv_1= ';' ( (lv_sections_2_0= rulerecord_section ) ) )* ) ;
+    // InternalPascal.g:3266:1: rulefixed_part returns [EObject current=null] : ( ( (lv_sections_0_0= rulerecord_section ) ) (otherlv_1= ';' ( (lv_sections_2_0= rulerecord_section ) ) )* ) ;
     public final EObject rulefixed_part() throws RecognitionException {
         EObject current = null;
 
@@ -9654,17 +9183,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:3477:2: ( ( ( (lv_sections_0_0= rulerecord_section ) ) (otherlv_1= ';' ( (lv_sections_2_0= rulerecord_section ) ) )* ) )
-            // InternalPascal.g:3478:2: ( ( (lv_sections_0_0= rulerecord_section ) ) (otherlv_1= ';' ( (lv_sections_2_0= rulerecord_section ) ) )* )
+            // InternalPascal.g:3272:2: ( ( ( (lv_sections_0_0= rulerecord_section ) ) (otherlv_1= ';' ( (lv_sections_2_0= rulerecord_section ) ) )* ) )
+            // InternalPascal.g:3273:2: ( ( (lv_sections_0_0= rulerecord_section ) ) (otherlv_1= ';' ( (lv_sections_2_0= rulerecord_section ) ) )* )
             {
-            // InternalPascal.g:3478:2: ( ( (lv_sections_0_0= rulerecord_section ) ) (otherlv_1= ';' ( (lv_sections_2_0= rulerecord_section ) ) )* )
-            // InternalPascal.g:3479:3: ( (lv_sections_0_0= rulerecord_section ) ) (otherlv_1= ';' ( (lv_sections_2_0= rulerecord_section ) ) )*
+            // InternalPascal.g:3273:2: ( ( (lv_sections_0_0= rulerecord_section ) ) (otherlv_1= ';' ( (lv_sections_2_0= rulerecord_section ) ) )* )
+            // InternalPascal.g:3274:3: ( (lv_sections_0_0= rulerecord_section ) ) (otherlv_1= ';' ( (lv_sections_2_0= rulerecord_section ) ) )*
             {
-            // InternalPascal.g:3479:3: ( (lv_sections_0_0= rulerecord_section ) )
-            // InternalPascal.g:3480:4: (lv_sections_0_0= rulerecord_section )
+            // InternalPascal.g:3274:3: ( (lv_sections_0_0= rulerecord_section ) )
+            // InternalPascal.g:3275:4: (lv_sections_0_0= rulerecord_section )
             {
-            // InternalPascal.g:3480:4: (lv_sections_0_0= rulerecord_section )
-            // InternalPascal.g:3481:5: lv_sections_0_0= rulerecord_section
+            // InternalPascal.g:3275:4: (lv_sections_0_0= rulerecord_section )
+            // InternalPascal.g:3276:5: lv_sections_0_0= rulerecord_section
             {
             if ( state.backtracking==0 ) {
 
@@ -9695,26 +9224,26 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPascal.g:3498:3: (otherlv_1= ';' ( (lv_sections_2_0= rulerecord_section ) ) )*
-            loop44:
+            // InternalPascal.g:3293:3: (otherlv_1= ';' ( (lv_sections_2_0= rulerecord_section ) ) )*
+            loop42:
             do {
-                int alt44=2;
-                int LA44_0 = input.LA(1);
+                int alt42=2;
+                int LA42_0 = input.LA(1);
 
-                if ( (LA44_0==24) ) {
-                    int LA44_1 = input.LA(2);
+                if ( (LA42_0==24) ) {
+                    int LA42_1 = input.LA(2);
 
-                    if ( (LA44_1==RULE_ID) ) {
-                        alt44=1;
+                    if ( (LA42_1==RULE_ID) ) {
+                        alt42=1;
                     }
 
 
                 }
 
 
-                switch (alt44) {
+                switch (alt42) {
             	case 1 :
-            	    // InternalPascal.g:3499:4: otherlv_1= ';' ( (lv_sections_2_0= rulerecord_section ) )
+            	    // InternalPascal.g:3294:4: otherlv_1= ';' ( (lv_sections_2_0= rulerecord_section ) )
             	    {
             	    otherlv_1=(Token)match(input,24,FOLLOW_5); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -9722,11 +9251,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             	      				newLeafNode(otherlv_1, grammarAccess.getFixed_partAccess().getSemicolonKeyword_1_0());
             	      			
             	    }
-            	    // InternalPascal.g:3503:4: ( (lv_sections_2_0= rulerecord_section ) )
-            	    // InternalPascal.g:3504:5: (lv_sections_2_0= rulerecord_section )
+            	    // InternalPascal.g:3298:4: ( (lv_sections_2_0= rulerecord_section ) )
+            	    // InternalPascal.g:3299:5: (lv_sections_2_0= rulerecord_section )
             	    {
-            	    // InternalPascal.g:3504:5: (lv_sections_2_0= rulerecord_section )
-            	    // InternalPascal.g:3505:6: lv_sections_2_0= rulerecord_section
+            	    // InternalPascal.g:3299:5: (lv_sections_2_0= rulerecord_section )
+            	    // InternalPascal.g:3300:6: lv_sections_2_0= rulerecord_section
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -9762,7 +9291,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop44;
+            	    break loop42;
                 }
             } while (true);
 
@@ -9791,7 +9320,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulerecord_section"
-    // InternalPascal.g:3527:1: entryRulerecord_section returns [EObject current=null] : iv_rulerecord_section= rulerecord_section EOF ;
+    // InternalPascal.g:3322:1: entryRulerecord_section returns [EObject current=null] : iv_rulerecord_section= rulerecord_section EOF ;
     public final EObject entryRulerecord_section() throws RecognitionException {
         EObject current = null;
 
@@ -9799,8 +9328,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:3527:55: (iv_rulerecord_section= rulerecord_section EOF )
-            // InternalPascal.g:3528:2: iv_rulerecord_section= rulerecord_section EOF
+            // InternalPascal.g:3322:55: (iv_rulerecord_section= rulerecord_section EOF )
+            // InternalPascal.g:3323:2: iv_rulerecord_section= rulerecord_section EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getRecord_sectionRule()); 
@@ -9831,7 +9360,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulerecord_section"
-    // InternalPascal.g:3534:1: rulerecord_section returns [EObject current=null] : ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) ) ;
+    // InternalPascal.g:3329:1: rulerecord_section returns [EObject current=null] : ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) ) ;
     public final EObject rulerecord_section() throws RecognitionException {
         EObject current = null;
 
@@ -9845,17 +9374,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:3540:2: ( ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) ) )
-            // InternalPascal.g:3541:2: ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) )
+            // InternalPascal.g:3335:2: ( ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) ) )
+            // InternalPascal.g:3336:2: ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) )
             {
-            // InternalPascal.g:3541:2: ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) )
-            // InternalPascal.g:3542:3: ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) )
+            // InternalPascal.g:3336:2: ( ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) )
+            // InternalPascal.g:3337:3: ( (lv_identifiers_0_0= ruleidentifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) )
             {
-            // InternalPascal.g:3542:3: ( (lv_identifiers_0_0= ruleidentifier_list ) )
-            // InternalPascal.g:3543:4: (lv_identifiers_0_0= ruleidentifier_list )
+            // InternalPascal.g:3337:3: ( (lv_identifiers_0_0= ruleidentifier_list ) )
+            // InternalPascal.g:3338:4: (lv_identifiers_0_0= ruleidentifier_list )
             {
-            // InternalPascal.g:3543:4: (lv_identifiers_0_0= ruleidentifier_list )
-            // InternalPascal.g:3544:5: lv_identifiers_0_0= ruleidentifier_list
+            // InternalPascal.g:3338:4: (lv_identifiers_0_0= ruleidentifier_list )
+            // InternalPascal.g:3339:5: lv_identifiers_0_0= ruleidentifier_list
             {
             if ( state.backtracking==0 ) {
 
@@ -9886,17 +9415,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,27,FOLLOW_34); if (state.failed) return current;
+            otherlv_1=(Token)match(input,27,FOLLOW_33); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getRecord_sectionAccess().getColonKeyword_1());
               		
             }
-            // InternalPascal.g:3565:3: ( (lv_type_2_0= ruletype ) )
-            // InternalPascal.g:3566:4: (lv_type_2_0= ruletype )
+            // InternalPascal.g:3360:3: ( (lv_type_2_0= ruletype ) )
+            // InternalPascal.g:3361:4: (lv_type_2_0= ruletype )
             {
-            // InternalPascal.g:3566:4: (lv_type_2_0= ruletype )
-            // InternalPascal.g:3567:5: lv_type_2_0= ruletype
+            // InternalPascal.g:3361:4: (lv_type_2_0= ruletype )
+            // InternalPascal.g:3362:5: lv_type_2_0= ruletype
             {
             if ( state.backtracking==0 ) {
 
@@ -9952,7 +9481,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulevariant_part"
-    // InternalPascal.g:3588:1: entryRulevariant_part returns [EObject current=null] : iv_rulevariant_part= rulevariant_part EOF ;
+    // InternalPascal.g:3383:1: entryRulevariant_part returns [EObject current=null] : iv_rulevariant_part= rulevariant_part EOF ;
     public final EObject entryRulevariant_part() throws RecognitionException {
         EObject current = null;
 
@@ -9960,8 +9489,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:3588:53: (iv_rulevariant_part= rulevariant_part EOF )
-            // InternalPascal.g:3589:2: iv_rulevariant_part= rulevariant_part EOF
+            // InternalPascal.g:3383:53: (iv_rulevariant_part= rulevariant_part EOF )
+            // InternalPascal.g:3384:2: iv_rulevariant_part= rulevariant_part EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getVariant_partRule()); 
@@ -9992,7 +9521,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulevariant_part"
-    // InternalPascal.g:3595:1: rulevariant_part returns [EObject current=null] : (otherlv_0= 'case' ( (lv_tag_1_0= ruletag_field ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (lv_variants_4_0= rulevariant ) ) (otherlv_5= ';' ( (lv_variants_6_0= rulevariant ) ) )* ) ;
+    // InternalPascal.g:3390:1: rulevariant_part returns [EObject current=null] : (otherlv_0= 'case' ( (lv_tag_1_0= ruletag_field ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (lv_variants_4_0= rulevariant ) ) (otherlv_5= ';' ( (lv_variants_6_0= rulevariant ) ) )* ) ;
     public final EObject rulevariant_part() throws RecognitionException {
         EObject current = null;
 
@@ -10011,35 +9540,35 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:3601:2: ( (otherlv_0= 'case' ( (lv_tag_1_0= ruletag_field ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (lv_variants_4_0= rulevariant ) ) (otherlv_5= ';' ( (lv_variants_6_0= rulevariant ) ) )* ) )
-            // InternalPascal.g:3602:2: (otherlv_0= 'case' ( (lv_tag_1_0= ruletag_field ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (lv_variants_4_0= rulevariant ) ) (otherlv_5= ';' ( (lv_variants_6_0= rulevariant ) ) )* )
+            // InternalPascal.g:3396:2: ( (otherlv_0= 'case' ( (lv_tag_1_0= ruletag_field ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (lv_variants_4_0= rulevariant ) ) (otherlv_5= ';' ( (lv_variants_6_0= rulevariant ) ) )* ) )
+            // InternalPascal.g:3397:2: (otherlv_0= 'case' ( (lv_tag_1_0= ruletag_field ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (lv_variants_4_0= rulevariant ) ) (otherlv_5= ';' ( (lv_variants_6_0= rulevariant ) ) )* )
             {
-            // InternalPascal.g:3602:2: (otherlv_0= 'case' ( (lv_tag_1_0= ruletag_field ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (lv_variants_4_0= rulevariant ) ) (otherlv_5= ';' ( (lv_variants_6_0= rulevariant ) ) )* )
-            // InternalPascal.g:3603:3: otherlv_0= 'case' ( (lv_tag_1_0= ruletag_field ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (lv_variants_4_0= rulevariant ) ) (otherlv_5= ';' ( (lv_variants_6_0= rulevariant ) ) )*
+            // InternalPascal.g:3397:2: (otherlv_0= 'case' ( (lv_tag_1_0= ruletag_field ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (lv_variants_4_0= rulevariant ) ) (otherlv_5= ';' ( (lv_variants_6_0= rulevariant ) ) )* )
+            // InternalPascal.g:3398:3: otherlv_0= 'case' ( (lv_tag_1_0= ruletag_field ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (lv_variants_4_0= rulevariant ) ) (otherlv_5= ';' ( (lv_variants_6_0= rulevariant ) ) )*
             {
-            otherlv_0=(Token)match(input,54,FOLLOW_5); if (state.failed) return current;
+            otherlv_0=(Token)match(input,53,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getVariant_partAccess().getCaseKeyword_0());
               		
             }
-            // InternalPascal.g:3607:3: ( (lv_tag_1_0= ruletag_field ) )?
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            // InternalPascal.g:3402:3: ( (lv_tag_1_0= ruletag_field ) )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
 
-            if ( (LA45_0==RULE_ID) ) {
-                int LA45_1 = input.LA(2);
+            if ( (LA43_0==RULE_ID) ) {
+                int LA43_1 = input.LA(2);
 
-                if ( (LA45_1==27) ) {
-                    alt45=1;
+                if ( (LA43_1==27) ) {
+                    alt43=1;
                 }
             }
-            switch (alt45) {
+            switch (alt43) {
                 case 1 :
-                    // InternalPascal.g:3608:4: (lv_tag_1_0= ruletag_field )
+                    // InternalPascal.g:3403:4: (lv_tag_1_0= ruletag_field )
                     {
-                    // InternalPascal.g:3608:4: (lv_tag_1_0= ruletag_field )
-                    // InternalPascal.g:3609:5: lv_tag_1_0= ruletag_field
+                    // InternalPascal.g:3403:4: (lv_tag_1_0= ruletag_field )
+                    // InternalPascal.g:3404:5: lv_tag_1_0= ruletag_field
                     {
                     if ( state.backtracking==0 ) {
 
@@ -10073,13 +9602,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPascal.g:3626:3: ( (lv_name_2_0= RULE_ID ) )
-            // InternalPascal.g:3627:4: (lv_name_2_0= RULE_ID )
+            // InternalPascal.g:3421:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalPascal.g:3422:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalPascal.g:3627:4: (lv_name_2_0= RULE_ID )
-            // InternalPascal.g:3628:5: lv_name_2_0= RULE_ID
+            // InternalPascal.g:3422:4: (lv_name_2_0= RULE_ID )
+            // InternalPascal.g:3423:5: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_39); if (state.failed) return current;
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_38); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               					newLeafNode(lv_name_2_0, grammarAccess.getVariant_partAccess().getNameIDTerminalRuleCall_2_0());
@@ -10103,17 +9632,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,55,FOLLOW_33); if (state.failed) return current;
+            otherlv_3=(Token)match(input,54,FOLLOW_32); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_3, grammarAccess.getVariant_partAccess().getOfKeyword_3());
               		
             }
-            // InternalPascal.g:3648:3: ( (lv_variants_4_0= rulevariant ) )
-            // InternalPascal.g:3649:4: (lv_variants_4_0= rulevariant )
+            // InternalPascal.g:3443:3: ( (lv_variants_4_0= rulevariant ) )
+            // InternalPascal.g:3444:4: (lv_variants_4_0= rulevariant )
             {
-            // InternalPascal.g:3649:4: (lv_variants_4_0= rulevariant )
-            // InternalPascal.g:3650:5: lv_variants_4_0= rulevariant
+            // InternalPascal.g:3444:4: (lv_variants_4_0= rulevariant )
+            // InternalPascal.g:3445:5: lv_variants_4_0= rulevariant
             {
             if ( state.backtracking==0 ) {
 
@@ -10144,38 +9673,38 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPascal.g:3667:3: (otherlv_5= ';' ( (lv_variants_6_0= rulevariant ) ) )*
-            loop46:
+            // InternalPascal.g:3462:3: (otherlv_5= ';' ( (lv_variants_6_0= rulevariant ) ) )*
+            loop44:
             do {
-                int alt46=2;
-                int LA46_0 = input.LA(1);
+                int alt44=2;
+                int LA44_0 = input.LA(1);
 
-                if ( (LA46_0==24) ) {
-                    int LA46_1 = input.LA(2);
+                if ( (LA44_0==24) ) {
+                    int LA44_1 = input.LA(2);
 
-                    if ( ((LA46_1>=RULE_ID && LA46_1<=RULE_INTEGER_NUMBER)||LA46_1==RULE_ADDITION_OP||LA46_1==RULE_STRING||(LA46_1>=RULE_SIGNED_REAL_NUMBER && LA46_1<=RULE_REAL_NUMBER)||(LA46_1>=40 && LA46_1<=41)) ) {
-                        alt46=1;
+                    if ( ((LA44_1>=RULE_ID && LA44_1<=RULE_INTEGER_NUMBER)||LA44_1==RULE_ADDITION_OP||LA44_1==RULE_STRING||(LA44_1>=RULE_SIGNED_REAL_NUMBER && LA44_1<=RULE_REAL_NUMBER)||(LA44_1>=40 && LA44_1<=41)) ) {
+                        alt44=1;
                     }
 
 
                 }
 
 
-                switch (alt46) {
+                switch (alt44) {
             	case 1 :
-            	    // InternalPascal.g:3668:4: otherlv_5= ';' ( (lv_variants_6_0= rulevariant ) )
+            	    // InternalPascal.g:3463:4: otherlv_5= ';' ( (lv_variants_6_0= rulevariant ) )
             	    {
-            	    otherlv_5=(Token)match(input,24,FOLLOW_33); if (state.failed) return current;
+            	    otherlv_5=(Token)match(input,24,FOLLOW_32); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_5, grammarAccess.getVariant_partAccess().getSemicolonKeyword_5_0());
             	      			
             	    }
-            	    // InternalPascal.g:3672:4: ( (lv_variants_6_0= rulevariant ) )
-            	    // InternalPascal.g:3673:5: (lv_variants_6_0= rulevariant )
+            	    // InternalPascal.g:3467:4: ( (lv_variants_6_0= rulevariant ) )
+            	    // InternalPascal.g:3468:5: (lv_variants_6_0= rulevariant )
             	    {
-            	    // InternalPascal.g:3673:5: (lv_variants_6_0= rulevariant )
-            	    // InternalPascal.g:3674:6: lv_variants_6_0= rulevariant
+            	    // InternalPascal.g:3468:5: (lv_variants_6_0= rulevariant )
+            	    // InternalPascal.g:3469:6: lv_variants_6_0= rulevariant
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -10211,7 +9740,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop46;
+            	    break loop44;
                 }
             } while (true);
 
@@ -10240,7 +9769,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuletag_field"
-    // InternalPascal.g:3696:1: entryRuletag_field returns [EObject current=null] : iv_ruletag_field= ruletag_field EOF ;
+    // InternalPascal.g:3491:1: entryRuletag_field returns [EObject current=null] : iv_ruletag_field= ruletag_field EOF ;
     public final EObject entryRuletag_field() throws RecognitionException {
         EObject current = null;
 
@@ -10248,8 +9777,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:3696:50: (iv_ruletag_field= ruletag_field EOF )
-            // InternalPascal.g:3697:2: iv_ruletag_field= ruletag_field EOF
+            // InternalPascal.g:3491:50: (iv_ruletag_field= ruletag_field EOF )
+            // InternalPascal.g:3492:2: iv_ruletag_field= ruletag_field EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getTag_fieldRule()); 
@@ -10280,7 +9809,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruletag_field"
-    // InternalPascal.g:3703:1: ruletag_field returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ) ;
+    // InternalPascal.g:3498:1: ruletag_field returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ) ;
     public final EObject ruletag_field() throws RecognitionException {
         EObject current = null;
 
@@ -10291,17 +9820,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:3709:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ) )
-            // InternalPascal.g:3710:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' )
+            // InternalPascal.g:3504:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ) )
+            // InternalPascal.g:3505:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' )
             {
-            // InternalPascal.g:3710:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' )
-            // InternalPascal.g:3711:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':'
+            // InternalPascal.g:3505:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' )
+            // InternalPascal.g:3506:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':'
             {
-            // InternalPascal.g:3711:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalPascal.g:3712:4: (lv_name_0_0= RULE_ID )
+            // InternalPascal.g:3506:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalPascal.g:3507:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalPascal.g:3712:4: (lv_name_0_0= RULE_ID )
-            // InternalPascal.g:3713:5: lv_name_0_0= RULE_ID
+            // InternalPascal.g:3507:4: (lv_name_0_0= RULE_ID )
+            // InternalPascal.g:3508:5: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_10); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -10358,7 +9887,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulevariant"
-    // InternalPascal.g:3737:1: entryRulevariant returns [EObject current=null] : iv_rulevariant= rulevariant EOF ;
+    // InternalPascal.g:3532:1: entryRulevariant returns [EObject current=null] : iv_rulevariant= rulevariant EOF ;
     public final EObject entryRulevariant() throws RecognitionException {
         EObject current = null;
 
@@ -10366,8 +9895,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:3737:48: (iv_rulevariant= rulevariant EOF )
-            // InternalPascal.g:3738:2: iv_rulevariant= rulevariant EOF
+            // InternalPascal.g:3532:48: (iv_rulevariant= rulevariant EOF )
+            // InternalPascal.g:3533:2: iv_rulevariant= rulevariant EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getVariantRule()); 
@@ -10398,7 +9927,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulevariant"
-    // InternalPascal.g:3744:1: rulevariant returns [EObject current=null] : ( ( (lv_labels_0_0= rulecase_label_list ) ) otherlv_1= ':' otherlv_2= '(' ( (lv_fields_3_0= rulefield_list ) )? otherlv_4= ')' ) ;
+    // InternalPascal.g:3539:1: rulevariant returns [EObject current=null] : ( ( (lv_labels_0_0= rulecase_label_list ) ) otherlv_1= ':' otherlv_2= '(' ( (lv_fields_3_0= rulefield_list ) )? otherlv_4= ')' ) ;
     public final EObject rulevariant() throws RecognitionException {
         EObject current = null;
 
@@ -10414,17 +9943,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:3750:2: ( ( ( (lv_labels_0_0= rulecase_label_list ) ) otherlv_1= ':' otherlv_2= '(' ( (lv_fields_3_0= rulefield_list ) )? otherlv_4= ')' ) )
-            // InternalPascal.g:3751:2: ( ( (lv_labels_0_0= rulecase_label_list ) ) otherlv_1= ':' otherlv_2= '(' ( (lv_fields_3_0= rulefield_list ) )? otherlv_4= ')' )
+            // InternalPascal.g:3545:2: ( ( ( (lv_labels_0_0= rulecase_label_list ) ) otherlv_1= ':' otherlv_2= '(' ( (lv_fields_3_0= rulefield_list ) )? otherlv_4= ')' ) )
+            // InternalPascal.g:3546:2: ( ( (lv_labels_0_0= rulecase_label_list ) ) otherlv_1= ':' otherlv_2= '(' ( (lv_fields_3_0= rulefield_list ) )? otherlv_4= ')' )
             {
-            // InternalPascal.g:3751:2: ( ( (lv_labels_0_0= rulecase_label_list ) ) otherlv_1= ':' otherlv_2= '(' ( (lv_fields_3_0= rulefield_list ) )? otherlv_4= ')' )
-            // InternalPascal.g:3752:3: ( (lv_labels_0_0= rulecase_label_list ) ) otherlv_1= ':' otherlv_2= '(' ( (lv_fields_3_0= rulefield_list ) )? otherlv_4= ')'
+            // InternalPascal.g:3546:2: ( ( (lv_labels_0_0= rulecase_label_list ) ) otherlv_1= ':' otherlv_2= '(' ( (lv_fields_3_0= rulefield_list ) )? otherlv_4= ')' )
+            // InternalPascal.g:3547:3: ( (lv_labels_0_0= rulecase_label_list ) ) otherlv_1= ':' otherlv_2= '(' ( (lv_fields_3_0= rulefield_list ) )? otherlv_4= ')'
             {
-            // InternalPascal.g:3752:3: ( (lv_labels_0_0= rulecase_label_list ) )
-            // InternalPascal.g:3753:4: (lv_labels_0_0= rulecase_label_list )
+            // InternalPascal.g:3547:3: ( (lv_labels_0_0= rulecase_label_list ) )
+            // InternalPascal.g:3548:4: (lv_labels_0_0= rulecase_label_list )
             {
-            // InternalPascal.g:3753:4: (lv_labels_0_0= rulecase_label_list )
-            // InternalPascal.g:3754:5: lv_labels_0_0= rulecase_label_list
+            // InternalPascal.g:3548:4: (lv_labels_0_0= rulecase_label_list )
+            // InternalPascal.g:3549:5: lv_labels_0_0= rulecase_label_list
             {
             if ( state.backtracking==0 ) {
 
@@ -10461,25 +9990,25 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getVariantAccess().getColonKeyword_1());
               		
             }
-            otherlv_2=(Token)match(input,42,FOLLOW_40); if (state.failed) return current;
+            otherlv_2=(Token)match(input,42,FOLLOW_39); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_2, grammarAccess.getVariantAccess().getLeftParenthesisKeyword_2());
               		
             }
-            // InternalPascal.g:3779:3: ( (lv_fields_3_0= rulefield_list ) )?
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            // InternalPascal.g:3574:3: ( (lv_fields_3_0= rulefield_list ) )?
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA47_0==RULE_ID||LA47_0==54) ) {
-                alt47=1;
+            if ( (LA45_0==RULE_ID||LA45_0==53) ) {
+                alt45=1;
             }
-            switch (alt47) {
+            switch (alt45) {
                 case 1 :
-                    // InternalPascal.g:3780:4: (lv_fields_3_0= rulefield_list )
+                    // InternalPascal.g:3575:4: (lv_fields_3_0= rulefield_list )
                     {
-                    // InternalPascal.g:3780:4: (lv_fields_3_0= rulefield_list )
-                    // InternalPascal.g:3781:5: lv_fields_3_0= rulefield_list
+                    // InternalPascal.g:3575:4: (lv_fields_3_0= rulefield_list )
+                    // InternalPascal.g:3576:5: lv_fields_3_0= rulefield_list
                     {
                     if ( state.backtracking==0 ) {
 
@@ -10544,7 +10073,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulecase_label_list"
-    // InternalPascal.g:3806:1: entryRulecase_label_list returns [EObject current=null] : iv_rulecase_label_list= rulecase_label_list EOF ;
+    // InternalPascal.g:3601:1: entryRulecase_label_list returns [EObject current=null] : iv_rulecase_label_list= rulecase_label_list EOF ;
     public final EObject entryRulecase_label_list() throws RecognitionException {
         EObject current = null;
 
@@ -10552,8 +10081,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:3806:56: (iv_rulecase_label_list= rulecase_label_list EOF )
-            // InternalPascal.g:3807:2: iv_rulecase_label_list= rulecase_label_list EOF
+            // InternalPascal.g:3601:56: (iv_rulecase_label_list= rulecase_label_list EOF )
+            // InternalPascal.g:3602:2: iv_rulecase_label_list= rulecase_label_list EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCase_label_listRule()); 
@@ -10584,7 +10113,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulecase_label_list"
-    // InternalPascal.g:3813:1: rulecase_label_list returns [EObject current=null] : ( ( (lv_constants_0_0= ruleconstant ) ) (otherlv_1= ',' ( (lv_constants_2_0= ruleconstant ) ) )* ) ;
+    // InternalPascal.g:3608:1: rulecase_label_list returns [EObject current=null] : ( ( (lv_constants_0_0= ruleconstant ) ) (otherlv_1= ',' ( (lv_constants_2_0= ruleconstant ) ) )* ) ;
     public final EObject rulecase_label_list() throws RecognitionException {
         EObject current = null;
 
@@ -10598,17 +10127,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:3819:2: ( ( ( (lv_constants_0_0= ruleconstant ) ) (otherlv_1= ',' ( (lv_constants_2_0= ruleconstant ) ) )* ) )
-            // InternalPascal.g:3820:2: ( ( (lv_constants_0_0= ruleconstant ) ) (otherlv_1= ',' ( (lv_constants_2_0= ruleconstant ) ) )* )
+            // InternalPascal.g:3614:2: ( ( ( (lv_constants_0_0= ruleconstant ) ) (otherlv_1= ',' ( (lv_constants_2_0= ruleconstant ) ) )* ) )
+            // InternalPascal.g:3615:2: ( ( (lv_constants_0_0= ruleconstant ) ) (otherlv_1= ',' ( (lv_constants_2_0= ruleconstant ) ) )* )
             {
-            // InternalPascal.g:3820:2: ( ( (lv_constants_0_0= ruleconstant ) ) (otherlv_1= ',' ( (lv_constants_2_0= ruleconstant ) ) )* )
-            // InternalPascal.g:3821:3: ( (lv_constants_0_0= ruleconstant ) ) (otherlv_1= ',' ( (lv_constants_2_0= ruleconstant ) ) )*
+            // InternalPascal.g:3615:2: ( ( (lv_constants_0_0= ruleconstant ) ) (otherlv_1= ',' ( (lv_constants_2_0= ruleconstant ) ) )* )
+            // InternalPascal.g:3616:3: ( (lv_constants_0_0= ruleconstant ) ) (otherlv_1= ',' ( (lv_constants_2_0= ruleconstant ) ) )*
             {
-            // InternalPascal.g:3821:3: ( (lv_constants_0_0= ruleconstant ) )
-            // InternalPascal.g:3822:4: (lv_constants_0_0= ruleconstant )
+            // InternalPascal.g:3616:3: ( (lv_constants_0_0= ruleconstant ) )
+            // InternalPascal.g:3617:4: (lv_constants_0_0= ruleconstant )
             {
-            // InternalPascal.g:3822:4: (lv_constants_0_0= ruleconstant )
-            // InternalPascal.g:3823:5: lv_constants_0_0= ruleconstant
+            // InternalPascal.g:3617:4: (lv_constants_0_0= ruleconstant )
+            // InternalPascal.g:3618:5: lv_constants_0_0= ruleconstant
             {
             if ( state.backtracking==0 ) {
 
@@ -10639,32 +10168,32 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPascal.g:3840:3: (otherlv_1= ',' ( (lv_constants_2_0= ruleconstant ) ) )*
-            loop48:
+            // InternalPascal.g:3635:3: (otherlv_1= ',' ( (lv_constants_2_0= ruleconstant ) ) )*
+            loop46:
             do {
-                int alt48=2;
-                int LA48_0 = input.LA(1);
+                int alt46=2;
+                int LA46_0 = input.LA(1);
 
-                if ( (LA48_0==32) ) {
-                    alt48=1;
+                if ( (LA46_0==32) ) {
+                    alt46=1;
                 }
 
 
-                switch (alt48) {
+                switch (alt46) {
             	case 1 :
-            	    // InternalPascal.g:3841:4: otherlv_1= ',' ( (lv_constants_2_0= ruleconstant ) )
+            	    // InternalPascal.g:3636:4: otherlv_1= ',' ( (lv_constants_2_0= ruleconstant ) )
             	    {
-            	    otherlv_1=(Token)match(input,32,FOLLOW_33); if (state.failed) return current;
+            	    otherlv_1=(Token)match(input,32,FOLLOW_32); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_1, grammarAccess.getCase_label_listAccess().getCommaKeyword_1_0());
             	      			
             	    }
-            	    // InternalPascal.g:3845:4: ( (lv_constants_2_0= ruleconstant ) )
-            	    // InternalPascal.g:3846:5: (lv_constants_2_0= ruleconstant )
+            	    // InternalPascal.g:3640:4: ( (lv_constants_2_0= ruleconstant ) )
+            	    // InternalPascal.g:3641:5: (lv_constants_2_0= ruleconstant )
             	    {
-            	    // InternalPascal.g:3846:5: (lv_constants_2_0= ruleconstant )
-            	    // InternalPascal.g:3847:6: lv_constants_2_0= ruleconstant
+            	    // InternalPascal.g:3641:5: (lv_constants_2_0= ruleconstant )
+            	    // InternalPascal.g:3642:6: lv_constants_2_0= ruleconstant
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -10700,7 +10229,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop48;
+            	    break loop46;
                 }
             } while (true);
 
@@ -10729,7 +10258,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulepointer_type"
-    // InternalPascal.g:3869:1: entryRulepointer_type returns [EObject current=null] : iv_rulepointer_type= rulepointer_type EOF ;
+    // InternalPascal.g:3664:1: entryRulepointer_type returns [EObject current=null] : iv_rulepointer_type= rulepointer_type EOF ;
     public final EObject entryRulepointer_type() throws RecognitionException {
         EObject current = null;
 
@@ -10737,8 +10266,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:3869:53: (iv_rulepointer_type= rulepointer_type EOF )
-            // InternalPascal.g:3870:2: iv_rulepointer_type= rulepointer_type EOF
+            // InternalPascal.g:3664:53: (iv_rulepointer_type= rulepointer_type EOF )
+            // InternalPascal.g:3665:2: iv_rulepointer_type= rulepointer_type EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPointer_typeRule()); 
@@ -10769,7 +10298,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulepointer_type"
-    // InternalPascal.g:3876:1: rulepointer_type returns [EObject current=null] : (otherlv_0= '^' ( (lv_type_1_0= ruletype ) ) ) ;
+    // InternalPascal.g:3671:1: rulepointer_type returns [EObject current=null] : (otherlv_0= '^' ( (lv_type_1_0= ruletype ) ) ) ;
     public final EObject rulepointer_type() throws RecognitionException {
         EObject current = null;
 
@@ -10781,23 +10310,23 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:3882:2: ( (otherlv_0= '^' ( (lv_type_1_0= ruletype ) ) ) )
-            // InternalPascal.g:3883:2: (otherlv_0= '^' ( (lv_type_1_0= ruletype ) ) )
+            // InternalPascal.g:3677:2: ( (otherlv_0= '^' ( (lv_type_1_0= ruletype ) ) ) )
+            // InternalPascal.g:3678:2: (otherlv_0= '^' ( (lv_type_1_0= ruletype ) ) )
             {
-            // InternalPascal.g:3883:2: (otherlv_0= '^' ( (lv_type_1_0= ruletype ) ) )
-            // InternalPascal.g:3884:3: otherlv_0= '^' ( (lv_type_1_0= ruletype ) )
+            // InternalPascal.g:3678:2: (otherlv_0= '^' ( (lv_type_1_0= ruletype ) ) )
+            // InternalPascal.g:3679:3: otherlv_0= '^' ( (lv_type_1_0= ruletype ) )
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_34); if (state.failed) return current;
+            otherlv_0=(Token)match(input,31,FOLLOW_33); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getPointer_typeAccess().getCircumflexAccentKeyword_0());
               		
             }
-            // InternalPascal.g:3888:3: ( (lv_type_1_0= ruletype ) )
-            // InternalPascal.g:3889:4: (lv_type_1_0= ruletype )
+            // InternalPascal.g:3683:3: ( (lv_type_1_0= ruletype ) )
+            // InternalPascal.g:3684:4: (lv_type_1_0= ruletype )
             {
-            // InternalPascal.g:3889:4: (lv_type_1_0= ruletype )
-            // InternalPascal.g:3890:5: lv_type_1_0= ruletype
+            // InternalPascal.g:3684:4: (lv_type_1_0= ruletype )
+            // InternalPascal.g:3685:5: lv_type_1_0= ruletype
             {
             if ( state.backtracking==0 ) {
 
@@ -10853,7 +10382,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulesigned_number"
-    // InternalPascal.g:3911:1: entryRulesigned_number returns [EObject current=null] : iv_rulesigned_number= rulesigned_number EOF ;
+    // InternalPascal.g:3706:1: entryRulesigned_number returns [EObject current=null] : iv_rulesigned_number= rulesigned_number EOF ;
     public final EObject entryRulesigned_number() throws RecognitionException {
         EObject current = null;
 
@@ -10861,8 +10390,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:3911:54: (iv_rulesigned_number= rulesigned_number EOF )
-            // InternalPascal.g:3912:2: iv_rulesigned_number= rulesigned_number EOF
+            // InternalPascal.g:3706:54: (iv_rulesigned_number= rulesigned_number EOF )
+            // InternalPascal.g:3707:2: iv_rulesigned_number= rulesigned_number EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSigned_numberRule()); 
@@ -10893,7 +10422,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulesigned_number"
-    // InternalPascal.g:3918:1: rulesigned_number returns [EObject current=null] : ( ( (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_SIGNED_REAL_NUMBER ) ) ) ;
+    // InternalPascal.g:3713:1: rulesigned_number returns [EObject current=null] : ( ( (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_SIGNED_REAL_NUMBER ) ) ) ;
     public final EObject rulesigned_number() throws RecognitionException {
         EObject current = null;
 
@@ -10904,35 +10433,35 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:3924:2: ( ( ( (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_SIGNED_REAL_NUMBER ) ) ) )
-            // InternalPascal.g:3925:2: ( ( (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_SIGNED_REAL_NUMBER ) ) )
+            // InternalPascal.g:3719:2: ( ( ( (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_SIGNED_REAL_NUMBER ) ) ) )
+            // InternalPascal.g:3720:2: ( ( (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_SIGNED_REAL_NUMBER ) ) )
             {
-            // InternalPascal.g:3925:2: ( ( (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_SIGNED_REAL_NUMBER ) ) )
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            // InternalPascal.g:3720:2: ( ( (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_SIGNED_REAL_NUMBER ) ) )
+            int alt47=2;
+            int LA47_0 = input.LA(1);
 
-            if ( (LA49_0==RULE_SIGNED_INTEGER_NUMBER) ) {
-                alt49=1;
+            if ( (LA47_0==RULE_SIGNED_INTEGER_NUMBER) ) {
+                alt47=1;
             }
-            else if ( (LA49_0==RULE_SIGNED_REAL_NUMBER) ) {
-                alt49=2;
+            else if ( (LA47_0==RULE_SIGNED_REAL_NUMBER) ) {
+                alt47=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 49, 0, input);
+                    new NoViableAltException("", 47, 0, input);
 
                 throw nvae;
             }
-            switch (alt49) {
+            switch (alt47) {
                 case 1 :
-                    // InternalPascal.g:3926:3: ( (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER ) )
+                    // InternalPascal.g:3721:3: ( (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER ) )
                     {
-                    // InternalPascal.g:3926:3: ( (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER ) )
-                    // InternalPascal.g:3927:4: (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER )
+                    // InternalPascal.g:3721:3: ( (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER ) )
+                    // InternalPascal.g:3722:4: (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER )
                     {
-                    // InternalPascal.g:3927:4: (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER )
-                    // InternalPascal.g:3928:5: lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER
+                    // InternalPascal.g:3722:4: (lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER )
+                    // InternalPascal.g:3723:5: lv_integer_0_0= RULE_SIGNED_INTEGER_NUMBER
                     {
                     lv_integer_0_0=(Token)match(input,RULE_SIGNED_INTEGER_NUMBER,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -10962,13 +10491,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPascal.g:3945:3: ( (lv_real_1_0= RULE_SIGNED_REAL_NUMBER ) )
+                    // InternalPascal.g:3740:3: ( (lv_real_1_0= RULE_SIGNED_REAL_NUMBER ) )
                     {
-                    // InternalPascal.g:3945:3: ( (lv_real_1_0= RULE_SIGNED_REAL_NUMBER ) )
-                    // InternalPascal.g:3946:4: (lv_real_1_0= RULE_SIGNED_REAL_NUMBER )
+                    // InternalPascal.g:3740:3: ( (lv_real_1_0= RULE_SIGNED_REAL_NUMBER ) )
+                    // InternalPascal.g:3741:4: (lv_real_1_0= RULE_SIGNED_REAL_NUMBER )
                     {
-                    // InternalPascal.g:3946:4: (lv_real_1_0= RULE_SIGNED_REAL_NUMBER )
-                    // InternalPascal.g:3947:5: lv_real_1_0= RULE_SIGNED_REAL_NUMBER
+                    // InternalPascal.g:3741:4: (lv_real_1_0= RULE_SIGNED_REAL_NUMBER )
+                    // InternalPascal.g:3742:5: lv_real_1_0= RULE_SIGNED_REAL_NUMBER
                     {
                     lv_real_1_0=(Token)match(input,RULE_SIGNED_REAL_NUMBER,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -11022,7 +10551,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleunsigned_number"
-    // InternalPascal.g:3967:1: entryRuleunsigned_number returns [EObject current=null] : iv_ruleunsigned_number= ruleunsigned_number EOF ;
+    // InternalPascal.g:3762:1: entryRuleunsigned_number returns [EObject current=null] : iv_ruleunsigned_number= ruleunsigned_number EOF ;
     public final EObject entryRuleunsigned_number() throws RecognitionException {
         EObject current = null;
 
@@ -11030,8 +10559,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:3967:56: (iv_ruleunsigned_number= ruleunsigned_number EOF )
-            // InternalPascal.g:3968:2: iv_ruleunsigned_number= ruleunsigned_number EOF
+            // InternalPascal.g:3762:56: (iv_ruleunsigned_number= ruleunsigned_number EOF )
+            // InternalPascal.g:3763:2: iv_ruleunsigned_number= ruleunsigned_number EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnsigned_numberRule()); 
@@ -11062,7 +10591,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleunsigned_number"
-    // InternalPascal.g:3974:1: ruleunsigned_number returns [EObject current=null] : ( ( (lv_integer_0_0= RULE_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_REAL_NUMBER ) ) ) ;
+    // InternalPascal.g:3769:1: ruleunsigned_number returns [EObject current=null] : ( ( (lv_integer_0_0= RULE_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_REAL_NUMBER ) ) ) ;
     public final EObject ruleunsigned_number() throws RecognitionException {
         EObject current = null;
 
@@ -11073,35 +10602,35 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:3980:2: ( ( ( (lv_integer_0_0= RULE_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_REAL_NUMBER ) ) ) )
-            // InternalPascal.g:3981:2: ( ( (lv_integer_0_0= RULE_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_REAL_NUMBER ) ) )
+            // InternalPascal.g:3775:2: ( ( ( (lv_integer_0_0= RULE_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_REAL_NUMBER ) ) ) )
+            // InternalPascal.g:3776:2: ( ( (lv_integer_0_0= RULE_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_REAL_NUMBER ) ) )
             {
-            // InternalPascal.g:3981:2: ( ( (lv_integer_0_0= RULE_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_REAL_NUMBER ) ) )
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            // InternalPascal.g:3776:2: ( ( (lv_integer_0_0= RULE_INTEGER_NUMBER ) ) | ( (lv_real_1_0= RULE_REAL_NUMBER ) ) )
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA50_0==RULE_INTEGER_NUMBER) ) {
-                alt50=1;
+            if ( (LA48_0==RULE_INTEGER_NUMBER) ) {
+                alt48=1;
             }
-            else if ( (LA50_0==RULE_REAL_NUMBER) ) {
-                alt50=2;
+            else if ( (LA48_0==RULE_REAL_NUMBER) ) {
+                alt48=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 50, 0, input);
+                    new NoViableAltException("", 48, 0, input);
 
                 throw nvae;
             }
-            switch (alt50) {
+            switch (alt48) {
                 case 1 :
-                    // InternalPascal.g:3982:3: ( (lv_integer_0_0= RULE_INTEGER_NUMBER ) )
+                    // InternalPascal.g:3777:3: ( (lv_integer_0_0= RULE_INTEGER_NUMBER ) )
                     {
-                    // InternalPascal.g:3982:3: ( (lv_integer_0_0= RULE_INTEGER_NUMBER ) )
-                    // InternalPascal.g:3983:4: (lv_integer_0_0= RULE_INTEGER_NUMBER )
+                    // InternalPascal.g:3777:3: ( (lv_integer_0_0= RULE_INTEGER_NUMBER ) )
+                    // InternalPascal.g:3778:4: (lv_integer_0_0= RULE_INTEGER_NUMBER )
                     {
-                    // InternalPascal.g:3983:4: (lv_integer_0_0= RULE_INTEGER_NUMBER )
-                    // InternalPascal.g:3984:5: lv_integer_0_0= RULE_INTEGER_NUMBER
+                    // InternalPascal.g:3778:4: (lv_integer_0_0= RULE_INTEGER_NUMBER )
+                    // InternalPascal.g:3779:5: lv_integer_0_0= RULE_INTEGER_NUMBER
                     {
                     lv_integer_0_0=(Token)match(input,RULE_INTEGER_NUMBER,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -11131,13 +10660,13 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPascal.g:4001:3: ( (lv_real_1_0= RULE_REAL_NUMBER ) )
+                    // InternalPascal.g:3796:3: ( (lv_real_1_0= RULE_REAL_NUMBER ) )
                     {
-                    // InternalPascal.g:4001:3: ( (lv_real_1_0= RULE_REAL_NUMBER ) )
-                    // InternalPascal.g:4002:4: (lv_real_1_0= RULE_REAL_NUMBER )
+                    // InternalPascal.g:3796:3: ( (lv_real_1_0= RULE_REAL_NUMBER ) )
+                    // InternalPascal.g:3797:4: (lv_real_1_0= RULE_REAL_NUMBER )
                     {
-                    // InternalPascal.g:4002:4: (lv_real_1_0= RULE_REAL_NUMBER )
-                    // InternalPascal.g:4003:5: lv_real_1_0= RULE_REAL_NUMBER
+                    // InternalPascal.g:3797:4: (lv_real_1_0= RULE_REAL_NUMBER )
+                    // InternalPascal.g:3798:5: lv_real_1_0= RULE_REAL_NUMBER
                     {
                     lv_real_1_0=(Token)match(input,RULE_REAL_NUMBER,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -11191,7 +10720,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulevariable_declaration_part"
-    // InternalPascal.g:4023:1: entryRulevariable_declaration_part returns [EObject current=null] : iv_rulevariable_declaration_part= rulevariable_declaration_part EOF ;
+    // InternalPascal.g:3818:1: entryRulevariable_declaration_part returns [EObject current=null] : iv_rulevariable_declaration_part= rulevariable_declaration_part EOF ;
     public final EObject entryRulevariable_declaration_part() throws RecognitionException {
         EObject current = null;
 
@@ -11199,8 +10728,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:4023:66: (iv_rulevariable_declaration_part= rulevariable_declaration_part EOF )
-            // InternalPascal.g:4024:2: iv_rulevariable_declaration_part= rulevariable_declaration_part EOF
+            // InternalPascal.g:3818:66: (iv_rulevariable_declaration_part= rulevariable_declaration_part EOF )
+            // InternalPascal.g:3819:2: iv_rulevariable_declaration_part= rulevariable_declaration_part EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getVariable_declaration_partRule()); 
@@ -11231,7 +10760,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulevariable_declaration_part"
-    // InternalPascal.g:4030:1: rulevariable_declaration_part returns [EObject current=null] : (otherlv_0= 'var' ( (lv_sections_1_0= rulevariable_section ) ) otherlv_2= ';' ( ( (lv_sections_3_0= rulevariable_section ) ) otherlv_4= ';' )* ) ;
+    // InternalPascal.g:3825:1: rulevariable_declaration_part returns [EObject current=null] : (otherlv_0= 'var' ( (lv_sections_1_0= rulevariable_section ) ) otherlv_2= ';' ( ( (lv_sections_3_0= rulevariable_section ) ) otherlv_4= ';' )* ) ;
     public final EObject rulevariable_declaration_part() throws RecognitionException {
         EObject current = null;
 
@@ -11247,11 +10776,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:4036:2: ( (otherlv_0= 'var' ( (lv_sections_1_0= rulevariable_section ) ) otherlv_2= ';' ( ( (lv_sections_3_0= rulevariable_section ) ) otherlv_4= ';' )* ) )
-            // InternalPascal.g:4037:2: (otherlv_0= 'var' ( (lv_sections_1_0= rulevariable_section ) ) otherlv_2= ';' ( ( (lv_sections_3_0= rulevariable_section ) ) otherlv_4= ';' )* )
+            // InternalPascal.g:3831:2: ( (otherlv_0= 'var' ( (lv_sections_1_0= rulevariable_section ) ) otherlv_2= ';' ( ( (lv_sections_3_0= rulevariable_section ) ) otherlv_4= ';' )* ) )
+            // InternalPascal.g:3832:2: (otherlv_0= 'var' ( (lv_sections_1_0= rulevariable_section ) ) otherlv_2= ';' ( ( (lv_sections_3_0= rulevariable_section ) ) otherlv_4= ';' )* )
             {
-            // InternalPascal.g:4037:2: (otherlv_0= 'var' ( (lv_sections_1_0= rulevariable_section ) ) otherlv_2= ';' ( ( (lv_sections_3_0= rulevariable_section ) ) otherlv_4= ';' )* )
-            // InternalPascal.g:4038:3: otherlv_0= 'var' ( (lv_sections_1_0= rulevariable_section ) ) otherlv_2= ';' ( ( (lv_sections_3_0= rulevariable_section ) ) otherlv_4= ';' )*
+            // InternalPascal.g:3832:2: (otherlv_0= 'var' ( (lv_sections_1_0= rulevariable_section ) ) otherlv_2= ';' ( ( (lv_sections_3_0= rulevariable_section ) ) otherlv_4= ';' )* )
+            // InternalPascal.g:3833:3: otherlv_0= 'var' ( (lv_sections_1_0= rulevariable_section ) ) otherlv_2= ';' ( ( (lv_sections_3_0= rulevariable_section ) ) otherlv_4= ';' )*
             {
             otherlv_0=(Token)match(input,46,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -11259,11 +10788,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getVariable_declaration_partAccess().getVarKeyword_0());
               		
             }
-            // InternalPascal.g:4042:3: ( (lv_sections_1_0= rulevariable_section ) )
-            // InternalPascal.g:4043:4: (lv_sections_1_0= rulevariable_section )
+            // InternalPascal.g:3837:3: ( (lv_sections_1_0= rulevariable_section ) )
+            // InternalPascal.g:3838:4: (lv_sections_1_0= rulevariable_section )
             {
-            // InternalPascal.g:4043:4: (lv_sections_1_0= rulevariable_section )
-            // InternalPascal.g:4044:5: lv_sections_1_0= rulevariable_section
+            // InternalPascal.g:3838:4: (lv_sections_1_0= rulevariable_section )
+            // InternalPascal.g:3839:5: lv_sections_1_0= rulevariable_section
             {
             if ( state.backtracking==0 ) {
 
@@ -11294,32 +10823,32 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,24,FOLLOW_31); if (state.failed) return current;
+            otherlv_2=(Token)match(input,24,FOLLOW_30); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_2, grammarAccess.getVariable_declaration_partAccess().getSemicolonKeyword_2());
               		
             }
-            // InternalPascal.g:4065:3: ( ( (lv_sections_3_0= rulevariable_section ) ) otherlv_4= ';' )*
-            loop51:
+            // InternalPascal.g:3860:3: ( ( (lv_sections_3_0= rulevariable_section ) ) otherlv_4= ';' )*
+            loop49:
             do {
-                int alt51=2;
-                int LA51_0 = input.LA(1);
+                int alt49=2;
+                int LA49_0 = input.LA(1);
 
-                if ( (LA51_0==RULE_ID) ) {
-                    alt51=1;
+                if ( (LA49_0==RULE_ID) ) {
+                    alt49=1;
                 }
 
 
-                switch (alt51) {
+                switch (alt49) {
             	case 1 :
-            	    // InternalPascal.g:4066:4: ( (lv_sections_3_0= rulevariable_section ) ) otherlv_4= ';'
+            	    // InternalPascal.g:3861:4: ( (lv_sections_3_0= rulevariable_section ) ) otherlv_4= ';'
             	    {
-            	    // InternalPascal.g:4066:4: ( (lv_sections_3_0= rulevariable_section ) )
-            	    // InternalPascal.g:4067:5: (lv_sections_3_0= rulevariable_section )
+            	    // InternalPascal.g:3861:4: ( (lv_sections_3_0= rulevariable_section ) )
+            	    // InternalPascal.g:3862:5: (lv_sections_3_0= rulevariable_section )
             	    {
-            	    // InternalPascal.g:4067:5: (lv_sections_3_0= rulevariable_section )
-            	    // InternalPascal.g:4068:6: lv_sections_3_0= rulevariable_section
+            	    // InternalPascal.g:3862:5: (lv_sections_3_0= rulevariable_section )
+            	    // InternalPascal.g:3863:6: lv_sections_3_0= rulevariable_section
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -11350,7 +10879,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_4=(Token)match(input,24,FOLLOW_31); if (state.failed) return current;
+            	    otherlv_4=(Token)match(input,24,FOLLOW_30); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_4, grammarAccess.getVariable_declaration_partAccess().getSemicolonKeyword_3_1());
@@ -11361,7 +10890,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop51;
+            	    break loop49;
                 }
             } while (true);
 
@@ -11390,7 +10919,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulevariable_section"
-    // InternalPascal.g:4094:1: entryRulevariable_section returns [EObject current=null] : iv_rulevariable_section= rulevariable_section EOF ;
+    // InternalPascal.g:3889:1: entryRulevariable_section returns [EObject current=null] : iv_rulevariable_section= rulevariable_section EOF ;
     public final EObject entryRulevariable_section() throws RecognitionException {
         EObject current = null;
 
@@ -11398,8 +10927,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:4094:57: (iv_rulevariable_section= rulevariable_section EOF )
-            // InternalPascal.g:4095:2: iv_rulevariable_section= rulevariable_section EOF
+            // InternalPascal.g:3889:57: (iv_rulevariable_section= rulevariable_section EOF )
+            // InternalPascal.g:3890:2: iv_rulevariable_section= rulevariable_section EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getVariable_sectionRule()); 
@@ -11430,7 +10959,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulevariable_section"
-    // InternalPascal.g:4101:1: rulevariable_section returns [EObject current=null] : ( ( (lv_identifiers_0_0= rulevariable_identifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) ) ;
+    // InternalPascal.g:3896:1: rulevariable_section returns [EObject current=null] : ( ( (lv_identifiers_0_0= rulevariable_identifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) ) ;
     public final EObject rulevariable_section() throws RecognitionException {
         EObject current = null;
 
@@ -11444,17 +10973,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:4107:2: ( ( ( (lv_identifiers_0_0= rulevariable_identifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) ) )
-            // InternalPascal.g:4108:2: ( ( (lv_identifiers_0_0= rulevariable_identifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) )
+            // InternalPascal.g:3902:2: ( ( ( (lv_identifiers_0_0= rulevariable_identifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) ) )
+            // InternalPascal.g:3903:2: ( ( (lv_identifiers_0_0= rulevariable_identifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) )
             {
-            // InternalPascal.g:4108:2: ( ( (lv_identifiers_0_0= rulevariable_identifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) )
-            // InternalPascal.g:4109:3: ( (lv_identifiers_0_0= rulevariable_identifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) )
+            // InternalPascal.g:3903:2: ( ( (lv_identifiers_0_0= rulevariable_identifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) ) )
+            // InternalPascal.g:3904:3: ( (lv_identifiers_0_0= rulevariable_identifier_list ) ) otherlv_1= ':' ( (lv_type_2_0= ruletype ) )
             {
-            // InternalPascal.g:4109:3: ( (lv_identifiers_0_0= rulevariable_identifier_list ) )
-            // InternalPascal.g:4110:4: (lv_identifiers_0_0= rulevariable_identifier_list )
+            // InternalPascal.g:3904:3: ( (lv_identifiers_0_0= rulevariable_identifier_list ) )
+            // InternalPascal.g:3905:4: (lv_identifiers_0_0= rulevariable_identifier_list )
             {
-            // InternalPascal.g:4110:4: (lv_identifiers_0_0= rulevariable_identifier_list )
-            // InternalPascal.g:4111:5: lv_identifiers_0_0= rulevariable_identifier_list
+            // InternalPascal.g:3905:4: (lv_identifiers_0_0= rulevariable_identifier_list )
+            // InternalPascal.g:3906:5: lv_identifiers_0_0= rulevariable_identifier_list
             {
             if ( state.backtracking==0 ) {
 
@@ -11485,17 +11014,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,27,FOLLOW_34); if (state.failed) return current;
+            otherlv_1=(Token)match(input,27,FOLLOW_33); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getVariable_sectionAccess().getColonKeyword_1());
               		
             }
-            // InternalPascal.g:4132:3: ( (lv_type_2_0= ruletype ) )
-            // InternalPascal.g:4133:4: (lv_type_2_0= ruletype )
+            // InternalPascal.g:3927:3: ( (lv_type_2_0= ruletype ) )
+            // InternalPascal.g:3928:4: (lv_type_2_0= ruletype )
             {
-            // InternalPascal.g:4133:4: (lv_type_2_0= ruletype )
-            // InternalPascal.g:4134:5: lv_type_2_0= ruletype
+            // InternalPascal.g:3928:4: (lv_type_2_0= ruletype )
+            // InternalPascal.g:3929:5: lv_type_2_0= ruletype
             {
             if ( state.backtracking==0 ) {
 
@@ -11551,7 +11080,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulevariable_identifier_list"
-    // InternalPascal.g:4155:1: entryRulevariable_identifier_list returns [EObject current=null] : iv_rulevariable_identifier_list= rulevariable_identifier_list EOF ;
+    // InternalPascal.g:3950:1: entryRulevariable_identifier_list returns [EObject current=null] : iv_rulevariable_identifier_list= rulevariable_identifier_list EOF ;
     public final EObject entryRulevariable_identifier_list() throws RecognitionException {
         EObject current = null;
 
@@ -11559,8 +11088,8 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPascal.g:4155:65: (iv_rulevariable_identifier_list= rulevariable_identifier_list EOF )
-            // InternalPascal.g:4156:2: iv_rulevariable_identifier_list= rulevariable_identifier_list EOF
+            // InternalPascal.g:3950:65: (iv_rulevariable_identifier_list= rulevariable_identifier_list EOF )
+            // InternalPascal.g:3951:2: iv_rulevariable_identifier_list= rulevariable_identifier_list EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getVariable_identifier_listRule()); 
@@ -11591,7 +11120,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulevariable_identifier_list"
-    // InternalPascal.g:4162:1: rulevariable_identifier_list returns [EObject current=null] : ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* ) ;
+    // InternalPascal.g:3957:1: rulevariable_identifier_list returns [EObject current=null] : ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* ) ;
     public final EObject rulevariable_identifier_list() throws RecognitionException {
         EObject current = null;
 
@@ -11603,17 +11132,17 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPascal.g:4168:2: ( ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* ) )
-            // InternalPascal.g:4169:2: ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* )
+            // InternalPascal.g:3963:2: ( ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* ) )
+            // InternalPascal.g:3964:2: ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* )
             {
-            // InternalPascal.g:4169:2: ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* )
-            // InternalPascal.g:4170:3: ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )*
+            // InternalPascal.g:3964:2: ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* )
+            // InternalPascal.g:3965:3: ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )*
             {
-            // InternalPascal.g:4170:3: ( (lv_names_0_0= RULE_ID ) )
-            // InternalPascal.g:4171:4: (lv_names_0_0= RULE_ID )
+            // InternalPascal.g:3965:3: ( (lv_names_0_0= RULE_ID ) )
+            // InternalPascal.g:3966:4: (lv_names_0_0= RULE_ID )
             {
-            // InternalPascal.g:4171:4: (lv_names_0_0= RULE_ID )
-            // InternalPascal.g:4172:5: lv_names_0_0= RULE_ID
+            // InternalPascal.g:3966:4: (lv_names_0_0= RULE_ID )
+            // InternalPascal.g:3967:5: lv_names_0_0= RULE_ID
             {
             lv_names_0_0=(Token)match(input,RULE_ID,FOLLOW_15); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -11639,20 +11168,20 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPascal.g:4188:3: (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )*
-            loop52:
+            // InternalPascal.g:3983:3: (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )*
+            loop50:
             do {
-                int alt52=2;
-                int LA52_0 = input.LA(1);
+                int alt50=2;
+                int LA50_0 = input.LA(1);
 
-                if ( (LA52_0==32) ) {
-                    alt52=1;
+                if ( (LA50_0==32) ) {
+                    alt50=1;
                 }
 
 
-                switch (alt52) {
+                switch (alt50) {
             	case 1 :
-            	    // InternalPascal.g:4189:4: otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) )
+            	    // InternalPascal.g:3984:4: otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) )
             	    {
             	    otherlv_1=(Token)match(input,32,FOLLOW_5); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -11660,11 +11189,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             	      				newLeafNode(otherlv_1, grammarAccess.getVariable_identifier_listAccess().getCommaKeyword_1_0());
             	      			
             	    }
-            	    // InternalPascal.g:4193:4: ( (lv_names_2_0= RULE_ID ) )
-            	    // InternalPascal.g:4194:5: (lv_names_2_0= RULE_ID )
+            	    // InternalPascal.g:3988:4: ( (lv_names_2_0= RULE_ID ) )
+            	    // InternalPascal.g:3989:5: (lv_names_2_0= RULE_ID )
             	    {
-            	    // InternalPascal.g:4194:5: (lv_names_2_0= RULE_ID )
-            	    // InternalPascal.g:4195:6: lv_names_2_0= RULE_ID
+            	    // InternalPascal.g:3989:5: (lv_names_2_0= RULE_ID )
+            	    // InternalPascal.g:3990:6: lv_names_2_0= RULE_ID
             	    {
             	    lv_names_2_0=(Token)match(input,RULE_ID,FOLLOW_15); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -11695,7 +11224,7 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop52;
+            	    break loop50;
                 }
             } while (true);
 
@@ -11725,58 +11254,11 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
-    protected DFA19 dfa19 = new DFA19(this);
-    static final String dfa_1s = "\14\uffff";
-    static final String dfa_2s = "\1\uffff\1\12\12\uffff";
-    static final String dfa_3s = "\1\4\1\6\12\uffff";
-    static final String dfa_4s = "\1\54\1\53\12\uffff";
-    static final String dfa_5s = "\2\uffff\1\2\1\3\1\4\1\5\1\6\1\7\1\11\1\12\1\1\1\10";
-    static final String dfa_6s = "\14\uffff}>";
-    static final String[] dfa_7s = {
-            "\1\1\2\2\3\uffff\1\3\1\uffff\2\2\17\uffff\1\4\11\uffff\1\5\1\6\1\7\1\10\1\uffff\1\11",
-            "\4\12\3\uffff\1\12\10\uffff\1\12\1\uffff\1\12\1\uffff\1\12\2\uffff\12\12\3\uffff\1\13\1\12",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-    };
-
-    static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
-    static final short[] dfa_2 = DFA.unpackEncodedString(dfa_2s);
-    static final char[] dfa_3 = DFA.unpackEncodedStringToUnsignedChars(dfa_3s);
-    static final char[] dfa_4 = DFA.unpackEncodedStringToUnsignedChars(dfa_4s);
-    static final short[] dfa_5 = DFA.unpackEncodedString(dfa_5s);
-    static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
-    static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
-
-    class DFA19 extends DFA {
-
-        public DFA19(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 19;
-            this.eot = dfa_1;
-            this.eof = dfa_2;
-            this.min = dfa_3;
-            this.max = dfa_4;
-            this.accept = dfa_5;
-            this.special = dfa_6;
-            this.transition = dfa_7;
-        }
-        public String getDescription() {
-            return "1358:2: ( ( (lv_variable_0_0= rulevariable ) ) | ( (lv_number_1_0= rulenumber ) ) | ( (lv_string_2_0= RULE_STRING ) ) | ( (lv_set_3_0= ruleset ) ) | ( (lv_nil_4_0= 'nil' ) ) | ( (lv_boolean_5_0= 'true' ) ) | ( (lv_boolean_6_0= 'false' ) ) | ( (lv_function_7_0= rulefunction_designator ) ) | (otherlv_8= '(' ( (lv_expression_9_0= ruleexpression ) ) otherlv_10= ')' ) | (otherlv_11= 'not' ( (lv_not_12_0= rulefactor ) ) ) )";
-        }
-    }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0007E00002000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0003E00002000000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000001000000L});
@@ -11795,24 +11277,23 @@ public class InternalPascalParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000080000000000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000040000000000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x00001F8020003570L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000A00000000002L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000040008000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000E00000000010L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000200000000002L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000040000000002L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000600000000010L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000080001000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000040000000002L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000178060003570L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000101000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000003070L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000030000003570L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0030070080003D70L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0030000000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0040000004000010L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0040000000000010L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0040080000000010L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000178060003570L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000101000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000003070L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000030000003570L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0018070080003D70L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0018000000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0020000004000010L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0020000000000010L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0020080000000010L});
 
 }

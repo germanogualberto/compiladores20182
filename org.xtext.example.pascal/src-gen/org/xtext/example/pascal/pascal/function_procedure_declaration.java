@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.pascal.pascal.function_procedure_declaration#getProcedures <em>Procedures</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.function_procedure_declaration#getFunctions <em>Functions</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.pascal.pascal.PascalPackage#getfunction_procedure_declaration()
@@ -28,7 +27,7 @@ public interface function_procedure_declaration extends EObject
 {
   /**
    * Returns the value of the '<em><b>Procedures</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.pascal.pascal.function_declaration}.
+   * The list contents are of type {@link org.xtext.example.pascal.pascal.abstraction_heading}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Procedures</em>' containment reference list isn't clear,
@@ -40,22 +39,6 @@ public interface function_procedure_declaration extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<function_declaration> getProcedures();
-
-  /**
-   * Returns the value of the '<em><b>Functions</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.pascal.pascal.procedure_declaration}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Functions</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Functions</em>' containment reference list.
-   * @see org.xtext.example.pascal.pascal.PascalPackage#getfunction_procedure_declaration_Functions()
-   * @model containment="true"
-   * @generated
-   */
-  EList<procedure_declaration> getFunctions();
+  EList<abstraction_heading> getProcedures();
 
 } // function_procedure_declaration

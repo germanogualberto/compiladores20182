@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.xtext.example.pascal.pascal.PascalPackage;
 import org.xtext.example.pascal.pascal.expression;
 import org.xtext.example.pascal.pascal.factor;
-import org.xtext.example.pascal.pascal.function_designator;
 import org.xtext.example.pascal.pascal.number;
 import org.xtext.example.pascal.pascal.set;
 import org.xtext.example.pascal.pascal.variable;
@@ -34,7 +33,6 @@ import org.xtext.example.pascal.pascal.variable;
  *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getSet <em>Set</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#isNil <em>Nil</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getBoolean <em>Boolean</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getFunction <em>Function</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getNot <em>Not</em>}</li>
  * </ul>
@@ -132,16 +130,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
    * @ordered
    */
   protected String boolean_ = BOOLEAN_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getFunction() <em>Function</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFunction()
-   * @generated
-   * @ordered
-   */
-  protected function_designator function;
 
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
@@ -402,54 +390,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
    * <!-- end-user-doc -->
    * @generated
    */
-  public function_designator getFunction()
-  {
-    return function;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetFunction(function_designator newFunction, NotificationChain msgs)
-  {
-    function_designator oldFunction = function;
-    function = newFunction;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PascalPackage.FACTOR__FUNCTION, oldFunction, newFunction);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFunction(function_designator newFunction)
-  {
-    if (newFunction != function)
-    {
-      NotificationChain msgs = null;
-      if (function != null)
-        msgs = ((InternalEObject)function).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PascalPackage.FACTOR__FUNCTION, null, msgs);
-      if (newFunction != null)
-        msgs = ((InternalEObject)newFunction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PascalPackage.FACTOR__FUNCTION, null, msgs);
-      msgs = basicSetFunction(newFunction, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.FACTOR__FUNCTION, newFunction, newFunction));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public expression getExpression()
   {
     return expression;
@@ -557,8 +497,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
         return basicSetNumber(null, msgs);
       case PascalPackage.FACTOR__SET:
         return basicSetSet(null, msgs);
-      case PascalPackage.FACTOR__FUNCTION:
-        return basicSetFunction(null, msgs);
       case PascalPackage.FACTOR__EXPRESSION:
         return basicSetExpression(null, msgs);
       case PascalPackage.FACTOR__NOT:
@@ -589,8 +527,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
         return isNil();
       case PascalPackage.FACTOR__BOOLEAN:
         return getBoolean();
-      case PascalPackage.FACTOR__FUNCTION:
-        return getFunction();
       case PascalPackage.FACTOR__EXPRESSION:
         return getExpression();
       case PascalPackage.FACTOR__NOT:
@@ -626,9 +562,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
         return;
       case PascalPackage.FACTOR__BOOLEAN:
         setBoolean((String)newValue);
-        return;
-      case PascalPackage.FACTOR__FUNCTION:
-        setFunction((function_designator)newValue);
         return;
       case PascalPackage.FACTOR__EXPRESSION:
         setExpression((expression)newValue);
@@ -668,9 +601,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
       case PascalPackage.FACTOR__BOOLEAN:
         setBoolean(BOOLEAN_EDEFAULT);
         return;
-      case PascalPackage.FACTOR__FUNCTION:
-        setFunction((function_designator)null);
-        return;
       case PascalPackage.FACTOR__EXPRESSION:
         setExpression((expression)null);
         return;
@@ -703,8 +633,6 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
         return nil != NIL_EDEFAULT;
       case PascalPackage.FACTOR__BOOLEAN:
         return BOOLEAN_EDEFAULT == null ? boolean_ != null : !BOOLEAN_EDEFAULT.equals(boolean_);
-      case PascalPackage.FACTOR__FUNCTION:
-        return function != null;
       case PascalPackage.FACTOR__EXPRESSION:
         return expression != null;
       case PascalPackage.FACTOR__NOT:

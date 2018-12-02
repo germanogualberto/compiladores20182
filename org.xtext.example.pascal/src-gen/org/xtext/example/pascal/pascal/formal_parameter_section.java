@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.pascal.pascal.formal_parameter_section#getValue <em>Value</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.formal_parameter_section#getVariable <em>Variable</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.formal_parameter_section#getProcedure <em>Procedure</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.formal_parameter_section#getFunction <em>Function</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.pascal.pascal.PascalPackage#getformal_parameter_section()
@@ -87,12 +86,12 @@ public interface formal_parameter_section extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Procedure</em>' containment reference.
-   * @see #setProcedure(procedure_heading)
+   * @see #setProcedure(abstraction_heading)
    * @see org.xtext.example.pascal.pascal.PascalPackage#getformal_parameter_section_Procedure()
    * @model containment="true"
    * @generated
    */
-  procedure_heading getProcedure();
+  abstraction_heading getProcedure();
 
   /**
    * Sets the value of the '{@link org.xtext.example.pascal.pascal.formal_parameter_section#getProcedure <em>Procedure</em>}' containment reference.
@@ -102,32 +101,6 @@ public interface formal_parameter_section extends EObject
    * @see #getProcedure()
    * @generated
    */
-  void setProcedure(procedure_heading value);
-
-  /**
-   * Returns the value of the '<em><b>Function</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Function</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Function</em>' containment reference.
-   * @see #setFunction(function_heading)
-   * @see org.xtext.example.pascal.pascal.PascalPackage#getformal_parameter_section_Function()
-   * @model containment="true"
-   * @generated
-   */
-  function_heading getFunction();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.pascal.pascal.formal_parameter_section#getFunction <em>Function</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Function</em>' containment reference.
-   * @see #getFunction()
-   * @generated
-   */
-  void setFunction(function_heading value);
+  void setProcedure(abstraction_heading value);
 
 } // formal_parameter_section

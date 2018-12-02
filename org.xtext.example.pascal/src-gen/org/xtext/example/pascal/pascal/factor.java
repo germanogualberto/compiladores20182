@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.pascal.pascal.factor#getSet <em>Set</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.factor#isNil <em>Nil</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.factor#getBoolean <em>Boolean</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.factor#getFunction <em>Function</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.factor#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.factor#getNot <em>Not</em>}</li>
  * </ul>
@@ -186,32 +185,6 @@ public interface factor extends EObject
    * @generated
    */
   void setBoolean(String value);
-
-  /**
-   * Returns the value of the '<em><b>Function</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Function</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Function</em>' containment reference.
-   * @see #setFunction(function_designator)
-   * @see org.xtext.example.pascal.pascal.PascalPackage#getfactor_Function()
-   * @model containment="true"
-   * @generated
-   */
-  function_designator getFunction();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.pascal.pascal.factor#getFunction <em>Function</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Function</em>' containment reference.
-   * @see #getFunction()
-   * @generated
-   */
-  void setFunction(function_designator value);
 
   /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.

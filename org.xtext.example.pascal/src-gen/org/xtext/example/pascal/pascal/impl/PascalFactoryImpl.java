@@ -84,16 +84,14 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
       case PascalPackage.FACTOR: return createfactor();
       case PascalPackage.FUNCTION_DESIGNATOR: return createfunction_designator();
       case PascalPackage.FUNCTION_PROCEDURE_DECLARATION: return createfunction_procedure_declaration();
-      case PascalPackage.FUNCTION_HEADING: return createfunction_heading();
-      case PascalPackage.FUNCTION_DECLARATION: return createfunction_declaration();
+      case PascalPackage.ABSTRACTION_DECLARATION: return createabstraction_declaration();
+      case PascalPackage.ABSTRACTION_HEADING: return createabstraction_heading();
       case PascalPackage.FORMAL_PARAMETER_LIST: return createformal_parameter_list();
       case PascalPackage.FORMAL_PARAMETER_SECTION: return createformal_parameter_section();
       case PascalPackage.VALUE_PARAMETER_SECTION: return createvalue_parameter_section();
       case PascalPackage.IDENTIFIER_LIST: return createidentifier_list();
       case PascalPackage.PARAMETER_TYPE: return createparameter_type();
       case PascalPackage.VARIABLE_PARAMETER_SECTION: return createvariable_parameter_section();
-      case PascalPackage.PROCEDURE_DECLARATION: return createprocedure_declaration();
-      case PascalPackage.PROCEDURE_HEADING: return createprocedure_heading();
       case PascalPackage.SET: return createset();
       case PascalPackage.NUMBER: return createnumber();
       case PascalPackage.ANY_NUMBER: return createany_number();
@@ -340,10 +338,10 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public function_heading createfunction_heading()
+  public abstraction_declaration createabstraction_declaration()
   {
-    function_headingImpl function_heading = new function_headingImpl();
-    return function_heading;
+    abstraction_declarationImpl abstraction_declaration = new abstraction_declarationImpl();
+    return abstraction_declaration;
   }
 
   /**
@@ -351,10 +349,10 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public function_declaration createfunction_declaration()
+  public abstraction_heading createabstraction_heading()
   {
-    function_declarationImpl function_declaration = new function_declarationImpl();
-    return function_declaration;
+    abstraction_headingImpl abstraction_heading = new abstraction_headingImpl();
+    return abstraction_heading;
   }
 
   /**
@@ -421,28 +419,6 @@ public class PascalFactoryImpl extends EFactoryImpl implements PascalFactory
   {
     variable_parameter_sectionImpl variable_parameter_section = new variable_parameter_sectionImpl();
     return variable_parameter_section;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public procedure_declaration createprocedure_declaration()
-  {
-    procedure_declarationImpl procedure_declaration = new procedure_declarationImpl();
-    return procedure_declaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public procedure_heading createprocedure_heading()
-  {
-    procedure_headingImpl procedure_heading = new procedure_headingImpl();
-    return procedure_heading;
   }
 
   /**
