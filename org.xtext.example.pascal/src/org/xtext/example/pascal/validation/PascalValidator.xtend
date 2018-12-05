@@ -20,6 +20,9 @@ import org.xtext.example.pascal.pascal.program
 import org.xtext.example.pascal.pascal.simple_expression
 import org.xtext.example.pascal.pascal.term
 import org.xtext.example.pascal.pascal.type
+import org.xtext.example.pascal.pascal.number;
+import org.xtext.example.pascal.pascal.constant;
+import org.xtext.example.pascal.pascal.variable;
 
 /**
  * This class contains custom validation rules. 
@@ -225,6 +228,72 @@ class PascalValidator extends AbstractPascalValidator {
 		calculatedTypes.put(f, type);
 		return type;
 	}
+	
+	def static Object getValue(number num) {
+		if (num.number.integer !== null) {
+			return Integer.valueOf(num.number.integer);
+		} else if (num.number.real !== null) {
+			return Double.valueOf(num.number.real);
+		}
+		return null;
+	}
+	
+	def static boolean isNumeric(Object obj) {
+		try {
+			 Double.parseDouble(obj.toString); 
+		} catch(Exception e) {
+			return false;
+		}
+		return true;
+	}
+	
+	def static Object getValue(constant const, Set<Variable> variables) {
+		var Object value = null;
+		if (const.name !== null) {
+			var variable = search(variables, new Variable(const.name));
+			value = variable.getValue;
+		} else if (const.number !== null) {
+			value = getValue(const.number);
+		} else if (const.string !== null) {
+			value = const.string;
+		} else if (const.boolLiteral !== null) {
+			value = Boolean.valueOf(const.boolLiteral);
+		} else if (const.nil) {
+			value = null;
+		}
+		if (const.opterator !== null) {
+			if (isNumeric(value) && const.opterator.equals("-")) {
+				try {
+					return - Integer.parseInt(value.toString);
+				} catch(Exception e) {
+					return - Double.parseDouble(value.toString);
+				}
+			}
+		}
+		return value;
+	}
+	
+	def boolean checkVariable(block b, variable v, boolean isAssignment) { 
+		var isValid = true;
+		if (v === null) return true;
+		var searchVariable = search(variables.get(b), new Variable(v.name));
+		if (searchVariable === null) {
+			isValid = false;
+			insertError(v, "Variable was not declared.", ErrorType.NOT_DECLARATION, PascalPackage.Literals.VARIABLE__NAME);
+		} else {
+			removeError(v, ErrorType.NOT_DECLARATION);
+			if (isAssignment) {
+				if (searchVariable.type == ElementType.CONSTANT) {
+					isValid = false;
+					insertError(v, "Constants cannot be assigned.", ErrorType.CONSTANT_ASSIGNMENT, PascalPackage.Literals.VARIABLE__NAME);
+				} else {
+					removeError(v, ErrorType.CONSTANT_ASSIGNMENT);
+				}
+			}
+		}
+		return isValid; 
+	}
+	
 	
 	def checkAbstraction(block b, Procedure proc, boolean functionOnly, EObject object, EStructuralFeature feature) {
 		var abstractionFound = searchWithTypeCoersion(abstractions.get(b), proc);

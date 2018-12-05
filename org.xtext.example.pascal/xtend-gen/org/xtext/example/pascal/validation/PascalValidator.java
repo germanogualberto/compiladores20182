@@ -13,9 +13,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.xtext.example.pascal.pascal.PascalPackage;
 import org.xtext.example.pascal.pascal.any_number;
 import org.xtext.example.pascal.pascal.block;
+import org.xtext.example.pascal.pascal.constant;
 import org.xtext.example.pascal.pascal.expression;
 import org.xtext.example.pascal.pascal.expression_list;
 import org.xtext.example.pascal.pascal.factor;
@@ -332,6 +334,114 @@ public class PascalValidator extends AbstractPascalValidator {
     }
     this.calculatedTypes.put(f, type);
     return type;
+  }
+  
+  public static Object getValue(final number num) {
+    String _integer = num.getNumber().getInteger();
+    boolean _tripleNotEquals = (_integer != null);
+    if (_tripleNotEquals) {
+      return Integer.valueOf(num.getNumber().getInteger());
+    } else {
+      String _real = num.getNumber().getReal();
+      boolean _tripleNotEquals_1 = (_real != null);
+      if (_tripleNotEquals_1) {
+        return Double.valueOf(num.getNumber().getReal());
+      }
+    }
+    return null;
+  }
+  
+  public static boolean isNumeric(final Object obj) {
+    try {
+      Double.parseDouble(obj.toString());
+    } catch (final Throwable _t) {
+      if (_t instanceof Exception) {
+        return false;
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
+    return true;
+  }
+  
+  public static Object getValue(final constant const_, final Set<Variable> variables) {
+    Object value = null;
+    String _name = const_.getName();
+    boolean _tripleNotEquals = (_name != null);
+    if (_tripleNotEquals) {
+      String _name_1 = const_.getName();
+      Variable _variable = new Variable(_name_1);
+      Variable variable = PascalValidator.<Variable>search(variables, _variable);
+      value = variable.getValue();
+    } else {
+      number _number = const_.getNumber();
+      boolean _tripleNotEquals_1 = (_number != null);
+      if (_tripleNotEquals_1) {
+        value = PascalValidator.getValue(const_.getNumber());
+      } else {
+        String _string = const_.getString();
+        boolean _tripleNotEquals_2 = (_string != null);
+        if (_tripleNotEquals_2) {
+          value = const_.getString();
+        } else {
+          String _boolLiteral = const_.getBoolLiteral();
+          boolean _tripleNotEquals_3 = (_boolLiteral != null);
+          if (_tripleNotEquals_3) {
+            value = Boolean.valueOf(const_.getBoolLiteral());
+          } else {
+            boolean _isNil = const_.isNil();
+            if (_isNil) {
+              value = null;
+            }
+          }
+        }
+      }
+    }
+    String _opterator = const_.getOpterator();
+    boolean _tripleNotEquals_4 = (_opterator != null);
+    if (_tripleNotEquals_4) {
+      if ((PascalValidator.isNumeric(value) && const_.getOpterator().equals("-"))) {
+        try {
+          int _parseInt = Integer.parseInt(value.toString());
+          return Integer.valueOf((-_parseInt));
+        } catch (final Throwable _t) {
+          if (_t instanceof Exception) {
+            double _parseDouble = Double.parseDouble(value.toString());
+            return Double.valueOf((-_parseDouble));
+          } else {
+            throw Exceptions.sneakyThrow(_t);
+          }
+        }
+      }
+    }
+    return value;
+  }
+  
+  public boolean checkVariable(final block b, final variable v, final boolean isAssignment) {
+    boolean isValid = true;
+    if ((v == null)) {
+      return true;
+    }
+    Set<Variable> _get = this.variables.get(b);
+    String _name = v.getName();
+    Variable _variable = new Variable(_name);
+    Variable searchVariable = PascalValidator.<Variable>search(_get, _variable);
+    if ((searchVariable == null)) {
+      isValid = false;
+      this.insertError(v, "Variable was not declared.", ErrorType.NOT_DECLARATION, PascalPackage.Literals.VARIABLE__NAME);
+    } else {
+      this.removeError(v, ErrorType.NOT_DECLARATION);
+      if (isAssignment) {
+        boolean _equals = Objects.equal(searchVariable.type, ElementType.CONSTANT);
+        if (_equals) {
+          isValid = false;
+          this.insertError(v, "Constants cannot be assigned.", ErrorType.CONSTANT_ASSIGNMENT, PascalPackage.Literals.VARIABLE__NAME);
+        } else {
+          this.removeError(v, ErrorType.CONSTANT_ASSIGNMENT);
+        }
+      }
+    }
+    return isValid;
   }
   
   public void checkAbstraction(final block b, final Procedure proc, final boolean functionOnly, final EObject object, final EStructuralFeature feature) {
