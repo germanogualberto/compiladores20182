@@ -34,6 +34,7 @@ import org.xtext.example.pascal.pascal.variable;
  *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getFunction <em>Function</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#getNot <em>Not</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.impl.factorImpl#isNil <em>Nil</em>}</li>
  * </ul>
  *
  * @generated
@@ -129,6 +130,26 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
    * @ordered
    */
   protected factor not;
+
+  /**
+   * The default value of the '{@link #isNil() <em>Nil</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNil()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean NIL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isNil() <em>Nil</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNil()
+   * @generated
+   * @ordered
+   */
+  protected boolean nil = NIL_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -442,6 +463,29 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isNil()
+  {
+    return nil;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNil(boolean newNil)
+  {
+    boolean oldNil = nil;
+    nil = newNil;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.FACTOR__NIL, oldNil, nil));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -485,6 +529,8 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
         return getExpression();
       case PascalPackage.FACTOR__NOT:
         return getNot();
+      case PascalPackage.FACTOR__NIL:
+        return isNil();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -519,6 +565,9 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
         return;
       case PascalPackage.FACTOR__NOT:
         setNot((factor)newValue);
+        return;
+      case PascalPackage.FACTOR__NIL:
+        setNil((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -555,6 +604,9 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
       case PascalPackage.FACTOR__NOT:
         setNot((factor)null);
         return;
+      case PascalPackage.FACTOR__NIL:
+        setNil(NIL_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -583,6 +635,8 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
         return expression != null;
       case PascalPackage.FACTOR__NOT:
         return not != null;
+      case PascalPackage.FACTOR__NIL:
+        return nil != NIL_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -602,6 +656,8 @@ public class factorImpl extends MinimalEObjectImpl.Container implements factor
     result.append(string);
     result.append(", boolean: ");
     result.append(boolean_);
+    result.append(", nil: ");
+    result.append(nil);
     result.append(')');
     return result.toString();
   }

@@ -3,6 +3,23 @@
  */
 package org.xtext.example.pascal.validation
 
+import java.util.ArrayList
+import java.util.Map
+import java.util.Set
+import java.util.HashMap
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EStructuralFeature
+import org.eclipse.xtext.validation.Check
+import org.xtext.example.pascal.pascal.PascalPackage
+import org.xtext.example.pascal.pascal.any_number
+import org.xtext.example.pascal.pascal.block
+import org.xtext.example.pascal.pascal.expression
+import org.xtext.example.pascal.pascal.factor
+import org.xtext.example.pascal.pascal.function_designator
+import org.xtext.example.pascal.pascal.program
+import org.xtext.example.pascal.pascal.simple_expression
+import org.xtext.example.pascal.pascal.term
+import org.xtext.example.pascal.pascal.type
 
 /**
  * This class contains custom validation rules. 
@@ -11,6 +28,15 @@ package org.xtext.example.pascal.validation
  */
 class PascalValidator extends AbstractPascalValidator {
 	
+	public static final Map<String, Map<String, Object>> artefacts = new HashMap<String, Map<String, Object>>();
+	
+	
+	private final Map<block, Set<Type>> types = new AdaptativeHashMap<block, Type>(APIProvider.types);
+	private final Map<EObject, Set<Error>> errorList = new AdaptativeHashMap<EObject, Error>();
+	private final Map<block, Set<Variable>> variables = new AdaptativeHashMap<block, Variable>();
+	private final Map<block, Set<Procedure>> abstractions = new AdaptativeHashMap<block, Procedure>(APIProvider.procedures);
+	private final Map<EObject, Type> calculatedTypes = new HashMap<EObject, Type>();
+
 //	public static val INVALID_NAME = 'invalidName'
 //
 //	@Check
@@ -22,4 +48,223 @@ class PascalValidator extends AbstractPascalValidator {
 //		}
 //	}
 	
+	@Check
+	def fillArtefacts(program p) {
+		var name = p.heading.name;
+		if (!artefacts.containsKey(name)) {
+			artefacts.put(name, new HashMap<String, Object>());
+			artefacts.get(name).put("variables", variables);
+			artefacts.get(name).put("abstractions", abstractions);
+			artefacts.get(name).put("types", types);
+			artefacts.get(name).put("calculatedTypes", calculatedTypes);
+		}	
+	}
+	
+	def insertError(EObject object, String message, ErrorType type, EStructuralFeature feature) {
+		errorList.get(object).add(new Error(message, type, feature));
+	}
+
+	def removeError(EObject object, ErrorType type) {
+		errorList.get(object).remove(new Error(type));
+		showError(object);
+	}
+	
+	
+	def static <T extends Element> search(Set<T> elements, T key) {
+		for (T t : elements) {
+			if (t.equals(key))
+				return t;
+		} 
+		return null;	
+	}
+	
+	def static searchWithTypeCoersion(Set<Procedure> elements, Procedure key) {
+		var Procedure optimal = null; 
+		for (Procedure t : elements) {
+			if (t.equals(key))
+				return t;
+			if (t.equalsWithTypeCoersion(key))
+				optimal = t;
+		}  
+		return optimal;
+	}
+	
+	def getParameters(block b, function_designator f) {
+		var parameters = new ArrayList<Variable>();
+		if (f.expressions !== null) {
+			var count = 0; 
+			for (expression e : f.expressions.expressions) {
+				parameters.add(new Variable("arg_" + count, getType(b, e), false, b, ElementType.PARAMETER));
+				count++;
+			} 
+		}
+		return parameters;
+	}
+	
+	def getAbstraction(block b, function_designator f) {
+		var name = f.name; 
+		var parameters = getParameters(b, f);
+		return new Procedure(name, parameters);	
+	}
+
+
+	def String getRealType(block b, String type) {
+		var foundType = search(types.get(b), new Type(type));
+		if (foundType !== null) {
+			return foundType.realType;
+		}	
+		return type;
+	}
+	
+	def Type getType(block b, String type) {
+		if (type === null) return null;
+		return new Type(type, false, getRealType(b, type));	
+	}
+	
+	def Type getType(block b, function_designator f) {
+		var type = new Type("nil");
+		var function = getAbstraction(b, f);
+		var abstractionFound = searchWithTypeCoersion(abstractions.get(b), function);
+		if (abstractionFound !== null && abstractionFound.type == ElementType.FUNCTION) {
+			var functionFound = abstractionFound as Function;
+			type = functionFound.returnType;  
+		}
+		return type;
+	}
+	
+	def Type getType(block b, simple_expression expr) {
+		var Type greatestType = null;
+		for (EObject obj : expr.terms) {
+			if (obj instanceof term) {
+				var t = obj as term;
+				var type = getType(b, t);
+				greatestType = TypeInferer.greater(type, greatestType);
+			} else {
+				var n = obj as any_number;
+				if (n.integer !== null) {
+					greatestType = TypeInferer.greater(new Type("integer"), greatestType);
+				} else {
+					greatestType = TypeInferer.greater(new Type("real"), greatestType);
+				}
+			}
+		}
+		calculatedTypes.put(expr, greatestType);
+		return greatestType;
+	}
+	
+	def Type getType(block b, term t) {
+		var Type greatestType = null; 
+		for (factor f : t.factors) {
+			var type = getType(b, f);
+			greatestType = TypeInferer.greater(type, greatestType);
+		}
+		calculatedTypes.put(t, greatestType);
+		return greatestType;
+	}
+	
+	def Type getType(block b, expression expr) {
+		var t = new Type("nil");
+		if (expr.operators !== null && !expr.operators.empty) {
+			t = new Type("boolean");
+		} else {
+			var Type greatestType = null;
+			for (simple_expression e : expr.expressions) {
+				var type = getType(b, e);
+				greatestType = TypeInferer.greater(type, greatestType);
+			}
+			t = greatestType;
+		}
+		calculatedTypes.put(expr, t);
+		return t;
+	}
+	
+	def Type getType(block b, type t) {
+		var Type type = new Type("nil");
+		if (t.simple !== null) {
+			var simple = t.simple;
+			if (simple.name !== null) {
+				if (search(types.get(b), new Type(simple.name)) === null) {
+					insertError(t, "Undefined type.", ErrorType.UNDEFINED_TYPE, PascalPackage.Literals.TYPE__SIMPLE);
+				} else {
+					removeError(t, ErrorType.UNDEFINED_TYPE);
+				} 
+				type = getType(b, simple.name);
+			} 
+		} else if (t.structured !== null) {
+			var unpacked = t.structured.type;
+			if (unpacked.record !== null) {
+				type = new Type("record");
+			}
+		}
+		return type;
+	}
+	
+	def Type getType(block b, factor f) {
+		var type = new Type("nil");
+		if (f.variable !== null) {
+			var variableFound = search(variables.get(b), new Variable(f.variable.name));
+			if (variableFound !== null) {
+				type = variableFound.varType;		
+			}
+		} else if (f.number !== null) {
+			var number = f.number.number;
+			if (number.integer !== null) {
+				type = new Type("integer");
+			} else if (number.real !== null) {
+				type = new Type("real");
+			}
+		} else if (f.nil) {
+			type = new Type("nil");
+		} else if (f.boolean !== null || f.not !== null) {
+			type = new Type("boolean");
+		} else if (f.function !== null) {
+			type = getType(b, f.function);
+		} else if (f.expression !== null) {
+			type = getType(b, f.expression);
+		}
+		calculatedTypes.put(f, type);
+		return type;
+	}
+	
+	def checkAbstraction(block b, Procedure proc, boolean functionOnly, EObject object, EStructuralFeature feature) {
+		var abstractionFound = searchWithTypeCoersion(abstractions.get(b), proc);
+		if (abstractionFound === null) {
+			for (Procedure p : abstractions.get(b)) {
+				if (p.name.toLowerCase.equals(proc.name.toLowerCase)) {
+					if (p.parameters.size != proc.parameters.size) {
+						insertError(object, "Wrong number of arguments. It expected " + p.parameters.size + " received " + proc.parameters.size + " arguments.", ErrorType.NOT_DECLARATION, feature);
+					} else {
+						var it1 = p.parameters.iterator;
+						var it2 = proc.parameters.iterator;
+						while (it1.hasNext && it2.hasNext) {
+							var type1 = it1.next;
+							var type2 = it2.next; 
+							if (!TypeInferer.areTypesCompatibles(type1.varType, type2.varType)) {
+								insertError(object, "Incompatible types of arguments. It expected " + p.parameters + " received " + proc.parameters + ".", ErrorType.NOT_DECLARATION, feature);
+								return;
+							}	
+						}
+					}
+					return;
+				}
+			}
+			insertError(object, "Function was not declared.", ErrorType.NOT_DECLARATION, feature); 
+		} else {
+			removeError(object, ErrorType.NOT_DECLARATION);
+			if (abstractionFound.type == ElementType.PROCEDURE && functionOnly) {
+				insertError(object, "Procedures calls are not allowed in an expression.", ErrorType.FUNCTION_ONLY, feature);
+			} else {
+				removeError(object, ErrorType.FUNCTION_ONLY);
+			}
+		}
+	}
+	
+	@Check
+	def showError(EObject obj) {
+		if (errorList.containsKey(obj)) {
+			for (Error err : errorList.get(obj)) {
+				error(err.message, obj, err.feature, -1);
+			} 
+		} 
+	}
 }

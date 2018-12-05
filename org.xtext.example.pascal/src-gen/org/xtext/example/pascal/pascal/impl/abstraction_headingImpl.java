@@ -10,27 +10,27 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.pascal.pascal.PascalPackage;
+import org.xtext.example.pascal.pascal.abstraction_heading;
 import org.xtext.example.pascal.pascal.formal_parameter_list;
-import org.xtext.example.pascal.pascal.procedure_heading;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>procedure heading</b></em>'.
+ * An implementation of the model object '<em><b>abstraction heading</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.pascal.pascal.impl.procedure_headingImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.impl.procedure_headingImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.impl.abstraction_headingImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.impl.abstraction_headingImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.impl.abstraction_headingImpl#getReturnType <em>Return Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class procedure_headingImpl extends MinimalEObjectImpl.Container implements procedure_heading
+public class abstraction_headingImpl extends abstraction_declarationImpl implements abstraction_heading
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -63,11 +63,31 @@ public class procedure_headingImpl extends MinimalEObjectImpl.Container implemen
   protected formal_parameter_list parameters;
 
   /**
+   * The default value of the '{@link #getReturnType() <em>Return Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReturnType()
+   * @generated
+   * @ordered
+   */
+  protected static final String RETURN_TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReturnType()
+   * @generated
+   * @ordered
+   */
+  protected String returnType = RETURN_TYPE_EDEFAULT;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected procedure_headingImpl()
+  protected abstraction_headingImpl()
   {
     super();
   }
@@ -80,7 +100,7 @@ public class procedure_headingImpl extends MinimalEObjectImpl.Container implemen
   @Override
   protected EClass eStaticClass()
   {
-    return PascalPackage.Literals.PROCEDURE_HEADING;
+    return PascalPackage.Literals.ABSTRACTION_HEADING;
   }
 
   /**
@@ -103,7 +123,7 @@ public class procedure_headingImpl extends MinimalEObjectImpl.Container implemen
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.PROCEDURE_HEADING__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.ABSTRACTION_HEADING__NAME, oldName, name));
   }
 
   /**
@@ -127,7 +147,7 @@ public class procedure_headingImpl extends MinimalEObjectImpl.Container implemen
     parameters = newParameters;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PascalPackage.PROCEDURE_HEADING__PARAMETERS, oldParameters, newParameters);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PascalPackage.ABSTRACTION_HEADING__PARAMETERS, oldParameters, newParameters);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -144,14 +164,37 @@ public class procedure_headingImpl extends MinimalEObjectImpl.Container implemen
     {
       NotificationChain msgs = null;
       if (parameters != null)
-        msgs = ((InternalEObject)parameters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PascalPackage.PROCEDURE_HEADING__PARAMETERS, null, msgs);
+        msgs = ((InternalEObject)parameters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PascalPackage.ABSTRACTION_HEADING__PARAMETERS, null, msgs);
       if (newParameters != null)
-        msgs = ((InternalEObject)newParameters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PascalPackage.PROCEDURE_HEADING__PARAMETERS, null, msgs);
+        msgs = ((InternalEObject)newParameters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PascalPackage.ABSTRACTION_HEADING__PARAMETERS, null, msgs);
       msgs = basicSetParameters(newParameters, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.PROCEDURE_HEADING__PARAMETERS, newParameters, newParameters));
+      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.ABSTRACTION_HEADING__PARAMETERS, newParameters, newParameters));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getReturnType()
+  {
+    return returnType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setReturnType(String newReturnType)
+  {
+    String oldReturnType = returnType;
+    returnType = newReturnType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.ABSTRACTION_HEADING__RETURN_TYPE, oldReturnType, returnType));
   }
 
   /**
@@ -164,7 +207,7 @@ public class procedure_headingImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case PascalPackage.PROCEDURE_HEADING__PARAMETERS:
+      case PascalPackage.ABSTRACTION_HEADING__PARAMETERS:
         return basicSetParameters(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -180,10 +223,12 @@ public class procedure_headingImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case PascalPackage.PROCEDURE_HEADING__NAME:
+      case PascalPackage.ABSTRACTION_HEADING__NAME:
         return getName();
-      case PascalPackage.PROCEDURE_HEADING__PARAMETERS:
+      case PascalPackage.ABSTRACTION_HEADING__PARAMETERS:
         return getParameters();
+      case PascalPackage.ABSTRACTION_HEADING__RETURN_TYPE:
+        return getReturnType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -198,11 +243,14 @@ public class procedure_headingImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case PascalPackage.PROCEDURE_HEADING__NAME:
+      case PascalPackage.ABSTRACTION_HEADING__NAME:
         setName((String)newValue);
         return;
-      case PascalPackage.PROCEDURE_HEADING__PARAMETERS:
+      case PascalPackage.ABSTRACTION_HEADING__PARAMETERS:
         setParameters((formal_parameter_list)newValue);
+        return;
+      case PascalPackage.ABSTRACTION_HEADING__RETURN_TYPE:
+        setReturnType((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -218,11 +266,14 @@ public class procedure_headingImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case PascalPackage.PROCEDURE_HEADING__NAME:
+      case PascalPackage.ABSTRACTION_HEADING__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case PascalPackage.PROCEDURE_HEADING__PARAMETERS:
+      case PascalPackage.ABSTRACTION_HEADING__PARAMETERS:
         setParameters((formal_parameter_list)null);
+        return;
+      case PascalPackage.ABSTRACTION_HEADING__RETURN_TYPE:
+        setReturnType(RETURN_TYPE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -238,10 +289,12 @@ public class procedure_headingImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case PascalPackage.PROCEDURE_HEADING__NAME:
+      case PascalPackage.ABSTRACTION_HEADING__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case PascalPackage.PROCEDURE_HEADING__PARAMETERS:
+      case PascalPackage.ABSTRACTION_HEADING__PARAMETERS:
         return parameters != null;
+      case PascalPackage.ABSTRACTION_HEADING__RETURN_TYPE:
+        return RETURN_TYPE_EDEFAULT == null ? returnType != null : !RETURN_TYPE_EDEFAULT.equals(returnType);
     }
     return super.eIsSet(featureID);
   }
@@ -259,8 +312,10 @@ public class procedure_headingImpl extends MinimalEObjectImpl.Container implemen
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", returnType: ");
+    result.append(returnType);
     result.append(')');
     return result.toString();
   }
 
-} //procedure_headingImpl
+} //abstraction_headingImpl

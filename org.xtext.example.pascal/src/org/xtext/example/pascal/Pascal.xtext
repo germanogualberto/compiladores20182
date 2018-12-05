@@ -66,9 +66,8 @@ expression_list:
 ;
 
 expression:
-	expressions+=simple_expression
-;
-
+	expressions+=simple_expression ( ( operators+=RELATIONAL_OP | operators+="in" | operators+="=" ) expressions+=simple_expression ) ?
+; 
 
 simple_expression:
 	(prefixOperator=ADDITION_OP) ? terms+=term ( ( operators+=ADDITION_OP | operators+="or" ) terms+=term | terms+=unsigned_number ) *
@@ -87,6 +86,7 @@ factor:
 	| function=function_designator 
 	| "(" expression=expression ")" 
 	| "not" not=factor
+	| nil?="nil"
 ;
 
 function_designator:
@@ -113,6 +113,14 @@ abstraction_heading:
 	procedure_heading | function_heading 
 ;
 
+procedure_declaration returns abstraction_heading:
+	heading=procedure_heading ";" block=block
+;
+
+procedure_heading returns abstraction_heading: 
+	"procedure" name=ID ( parameters=formal_parameter_list ) ?	
+;
+
 formal_parameter_list:
 	"(" parameters+=formal_parameter_section ( ";" parameters+=formal_parameter_section)* ")"
 ;
@@ -137,15 +145,6 @@ variable_parameter_section:
 	"var" indentifiers=identifier_list ":" type=parameter_type
 ;
 
-procedure_declaration:
-	heading=procedure_heading ";" block=block
-;
-
-procedure_heading:
-	"procedure" name=ID (parameters=formal_parameter_list)? 
-;
-
-
 number:
 	number=any_number
 ;
@@ -164,6 +163,7 @@ constant:
 	| string=STRING 
 	| boolLiteral="true" 
 	| boolLiteral="false"
+	| nil?="nil"
 ;
 
 
@@ -193,6 +193,10 @@ simple_type:
 ;
 
 structured_type:
+	type=unpacked_structured_type
+;
+
+unpacked_structured_type:
 	record=record_type
 ;
 
@@ -243,11 +247,9 @@ terminal MULTIPLICATION_OP:
 	"*" | "/"
 ;
 
-/* comentado pra tirar duvida com p prof sobre a expressao do while
 terminal RELATIONAL_OP:
 	"=" | "<>" | "<" | "<=" | ">" | ">="	
 ;
-*/
 
 terminal DIGIT_SEQUENCE:
 	ADDITION_OP ? INTEGER_NUMBER

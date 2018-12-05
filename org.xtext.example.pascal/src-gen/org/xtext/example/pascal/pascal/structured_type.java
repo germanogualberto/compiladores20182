@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.pascal.pascal.structured_type#getRecord <em>Record</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.structured_type#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.pascal.pascal.PascalPackage#getstructured_type()
@@ -24,29 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface structured_type extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Record</b></em>' containment reference.
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Record</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Record</em>' containment reference.
-   * @see #setRecord(record_type)
-   * @see org.xtext.example.pascal.pascal.PascalPackage#getstructured_type_Record()
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(unpacked_structured_type)
+   * @see org.xtext.example.pascal.pascal.PascalPackage#getstructured_type_Type()
    * @model containment="true"
    * @generated
    */
-  record_type getRecord();
+  unpacked_structured_type getType();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.pascal.pascal.structured_type#getRecord <em>Record</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.pascal.pascal.structured_type#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Record</em>' containment reference.
-   * @see #getRecord()
+   * @param value the new value of the '<em>Type</em>' containment reference.
+   * @see #getType()
    * @generated
    */
-  void setRecord(record_type value);
+  void setType(unpacked_structured_type value);
 
 } // structured_type

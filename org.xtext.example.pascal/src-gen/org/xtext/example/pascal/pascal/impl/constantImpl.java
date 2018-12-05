@@ -29,6 +29,7 @@ import org.xtext.example.pascal.pascal.number;
  *   <li>{@link org.xtext.example.pascal.pascal.impl.constantImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.constantImpl#getString <em>String</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.constantImpl#getBoolLiteral <em>Bool Literal</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.impl.constantImpl#isNil <em>Nil</em>}</li>
  * </ul>
  *
  * @generated
@@ -124,6 +125,26 @@ public class constantImpl extends MinimalEObjectImpl.Container implements consta
    * @ordered
    */
   protected String boolLiteral = BOOL_LITERAL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isNil() <em>Nil</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNil()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean NIL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isNil() <em>Nil</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNil()
+   * @generated
+   * @ordered
+   */
+  protected boolean nil = NIL_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -291,6 +312,29 @@ public class constantImpl extends MinimalEObjectImpl.Container implements consta
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isNil()
+  {
+    return nil;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNil(boolean newNil)
+  {
+    boolean oldNil = nil;
+    nil = newNil;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PascalPackage.CONSTANT__NIL, oldNil, nil));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -322,6 +366,8 @@ public class constantImpl extends MinimalEObjectImpl.Container implements consta
         return getString();
       case PascalPackage.CONSTANT__BOOL_LITERAL:
         return getBoolLiteral();
+      case PascalPackage.CONSTANT__NIL:
+        return isNil();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -350,6 +396,9 @@ public class constantImpl extends MinimalEObjectImpl.Container implements consta
         return;
       case PascalPackage.CONSTANT__BOOL_LITERAL:
         setBoolLiteral((String)newValue);
+        return;
+      case PascalPackage.CONSTANT__NIL:
+        setNil((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -380,6 +429,9 @@ public class constantImpl extends MinimalEObjectImpl.Container implements consta
       case PascalPackage.CONSTANT__BOOL_LITERAL:
         setBoolLiteral(BOOL_LITERAL_EDEFAULT);
         return;
+      case PascalPackage.CONSTANT__NIL:
+        setNil(NIL_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -404,6 +456,8 @@ public class constantImpl extends MinimalEObjectImpl.Container implements consta
         return STRING_EDEFAULT == null ? string != null : !STRING_EDEFAULT.equals(string);
       case PascalPackage.CONSTANT__BOOL_LITERAL:
         return BOOL_LITERAL_EDEFAULT == null ? boolLiteral != null : !BOOL_LITERAL_EDEFAULT.equals(boolLiteral);
+      case PascalPackage.CONSTANT__NIL:
+        return nil != NIL_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -427,6 +481,8 @@ public class constantImpl extends MinimalEObjectImpl.Container implements consta
     result.append(string);
     result.append(", boolLiteral: ");
     result.append(boolLiteral);
+    result.append(", nil: ");
+    result.append(nil);
     result.append(')');
     return result.toString();
   }

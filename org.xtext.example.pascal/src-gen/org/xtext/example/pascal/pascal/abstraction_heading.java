@@ -3,27 +3,26 @@
  */
 package org.xtext.example.pascal.pascal;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>function heading</b></em>'.
+ * A representation of the model object '<em><b>abstraction heading</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.pascal.pascal.function_heading#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.function_heading#getParameters <em>Parameters</em>}</li>
- *   <li>{@link org.xtext.example.pascal.pascal.function_heading#getReturnType <em>Return Type</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.abstraction_heading#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.abstraction_heading#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.abstraction_heading#getReturnType <em>Return Type</em>}</li>
  * </ul>
  *
- * @see org.xtext.example.pascal.pascal.PascalPackage#getfunction_heading()
+ * @see org.xtext.example.pascal.pascal.PascalPackage#getabstraction_heading()
  * @model
  * @generated
  */
-public interface function_heading extends EObject
+public interface abstraction_heading extends abstraction_declaration
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -35,14 +34,14 @@ public interface function_heading extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see org.xtext.example.pascal.pascal.PascalPackage#getfunction_heading_Name()
+   * @see org.xtext.example.pascal.pascal.PascalPackage#getabstraction_heading_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.pascal.pascal.function_heading#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.pascal.pascal.abstraction_heading#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -61,14 +60,14 @@ public interface function_heading extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Parameters</em>' containment reference.
    * @see #setParameters(formal_parameter_list)
-   * @see org.xtext.example.pascal.pascal.PascalPackage#getfunction_heading_Parameters()
+   * @see org.xtext.example.pascal.pascal.PascalPackage#getabstraction_heading_Parameters()
    * @model containment="true"
    * @generated
    */
   formal_parameter_list getParameters();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.pascal.pascal.function_heading#getParameters <em>Parameters</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.pascal.pascal.abstraction_heading#getParameters <em>Parameters</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Parameters</em>' containment reference.
@@ -87,14 +86,14 @@ public interface function_heading extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Return Type</em>' attribute.
    * @see #setReturnType(String)
-   * @see org.xtext.example.pascal.pascal.PascalPackage#getfunction_heading_ReturnType()
+   * @see org.xtext.example.pascal.pascal.PascalPackage#getabstraction_heading_ReturnType()
    * @model
    * @generated
    */
   String getReturnType();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.pascal.pascal.function_heading#getReturnType <em>Return Type</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.pascal.pascal.abstraction_heading#getReturnType <em>Return Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Return Type</em>' attribute.
@@ -103,4 +102,4 @@ public interface function_heading extends EObject
    */
   void setReturnType(String value);
 
-} // function_heading
+} // abstraction_heading

@@ -18,9 +18,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.pascal.pascal.PascalPackage;
-import org.xtext.example.pascal.pascal.function_declaration;
+import org.xtext.example.pascal.pascal.abstraction_declaration;
+import org.xtext.example.pascal.pascal.abstraction_heading;
 import org.xtext.example.pascal.pascal.function_procedure_declaration;
-import org.xtext.example.pascal.pascal.procedure_declaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,24 +30,14 @@ import org.xtext.example.pascal.pascal.procedure_declaration;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.pascal.pascal.impl.function_procedure_declarationImpl#getProcedures <em>Procedures</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.impl.function_procedure_declarationImpl#getFunctions <em>Functions</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.impl.function_procedure_declarationImpl#getProcedures <em>Procedures</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class function_procedure_declarationImpl extends MinimalEObjectImpl.Container implements function_procedure_declaration
 {
-  /**
-   * The cached value of the '{@link #getProcedures() <em>Procedures</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProcedures()
-   * @generated
-   * @ordered
-   */
-  protected EList<function_declaration> procedures;
-
   /**
    * The cached value of the '{@link #getFunctions() <em>Functions</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -56,7 +46,17 @@ public class function_procedure_declarationImpl extends MinimalEObjectImpl.Conta
    * @generated
    * @ordered
    */
-  protected EList<procedure_declaration> functions;
+  protected EList<abstraction_declaration> functions;
+
+  /**
+   * The cached value of the '{@link #getProcedures() <em>Procedures</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProcedures()
+   * @generated
+   * @ordered
+   */
+  protected EList<abstraction_heading> procedures;
 
   /**
    * <!-- begin-user-doc -->
@@ -84,13 +84,13 @@ public class function_procedure_declarationImpl extends MinimalEObjectImpl.Conta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<function_declaration> getProcedures()
+  public EList<abstraction_declaration> getFunctions()
   {
-    if (procedures == null)
+    if (functions == null)
     {
-      procedures = new EObjectContainmentEList<function_declaration>(function_declaration.class, this, PascalPackage.FUNCTION_PROCEDURE_DECLARATION__PROCEDURES);
+      functions = new EObjectContainmentEList<abstraction_declaration>(abstraction_declaration.class, this, PascalPackage.FUNCTION_PROCEDURE_DECLARATION__FUNCTIONS);
     }
-    return procedures;
+    return functions;
   }
 
   /**
@@ -98,13 +98,13 @@ public class function_procedure_declarationImpl extends MinimalEObjectImpl.Conta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<procedure_declaration> getFunctions()
+  public EList<abstraction_heading> getProcedures()
   {
-    if (functions == null)
+    if (procedures == null)
     {
-      functions = new EObjectContainmentEList<procedure_declaration>(procedure_declaration.class, this, PascalPackage.FUNCTION_PROCEDURE_DECLARATION__FUNCTIONS);
+      procedures = new EObjectContainmentEList<abstraction_heading>(abstraction_heading.class, this, PascalPackage.FUNCTION_PROCEDURE_DECLARATION__PROCEDURES);
     }
-    return functions;
+    return procedures;
   }
 
   /**
@@ -117,10 +117,10 @@ public class function_procedure_declarationImpl extends MinimalEObjectImpl.Conta
   {
     switch (featureID)
     {
-      case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__PROCEDURES:
-        return ((InternalEList<?>)getProcedures()).basicRemove(otherEnd, msgs);
       case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__FUNCTIONS:
         return ((InternalEList<?>)getFunctions()).basicRemove(otherEnd, msgs);
+      case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__PROCEDURES:
+        return ((InternalEList<?>)getProcedures()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,10 +135,10 @@ public class function_procedure_declarationImpl extends MinimalEObjectImpl.Conta
   {
     switch (featureID)
     {
-      case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__PROCEDURES:
-        return getProcedures();
       case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__FUNCTIONS:
         return getFunctions();
+      case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__PROCEDURES:
+        return getProcedures();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,13 +154,13 @@ public class function_procedure_declarationImpl extends MinimalEObjectImpl.Conta
   {
     switch (featureID)
     {
-      case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__PROCEDURES:
-        getProcedures().clear();
-        getProcedures().addAll((Collection<? extends function_declaration>)newValue);
-        return;
       case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__FUNCTIONS:
         getFunctions().clear();
-        getFunctions().addAll((Collection<? extends procedure_declaration>)newValue);
+        getFunctions().addAll((Collection<? extends abstraction_declaration>)newValue);
+        return;
+      case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__PROCEDURES:
+        getProcedures().clear();
+        getProcedures().addAll((Collection<? extends abstraction_heading>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -176,11 +176,11 @@ public class function_procedure_declarationImpl extends MinimalEObjectImpl.Conta
   {
     switch (featureID)
     {
-      case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__PROCEDURES:
-        getProcedures().clear();
-        return;
       case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__FUNCTIONS:
         getFunctions().clear();
+        return;
+      case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__PROCEDURES:
+        getProcedures().clear();
         return;
     }
     super.eUnset(featureID);
@@ -196,10 +196,10 @@ public class function_procedure_declarationImpl extends MinimalEObjectImpl.Conta
   {
     switch (featureID)
     {
-      case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__PROCEDURES:
-        return procedures != null && !procedures.isEmpty();
       case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__FUNCTIONS:
         return functions != null && !functions.isEmpty();
+      case PascalPackage.FUNCTION_PROCEDURE_DECLARATION__PROCEDURES:
+        return procedures != null && !procedures.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.pascal.pascal.factor#getFunction <em>Function</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.factor#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.xtext.example.pascal.pascal.factor#getNot <em>Not</em>}</li>
+ *   <li>{@link org.xtext.example.pascal.pascal.factor#isNil <em>Nil</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.pascal.pascal.PascalPackage#getfactor()
@@ -210,5 +211,31 @@ public interface factor extends EObject
    * @generated
    */
   void setNot(factor value);
+
+  /**
+   * Returns the value of the '<em><b>Nil</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Nil</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Nil</em>' attribute.
+   * @see #setNil(boolean)
+   * @see org.xtext.example.pascal.pascal.PascalPackage#getfactor_Nil()
+   * @model
+   * @generated
+   */
+  boolean isNil();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.pascal.pascal.factor#isNil <em>Nil</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Nil</em>' attribute.
+   * @see #isNil()
+   * @generated
+   */
+  void setNil(boolean value);
 
 } // factor

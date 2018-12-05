@@ -204,22 +204,22 @@ public interface PascalFactory extends EFactory
   function_procedure_declaration createfunction_procedure_declaration();
 
   /**
-   * Returns a new object of class '<em>function heading</em>'.
+   * Returns a new object of class '<em>abstraction heading</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>function heading</em>'.
+   * @return a new object of class '<em>abstraction heading</em>'.
    * @generated
    */
-  function_heading createfunction_heading();
+  abstraction_heading createabstraction_heading();
 
   /**
-   * Returns a new object of class '<em>function declaration</em>'.
+   * Returns a new object of class '<em>abstraction declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>function declaration</em>'.
+   * @return a new object of class '<em>abstraction declaration</em>'.
    * @generated
    */
-  function_declaration createfunction_declaration();
+  abstraction_declaration createabstraction_declaration();
 
   /**
    * Returns a new object of class '<em>formal parameter list</em>'.
@@ -274,24 +274,6 @@ public interface PascalFactory extends EFactory
    * @generated
    */
   variable_parameter_section createvariable_parameter_section();
-
-  /**
-   * Returns a new object of class '<em>procedure declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>procedure declaration</em>'.
-   * @generated
-   */
-  procedure_declaration createprocedure_declaration();
-
-  /**
-   * Returns a new object of class '<em>procedure heading</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>procedure heading</em>'.
-   * @generated
-   */
-  procedure_heading createprocedure_heading();
 
   /**
    * Returns a new object of class '<em>number</em>'.
@@ -391,6 +373,15 @@ public interface PascalFactory extends EFactory
    * @generated
    */
   structured_type createstructured_type();
+
+  /**
+   * Returns a new object of class '<em>unpacked structured type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>unpacked structured type</em>'.
+   * @generated
+   */
+  unpacked_structured_type createunpacked_structured_type();
 
   /**
    * Returns a new object of class '<em>record type</em>'.
