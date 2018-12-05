@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.xtext.validation.Check
 import org.xtext.example.pascal.pascal.PascalPackage
 import org.xtext.example.pascal.pascal.any_number
+import org.xtext.example.pascal.pascal.assignment_statement
 import org.xtext.example.pascal.pascal.block
 import org.xtext.example.pascal.pascal.expression
 import org.xtext.example.pascal.pascal.factor
@@ -23,6 +24,8 @@ import org.xtext.example.pascal.pascal.type
 import org.xtext.example.pascal.pascal.number;
 import org.xtext.example.pascal.pascal.constant;
 import org.xtext.example.pascal.pascal.variable;
+import org.xtext.example.pascal.pascal.variable_declaration_part;
+import org.xtext.example.pascal.pascal.variable_section
 
 /**
  * This class contains custom validation rules. 
@@ -33,23 +36,7 @@ class PascalValidator extends AbstractPascalValidator {
 	
 	public static final Map<String, Map<String, Object>> artefacts = new HashMap<String, Map<String, Object>>();
 	
-	
-	private final Map<block, Set<Type>> types = new AdaptativeHashMap<block, Type>(APIProvider.types);
-	private final Map<EObject, Set<Error>> errorList = new AdaptativeHashMap<EObject, Error>();
-	private final Map<block, Set<Variable>> variables = new AdaptativeHashMap<block, Variable>();
-	private final Map<block, Set<Procedure>> abstractions = new AdaptativeHashMap<block, Procedure>(APIProvider.procedures);
-	private final Map<EObject, Type> calculatedTypes = new HashMap<EObject, Type>();
-
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					PascalPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	private var variables = new HashMap<String, variable_section>();
 	
 	@Check
 	def fillArtefacts(program p) {
@@ -57,283 +44,29 @@ class PascalValidator extends AbstractPascalValidator {
 		if (!artefacts.containsKey(name)) {
 			artefacts.put(name, new HashMap<String, Object>());
 			artefacts.get(name).put("variables", variables);
-			artefacts.get(name).put("abstractions", abstractions);
-			artefacts.get(name).put("types", types);
-			artefacts.get(name).put("calculatedTypes", calculatedTypes);
-		}	
-	}
-	
-	def insertError(EObject object, String message, ErrorType type, EStructuralFeature feature) {
-		errorList.get(object).add(new Error(message, type, feature));
-	}
-
-	def removeError(EObject object, ErrorType type) {
-		errorList.get(object).remove(new Error(type));
-		showError(object);
-	}
-	
-	
-	def static <T extends Element> search(Set<T> elements, T key) {
-		for (T t : elements) {
-			if (t.equals(key))
-				return t;
-		} 
-		return null;	
-	}
-	
-	def static searchWithTypeCoersion(Set<Procedure> elements, Procedure key) {
-		var Procedure optimal = null; 
-		for (Procedure t : elements) {
-			if (t.equals(key))
-				return t;
-			if (t.equalsWithTypeCoersion(key))
-				optimal = t;
-		}  
-		return optimal;
-	}
-	
-	def getParameters(block b, function_designator f) {
-		var parameters = new ArrayList<Variable>();
-		if (f.expressions !== null) {
-			var count = 0; 
-			for (expression e : f.expressions.expressions) {
-				parameters.add(new Variable("arg_" + count, getType(b, e), false, b, ElementType.PARAMETER));
-				count++;
-			} 
+//			artefacts.get(name).put("abstractions", abstractions);
+//			artefacts.get(name).put("types", types);
+//			artefacts.get(name).put("calculatedTypes", calculatedTypes);
 		}
-		return parameters;
 	}
 	
-	def getAbstraction(block b, function_designator f) {
-		var name = f.name; 
-		var parameters = getParameters(b, f);
-		return new Procedure(name, parameters);	
-	}
-
-
-	def String getRealType(block b, String type) {
-		var foundType = search(types.get(b), new Type(type));
-		if (foundType !== null) {
-			return foundType.realType;
-		}	
-		return type;
-	}
-	
-	def Type getType(block b, String type) {
-		if (type === null) return null;
-		return new Type(type, false, getRealType(b, type));	
-	}
-	
-	def Type getType(block b, function_designator f) {
-		var type = new Type("nil");
-		var function = getAbstraction(b, f);
-		var abstractionFound = searchWithTypeCoersion(abstractions.get(b), function);
-		if (abstractionFound !== null && abstractionFound.type == ElementType.FUNCTION) {
-			var functionFound = abstractionFound as Function;
-			type = functionFound.returnType;  
-		}
-		return type;
-	}
-	
-	def Type getType(block b, simple_expression expr) {
-		var Type greatestType = null;
-		for (EObject obj : expr.terms) {
-			if (obj instanceof term) {
-				var t = obj as term;
-				var type = getType(b, t);
-				greatestType = TypeInferer.greater(type, greatestType);
-			} else {
-				var n = obj as any_number;
-				if (n.integer !== null) {
-					greatestType = TypeInferer.greater(new Type("integer"), greatestType);
+		@Check
+	def checaVariavelDeclaradaSemInicializar(variable_section varDecl) {
+		if (!varDecl.identifiers.names.isNullOrEmpty()){
+			for (String element : varDecl.identifiers.names) {
+				if (!variables.containsKey(element)) {
+					variables.put(element, varDecl)
 				} else {
-					greatestType = TypeInferer.greater(new Type("real"), greatestType);
+					error(" Duplicate identifier "+element, null);
 				}
-			}
-		}
-		calculatedTypes.put(expr, greatestType);
-		return greatestType;
-	}
-	
-	def Type getType(block b, term t) {
-		var Type greatestType = null; 
-		for (factor f : t.factors) {
-			var type = getType(b, f);
-			greatestType = TypeInferer.greater(type, greatestType);
-		}
-		calculatedTypes.put(t, greatestType);
-		return greatestType;
-	}
-	
-	def Type getType(block b, expression expr) {
-		var t = new Type("nil");
-		if (expr.operators !== null && !expr.operators.empty) {
-			t = new Type("boolean");
-		} else {
-			var Type greatestType = null;
-			for (simple_expression e : expr.expressions) {
-				var type = getType(b, e);
-				greatestType = TypeInferer.greater(type, greatestType);
-			}
-			t = greatestType;
-		}
-		calculatedTypes.put(expr, t);
-		return t;
-	}
-	
-	def Type getType(block b, type t) {
-		var Type type = new Type("nil");
-		if (t.simple !== null) {
-			var simple = t.simple;
-			if (simple.name !== null) {
-				if (search(types.get(b), new Type(simple.name)) === null) {
-					insertError(t, "Undefined type.", ErrorType.UNDEFINED_TYPE, PascalPackage.Literals.TYPE__SIMPLE);
-				} else {
-					removeError(t, ErrorType.UNDEFINED_TYPE);
-				} 
-				type = getType(b, simple.name);
-			} 
-		} else if (t.structured !== null) {
-			var unpacked = t.structured.type;
-			if (unpacked.record !== null) {
-				type = new Type("record");
-			}
-		}
-		return type;
-	}
-	
-	def Type getType(block b, factor f) {
-		var type = new Type("nil");
-		if (f.variable !== null) {
-			var variableFound = search(variables.get(b), new Variable(f.variable.name));
-			if (variableFound !== null) {
-				type = variableFound.varType;		
-			}
-		} else if (f.number !== null) {
-			var number = f.number.number;
-			if (number.integer !== null) {
-				type = new Type("integer");
-			} else if (number.real !== null) {
-				type = new Type("real");
-			}
-		} else if (f.nil) {
-			type = new Type("nil");
-		} else if (f.boolean !== null || f.not !== null) {
-			type = new Type("boolean");
-		} else if (f.function !== null) {
-			type = getType(b, f.function);
-		} else if (f.expression !== null) {
-			type = getType(b, f.expression);
-		}
-		calculatedTypes.put(f, type);
-		return type;
-	}
-	
-	def static Object getValue(number num) {
-		if (num.number.integer !== null) {
-			return Integer.valueOf(num.number.integer);
-		} else if (num.number.real !== null) {
-			return Double.valueOf(num.number.real);
-		}
-		return null;
-	}
-	
-	def static boolean isNumeric(Object obj) {
-		try {
-			 Double.parseDouble(obj.toString); 
-		} catch(Exception e) {
-			return false;
-		}
-		return true;
-	}
-	
-	def static Object getValue(constant const, Set<Variable> variables) {
-		var Object value = null;
-		if (const.name !== null) {
-			var variable = search(variables, new Variable(const.name));
-			value = variable.getValue;
-		} else if (const.number !== null) {
-			value = getValue(const.number);
-		} else if (const.string !== null) {
-			value = const.string;
-		} else if (const.boolLiteral !== null) {
-			value = Boolean.valueOf(const.boolLiteral);
-		} else if (const.nil) {
-			value = null;
-		}
-		if (const.opterator !== null) {
-			if (isNumeric(value) && const.opterator.equals("-")) {
-				try {
-					return - Integer.parseInt(value.toString);
-				} catch(Exception e) {
-					return - Double.parseDouble(value.toString);
-				}
-			}
-		}
-		return value;
-	}
-	
-	def boolean checkVariable(block b, variable v, boolean isAssignment) { 
-		var isValid = true;
-		if (v === null) return true;
-		var searchVariable = search(variables.get(b), new Variable(v.name));
-		if (searchVariable === null) {
-			isValid = false;
-			insertError(v, "Variable was not declared.", ErrorType.NOT_DECLARATION, PascalPackage.Literals.VARIABLE__NAME);
-		} else {
-			removeError(v, ErrorType.NOT_DECLARATION);
-			if (isAssignment) {
-				if (searchVariable.type == ElementType.CONSTANT) {
-					isValid = false;
-					insertError(v, "Constants cannot be assigned.", ErrorType.CONSTANT_ASSIGNMENT, PascalPackage.Literals.VARIABLE__NAME);
-				} else {
-					removeError(v, ErrorType.CONSTANT_ASSIGNMENT);
-				}
-			}
-		}
-		return isValid; 
-	}
-	
-	
-	def checkAbstraction(block b, Procedure proc, boolean functionOnly, EObject object, EStructuralFeature feature) {
-		var abstractionFound = searchWithTypeCoersion(abstractions.get(b), proc);
-		if (abstractionFound === null) {
-			for (Procedure p : abstractions.get(b)) {
-				if (p.name.toLowerCase.equals(proc.name.toLowerCase)) {
-					if (p.parameters.size != proc.parameters.size) {
-						insertError(object, "Wrong number of arguments. It expected " + p.parameters.size + " received " + proc.parameters.size + " arguments.", ErrorType.NOT_DECLARATION, feature);
-					} else {
-						var it1 = p.parameters.iterator;
-						var it2 = proc.parameters.iterator;
-						while (it1.hasNext && it2.hasNext) {
-							var type1 = it1.next;
-							var type2 = it2.next; 
-							if (!TypeInferer.areTypesCompatibles(type1.varType, type2.varType)) {
-								insertError(object, "Incompatible types of arguments. It expected " + p.parameters + " received " + proc.parameters + ".", ErrorType.NOT_DECLARATION, feature);
-								return;
-							}	
-						}
-					}
-					return;
-				}
-			}
-			insertError(object, "Function was not declared.", ErrorType.NOT_DECLARATION, feature); 
-		} else {
-			removeError(object, ErrorType.NOT_DECLARATION);
-			if (abstractionFound.type == ElementType.PROCEDURE && functionOnly) {
-				insertError(object, "Procedures calls are not allowed in an expression.", ErrorType.FUNCTION_ONLY, feature);
-			} else {
-				removeError(object, ErrorType.FUNCTION_ONLY);
 			}
 		}
 	}
 	
 	@Check
-	def showError(EObject obj) {
-		if (errorList.containsKey(obj)) {
-			for (Error err : errorList.get(obj)) {
-				error(err.message, obj, err.feature, -1);
-			} 
-		} 
+	def restart(program program) {
+		artefacts.clear();
+		variables.clear();
+//		abstractions.clear();
 	}
 }

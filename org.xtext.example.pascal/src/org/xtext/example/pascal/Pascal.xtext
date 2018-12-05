@@ -2,10 +2,6 @@ grammar org.xtext.example.pascal.Pascal with org.eclipse.xtext.common.Terminals
 
 generate pascal "http://www.xtext.org/example/pascal/Pascal"
 
-pascal:
-	program += program
-; 
-
 program:
 	heading=program_heading_block block=block "." 
 ;
@@ -36,7 +32,7 @@ statement:
 ;
 
 simple_statement:
-	( assignment=assignment_statement | function=function_designator | function_noargs=ID ) ?	
+	{simple_statement} ( assignment=assignment_statement | function=function_designator | function_noargs=ID ) ?	
 ;
 
 structured_statement:
