@@ -3,9 +3,7 @@
  */
 package org.xtext.example.pascal.validation
 
-import java.util.ArrayList
 import java.util.Map
-import java.util.Set
 import java.util.HashMap
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EStructuralFeature
@@ -28,6 +26,8 @@ import org.xtext.example.pascal.pascal.number
 import org.xtext.example.pascal.pascal.constant
 import org.xtext.example.pascal.pascal.variable
 import org.xtext.example.pascal.pascal.variable_section
+import org.xtext.example.pascal.pascal.while_statement
+import org.xtext.example.pascal.pascal.statement_sequence
 
 /**
  * This class contains custom validation rules. 
@@ -108,6 +108,15 @@ class PascalValidator extends AbstractPascalValidator {
 	}
 	
 	@Check
+	def checaFuncCall(function_designator call) {
+		if (!functions.containsKey(call.name)) {
+			error("Identifier not found " + call.name, null);
+		} else if (call.expressions.expressions.size !== functions.get(call.name).heading.parameters.parameters.size) {
+			error("Wrong number of parameters specified for call to " + call.name, null)
+		}
+	}
+	
+	@Check
 	def checaVariavelNaoInicializadaAssignment(assignment_statement assignment) {
 		var element = assignment.variable.name;
 		if (!variables.containsKey(element)) {
@@ -130,7 +139,7 @@ class PascalValidator extends AbstractPascalValidator {
 			}
 		}
 	}
-		
+			
 	@Check
 	def restart(program program) {
 		artefacts.clear();

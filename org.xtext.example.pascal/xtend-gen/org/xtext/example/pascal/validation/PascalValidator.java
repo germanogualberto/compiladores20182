@@ -12,6 +12,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.xtext.example.pascal.pascal.abstraction_declaration;
 import org.xtext.example.pascal.pascal.assignment_statement;
 import org.xtext.example.pascal.pascal.factor;
+import org.xtext.example.pascal.pascal.function_designator;
 import org.xtext.example.pascal.pascal.program;
 import org.xtext.example.pascal.pascal.record_section;
 import org.xtext.example.pascal.pascal.simple_type;
@@ -133,6 +134,26 @@ public class PascalValidator extends AbstractPascalValidator {
     if (_tripleNotEquals) {
       if (((abt.getBlock().getStatement() == null) || (abt.getBlock().getStatement().getSequence() == null))) {
         this.error("Function needs return", null);
+      }
+    }
+  }
+  
+  @Check
+  public void checaFuncCall(final function_designator call) {
+    boolean _containsKey = this.functions.containsKey(call.getName());
+    boolean _not = (!_containsKey);
+    if (_not) {
+      String _name = call.getName();
+      String _plus = ("Identifier not found " + _name);
+      this.error(_plus, null);
+    } else {
+      int _size = call.getExpressions().getExpressions().size();
+      int _size_1 = this.functions.get(call.getName()).getHeading().getParameters().getParameters().size();
+      boolean _tripleNotEquals = (_size != _size_1);
+      if (_tripleNotEquals) {
+        String _name_1 = call.getName();
+        String _plus_1 = ("Wrong number of parameters specified for call to " + _name_1);
+        this.error(_plus_1, null);
       }
     }
   }
