@@ -7,10 +7,16 @@ import java.util.HashMap;
 import java.util.Map;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.xtext.example.pascal.pascal.abstraction_declaration;
 import org.xtext.example.pascal.pascal.assignment_statement;
 import org.xtext.example.pascal.pascal.factor;
 import org.xtext.example.pascal.pascal.program;
+import org.xtext.example.pascal.pascal.record_section;
+import org.xtext.example.pascal.pascal.simple_type;
+import org.xtext.example.pascal.pascal.type;
+import org.xtext.example.pascal.pascal.type_definition;
 import org.xtext.example.pascal.pascal.variable_section;
 import org.xtext.example.pascal.validation.AbstractPascalValidator;
 
@@ -25,6 +31,12 @@ public class PascalValidator extends AbstractPascalValidator {
   
   private HashMap<String, variable_section> variables = new HashMap<String, variable_section>();
   
+  private HashMap<String, record_section> records = new HashMap<String, record_section>();
+  
+  private HashMap<String, type_definition> types = new HashMap<String, type_definition>();
+  
+  private HashMap<String, abstraction_declaration> functions = CollectionLiterals.<String, abstraction_declaration>newHashMap();
+  
   @Check
   public Object fillArtefacts(final program p) {
     Object _xblockexpression = null;
@@ -38,7 +50,10 @@ public class PascalValidator extends AbstractPascalValidator {
         {
           HashMap<String, Object> _hashMap = new HashMap<String, Object>();
           PascalValidator.artefacts.put(name, _hashMap);
-          _xblockexpression_1 = PascalValidator.artefacts.get(name).put("variables", this.variables);
+          PascalValidator.artefacts.get(name).put("variables", this.variables);
+          PascalValidator.artefacts.get(name).put("functions", this.functions);
+          PascalValidator.artefacts.get(name).put("records", this.records);
+          _xblockexpression_1 = PascalValidator.artefacts.get(name).put("types", this.types);
         }
         _xifexpression = _xblockexpression_1;
       }
@@ -59,8 +74,65 @@ public class PascalValidator extends AbstractPascalValidator {
         if (_not_1) {
           this.variables.put(element, varDecl);
         } else {
-          this.error((" Duplicate identifier " + element), null);
+          this.error(("Duplicate identifier " + element), null);
         }
+      }
+    }
+  }
+  
+  @Check
+  public void checaRegistroDeclaradoSemInicializar(final record_section r) {
+    boolean _isNullOrEmpty = IterableExtensions.isNullOrEmpty(r.getIdentifiers().getNames());
+    boolean _not = (!_isNullOrEmpty);
+    if (_not) {
+      EList<String> _names = r.getIdentifiers().getNames();
+      for (final String element : _names) {
+        boolean _containsKey = this.records.containsKey(element);
+        boolean _not_1 = (!_containsKey);
+        if (_not_1) {
+          this.records.put(element, r);
+        } else {
+          this.error(("Duplicate identifier " + element), null);
+        }
+      }
+    }
+  }
+  
+  @Check
+  public type_definition checaTipoDuplicado(final type_definition t) {
+    type_definition _xifexpression = null;
+    String _name = t.getName();
+    boolean _tripleNotEquals = (_name != null);
+    if (_tripleNotEquals) {
+      type_definition _xifexpression_1 = null;
+      boolean _containsKey = this.types.containsKey(t.getName());
+      boolean _not = (!_containsKey);
+      if (_not) {
+        _xifexpression_1 = this.types.put(t.getName(), t);
+      } else {
+        String _name_1 = t.getName();
+        String _plus = ("Duplicate identifier " + _name_1);
+        this.error(_plus, null);
+      }
+      _xifexpression = _xifexpression_1;
+    }
+    return _xifexpression;
+  }
+  
+  @Check
+  public void checaFuncDecl(final abstraction_declaration abt) {
+    if (((abt.getHeading() != null) && (!this.functions.containsKey(abt.getHeading().getName())))) {
+      this.functions.put(abt.getHeading().getName(), abt);
+    } else {
+      String _name = abt.getHeading().getName();
+      String _plus = ("Duplicate identifier " + _name);
+      this.error(_plus, null);
+    }
+    String _returnType = abt.getHeading().getReturnType();
+    boolean _tripleNotEquals = (_returnType != null);
+    if (_tripleNotEquals) {
+      if (((abt.getBlock().getStatement() == null) || (abt.getBlock().getStatement().getSequence() == null))) {
+        this.error("Function needs return", null);
       }
     }
   }
@@ -87,8 +159,22 @@ public class PascalValidator extends AbstractPascalValidator {
   }
   
   @Check
+  public void checaTipoSimples(final type t) {
+    simple_type _simple = t.getSimple();
+    boolean _tripleNotEquals = (_simple != null);
+    if (_tripleNotEquals) {
+      if ((((!t.getSimple().getName().equals("boolean")) && (!t.getSimple().getName().equals("integer"))) && (!t.getSimple().getName().equals("string")))) {
+        this.error("Invalid type", null);
+      }
+    }
+  }
+  
+  @Check
   public void restart(final program program) {
     PascalValidator.artefacts.clear();
     this.variables.clear();
+    this.functions.clear();
+    this.records.clear();
+    this.types.clear();
   }
 }

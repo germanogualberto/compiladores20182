@@ -17,18 +17,17 @@ import org.xtext.example.pascal.pascal.block
 import org.xtext.example.pascal.pascal.expression
 import org.xtext.example.pascal.pascal.factor
 import org.xtext.example.pascal.pascal.function_designator
+import org.xtext.example.pascal.pascal.abstraction_declaration
 import org.xtext.example.pascal.pascal.program
+import org.xtext.example.pascal.pascal.record_section
 import org.xtext.example.pascal.pascal.simple_expression
 import org.xtext.example.pascal.pascal.term
 import org.xtext.example.pascal.pascal.type
-import org.xtext.example.pascal.pascal.simple_type
-import org.xtext.example.pascal.pascal.structured_type
+import org.xtext.example.pascal.pascal.type_definition
 import org.xtext.example.pascal.pascal.number
 import org.xtext.example.pascal.pascal.constant
 import org.xtext.example.pascal.pascal.variable
-import org.xtext.example.pascal.pascal.variable_declaration_part
 import org.xtext.example.pascal.pascal.variable_section
-import org.eclipse.emf.common.util.EList
 
 /**
  * This class contains custom validation rules. 
@@ -40,6 +39,9 @@ class PascalValidator extends AbstractPascalValidator {
 	public static final Map<String, Map<String, Object>> artefacts = new HashMap<String, Map<String, Object>>();
 	
 	private var variables = new HashMap<String, variable_section>();
+	private var records = new HashMap<String, record_section>();
+	private var types = new HashMap<String, type_definition>();
+	private var functions = <String, abstraction_declaration>newHashMap();
 	
 	@Check
 	def fillArtefacts(program p) {
@@ -47,9 +49,9 @@ class PascalValidator extends AbstractPascalValidator {
 		if (!artefacts.containsKey(name)) {
 			artefacts.put(name, new HashMap<String, Object>());
 			artefacts.get(name).put("variables", variables);
-//			artefacts.get(name).put("abstractions", abstractions);
-//			artefacts.get(name).put("types", types);
-//			artefacts.get(name).put("calculatedTypes", calculatedTypes);
+			artefacts.get(name).put("functions", functions);
+			artefacts.get(name).put("records", records);
+			artefacts.get(name).put("types", types);
 		}
 	}
 	
@@ -60,8 +62,47 @@ class PascalValidator extends AbstractPascalValidator {
 				if (!variables.containsKey(element)) {
 					variables.put(element, varDecl)
 				} else {
-					error(" Duplicate identifier "+element, null);
+					error("Duplicate identifier "+element, null);
 				}
+			}
+		}
+	}
+	
+	@Check
+	def checaRegistroDeclaradoSemInicializar(record_section r) {
+		if (!r.identifiers.names.isNullOrEmpty()){
+			for (String element : r.identifiers.names) {
+				if (!records.containsKey(element)) {
+					records.put(element, r)
+				} else {
+					error("Duplicate identifier "+element, null);
+				}
+			}
+		}
+	}
+	
+	@Check
+	def checaTipoDuplicado(type_definition t) {
+		if (t.name !== null){
+			if (!types.containsKey(t.name)) {
+				types.put(t.name, t)
+			} else {
+				error("Duplicate identifier "+t.name, null);
+			}
+		}
+	}
+	
+	@Check
+	def checaFuncDecl(abstraction_declaration abt) {
+		if (abt.heading !== null && !functions.containsKey(abt.heading.name)) {
+			functions.put(abt.heading.name, abt)
+		} else {
+			error("Duplicate identifier "+abt.heading.name, null)
+		}
+		
+		if (abt.heading.returnType !== null) {
+			if (abt.block.statement === null || abt.block.statement.sequence === null) {
+				error("Function needs return", null)
 			}
 		}
 	}
@@ -80,11 +121,22 @@ class PascalValidator extends AbstractPascalValidator {
 			error("Identifier not found " + f.variable.name, null);
 		}
 	}
+	
+	@Check
+	def checaTipoSimples(type t) {
+		if (t.simple !== null) {
+			if (!t.simple.name.equals("boolean") && !t.simple.name.equals("integer") && !t.simple.name.equals("string")) {
+				error("Invalid type", null);
+			}
+		}
+	}
 		
 	@Check
 	def restart(program program) {
 		artefacts.clear();
 		variables.clear();
-//		abstractions.clear();
+		functions.clear();
+		records.clear();
+		types.clear();
 	}
 }

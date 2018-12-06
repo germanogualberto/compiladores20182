@@ -116,9 +116,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="functions" upperBound="-1"
         eType="#//abstraction_declaration" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="procedures" upperBound="-1"
-        eType="#//abstraction_heading" containment="true"/>
+        eType="#//abstraction_declaration" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="abstraction_heading" eSuperTypes="#//abstraction_declaration">
+  <eClassifiers xsi:type="ecore:EClass" name="abstraction_heading">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" eType="#//formal_parameter_list"
         containment="true"/>

@@ -109,7 +109,7 @@ abstraction_heading:
 	procedure_heading | function_heading 
 ;
 
-procedure_declaration returns abstraction_heading:
+procedure_declaration returns abstraction_declaration:
 	heading=procedure_heading ";" block=block
 ;
 
