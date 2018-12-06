@@ -21,11 +21,14 @@ import org.xtext.example.pascal.pascal.program
 import org.xtext.example.pascal.pascal.simple_expression
 import org.xtext.example.pascal.pascal.term
 import org.xtext.example.pascal.pascal.type
-import org.xtext.example.pascal.pascal.number;
-import org.xtext.example.pascal.pascal.constant;
-import org.xtext.example.pascal.pascal.variable;
-import org.xtext.example.pascal.pascal.variable_declaration_part;
+import org.xtext.example.pascal.pascal.simple_type
+import org.xtext.example.pascal.pascal.structured_type
+import org.xtext.example.pascal.pascal.number
+import org.xtext.example.pascal.pascal.constant
+import org.xtext.example.pascal.pascal.variable
+import org.xtext.example.pascal.pascal.variable_declaration_part
 import org.xtext.example.pascal.pascal.variable_section
+import org.eclipse.emf.common.util.EList
 
 /**
  * This class contains custom validation rules. 
@@ -50,7 +53,7 @@ class PascalValidator extends AbstractPascalValidator {
 		}
 	}
 	
-		@Check
+	@Check
 	def checaVariavelDeclaradaSemInicializar(variable_section varDecl) {
 		if (!varDecl.identifiers.names.isNullOrEmpty()){
 			for (String element : varDecl.identifiers.names) {
@@ -63,6 +66,21 @@ class PascalValidator extends AbstractPascalValidator {
 		}
 	}
 	
+	@Check
+	def checaVariavelNaoInicializadaAssignment(assignment_statement assignment) {
+		var element = assignment.variable.name;
+		if (!variables.containsKey(element)) {
+			error("Identifier not found " + element, null);
+		}
+	}
+	
+	@Check
+	def checaIdsFactorExpressions(factor f) {
+		if (!variables.containsKey(f.variable.name)) {
+			error("Identifier not found " + f.variable.name, null);
+		}
+	}
+		
 	@Check
 	def restart(program program) {
 		artefacts.clear();

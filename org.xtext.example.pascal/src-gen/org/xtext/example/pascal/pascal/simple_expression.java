@@ -85,4 +85,8 @@ public interface simple_expression extends EObject
    */
   EList<String> getOperators();
 
+public abstract static Object getTerms();
+
+public abstract static Object getTerms();
+
 } // simple_expression

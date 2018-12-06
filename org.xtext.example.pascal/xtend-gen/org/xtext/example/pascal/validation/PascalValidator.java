@@ -8,6 +8,8 @@ import java.util.Map;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.xtext.example.pascal.pascal.assignment_statement;
+import org.xtext.example.pascal.pascal.factor;
 import org.xtext.example.pascal.pascal.program;
 import org.xtext.example.pascal.pascal.variable_section;
 import org.xtext.example.pascal.validation.AbstractPascalValidator;
@@ -19,7 +21,7 @@ import org.xtext.example.pascal.validation.AbstractPascalValidator;
  */
 @SuppressWarnings("all")
 public class PascalValidator extends AbstractPascalValidator {
-  public static final Map<String, Map<String, Object>> artefacts = new HashMap<String, Map<String, Object>>();
+  public final static Map<String, Map<String, Object>> artefacts = new HashMap<String, Map<String, Object>>();
   
   private HashMap<String, variable_section> variables = new HashMap<String, variable_section>();
   
@@ -60,6 +62,27 @@ public class PascalValidator extends AbstractPascalValidator {
           this.error((" Duplicate identifier " + element), null);
         }
       }
+    }
+  }
+  
+  @Check
+  public void checaVariavelNaoInicializadaAssignment(final assignment_statement assignment) {
+    String element = assignment.getVariable().getName();
+    boolean _containsKey = this.variables.containsKey(element);
+    boolean _not = (!_containsKey);
+    if (_not) {
+      this.error(("Identifier not found " + element), null);
+    }
+  }
+  
+  @Check
+  public void checaIdsFactorExpressions(final factor f) {
+    boolean _containsKey = this.variables.containsKey(f.getVariable().getName());
+    boolean _not = (!_containsKey);
+    if (_not) {
+      String _name = f.getVariable().getName();
+      String _plus = ("Identifier not found " + _name);
+      this.error(_plus, null);
     }
   }
   
