@@ -28,6 +28,8 @@ import org.xtext.example.pascal.pascal.variable
 import org.xtext.example.pascal.pascal.variable_section
 import org.xtext.example.pascal.pascal.while_statement
 import org.xtext.example.pascal.pascal.statement_sequence
+import org.eclipse.xtext.parser.packrat.tokens.AssignmentToken.End
+import java.util.List
 
 /**
  * This class contains custom validation rules. 
@@ -139,6 +141,7 @@ class PascalValidator extends AbstractPascalValidator {
 			}
 		}
 	}
+		
 			
 	@Check
 	def restart(program program) {
